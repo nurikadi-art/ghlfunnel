@@ -32,6 +32,10 @@ body, html, .hl_page-preview--content {
     -webkit-font-smoothing: antialiased;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 .c-section, .c-row, .c-column, .c-column > .inner, .c-custom-html {
     width: 100% !important;
     max-width: 100% !important;
@@ -46,6 +50,7 @@ body, html, .hl_page-preview--content {
     z-index: 1;
     line-height: 1.6;
     background: #020204;
+    overflow-x: hidden;
 }
 
 .ai-clone .container {
@@ -56,6 +61,11 @@ body, html, .hl_page-preview--content {
     box-sizing: border-box !important;
     position: relative;
     z-index: 2;
+}
+
+img, svg, video {
+    max-width: 100%;
+    height: auto;
 }
 
 /* --- 2. HERO (NEURAL GRID) --- */
@@ -487,17 +497,224 @@ details[open] summary::after {
     color: var(--apple-grey);
 }
 
+@media (max-width: 900px) {
+    .ai-clone {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    .ai-clone .container {
+        padding: 0 20px !important;
+    }
+}
+
 @media (max-width: 768px) {
-    .grid-2 {
-        grid-template-columns: 1fr;
+    section {
+        padding: 52px 0 !important;
     }
 
     .hero-neural {
-        padding-top: 80px !important;
+        padding-top: 52px !important;
+        padding-bottom: 30px !important;
     }
 
-    .hero-headline {
-        font-size: 42px !important;
+    .problem-section {
+        padding-top: 52px !important;
+    }
+
+    .bg-deep-space {
+        padding-bottom: 60px !important;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 16px !important;
+    }
+
+    .ai-clone h1,
+    .hero-headline,
+    .shimmer-text {
+        font-size: 26px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 16px !important;
+    }
+
+    .ai-clone h2 {
+        font-size: 20px !important;
+        line-height: 1.25 !important;
+        margin-bottom: 14px !important;
+    }
+
+    .ai-clone h3 {
+        font-size: 17px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .ai-clone p,
+    .ai-clone ul,
+    .ai-clone ol {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 14px !important;
+    }
+
+    .cta-btn {
+        width: 100% !important;
+        max-width: 320px !important;
+        padding: 13px 16px !important;
+        font-size: 14px !important;
+    }
+
+    .designer-box {
+        min-height: 130px !important;
+        padding: 20px 12px !important;
+        margin: 20px 0 !important;
+        font-size: 12px !important;
+    }
+
+    .hero-neural .designer-box {
+        margin-bottom: -20px !important;
+    }
+
+    .card,
+    .state-card {
+        padding: 18px !important;
+        border-radius: 14px !important;
+    }
+
+    .stack-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+    }
+
+    summary {
+        padding: 16px !important;
+    }
+
+    summary::after {
+        right: 14px !important;
+    }
+
+    .faq-content {
+        padding: 0 16px 16px 16px !important;
+    }
+
+    .pre-headline-box,
+    .badge {
+        font-size: 10px !important;
+        padding: 6px 10px !important;
+        margin-bottom: 18px !important;
+    }
+
+    .bg-deep-space .card[style*="display: flex"] {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 16px !important;
+    }
+
+    .bg-deep-space .card [style*="min-width: 300px"] {
+        min-width: 0 !important;
+        width: 100% !important;
+    }
+
+    #order .text-center div[style*="font-size: 80px"] {
+        font-size: 40px !important;
+    }
+
+    #order p[style*="font-size: 28px"] {
+        font-size: 18px !important;
+    }
+
+    #order .stack-item[style*="font-size: 20px"],
+    #order .stack-val[style*="font-size: 20px"] {
+        font-size: 16px !important;
+    }
+
+    h3[style*="font-size: 28px"] {
+        font-size: 20px !important;
+    }
+
+    .hero-headline br,
+    .ai-clone h2 br {
+        display: none;
+    }
+
+    .hero-neural p[style*="font-size: 20px"] {
+        font-size: 16px !important;
+        margin-bottom: 16px !important;
+    }
+
+    .hero-neural p[style*="font-size: 16px"] {
+        font-size: 14px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .ai-clone p[style*="font-size: 22px"] {
+        font-size: 16px !important;
+    }
+
+    .ai-clone p[style*="font-size: 20px"] {
+        font-size: 16px !important;
+    }
+
+    .ai-clone p[style*="font-size: 18px"] {
+        font-size: 14px !important;
+    }
+
+    .ai-clone [style*="margin-bottom: 40px"] {
+        margin-bottom: 24px !important;
+    }
+
+    .ai-clone [style*="margin-top: 60px"] {
+        margin-top: 32px !important;
+    }
+
+    .ai-clone [style*="margin: 100px auto 0"] {
+        margin: 48px auto 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 44px 0 !important;
+    }
+
+    .ai-clone .container {
+        padding: 0 10px !important;
+    }
+
+    .ai-clone h1,
+    .hero-headline,
+    .shimmer-text {
+        font-size: 24px !important;
+    }
+
+    .ai-clone h2 {
+        font-size: 19px !important;
+    }
+
+    .ai-clone p,
+    .ai-clone ul,
+    .ai-clone ol {
+        font-size: 13px !important;
+    }
+
+    .cta-btn {
+        font-size: 13px !important;
+    }
+
+    .designer-box {
+        min-height: 120px !important;
+        margin: 18px 0 !important;
+    }
+
+    .hero-neural .designer-box {
+        margin-bottom: -16px !important;
+    }
+
+    #order .text-center div[style*="font-size: 80px"] {
+        font-size: 36px !important;
     }
 }
 </style>
