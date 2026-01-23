@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Embedded CSS Override</title>
+    <style>
+      /* Scoped overrides to beat custom GHL CSS. */
+      #ghl-override,
+      #ghl-override * {
+        box-sizing: border-box !important;
+      }
+
+      #ghl-override {
+        font-family: Arial, sans-serif !important;
+        color: #111827 !important;
+        background: #f9fafb !important;
+        padding: 24px !important;
+      }
+
+      #ghl-override .title {
+        font-size: 28px !important;
+        font-weight: 700 !important;
+        margin: 0 0 12px !important;
+      }
+
+      #ghl-override .subtitle {
+        font-size: 16px !important;
+        color: #4b5563 !important;
+        margin: 0 0 20px !important;
+      }
+
+      #ghl-override .card {
+        background: #ffffff !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06) !important;
+      }
+
+      #ghl-override .form-row {
+        margin: 0 0 12px !important;
+      }
+
+      #ghl-override .label {
+        display: block !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        margin: 0 0 6px !important;
+      }
+
+      #ghl-override input[type="text"],
+      #ghl-override input[type="email"],
+      #ghl-override textarea,
+      #ghl-override select {
+        width: 100% !important;
+        border: 1px solid #d1d5db !important;
+        border-radius: 8px !important;
+        padding: 10px 12px !important;
+        font-size: 14px !important;
+        background: #ffffff !important;
+        color: #111827 !important;
+      }
+
+      #ghl-override .button {
+        display: inline-block !important;
+        background: #2563eb !important;
+        color: #ffffff !important;
+        padding: 10px 16px !important;
+        border-radius: 8px !important;
+        text-decoration: none !important;
+        font-weight: 600 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ghl-override">
+      <h1 class="title">Embedded CSS Override</h1>
+      <p class="subtitle">Styles here override custom GHL CSS.</p>
+
+      <div class="card">
+        <div class="form-row">
+          <label class="label" for="name">Name</label>
+          <input id="name" type="text" placeholder="Jane Doe">
+        </div>
+        <div class="form-row">
+          <label class="label" for="email">Email</label>
+          <input id="email" type="email" placeholder="jane@example.com">
+        </div>
+        <a class="button" href="#">Continue</a>
+      </div>
+    </div>
+  </body>
+</html>
