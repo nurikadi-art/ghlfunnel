@@ -1,0 +1,845 @@
+<!DOCTYPE html><html lang="en" data-capo=""><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OTO1 Role Playbooks</title>
+<style type="text/css">
+/* ======================================================
+   OTO1: ROLE PLAYBOOKS - TITANIUM BLUE (RESPONSIVE)
+   ====================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --titanium-dark: #020204;
+    --system-blue: #0a84ff;
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --accent-red: #ff453a;
+    --highlight-green: #28cd41;
+    --titanium-gold: #f5d0a9;
+    --apple-grey: #a1a1a6;
+}
+
+/* --- 1. GLOBAL RESET --- */
+body, html, .hl_page-preview--content {
+    background-color: var(--titanium-dark) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    font-family: 'Inter', sans-serif !important;
+    color: #fff !important;
+    font-size: 20px !important;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.c-section, .c-row, .c-column, .c-custom-html {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.ai-clone {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    line-height: 1.6;
+    container-type: inline-size;
+}
+
+.container {
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+    padding: 0 24px !important;
+    position: relative;
+    z-index: 2;
+    width: 100% !important;
+}
+
+img, svg, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- 2. HERO (NEURAL GRID) --- */
+.hero-neural {
+    position: relative;
+    background-color: #020204;
+    overflow: hidden !important;
+    padding-top: 100px !important;
+    padding-bottom: 80px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-neural::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: 0;
+    background-image: linear-gradient(rgba(10, 132, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10, 132, 255, 0.15) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(500px) rotateX(60deg);
+    animation: gridMove 20s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.hero-neural::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: radial-gradient(circle at 50% 40%, transparent 0%, #020204 90%);
+    pointer-events: none;
+}
+
+/* --- 3. COMPONENTS --- */
+.urgency-bar {
+    background: rgba(10, 132, 255, 0.15);
+    color: #4da6ff;
+    border-bottom: 1px solid rgba(10, 132, 255, 0.3);
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+.ai-clone h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.ai-clone h2 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.ai-clone h3 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.ai-clone p {
+    font-size: 20px;
+    color: var(--apple-grey);
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.highlight-blue {
+    background: linear-gradient(90deg, #fff 0%, #4da6ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cta-btn {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto 10px;
+    padding: 24px 30px;
+    background: #fff;
+    color: #000;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 980px;
+    font-size: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+.cta-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.4);
+}
+
+.no-thanks {
+    display: block;
+    text-align: center;
+    color: var(--apple-grey);
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
+}
+
+.no-thanks:hover {
+    border-bottom-color: var(--apple-grey);
+    color: #fff;
+}
+
+/* --- 4. CARDS & LAYOUTS --- */
+section {
+    padding: 100px 0 !important;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 40px;
+    height: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.card:hover {
+    border-color: rgba(10, 132, 255, 0.4);
+}
+
+/* Playbook Cards */
+.playbook-card {
+    position: relative;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.role-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.role-title {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.role-desc {
+    font-size: 16px;
+    color: #ccc;
+    margin-bottom: 20px;
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    padding: 10px 0;
+    font-size: 16px;
+    color: var(--apple-grey);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.bullet {
+    width: 8px;
+    height: 8px;
+    background: var(--system-blue);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Comparison */
+.gap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.gap-col.bad {
+    border-left: 4px solid var(--accent-red);
+    padding-left: 30px;
+}
+
+.gap-col.good {
+    border-left: 4px solid var(--highlight-green);
+    padding-left: 30px;
+}
+
+/* Offer Stack */
+.stack-box {
+    border: 1px solid var(--glass-border);
+    background: rgba(10, 132, 255, 0.05);
+    padding: 50px;
+    border-radius: 24px;
+}
+
+.stack-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 18px;
+}
+
+/* Animations */
+@keyframes gridMove {
+    0% {
+        transform: perspective(500px) rotateX(60deg) translateY(0);
+    }
+    100% {
+        transform: perspective(500px) rotateX(60deg) translateY(50px);
+    }
+}
+
+@keyframes appleFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.animate-load {
+    animation: appleFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+.float-anim {
+    animation: float 6s ease-in-out infinite;
+}
+
+.designer-box {
+    width: 100%;
+    border: 1px dashed rgba(10, 132, 255, 0.4);
+    background: rgba(10, 132, 255, 0.05);
+    color: #4da6ff;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 40px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- RESPONSIVE (VIEWPORT) --- */
+@media (max-width: 900px) {
+    .container {
+        padding: 0 20px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 56px 0 !important;
+    }
+
+    .hero-neural {
+        padding-top: 56px !important;
+        padding-bottom: 36px !important;
+    }
+
+    .ai-clone h1 {
+        font-size: 30px;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+
+    .ai-clone h2 {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+
+    .ai-clone h3 {
+        font-size: 18px;
+    }
+
+    .ai-clone p {
+        font-size: 15px;
+        margin-bottom: 16px;
+    }
+
+    .urgency-bar {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .gap-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 30px;
+    }
+
+    .gap-col.bad,
+    .gap-col.good {
+        padding-left: 18px;
+    }
+
+    .card {
+        padding: 22px;
+        border-radius: 18px;
+    }
+
+    .designer-box {
+        padding: 24px 14px;
+        min-height: 160px;
+        margin: 24px 0;
+    }
+
+    .cta-btn {
+        max-width: 360px;
+        padding: 16px 20px;
+        font-size: 16px;
+        margin-top: 24px;
+    }
+
+    .no-thanks {
+        font-size: 14px;
+    }
+
+    .role-icon {
+        font-size: 28px;
+    }
+
+    .role-title {
+        font-size: 20px;
+    }
+
+    .role-desc,
+    .feature-list li {
+        font-size: 14px;
+    }
+
+    .stack-box {
+        padding: 26px;
+    }
+
+    .stack-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 48px 0 !important;
+    }
+
+    .container {
+        padding: 0 12px !important;
+    }
+
+    .ai-clone h1 {
+        font-size: 26px;
+    }
+
+    .ai-clone h2 {
+        font-size: 20px;
+    }
+
+    .ai-clone p {
+        font-size: 14px;
+    }
+
+    .cta-btn {
+        font-size: 14px;
+        padding: 14px 18px;
+    }
+
+    .designer-box {
+        min-height: 140px;
+    }
+}
+
+/* --- RESPONSIVE (CONTAINER FOR GHL PREVIEW) --- */
+@container (max-width: 768px) {
+    section {
+        padding: 56px 0 !important;
+    }
+
+    .hero-neural {
+        padding-top: 56px !important;
+        padding-bottom: 36px !important;
+    }
+
+    .ai-clone h1 {
+        font-size: 30px;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+
+    .ai-clone h2 {
+        font-size: 22px;
+        margin-bottom: 16px;
+    }
+
+    .ai-clone h3 {
+        font-size: 18px;
+    }
+
+    .ai-clone p {
+        font-size: 15px;
+        margin-bottom: 16px;
+    }
+
+    .urgency-bar {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .gap-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 30px;
+    }
+
+    .gap-col.bad,
+    .gap-col.good {
+        padding-left: 18px;
+    }
+
+    .card {
+        padding: 22px;
+        border-radius: 18px;
+    }
+
+    .designer-box {
+        padding: 24px 14px;
+        min-height: 160px;
+        margin: 24px 0;
+    }
+
+    .cta-btn {
+        max-width: 360px;
+        padding: 16px 20px;
+        font-size: 16px;
+        margin-top: 24px;
+    }
+
+    .no-thanks {
+        font-size: 14px;
+    }
+
+    .role-icon {
+        font-size: 28px;
+    }
+
+    .role-title {
+        font-size: 20px;
+    }
+
+    .role-desc,
+    .feature-list li {
+        font-size: 14px;
+    }
+
+    .stack-box {
+        padding: 26px;
+    }
+
+    .stack-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        font-size: 16px;
+    }
+}
+
+@container (max-width: 480px) {
+    section {
+        padding: 48px 0 !important;
+    }
+
+    .container {
+        padding: 0 12px !important;
+    }
+
+    .ai-clone h1 {
+        font-size: 26px;
+    }
+
+    .ai-clone h2 {
+        font-size: 20px;
+    }
+
+    .ai-clone p {
+        font-size: 14px;
+    }
+
+    .cta-btn {
+        font-size: 14px;
+        padding: 14px 18px;
+    }
+
+    .designer-box {
+        min-height: 140px;
+    }
+}
+</style>
+</head>
+<body>
+<div class="ai-clone">
+
+  <div class="urgency-bar animate-load">
+    &#9888; WAIT! Your Order Is Not Complete. This Offer Expires When You Leave This Page.
+  </div>
+
+  <section class="hero-neural">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h1 class="animate-load delay-1">The Toolkit Gives the Foundation.<br><span class="highlight-blue">These Playbooks Give MASTERY.</span></h1>
+        <p class="animate-load delay-2" style="font-size: 24px; color: #ccc; max-width: 800px; margin: 0 auto;">Don't just train your VA on "General AI." Give them the specialized Role Playbooks for every job in your company.</p>
+      </div>
+
+      <div class="designer-box float-anim animate-load delay-3" style="max-width: 800px; margin: 0 auto; min-height: 450px;">
+        (ADD VIDEO SALES LETTER OR HERO MOCKUP HERE)<br>
+        Video is recommended for OTO pages (2-3 mins walking through the playbooks)
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #020204;">
+    <div class="container">
+      <div class="card">
+        <h2 style="text-align: center; margin-bottom: 30px;">Here's The Problem With "General" Training...</h2>
+        <div class="designer-box" style="margin: 0 auto 40px auto; max-width: 700px; min-height: 200px;">
+            (ADD GRAPHIC: "Generalist VA" vs "Specialist Expert")<br>
+            Show the gap in value/output visually
+        </div>
+        <p style="text-align: center; color: #888; margin-bottom: 30px;">The toolkit teaches HOW to use AI. But it doesn't teach them how to do YOUR VA's specific job.</p>
+        <div class="gap-grid">
+            <div class="gap-col bad">
+                <h3 style="color: var(--accent-red);">Without Role Playbooks</h3>
+                <p style="color: #ccc; margin-bottom: 10px;">&#10060; They apply generic workflows to specialized tasks</p>
+                <p style="color: #ccc; margin-bottom: 10px;">&#10060; They waste time figuring out "how does this apply to me?"</p>
+                <p style="color: #ccc; margin-bottom: 10px;">&#10060; You still explain role-specific nuances</p>
+                <p style="color: #fff; font-weight: 700;">Result: Faster... but mediocre.</p>
+            </div>
+            <div class="gap-col good">
+                <h3 style="color: var(--highlight-green);">With Role Playbooks</h3>
+                <p style="color: #ccc; margin-bottom: 10px;">&#9989; They have a playbook built specifically for their role</p>
+                <p style="color: #ccc; margin-bottom: 10px;">&#9989; Every workflow is tailored to their exact job function</p>
+                <p style="color: #ccc; margin-bottom: 10px;">&#9989; They operate like a specialist from Day 1</p>
+                <p style="color: #fff; font-weight: 700;">Result: Expert output at $8/hr rates.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="text-align: center; padding-top: 40px !important;">
+    <div class="container">
+        <h2 style="color: #fff;">Introducing: The "Copy My VA" Role Playbooks</h2>
+        <p style="max-width: 800px; margin: 0 auto; color: #888;">These are the exact playbooks I use to train VAs at my agency before placing them. Instead of making you choose, I'm giving you the entire library.</p>
+        <div class="designer-box" style="margin: 40px auto; max-width: 600px; min-height: 350px;">
+            (ADD 3D BUNDLE SHOT HERE)<br>
+            Show the "Complete Library" of all 8 Playbooks
+        </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+        <h3 style="text-align: center; margin-bottom: 40px; color: #4da6ff;">You Get ALL 8 Playbooks:</h3>
+        <div class="grid-2">
+            <div class="card playbook-card">
+                <span class="role-icon">&#128222;</span>
+                <div class="role-title">Sales Closer / Setter</div>
+                <p class="role-desc">Perfect for booking calls &amp; closing.</p>
+                <ul class="feature-list">
+                    <li><div class="bullet"></div> Lead Qualification System</li>
+                    <li><div class="bullet"></div> Objection Handling Workflow</li>
+                    <li><div class="bullet"></div> No-Show Recovery Protocol</li>
+                </ul>
+            </div>
+
+            <div class="card playbook-card">
+                <span class="role-icon">&#128197;</span>
+                <div class="role-title">Executive Assistant</div>
+                <p class="role-desc">Manage calendar, inbox &amp; travel.</p>
+                <ul class="feature-list">
+                    <li><div class="bullet"></div> Inbox Zero Protocol</li>
+                    <li><div class="bullet"></div> Calendar Optimization</li>
+                    <li><div class="bullet"></div> Meeting Prep Workflow</li>
+                </ul>
+            </div>
+
+            <div class="card playbook-card">
+                <span class="role-icon">&#127916;</span>
+                <div class="role-title">Content Operator</div>
+                <p class="role-desc">Social media &amp; repurposing.</p>
+                <ul class="feature-list">
+                    <li><div class="bullet"></div> Content Multiplier System</li>
+                    <li><div class="bullet"></div> Voice Cloning Protocol</li>
+                    <li><div class="bullet"></div> Hooks Generator</li>
+                </ul>
+            </div>
+
+            <div class="card playbook-card">
+                <span class="role-icon">&#128269;</span>
+                <div class="role-title">Lead Researcher</div>
+                <p class="role-desc">Build lists &amp; data enrichment.</p>
+                <ul class="feature-list">
+                    <li><div class="bullet"></div> Precision Prospecting</li>
+                    <li><div class="bullet"></div> Data Cleaning System</li>
+                    <li><div class="bullet"></div> Company Deep-Dive</li>
+                </ul>
+            </div>
+
+            <div class="card playbook-card">
+                <span class="role-icon">&#128172;</span>
+                <div class="role-title">Customer Support</div>
+                <p class="role-desc">Tickets &amp; review management.</p>
+                <ul class="feature-list">
+                    <li><div class="bullet"></div> The Empathy Engine</li>
+                    <li><div class="bullet"></div> Ticket Triage Protocol</li>
+                    <li><div class="bullet"></div> Review Response System</li>
+                </ul>
+            </div>
+
+            <div class="card playbook-card">
+                <span class="role-icon">&#127919;</span>
+                <div class="role-title">Ops Manager</div>
+                <p class="role-desc">Project management &amp; SOPs.</p>
+                <ul class="feature-list">
+                    <li><div class="bullet"></div> Project Setup Protocol</li>
+                    <li><div class="bullet"></div> Bottleneck Detection</li>
+                    <li><div class="bullet"></div> Deadline Enforcement</li>
+                </ul>
+            </div>
+
+            <div class="card playbook-card">
+                <span class="role-icon">&#128202;</span>
+                <div class="role-title">Bookkeeper / Finance</div>
+                <p class="role-desc">Invoicing &amp; expense tracking.</p>
+                <ul class="feature-list">
+                    <li><div class="bullet"></div> Invoice Processing</li>
+                    <li><div class="bullet"></div> Expense Categorization</li>
+                    <li><div class="bullet"></div> Reconciliation Workflow</li>
+                </ul>
+            </div>
+
+            <div class="card playbook-card">
+                <span class="role-icon">&#128101;</span>
+                <div class="role-title">Recruiter / HR</div>
+                <p class="role-desc">Sourcing &amp; screening candidates.</p>
+                <ul class="feature-list">
+                    <li><div class="bullet"></div> Candidate Sourcing</li>
+                    <li><div class="bullet"></div> Resume Screening</li>
+                    <li><div class="bullet"></div> Interview Generator</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="offer">
+    <div class="container">
+        <div class="card stack-box" style="max-width: 700px; margin: 0 auto;">
+            <h2 style="text-align: center;">What You Get Today</h2>
+            <div class="designer-box" style="margin: 20px auto; max-width: 100%; min-height: 150px; padding: 20px;">
+                (ADD STACK GRAPHIC HERE)<br>
+                Visual representation of "All 8 Playbooks + Bonuses"
+            </div>
+            <div style="margin: 30px 0;">
+                <div class="stack-row">
+                    <div>&#9989; All 8 Role Playbooks ($97 each)</div>
+                    <div>$776</div>
+                </div>
+                <div class="stack-row">
+                    <div>&#9989; The Role Selector Guide</div>
+                    <div>$27</div>
+                </div>
+                <div class="stack-row">
+                    <div>&#9989; "Multi-Role VA" Training</div>
+                    <div>$47</div>
+                </div>
+                <div class="stack-row" style="border-top: 1px solid #fff; margin-top: 20px; padding-top: 15px;">
+                    <div style="font-weight: 700;">Total Value</div>
+                    <div style="text-decoration: line-through; color: #888;">$850</div>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <p style="color: #4da6ff; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">One-Time Offer Price:</p>
+                <div style="font-size: 80px; font-weight: 800; line-height: 1; margin-bottom: 20px; color: #fff;">$97</div>
+                <a href="#yes-link" class="cta-btn">YES &mdash; Add To My Order</a>
+                <a href="#no-link" class="no-thanks">No thanks, I'll stick with general training &rarr;</a>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <div style="padding: 40px 0; text-align: center; color: #555; font-size: 14px; background: #020204;">
+    <p>Copyright &#169; 2026 AI Operator Toolkit. All Rights Reserved.</p>
+  </div>
+
+</div>
+</body>
+</html>
