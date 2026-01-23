@@ -1,0 +1,506 @@
+/* ======================================================
+   AI OPERATOR TOOLKIT - MASTER CSS (FINAL LAYOUT FIX)
+   ====================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --titanium-gold: #f5d0a9;
+    --titanium-dark: #1d1d1f;
+    --apple-grey: #86868b;
+    --pure-white: #f5f5f7;
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --highlight-green: #28cd41;
+    --highlight-red: #ff453a;
+    --system-blue: #0a84ff;
+}
+
+/* --- 1. GLOBAL RESET --- */
+body, html, .hl_page-preview--content {
+    background-color: #020204 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    color: var(--pure-white) !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+.c-section, .c-row, .c-column, .c-column > .inner, .c-custom-html {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.ai-clone {
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
+    background: #020204;
+}
+
+.ai-clone .container {
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+    padding: 0 24px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- 2. HERO (NEURAL GRID) --- */
+.hero-neural {
+    position: relative;
+    background-color: #020204;
+    overflow: hidden !important;
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-neural::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: 0;
+    background-image: linear-gradient(rgba(10, 132, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10, 132, 255, 0.15) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(500px) rotateX(60deg);
+    animation: gridMove 20s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.hero-neural::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: radial-gradient(circle at 50% 40%, transparent 0%, #020204 90%);
+    pointer-events: none;
+}
+
+/* --- 3. BACKGROUNDS & SPACING --- */
+.problem-section {
+    padding-top: 100px !important;
+    background: #020204;
+    position: relative;
+    z-index: 5;
+}
+
+.bg-deep-space {
+    background: radial-gradient(circle at 80% 20%, rgba(10, 132, 255, 0.08) 0%, #020204 60%);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 120px !important;
+    /* Added extra padding to prevent overlap */
+}
+
+.bg-titanium-dark {
+    background: linear-gradient(180deg, #020204 0%, #0f0f12 50%, #020204 100%);
+}
+
+.bg-gold-glow {
+    position: relative;
+    background: radial-gradient(circle at 50% 50%, rgba(245, 208, 169, 0.08) 0%, #020204 70%);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* --- 4. ANIMATIONS --- */
+@keyframes gridMove {
+    0% {
+        transform: perspective(500px) rotateX(60deg) translateY(0);
+    }
+
+    100% {
+        transform: perspective(500px) rotateX(60deg) translateY(50px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.shimmer-text {
+    background: linear-gradient(90deg, #ffffff 0%, #4da6ff 45%, #ffffff 50%, #4da6ff 55%, #ffffff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 6s linear infinite;
+}
+
+@keyframes appleFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-load {
+    animation: appleFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.float-anim {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+    0% {
+        text-shadow: 0 0 20px rgba(10, 132, 255, 0.1);
+    }
+
+    50% {
+        text-shadow: 0 0 40px rgba(10, 132, 255, 0.4);
+    }
+
+    100% {
+        text-shadow: 0 0 20px rgba(10, 132, 255, 0.1);
+    }
+}
+
+.pulsing-headline {
+    animation: textPulse 4s ease-in-out infinite;
+}
+
+/* --- 5. TYPOGRAPHY --- */
+.ai-clone h1, .hero-headline {
+    font-weight: 700 !important;
+    font-size: clamp(40px, 5vw, 68px) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.03em !important;
+    margin-bottom: 24px !important;
+    text-align: center;
+    color: #fff;
+    opacity: 1;
+    visibility: visible;
+}
+
+.ai-clone h2 {
+    font-weight: 600 !important;
+    font-size: clamp(28px, 4vw, 42px) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.02em !important;
+    color: #ffffff !important;
+    margin-bottom: 24px !important;
+    text-align: center;
+}
+
+.ai-clone h3 {
+    font-weight: 600 !important;
+    font-size: 22px !important;
+    color: #ffffff !important;
+    margin-bottom: 12px !important;
+}
+
+.ai-clone p {
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    color: var(--apple-grey) !important;
+    margin-bottom: 24px !important;
+    line-height: 1.6;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-highlight {
+    color: #fff;
+    font-weight: 600;
+}
+
+.highlight-blue {
+    background: linear-gradient(90deg, #fff 0%, #4da6ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- 6. COMPONENTS --- */
+.pre-headline-box {
+    display: inline-block;
+    background: rgba(10, 132, 255, 0.1);
+    border: 1px solid rgba(10, 132, 255, 0.3);
+    color: #4da6ff;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(5px);
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--titanium-gold);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 8px 16px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    padding: 18px 40px;
+    border-radius: 980px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+}
+
+.cta-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 40px rgba(10, 132, 255, 0.4);
+}
+
+.designer-box {
+    width: 100%;
+    border: 1px dashed rgba(10, 132, 255, 0.4);
+    background: rgba(10, 132, 255, 0.05);
+    color: #4da6ff;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 40px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- 7. GRIDS & CARDS --- */
+section {
+    padding: 100px 0 !important;
+}
+
+.hero-neural .designer-box {
+    margin-bottom: -60px;
+    background: #000;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    align-items: start;
+    /* Fixes the stretching issue */
+}
+
+.card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 30px;
+    height: auto !important;
+    /* Fixes overlap issue */
+    box-sizing: border-box;
+    transition: background 0.3s ease;
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Clean Lists */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: var(--apple-grey);
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.bullet {
+    width: 6px;
+    height: 6px;
+    background: var(--system-blue);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Before/After Comparison */
+.state-card {
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.state-card.bad {
+    border-left: 4px solid var(--highlight-red);
+}
+
+.state-card.good {
+    border-left: 4px solid var(--highlight-green);
+    background: rgba(40, 205, 65, 0.05);
+}
+
+/* Pricing Stack */
+.stack-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.stack-item {
+    color: #fff;
+    font-size: 16px;
+    text-align: left;
+}
+
+.stack-val {
+    color: var(--apple-grey);
+    font-size: 16px;
+}
+
+/* Check Lists */
+.check-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.check-icon {
+    color: var(--highlight-green);
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.cross-icon {
+    color: var(--highlight-red);
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+/* FAQ */
+details {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+summary {
+    padding: 24px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #fff;
+    list-style: none;
+    position: relative;
+}
+
+summary::after {
+    content: '+';
+    position: absolute;
+    right: 24px;
+    font-size: 24px;
+    color: var(--apple-grey);
+}
+
+details[open] summary::after {
+    content: '-';
+}
+
+.faq-content {
+    padding: 0 24px 24px 24px;
+    color: var(--apple-grey);
+}
+
+@media (max-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-neural {
+        padding-top: 80px !important;
+    }
+
+    .hero-headline {
+        font-size: 42px !important;
+    }
+}
