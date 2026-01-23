@@ -32,6 +32,10 @@ body, html, .hl_page-preview--content {
     -webkit-font-smoothing: antialiased;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 .c-section, .c-row, .c-column, .c-column > .inner, .c-custom-html {
     width: 100% !important;
     max-width: 100% !important;
@@ -40,22 +44,28 @@ body, html, .hl_page-preview--content {
 }
 
 .ai-clone {
-    width: 100vw !important;
-    margin-left: calc(50% - 50vw) !important;
+    width: 100% !important;
+    margin-left: 0 !important;
     position: relative;
     z-index: 1;
     line-height: 1.6;
     background: #020204;
+    overflow-x: hidden;
 }
 
 .ai-clone .container {
-    max-width: 1000px !important;
+    max-width: 100% !important;
     margin: 0 auto !important;
-    padding: 0 24px !important;
+    padding: 0 18px !important;
     width: 100% !important;
     box-sizing: border-box !important;
     position: relative;
     z-index: 2;
+}
+
+img, svg, video {
+    max-width: 100%;
+    height: auto;
 }
 
 /* --- 2. HERO (NEURAL GRID) --- */
@@ -345,8 +355,8 @@ section {
 
 .grid-2 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 24px;
     align-items: start;
 }
 
