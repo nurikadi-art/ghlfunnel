@@ -1,0 +1,1070 @@
+<!DOCTYPE html><html  lang="en" data-capo=""><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5 Dollar Per Hour Operators</title>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="anonymous">
+<style type="text/css">
+/* ======================================================
+   AI OPERATOR TOOLKIT - EMBEDDED CSS (FOR GHL OVERRIDE TEST)
+   ====================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --titanium-gold: #f5d0a9;
+    --titanium-dark: #1d1d1f;
+    --apple-grey: #86868b;
+    --pure-white: #f5f5f7;
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --highlight-green: #28cd41;
+    --highlight-red: #ff453a;
+    --system-blue: #0a84ff;
+}
+
+/* --- 1. GLOBAL RESET --- */
+body, html, .hl_page-preview--content {
+    background-color: #020204 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    color: var(--pure-white) !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.c-section, .c-row, .c-column, .c-column > .inner, .c-custom-html {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.ai-clone {
+    width: 100% !important;
+    margin-left: 0 !important;
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
+    background: #020204;
+    overflow-x: hidden;
+}
+
+.ai-clone .container {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 18px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    position: relative;
+    z-index: 2;
+}
+
+img, svg, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- 2. HERO (NEURAL GRID) --- */
+.hero-neural {
+    position: relative;
+    background-color: #020204;
+    overflow: hidden !important;
+    padding-top: 56px !important;
+    padding-bottom: 32px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-neural::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: 0;
+    background-image: linear-gradient(rgba(10, 132, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10, 132, 255, 0.15) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(500px) rotateX(60deg);
+    animation: gridMove 20s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.hero-neural::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: radial-gradient(circle at 50% 40%, transparent 0%, #020204 90%);
+    pointer-events: none;
+}
+
+/* --- 3. BACKGROUNDS & SPACING --- */
+.problem-section {
+    padding-top: 56px !important;
+    background: #020204;
+    position: relative;
+    z-index: 5;
+}
+
+.bg-deep-space {
+    background: radial-gradient(circle at 80% 20%, rgba(10, 132, 255, 0.08) 0%, #020204 60%);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 64px !important;
+}
+
+.bg-titanium-dark {
+    background: linear-gradient(180deg, #020204 0%, #0f0f12 50%, #020204 100%);
+}
+
+.bg-gold-glow {
+    position: relative;
+    background: radial-gradient(circle at 50% 50%, rgba(245, 208, 169, 0.08) 0%, #020204 70%);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* --- 4. ANIMATIONS --- */
+@keyframes gridMove {
+    0% {
+        transform: perspective(500px) rotateX(60deg) translateY(0);
+    }
+    100% {
+        transform: perspective(500px) rotateX(60deg) translateY(50px);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.shimmer-text {
+    background: linear-gradient(90deg, #ffffff 0%, #4da6ff 45%, #ffffff 50%, #4da6ff 55%, #ffffff 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 6s linear infinite;
+}
+
+@keyframes appleFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-load {
+    animation: appleFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.float-anim {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+    0% {
+        text-shadow: 0 0 20px rgba(10, 132, 255, 0.1);
+    }
+    50% {
+        text-shadow: 0 0 40px rgba(10, 132, 255, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(10, 132, 255, 0.1);
+    }
+}
+
+.pulsing-headline {
+    animation: textPulse 4s ease-in-out infinite;
+}
+
+/* --- 5. TYPOGRAPHY --- */
+.ai-clone h1, .hero-headline {
+    font-weight: 700 !important;
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 18px !important;
+    text-align: center;
+    color: #fff;
+    opacity: 1;
+    visibility: visible;
+}
+
+.ai-clone h2 {
+    font-weight: 600 !important;
+    font-size: 22px !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.01em !important;
+    color: #ffffff !important;
+    margin-bottom: 16px !important;
+    text-align: center;
+}
+
+.ai-clone h3 {
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    color: #ffffff !important;
+    margin-bottom: 10px !important;
+}
+
+.ai-clone p {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    color: var(--apple-grey) !important;
+    margin-bottom: 16px !important;
+    line-height: 1.5;
+}
+
+.hero-headline br,
+.ai-clone h2 br {
+    display: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-highlight {
+    color: #fff;
+    font-weight: 600;
+}
+
+.highlight-blue {
+    background: linear-gradient(90deg, #fff 0%, #4da6ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- 6. COMPONENTS --- */
+.pre-headline-box {
+    display: inline-block;
+    background: rgba(10, 132, 255, 0.1);
+    border: 1px solid rgba(10, 132, 255, 0.3);
+    color: #4da6ff;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-bottom: 18px;
+    backdrop-filter: blur(5px);
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--titanium-gold);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 6px 10px;
+    border-radius: 50px;
+    margin-bottom: 18px;
+    backdrop-filter: blur(10px);
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 18px;
+    border-radius: 980px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 340px;
+}
+
+.cta-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 40px rgba(10, 132, 255, 0.4);
+}
+
+.designer-box {
+    width: 100%;
+    border: 1px dashed rgba(10, 132, 255, 0.4);
+    background: rgba(10, 132, 255, 0.05);
+    color: #4da6ff;
+    padding: 24px 14px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 24px 0 !important;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- 7. GRIDS & CARDS --- */
+section {
+    padding: 56px 0 !important;
+}
+
+.hero-neural .designer-box {
+    margin-bottom: -24px;
+    background: #000;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: start;
+}
+
+.card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    padding: 20px;
+    height: auto !important;
+    box-sizing: border-box;
+    transition: background 0.3s ease;
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Clean Lists */
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.feature-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    color: var(--apple-grey);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.feature-list li:last-child {
+    border-bottom: none;
+}
+
+.bullet {
+    width: 6px;
+    height: 6px;
+    background: var(--system-blue);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Before/After Comparison */
+.state-card {
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.state-card.bad {
+    border-left: 4px solid var(--highlight-red);
+}
+
+.state-card.good {
+    border-left: 4px solid var(--highlight-green);
+    background: rgba(40, 205, 65, 0.05);
+}
+
+/* Pricing Stack */
+.stack-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.stack-item {
+    color: #fff;
+    font-size: 14px !important;
+    text-align: left;
+}
+
+.stack-val {
+    color: var(--apple-grey);
+    font-size: 14px !important;
+}
+
+/* Check Lists */
+.check-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+    text-align: left;
+    align-items: flex-start;
+}
+
+.check-icon {
+    color: var(--highlight-green);
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.cross-icon {
+    color: var(--highlight-red);
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+/* FAQ */
+details {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+summary {
+    padding: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #fff;
+    list-style: none;
+    position: relative;
+}
+
+summary::after {
+    content: '+';
+    position: absolute;
+    right: 14px;
+    font-size: 24px;
+    color: var(--apple-grey);
+}
+
+details[open] summary::after {
+    content: '-';
+}
+
+.faq-content {
+    padding: 0 16px 16px 16px;
+    color: var(--apple-grey);
+}
+
+/* --- MOBILE OPTIMIZATION --- */
+@media (max-width: 900px) {
+    .ai-clone {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    .ai-clone .container {
+        padding: 0 20px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 52px 0 !important;
+    }
+
+    .hero-neural {
+        padding-top: 52px !important;
+        padding-bottom: 30px !important;
+    }
+
+    .problem-section {
+        padding-top: 52px !important;
+    }
+
+    .bg-deep-space {
+        padding-bottom: 60px !important;
+    }
+
+    .grid-2 {
+        gap: 16px !important;
+    }
+
+    .ai-clone h1,
+    .hero-headline,
+    .shimmer-text {
+        font-size: 26px !important;
+        line-height: 1.2 !important;
+        margin-bottom: 16px !important;
+    }
+
+    .ai-clone h2 {
+        font-size: 20px !important;
+        line-height: 1.25 !important;
+        margin-bottom: 14px !important;
+    }
+
+    .ai-clone h3 {
+        font-size: 17px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .ai-clone p,
+    .ai-clone ul,
+    .ai-clone ol {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 14px !important;
+    }
+
+    .cta-btn {
+        width: 100% !important;
+        max-width: 320px !important;
+        padding: 13px 16px !important;
+        font-size: 14px !important;
+    }
+
+    .designer-box {
+        min-height: 130px !important;
+        padding: 20px 12px !important;
+        margin: 20px 0 !important;
+    }
+
+    .hero-neural .designer-box {
+        margin-bottom: -20px !important;
+    }
+
+    .card,
+    .state-card {
+        padding: 18px !important;
+        border-radius: 14px !important;
+    }
+
+    .stack-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+    }
+
+    .stack-val {
+        margin-left: 0 !important;
+    }
+
+    summary {
+        padding: 16px !important;
+    }
+
+    summary::after {
+        right: 14px !important;
+    }
+
+    .faq-content {
+        padding: 0 16px 16px 16px !important;
+    }
+
+    .pre-headline-box,
+    .badge {
+        font-size: 10px !important;
+        padding: 6px 10px !important;
+        margin-bottom: 18px !important;
+    }
+
+    .bg-deep-space .card[style*="display: flex"] {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 16px !important;
+    }
+
+    .bg-deep-space .card [style*="min-width: 300px"] {
+        min-width: 0 !important;
+        width: 100% !important;
+    }
+
+    #order .text-center div[style*="font-size: 44px"] {
+        font-size: 40px !important;
+    }
+
+    h3[style*="font-size: 36px"] {
+        font-size: 22px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 44px 0 !important;
+    }
+
+    .ai-clone .container {
+        padding: 0 10px !important;
+    }
+
+    .ai-clone h1,
+    .hero-headline,
+    .shimmer-text {
+        font-size: 24px !important;
+    }
+
+    .ai-clone h2 {
+        font-size: 19px !important;
+    }
+
+    .ai-clone p,
+    .ai-clone ul,
+    .ai-clone ol {
+        font-size: 13px !important;
+    }
+
+    .cta-btn {
+        font-size: 13px !important;
+    }
+
+    .designer-box {
+        min-height: 120px !important;
+        margin: 18px 0 !important;
+    }
+
+    .hero-neural .designer-box {
+        margin-bottom: -16px !important;
+    }
+
+    #order .text-center div[style*="font-size: 44px"] {
+        font-size: 36px !important;
+    }
+}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7CRoboto:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7COpen%20Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7CFjalla%20One:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7CMontserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7CInter:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7CBarlow%20Semi%20Condensed:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7CPlayfair%20Display:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7CMrs%20Saint%20Delafield:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" media="print" onload="this.media='all'">
+<link rel="icon" href="https://stcdn.leadconnectorhq.com/funnel/icon/favicon.ico">
+<meta name="title" content="5 Dollar Per Hour Operators">
+<meta property="og:title" content="5 Dollar Per Hour Operators">
+<meta name="description" content="For $7 I'll Help Grow Your Business By Hiring Top 1% Virtual Assistants for Under $10/hr">
+<meta property="og:description" content="For $7 I'll Help Grow Your Business By Hiring Top 1% Virtual Assistants for Under $10/hr">
+<meta name="author" content="Nurik Adilkhanov">
+<meta property="og:author" content="Nurik Adilkhanov">
+<meta name="image" content="https://assets.cdn.filesafe.space/bh7ksvCXuReJ4AaVrUfG/media/664eb3075625fa4a6b75204c.png">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/bh7ksvCXuReJ4AaVrUfG/media/664eb3075625fa4a6b75204c.png">
+<meta property="og:type" content="website">
+<meta property="twitter:type" content="website">
+</head>
+<body>
+<div class="ai-clone">
+
+  <section class="hero-neural">
+    <div class="container" style="position: relative; z-index: 2;">
+      <div style="text-align: center; margin-bottom: 24px;">
+
+        <div class="animate-load">
+            <span class="pre-headline-box">For Business Owners Who Are Tired of Babysitting Their VA</span>
+        </div>
+
+        <h1 class="hero-headline pulsing-headline animate-load delay-1">
+            Your VA Is Costing You $8/hr
+            to Do Work That AI Can Finish in <span class="highlight-blue">4 Minutes.</span>
+        </h1>
+
+        <p class="animate-load delay-2" style="font-size: 16px; color: #ccc; max-width: 560px; margin: 0 auto 16px; line-height: 1.5;">
+            This is the plug-and-play system that turns any virtual assistant into an <strong>AI Operator</strong> — so they deliver $30/hr output while you pay $8/hr rates.
+        </p>
+
+        <p class="animate-load delay-2" style="font-size: 14px; color: #888; margin-bottom: 20px;">
+            No training calls. No management. No "checking in." You send them the toolkit. They send you the results.
+        </p>
+
+        <div class="animate-load delay-3">
+            <a href="/order" class="cta-btn" style="box-shadow: 0 0 30px rgba(10, 132, 255, 0.3);">Get The AI Operator Toolkit — $27</a>
+            <div style="margin-top: 12px; font-size: 12px; color: #666; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                <span style="color: #28cd41;">●</span> Instant access. 30-day money-back guarantee. Works with any VA.
+            </div>
+        </div>
+      </div>
+
+      <div class="designer-box float-anim animate-load delay-3">
+        (ADD LAPTOP MOCKUP HERE)<br>
+        Show "AI Operator Toolkit" dashboard on screen
+      </div>
+
+    </div>
+  </section>
+
+  <section class="problem-section bg-titanium-dark">
+    <div class="container text-center">
+      <h2>Let's Be Honest About Your VA Situation...</h2>
+      <div style="max-width: 700px; margin: 0 auto;">
+        <p>You hired a VA to get time back. Instead, you got a part-time job managing them.</p>
+        <p>You spend 30 minutes explaining a task that should take 5 minutes to understand. You check their work and find mistakes. You re-explain. They say "Yes, noted!" and then do it wrong again.</p>
+        <p>Meanwhile, you're watching AI tools like ChatGPT and Claude pump out incredible work in seconds — and wondering why your VA is still copy-pasting from Google like it's 2019.</p>
+
+        <div class="designer-box" style="margin: 24px 0; min-height: 140px;">
+            (ADD IMAGE HERE)<br>
+            Visualizing the frustration of micromanagement
+        </div>
+
+        <div class="card" style="border-color: var(--highlight-red);">
+            <h3 style="color: var(--highlight-red);">The Uncomfortable Truth</h3>
+            <p>Your VA isn't slow because they're bad at their job.<br><strong>They're slow because nobody taught them how to use AI.</strong></p>
+            <p style="font-size: 14px; margin-bottom: 14px;">And you don't have time to teach them. You hired them so you'd have MORE time, not less.</p>
+            <p style="font-size: 14px;">So you're stuck in this loop: Pay $8/hr for $8/hr output, do the AI stuff yourself, or fire them and start over.</p>
+            <p class="text-highlight" style="color: var(--system-blue);">There's a fourth option.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-deep-space">
+    <div class="container">
+      <h2 style="margin-bottom: 24px; text-align: center;">What If You Could Just... Hand Them a System?</h2>
+
+      <div class="grid-2">
+        <div>
+            <p>Imagine this: You share a single link with your VA.</p>
+            <p>They open it. Inside is everything they need:</p>
+
+            <ul style="color: #fff; font-size: 15px; line-height: 1.6; margin-bottom: 16px;">
+                <li>The exact AI workflows for their role</li>
+                <li>Step-by-step protocols they follow (no guessing)</li>
+                <li>Plug-and-play templates they fill in</li>
+                <li>Short training videos that take 2 hours total</li>
+            </ul>
+
+            <p>No Zoom calls with you. No "quick questions." No hand-holding.</p>
+        </div>
+
+        <div>
+            <div class="designer-box" style="margin: 0 0 20px 0; min-height: 140px;">
+                (ADD IMAGE HERE)<br>
+                A visual representation of the "System"
+            </div>
+
+            <div class="card" style="border-color: var(--system-blue); overflow: hidden;">
+                <h3>48 Hours Later...</h3>
+                <p>The person you're paying $8/hr is producing work that would cost $30/hr from a U.S.-based specialist.</p>
+                <p>They're researching leads in 10 minutes. They're writing emails that don't sound like a robot. They're using AI as a power tool.</p>
+                <p class="text-highlight" style="color: #4da6ff;">This is what an AI Operator looks like.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container text-center">
+      <span class="badge">Introducing</span>
+      <h1 class="shimmer-text">The AI Operator Toolkit</h1>
+      <p style="font-size: 16px;">The exact training system I use to transform fresh $8/hr hires into elite AI-powered operators.</p>
+
+      <div class="designer-box" style="max-width: 320px; margin: 24px auto; min-height: 180px;">
+        (ADD 3D BOXSHOT HERE)<br>
+        High-quality 3D render of the toolkit box/bundle
+      </div>
+
+      <div style="max-width: 700px; margin: 0 auto;">
+        <p>After 160+ VA placements across 5 countries, I discovered something that changed everything: The difference between a VA who drains your time and one who multiplies it... is a 2-hour training system.</p>
+        <p>Not a 40-hour course. Not weekly coaching calls. Not a $5,000 program.</p>
+        <p>A simple, plug-and-play toolkit that any VA can consume in a single afternoon — and immediately start applying to their work.</p>
+        <a href="/order" class="cta-btn">Get Instant Access — $27</a>
+      </div>
+    </div>
+  </section>
+
+  <hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin:0;">
+
+  <section>
+    <div class="container">
+      <h2 class="text-center">Here's Exactly What You're Getting</h2>
+
+      <div class="designer-box" style="margin: 24px auto; max-width: 800px;">
+        (ADD GRAPHIC HERE)<br>
+        A clean visual grid or icons showing all 5 components below
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+            <span class="badge" style="margin-bottom: 15px;">Component 1</span>
+            <h3>The AI Workflow Library</h3>
+            <p>Not "prompts." Workflows. 47 copy-paste protocols organized by task type:</p>
+            <ul class="feature-list">
+                <li><div class="bullet"></div> Research & Lead Gen (12 workflows)</li>
+                <li><div class="bullet"></div> Content Creation (11 workflows)</li>
+                <li><div class="bullet"></div> Email & Outreach (9 workflows)</li>
+                <li><div class="bullet"></div> Data & Admin (8 workflows)</li>
+                <li><div class="bullet"></div> Customer Support (7 workflows)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <span class="badge" style="margin-bottom: 15px;">Component 2</span>
+            <h3>The 2-Hour AI Bootcamp (Video)</h3>
+            <p>5 short, no-fluff training videos your VA watches on their own time:</p>
+            <ul class="feature-list">
+                <li><div class="bullet"></div> AI Fundamentals (15 min)</li>
+                <li><div class="bullet"></div> The Input-Output Method (22 min)</li>
+                <li><div class="bullet"></div> Quality Control Protocol (18 min)</li>
+                <li><div class="bullet"></div> Speed Shortcuts (25 min)</li>
+                <li><div class="bullet"></div> The Daily AI Operator Routine (20 min)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <span class="badge" style="margin-bottom: 15px;">Component 3</span>
+            <h3>Plug-and-Play Templates</h3>
+            <p>Notion + Google Drive assets. You clone them, you share them, done.</p>
+            <ul class="feature-list">
+                <li><div class="bullet"></div> AI Operator Daily Checklist</li>
+                <li><div class="bullet"></div> Task Handoff Template</li>
+                <li><div class="bullet"></div> Output Quality Scorecard</li>
+                <li><div class="bullet"></div> Weekly Performance Tracker</li>
+                <li><div class="bullet"></div> SOP Builder Template</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <span class="badge" style="margin-bottom: 15px;">Component 4</span>
+            <h3>The AI Leverage Audit</h3>
+            <p>A diagnostic checklist that reveals exactly where your VA is wasting time on manual work.</p>
+            <hr style="border-color: rgba(255,255,255,0.1); margin: 20px 0;">
+            <span class="badge" style="margin-bottom: 15px; background: rgba(255, 215, 0, 0.1); color: gold; border-color: rgba(255, 215, 0, 0.3);">Bonus Component</span>
+            <h3>"Is My VA Using AI?" Tracker</h3>
+            <p>A simple weekly check-in template that takes 30 seconds to review. You'll know immediately if they're applying what they learned.</p>
+        </div>
+      </div>
+
+      <div class="text-center" style="margin-top: 24px;">
+        <a href="/order" class="cta-btn">Get The Complete Toolkit — $27</a>
+        <p style="font-size: 12px; margin-top: 10px; color: #666;">Instant access. Start deploying today.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-titanium-dark">
+    <div class="container">
+      <div class="grid-2">
+        <div class="card">
+            <h3>This Is For You If...</h3>
+            <div class="check-row"><div class="check-icon">&#10003;</div><div>You have a VA and want them to be worth the money</div></div>
+            <div class="check-row"><div class="check-icon">&#10003;</div><div>You're tired of explaining simple tasks 14 different ways</div></div>
+            <div class="check-row"><div class="check-icon">&#10003;</div><div>You know AI works but don't have time to figure out prompts</div></div>
+            <div class="check-row"><div class="check-icon">&#10003;</div><div>You want to delegate MORE but your VA's quality isn't good enough</div></div>
+            <div class="check-row"><div class="check-icon">&#10003;</div><div>You've been burned by "cheap labor" that created more work</div></div>
+            <div class="check-row"><div class="check-icon">&#10003;</div><div>You want your VA to bring you solutions, not problems</div></div>
+        </div>
+        <div class="card">
+            <h3>This Is NOT For You If...</h3>
+            <div class="check-row"><div class="cross-icon">&#10007;</div><div>You want to learn AI yourself (this is for your VA)</div></div>
+            <div class="check-row"><div class="cross-icon">&#10007;</div><div>You don't have a VA and don't plan to hire one</div></div>
+            <div class="check-row"><div class="cross-icon">&#10007;</div><div>You expect magic without giving your VA time to watch a 2-hour training</div></div>
+            <div class="check-row"><div class="cross-icon">&#10007;</div><div>You're looking for a "course" (this is a deployment toolkit)</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="text-center">The Before & After</h2>
+      <div class="designer-box" style="margin: 24px auto; max-width: 800px;">
+        (ADD GRAPHIC HERE)<br>
+        A split-screen visual showing "Manual VA (Slow/Messy)" vs "AI Operator (Fast/Clean)"
+      </div>
+
+      <div class="grid-2">
+        <div class="state-card bad">
+            <h3 style="color: var(--highlight-red);">Before The Toolkit</h3>
+            <p>• You explain task → VA Googles for 3 hours → Comes back with a messy spreadsheet full of garbage</p>
+            <p>• You ask for email drafts → VA writes robotic nonsense → You rewrite the whole thing yourself</p>
+            <p>• You need content repurposed → VA takes your video and produces posts that sound nothing like you</p>
+            <p>• You check in constantly → They say "almost done!" → It's not done</p>
+            <p>• <strong>Result:</strong> You wonder if it would be faster to just do it yourself.</p>
+        </div>
+        <div class="state-card good">
+            <h3 style="color: var(--highlight-green);">After The Toolkit</h3>
+            <p>• You assign task → VA uses Lead Research Workflow → 50 verified leads in 45 minutes, formatted exactly right</p>
+            <p>• You ask for drafts → VA uses Outreach Protocol → Clean, personalized emails ready for review</p>
+            <p>• You need content repurposed → VA uses Content Engine Workflow → 5 posts that sound like you, delivered same-day</p>
+            <p>• You check in once per week → Output is tracked automatically → You spot issues early</p>
+            <p>• <strong>Result:</strong> You get 2-4 hours back DAILY and focus on growth.</p>
+        </div>
+      </div>
+
+      <div class="card" style="max-width: 700px; margin: 24px auto 0; text-align: center; border-color: var(--titanium-gold);">
+          <h3 style="color: var(--titanium-gold);">"But what if my VA doesn't 'get it'?"</h3>
+          <p>The training is designed for non-technical people. If they can follow a recipe, they can follow these workflows. And if they can't follow a recipe... you have a hiring problem, not a training problem.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-deep-space">
+    <div class="container">
+      <div class="card" style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
+         <div class="designer-box" style="width: 120px; height: 120px; border-radius: 50%; padding: 0; min-height: auto; flex-shrink: 0;">
+            (ADD YOUR PHOTO)
+         </div>
+         <div style="flex: 1; min-width: 0;">
+            <h3>Why Should You Trust This System?</h3>
+            <p>My name is Nurik, and I run a VA placement agency called Recrutu.</p>
+            <p>Over the past few years, we've placed 160+ virtual assistants for clients across the U.S., hiring from everywhere.</p>
+            <p>Here's what I learned the hard way: <strong>Geography doesn't determine VA quality. Training does.</strong></p>
+            <p>The VAs who crushed it were the ones who knew how to use AI as a multiplier. So I built a training system to create more of them.</p>
+            <p>This toolkit is that system — the same one we use internally. Now I'm making it available to you.</p>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="text-center">"Yeah, But..."</h2>
+      <div class="grid-2">
+        <div class="card">
+            <h3>"I don't have time to train my VA."</h3>
+            <p>You don't train them. The toolkit does. You send a link. They watch 2 hours of video on their own time. Your involvement: 5 minutes.</p>
+        </div>
+        <div class="card">
+            <h3>"My VA says they already know AI."</h3>
+            <p>Knowing AI exists isn't the same as using it systematically. Most VAs "use ChatGPT" like they "use the gym" — sporadically. This toolkit gives them the plan.</p>
+        </div>
+        <div class="card">
+            <h3>"What if this doesn't work for my industry?"</h3>
+            <p>The workflows cover research, content, email, data, and support — which accounts for 80%+ of what VAs do across every industry. If your VA does any of these, it applies.</p>
+        </div>
+        <div class="card">
+            <h3>"Can't I just find free prompts online?"</h3>
+            <p>Free prompts are ingredients. This is the recipe, kitchen, and meal plan. Will your VA follow random Google prompts, or a structured system?</p>
+        </div>
+        <div class="card">
+            <h3>"What if my VA quits after I train them?"</h3>
+            <p>Then you hand the same toolkit to your next VA and they're up to speed in 48 hours. The system is an asset you own forever.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 32px; border-color: var(--titanium-gold); text-align: center;">
+            <h2 style="color: var(--titanium-gold);">The "Deploy It Or Don't Pay" Guarantee</h2>
+            <p style="max-width: 700px; margin: 0 auto;">Here's the deal: Get the AI Operator Toolkit today. Share it with your VA. Give them 7 days to go through the training and start using the workflows.</p>
+            <p style="max-width: 700px; margin: 20px auto;">If you don't see a noticeable difference in their output quality or speed within 30 days — email me. I'll refund every penny. No questions. No hoops.</p>
+            <a href="/order" class="cta-btn">Get The Toolkit — 100% Risk Free</a>
+      </div>
+    </div>
+  </section>
+
+  <hr style="border:0; border-top:1px solid rgba(255,255,255,0.1); margin:0;">
+
+  <section class="bg-gold-glow" id="order">
+    <div class="container text-center">
+      <h2>Let's Talk Numbers</h2>
+      <p style="max-width: 800px; margin: 0 auto 24px;">A trained AI specialist in the U.S. costs $35-50/hr. A "prompt engineering" course runs $500-2,000. Hiring a new VA costs $300+ in recruiting.</p>
+      <p style="font-size: 20px; color: #fff; font-weight: 700;">Or... You spend $27 today.</p>
+
+      <div class="card" style="max-width: 600px; margin: 24px auto; border-color: var(--titanium-gold); text-align: left;">
+         <div class="designer-box" style="margin: 0 0 20px 0; min-height: 120px; padding: 16px;">
+            (ADD GRAPHIC HERE)<br>
+            A visual representation of the total value stack
+         </div>
+
+         <div class="stack-row"><div class="stack-item">✅ 47 AI Workflow Library</div><div class="stack-val">$197</div></div>
+         <div class="stack-row"><div class="stack-item">✅ 2-Hour AI Bootcamp Video Training</div><div class="stack-val">$297</div></div>
+         <div class="stack-row"><div class="stack-item">✅ Plug-and-Play Templates (Notion/Drive)</div><div class="stack-val">$97</div></div>
+         <div class="stack-row"><div class="stack-item">✅ The AI Leverage Audit</div><div class="stack-val">$47</div></div>
+         <div class="stack-row"><div class="stack-item">✅ "Is My VA Using AI?" Tracker</div><div class="stack-val">$27</div></div>
+
+         <div class="stack-row" style="margin-top:14px; border-top:1px solid #fff; padding-top:14px;">
+             <div class="stack-item" style="font-weight:700; font-size: 20px;">Total Value</div>
+             <div class="stack-val" style="text-decoration:line-through; font-size: 20px;">$665</div>
+         </div>
+
+         <div class="text-center" style="margin-top: 20px;">
+            <p style="text-transform: uppercase; letter-spacing: 1px; color: var(--titanium-gold); font-weight: 700;">Today's Price:</p>
+            <div style="font-size: 44px; font-weight: 700; color: #fff; line-height: 1;">$27</div>
+            <a href="/order" class="cta-btn">Get Instant Access — Just $27</a>
+            <p style="font-size: 12px; margin-top: 10px; color: #666;">One-time payment. Instant delivery. 30-day guarantee. Use it forever.</p>
+         </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container text-center">
+      <h2>You Have Two Options Right Now</h2>
+      <p style="max-width: 800px; margin: 0 auto 24px; text-align: left;">
+        <strong>Option 1:</strong> Close this page. Keep managing your VA the hard way. Keep re-explaining tasks. Keep wondering why they're so slow when AI can do things in seconds. Keep doing the math on whether it's faster to just do it yourself.<br><br>
+        <strong>Option 2:</strong> Invest $27. Send your VA a link. Let the toolkit do the training. Get your time back. Finally have an assistant who multiplies your output instead of draining your energy.
+      </p>
+      <p style="font-size: 16px; font-weight: 600; margin-bottom: 20px;">The system is proven. The guarantee removes the risk. The only question is whether you're ready to stop babysitting and start delegating.</p>
+
+      <div class="designer-box" style="max-width: 500px; margin: 24px auto;">
+        (ADD FINAL PRODUCT MOCKUP HERE)
+      </div>
+
+      <a href="/order" class="cta-btn">Give Me The AI Operator Toolkit →</a>
+      <p style="font-size: 12px; margin-top: 10px; color: #666;">$27 today. Results this week. Guaranteed.</p>
+
+      <div style="max-width: 800px; margin: 48px auto 0; text-align: left;">
+        <h3 class="text-center" style="margin-bottom: 24px; font-size: 24px;">Frequently Asked Questions</h3>
+        <details><summary>How quickly can my VA complete the training?</summary><div class="faq-content">The video training is under 2 hours total. Most VAs complete it in a single afternoon and start applying the workflows the next day.</div></details>
+        <details><summary>Does this work if I use contractors, not full-time VAs?</summary><div class="faq-content">Yes. Anyone who does recurring tasks for you — full-time, part-time, or project-based — can use this system.</div></details>
+        <details><summary>What AI tools does this cover?</summary><div class="faq-content">The workflows are designed for ChatGPT and Claude, which are the most widely used tools. The principles apply to any AI assistant.</div></details>
+        <details><summary>Is this a subscription?</summary><div class="faq-content">No. One-time payment of $27. You own the toolkit forever and can use it with unlimited VAs.</div></details>
+        <details><summary>What if I don't have a VA yet?</summary><div class="faq-content">Even better — you'll know exactly what to look for when hiring, and you'll have the training system ready to deploy on day one. No ramp-up time.</div></details>
+        <details><summary>Do you offer refunds?</summary><div class="faq-content">Yes. 30-day money-back guarantee. If you don't see results, email us and we'll refund you in full.</div></details>
+        <details><summary>Can I upgrade my whole team with this?</summary><div class="faq-content">Yes! The toolkit is designed to be shared. One purchase covers your entire internal team, whether you have 1 VA or 10.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <div style="padding: 40px 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); color: var(--apple-grey); background: #020204;">
+    <h3 style="color: #fff; font-size: 20px;">$27 to Turn Your VA Into an AI Operator.</h3>
+    <p style="font-size: 14px; margin-bottom: 16px;">Stop paying for manual labor. Start getting AI-powered output.</p>
+    <p>&copy; 2026 AI Operator Toolkit. All rights reserved.</p>
+  </div>
+
+</div>
+</body>
+</html>

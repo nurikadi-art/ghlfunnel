@@ -1,0 +1,504 @@
+<!DOCTYPE html><html lang="en" data-capo=""><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OTO2 Essentials</title>
+<style type="text/css">
+/* ======================================================
+   OTO1 DOWNSELL - TITANIUM BLUE (ESSENTIALS EDITION)
+   ====================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --titanium-dark: #020204;
+    --system-blue: #0a84ff;
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --apple-grey: #a1a1a6;
+    --pure-white: #ffffff;
+    --highlight-green: #28cd41;
+}
+
+/* --- 1. GLOBAL RESET --- */
+body, html, .hl_page-preview--content {
+    background-color: var(--titanium-dark) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    font-family: 'Inter', sans-serif !important;
+    color: #fff !important;
+    font-size: 18px !important;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.c-section, .c-row, .c-column, .c-custom-html {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.ai-clone {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    line-height: 1.6;
+    container-type: inline-size;
+}
+
+.container {
+    max-width: 800px !important;
+    margin: 0 auto !important;
+    padding: 0 24px !important;
+    position: relative;
+    z-index: 2;
+    width: 100% !important;
+}
+
+img, svg, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- 2. HERO (Simplified Neural) --- */
+.hero-neural {
+    position: relative;
+    background-color: #020204;
+    overflow: hidden !important;
+    padding-top: 60px !important;
+    padding-bottom: 40px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-neural::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: 0;
+    background-image: linear-gradient(rgba(10, 132, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10, 132, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(500px) rotateX(60deg);
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.hero-neural::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: radial-gradient(circle at 50% 40%, transparent 0%, #020204 90%);
+    pointer-events: none;
+}
+
+/* --- 3. COMPONENTS --- */
+.alert-bar {
+    background: #ff9f0a;
+    color: #000;
+    text-align: center;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.ai-clone h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ai-clone h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ai-clone p {
+    font-size: 18px;
+    color: var(--apple-grey);
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.highlight-blue {
+    color: #4da6ff;
+}
+
+/* --- 4. LIST & GRIDS --- */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.role-item {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* --- 5. OFFER BOX --- */
+.price-box {
+    text-align: center;
+    background: rgba(10, 132, 255, 0.05);
+    border: 1px solid rgba(10, 132, 255, 0.3);
+    border-radius: 16px;
+    padding: 40px 30px;
+    margin-top: 30px;
+}
+
+.cta-btn {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    color: #000;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 980px;
+    font-size: 18px;
+    margin-top: 20px;
+    transition: transform 0.2s;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+.cta-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+}
+
+.no-thanks {
+    display: block;
+    text-align: center;
+    color: var(--apple-grey);
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 20px;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s;
+}
+
+.no-thanks:hover {
+    border-bottom-color: var(--apple-grey);
+    color: #fff;
+}
+
+/* --- Image Placeholders --- */
+.designer-box {
+    width: 100%;
+    border: 1px dashed rgba(10, 132, 255, 0.4);
+    background: rgba(10, 132, 255, 0.05);
+    color: #4da6ff;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 30px auto;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Animations */
+@keyframes appleFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-load {
+    animation: appleFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+/* --- RESPONSIVE (VIEWPORT) --- */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 18px !important;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin: 20px 0;
+    }
+
+    .hero-neural {
+        padding-top: 52px !important;
+        padding-bottom: 32px !important;
+    }
+
+    .ai-clone h1 {
+        font-size: 30px;
+    }
+
+    .ai-clone h2 {
+        font-size: 22px;
+    }
+
+    .ai-clone p {
+        font-size: 15px;
+        margin-bottom: 16px;
+    }
+
+    .role-item {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .price-box {
+        padding: 28px 20px;
+    }
+
+    .cta-btn {
+        font-size: 16px;
+        padding: 16px;
+    }
+
+    .designer-box {
+        min-height: 180px;
+        margin: 22px auto;
+        padding: 24px 14px;
+    }
+
+    .hero-neural p[style*="font-size: 20px"] {
+        font-size: 16px !important;
+    }
+
+    .hero-neural p[style*="font-size: 18px"] {
+        font-size: 15px !important;
+    }
+
+    .price-box div[style*="font-size: 64px"] {
+        font-size: 44px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px !important;
+    }
+
+    .ai-clone h1 {
+        font-size: 26px;
+    }
+
+    .ai-clone h2 {
+        font-size: 20px;
+    }
+
+    .ai-clone p {
+        font-size: 14px;
+    }
+
+    .price-box div[style*="font-size: 64px"] {
+        font-size: 38px !important;
+    }
+}
+
+/* --- RESPONSIVE (CONTAINER FOR GHL PREVIEW) --- */
+@container (max-width: 768px) {
+    .container {
+        padding: 0 18px !important;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin: 20px 0;
+    }
+
+    .hero-neural {
+        padding-top: 52px !important;
+        padding-bottom: 32px !important;
+    }
+
+    .ai-clone h1 {
+        font-size: 30px;
+    }
+
+    .ai-clone h2 {
+        font-size: 22px;
+    }
+
+    .ai-clone p {
+        font-size: 15px;
+        margin-bottom: 16px;
+    }
+
+    .role-item {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .price-box {
+        padding: 28px 20px;
+    }
+
+    .cta-btn {
+        font-size: 16px;
+        padding: 16px;
+    }
+
+    .designer-box {
+        min-height: 180px;
+        margin: 22px auto;
+        padding: 24px 14px;
+    }
+
+    .hero-neural p[style*="font-size: 20px"] {
+        font-size: 16px !important;
+    }
+
+    .hero-neural p[style*="font-size: 18px"] {
+        font-size: 15px !important;
+    }
+
+    .price-box div[style*="font-size: 64px"] {
+        font-size: 44px !important;
+    }
+}
+
+@container (max-width: 480px) {
+    .container {
+        padding: 0 12px !important;
+    }
+
+    .ai-clone h1 {
+        font-size: 26px;
+    }
+
+    .ai-clone h2 {
+        font-size: 20px;
+    }
+
+    .ai-clone p {
+        font-size: 14px;
+    }
+
+    .price-box div[style*="font-size: 64px"] {
+        font-size: 38px !important;
+    }
+}
+</style>
+</head>
+<body>
+<div class="ai-clone">
+
+  <div class="alert-bar animate-load">
+    &#9208; WAIT &mdash; BEFORE YOU GO...
+  </div>
+
+  <section class="hero-neural">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 30px;">
+        <h1 class="animate-load delay-1">I Get It. $97 is a Commitment.<br><span class="highlight-blue">How About the "Lite" Version?</span></h1>
+
+        <p class="animate-load delay-2" style="font-size: 20px; color: #ccc; max-width: 700px; margin: 0 auto;">Maybe you don't need the deep-dive video training or the complex template systems yet.</p>
+        <p class="animate-load delay-2" style="font-size: 18px; color: #888; max-width: 700px; margin: 0 auto;">Maybe you just want the raw AI workflows so your team can get to work.</p>
+      </div>
+
+      <div class="designer-box animate-load delay-3" style="max-width: 600px; min-height: 300px;">
+        (ADD HERO IMAGE HERE)<br>
+        Visual of "The Essentials Edition"<br>(e.g., Simple PDF docs or folders instead of a big video course)
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #020204; padding: 40px 0;">
+    <div class="container">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <p>So let's make this a no-brainer.</p>
+        <p>You can get the <strong>"Playbook Essentials"</strong> bundle.</p>
+        <p>You get all 8 Role Playbooks, but we strip out the bonus video trainings and the complex setup guides. You just get the core prompts and workflows.</p>
+
+        <div class="designer-box" style="min-height: 150px; margin: 40px auto; border-color: rgba(255,255,255,0.1); color: #888;">
+            (ADD GRAPHIC HERE)<br>
+            Icons representing the 8 different roles included
+        </div>
+
+        <p style="color: #4da6ff; font-weight: 600; margin-bottom: 30px;">You still cover every single role in your company:</p>
+
+        <div class="grid-2">
+            <div class="role-item">&#9989; Sales Closer Workflows</div>
+            <div class="role-item">&#9989; Executive Assistant Workflows</div>
+            <div class="role-item">&#9989; Content Operator Workflows</div>
+            <div class="role-item">&#9989; Lead Researcher Workflows</div>
+            <div class="role-item">&#9989; Customer Support Workflows</div>
+            <div class="role-item">&#9989; Bookkeeper Workflows</div>
+            <div class="role-item">&#9989; Recruiter / HR Workflows</div>
+            <div class="role-item">&#9989; Ops Manager Workflows</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #020204; padding-bottom: 80px;">
+    <div class="container">
+      <div class="price-box">
+        <div class="designer-box" style="margin: 0 auto 30px auto; border-color: rgba(255,255,255,0.2); background: transparent; min-height: 200px;">
+            (ADD FINAL BUNDLE MOCKUP HERE)<br>
+            Small visual of the digital download
+        </div>
+
+        <p style="text-transform: uppercase; font-size: 12px; letter-spacing: 2px; color: #4da6ff; margin-bottom: 10px;">The Essentials Bundle (All 8 Roles)</p>
+        <div style="font-size: 64px; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 10px;">$37</div>
+        <p style="text-decoration: line-through; color: #666; font-size: 18px;">Normally $97</p>
+
+        <a href="#buy-link" class="cta-btn">YES &mdash; Add The Essentials Bundle ($37)</a>
+
+        <p style="font-size: 13px; margin-top: 15px; color: #666;">Instant access. 30-day money-back guarantee.</p>
+
+        <a href="#no-thanks" class="no-thanks">No thanks, I don't need role-specific training for my VA right now &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <div style="padding: 40px 0; text-align: center; color: #555; font-size: 14px; background: #020204;">
+    <p>Copyright &#169; 2026 AI Operator Toolkit. All Rights Reserved.</p>
+  </div>
+
+</div>
+</body>
+</html>
