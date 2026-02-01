@@ -1,0 +1,2196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Operator System™ — What They Don't Teach</title>
+<meta name="description" content="The 6-skill framework that took me from $1/hour to running a global business. What 47 courses won't tell you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   APPLE-STYLE HERO'S JOURNEY LANDING PAGE
+   Clean • Emotional • Conversion-Focused
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --bg-primary: #000000;
+    --bg-secondary: #0a0a0a;
+    --bg-tertiary: #111111;
+    --bg-card: #1a1a1a;
+    --text-primary: #f5f5f7;
+    --text-secondary: #a1a1a6;
+    --text-muted: #6e6e73;
+    --accent-blue: #2997ff;
+    --accent-green: #30d158;
+    --accent-orange: #ff9f0a;
+    --accent-red: #ff453a;
+    --accent-purple: #bf5af2;
+    --accent-pink: #ff375f;
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(255, 255, 255, 0.02);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: var(--accent-blue);
+    color: white;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.container-narrow {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ============ LIVE SOCIAL PROOF BAR ============ */
+.social-proof-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 12px 20px;
+}
+
+.social-proof-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.proof-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.proof-item .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.proof-item strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.live-counter {
+    font-family: 'Inter', monospace;
+    font-weight: 700;
+    color: var(--accent-orange);
+}
+
+/* ============ HERO SECTION ============ */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 140px 0 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 100%;
+    background: radial-gradient(ellipse at 50% 0%, rgba(41, 151, 255, 0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 149, 10, 0.1);
+    border: 1px solid rgba(255, 149, 10, 0.3);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-orange);
+    margin-bottom: 24px;
+    animation: fadeInUp 0.8s ease;
+}
+
+.hero-title {
+    font-size: clamp(40px, 7vw, 80px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    animation: fadeInUp 0.8s ease 0.1s both;
+}
+
+.hero-title .gradient {
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 50%, var(--accent-pink) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: clamp(18px, 2.5vw, 24px);
+    font-weight: 400;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.hero-subtitle strong {
+    color: var(--text-primary);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============ PRODUCT STACK (3D Books) ============ */
+.product-stack {
+    margin: 48px 0;
+    padding: 40px 24px;
+    background: linear-gradient(145deg, rgba(41, 151, 255, 0.05) 0%, rgba(0, 0, 0, 0.3) 50%, var(--bg-primary) 100%);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.product-stack::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(41, 151, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.stack-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 14px;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.stack-book {
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(800px) rotateY(-6deg);
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    cursor: pointer;
+}
+
+.stack-book:hover {
+    transform: perspective(800px) rotateY(-6deg) translateY(-12px) scale(1.02);
+}
+
+.stack-book-cover {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px 12px 12px 4px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        -8px 8px 24px rgba(0, 0, 0, 0.5),
+        0 16px 40px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stack-book-spine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 14px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+}
+
+.stack-book-design {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.stack-circles {
+    position: absolute;
+    top: 12px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+}
+
+.stack-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.stack-circle.sc1 { width: 70px; height: 70px; top: 0; right: 0; }
+.stack-circle.sc2 { width: 50px; height: 50px; top: 10px; right: 10px; }
+.stack-circle.sc3 { width: 30px; height: 30px; top: 20px; right: 20px; }
+
+.stack-grid-pattern {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background:
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 10px 10px;
+    mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+}
+
+.stack-book-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 18px 14px 14px 20px;
+    z-index: 2;
+}
+
+.stack-book-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.stack-book-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    width: fit-content;
+    margin-bottom: 8px;
+}
+
+.stack-book-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.25;
+    margin-bottom: auto;
+}
+
+.stack-book-author {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+}
+
+/* Stack book sizes */
+.stack-book.size-sm { width: 95px; height: 130px; }
+.stack-book.size-md { width: 105px; height: 145px; }
+.stack-book.size-lg { width: 115px; height: 158px; }
+
+/* Stack book color themes */
+.stack-blue .stack-book-cover { background: linear-gradient(145deg, #1e3a5f 0%, #0d1b2a 100%); }
+.stack-blue .stack-book-icon { background: linear-gradient(135deg, rgba(41, 151, 255, 0.3), rgba(41, 151, 255, 0.1)); border: 1px solid rgba(41, 151, 255, 0.4); }
+.stack-blue .stack-book-badge { background: rgba(41, 151, 255, 0.25); border: 1px solid rgba(41, 151, 255, 0.4); color: #7cc4ff; }
+.stack-blue .stack-circle.sc3 { background: rgba(41, 151, 255, 0.25); }
+
+.stack-purple .stack-book-cover { background: linear-gradient(145deg, #3d2a5c 0%, #1a1028 100%); }
+.stack-purple .stack-book-icon { background: linear-gradient(135deg, rgba(191, 90, 242, 0.3), rgba(191, 90, 242, 0.1)); border: 1px solid rgba(191, 90, 242, 0.4); }
+.stack-purple .stack-book-badge { background: rgba(191, 90, 242, 0.25); border: 1px solid rgba(191, 90, 242, 0.4); color: #d4a5f9; }
+.stack-purple .stack-circle.sc3 { background: rgba(191, 90, 242, 0.25); }
+
+.stack-orange .stack-book-cover { background: linear-gradient(145deg, #5c3d2e 0%, #2a1a10 100%); }
+.stack-orange .stack-book-icon { background: linear-gradient(135deg, rgba(255, 159, 10, 0.3), rgba(255, 159, 10, 0.1)); border: 1px solid rgba(255, 159, 10, 0.4); }
+.stack-orange .stack-book-badge { background: rgba(255, 159, 10, 0.25); border: 1px solid rgba(255, 159, 10, 0.4); color: #ffcc70; }
+.stack-orange .stack-circle.sc3 { background: rgba(255, 159, 10, 0.25); }
+
+.stack-cyan .stack-book-cover { background: linear-gradient(145deg, #134e5e 0%, #0a2a33 100%); }
+.stack-cyan .stack-book-icon { background: linear-gradient(135deg, rgba(100, 210, 255, 0.3), rgba(100, 210, 255, 0.1)); border: 1px solid rgba(100, 210, 255, 0.4); }
+.stack-cyan .stack-book-badge { background: rgba(100, 210, 255, 0.25); border: 1px solid rgba(100, 210, 255, 0.4); color: #9ee5ff; }
+.stack-cyan .stack-circle.sc3 { background: rgba(100, 210, 255, 0.25); }
+
+.stack-green .stack-book-cover { background: linear-gradient(145deg, #1a4d3e 0%, #0d2820 100%); }
+.stack-green .stack-book-icon { background: linear-gradient(135deg, rgba(48, 209, 88, 0.3), rgba(48, 209, 88, 0.1)); border: 1px solid rgba(48, 209, 88, 0.4); }
+.stack-green .stack-book-badge { background: rgba(48, 209, 88, 0.25); border: 1px solid rgba(48, 209, 88, 0.4); color: #7ee8a0; }
+.stack-green .stack-circle.sc3 { background: rgba(48, 209, 88, 0.25); }
+
+.stack-red .stack-book-cover { background: linear-gradient(145deg, #5c2a2a 0%, #2a1010 100%); }
+.stack-red .stack-book-icon { background: linear-gradient(135deg, rgba(255, 69, 58, 0.3), rgba(255, 69, 58, 0.1)); border: 1px solid rgba(255, 69, 58, 0.4); }
+.stack-red .stack-book-badge { background: rgba(255, 69, 58, 0.25); border: 1px solid rgba(255, 69, 58, 0.4); color: #ff9590; }
+.stack-red .stack-circle.sc3 { background: rgba(255, 69, 58, 0.25); }
+
+.stack-label {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ============ CTA BUTTON ============ */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 48px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    background: var(--accent-blue);
+    color: #ffffff;
+    border-radius: 980px;
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    box-shadow: 0 4px 24px rgba(41, 151, 255, 0.3);
+    cursor: pointer;
+    border: none;
+}
+
+.cta-button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 40px rgba(41, 151, 255, 0.45);
+}
+
+.cta-button.green {
+    background: var(--accent-green);
+    box-shadow: 0 4px 24px rgba(48, 209, 88, 0.3);
+}
+
+.cta-button.green:hover {
+    box-shadow: 0 8px 40px rgba(48, 209, 88, 0.45);
+}
+
+.cta-button svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover svg {
+    transform: translateX(4px);
+}
+
+.cta-subtext {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 16px;
+}
+
+.price-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.price-current {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--accent-green);
+}
+
+.price-original {
+    font-size: 24px;
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+/* ============ STORY SECTIONS ============ */
+.story-section {
+    padding: 120px 0;
+    position: relative;
+}
+
+.story-section.dark {
+    background: var(--bg-secondary);
+}
+
+.story-section.glow {
+    background: radial-gradient(ellipse at 50% 0%, rgba(41, 151, 255, 0.08) 0%, var(--bg-primary) 60%);
+}
+
+.section-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-blue);
+    margin-bottom: 20px;
+}
+
+.story-headline {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+}
+
+.story-text {
+    font-size: 19px;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.story-text strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.story-text em {
+    color: var(--accent-orange);
+    font-style: normal;
+    font-weight: 500;
+}
+
+/* ============ EMOTIONAL CALLOUTS ============ */
+.emotional-callout {
+    background: linear-gradient(135deg, rgba(191, 90, 242, 0.1) 0%, rgba(41, 151, 255, 0.1) 100%);
+    border-left: 4px solid var(--accent-purple);
+    padding: 32px 40px;
+    border-radius: 0 20px 20px 0;
+    margin: 40px 0;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.breaking-point {
+    background: linear-gradient(135deg, rgba(255, 69, 58, 0.1) 0%, rgba(255, 55, 95, 0.1) 100%);
+    border: 2px solid rgba(255, 69, 58, 0.3);
+    border-radius: 24px;
+    padding: 48px;
+    margin: 48px 0;
+    text-align: center;
+}
+
+.breaking-point h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent-red);
+    margin-bottom: 16px;
+}
+
+.breaking-point p {
+    font-size: 20px;
+    color: var(--text-primary);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.epiphany-box {
+    background: linear-gradient(135deg, rgba(48, 209, 88, 0.1) 0%, rgba(41, 151, 255, 0.1) 100%);
+    border: 2px solid rgba(48, 209, 88, 0.3);
+    border-radius: 24px;
+    padding: 48px;
+    margin: 48px 0;
+    text-align: center;
+}
+
+.epiphany-box h3 {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-green);
+    margin-bottom: 20px;
+}
+
+.epiphany-box p {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+/* ============ TIMELINE ============ */
+.journey-timeline {
+    position: relative;
+    padding-left: 40px;
+    margin: 48px 0;
+}
+
+.journey-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent-red) 0%, var(--accent-orange) 33%, var(--accent-blue) 66%, var(--accent-green) 100%);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 40px;
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.6s ease;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -36px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 3px solid var(--accent-blue);
+}
+
+.timeline-item.struggle::before { border-color: var(--accent-red); }
+.timeline-item.turning::before { border-color: var(--accent-orange); }
+.timeline-item.discovery::before { border-color: var(--accent-blue); }
+.timeline-item.success::before { border-color: var(--accent-green); }
+
+.timeline-year {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.timeline-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.timeline-text {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* ============ SOCIAL PROOF CARDS ============ */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin: 48px 0;
+}
+
+.testimonial-card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.testimonial-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+}
+
+.testimonial-star {
+    width: 18px;
+    height: 18px;
+    background: var(--accent-orange);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.testimonial-text {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.testimonial-text strong {
+    color: var(--text-primary);
+}
+
+.testimonial-result {
+    background: rgba(48, 209, 88, 0.1);
+    border-left: 3px solid var(--accent-green);
+    padding: 12px 16px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 20px;
+}
+
+.testimonial-result p {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-green);
+    margin: 0;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+}
+
+.author-info h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.author-info p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.verified-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(41, 151, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-left: auto;
+}
+
+/* ============ STATS BAR ============ */
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 48px 0;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    margin: 60px 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-number.counting {
+    color: var(--accent-blue);
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* ============ FOUNDER SECTION ============ */
+.founder-section {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    margin: 60px 0;
+}
+
+.founder-image {
+    flex-shrink: 0;
+}
+
+.founder-photo {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(41, 151, 255, 0.2) 0%, rgba(191, 90, 242, 0.2) 100%);
+    border: 4px solid var(--accent-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.founder-photo::after {
+    content: 'Verified ✓';
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-green);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.founder-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.founder-content .title {
+    font-size: 14px;
+    color: var(--accent-blue);
+    font-weight: 600;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.founder-content p {
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 16px;
+}
+
+/* ============ OFFER STACK ============ */
+.offer-section {
+    padding: 120px 0;
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+}
+
+.offer-card {
+    background: linear-gradient(145deg, rgba(41, 151, 255, 0.05) 0%, rgba(0, 0, 0, 0.4) 100%);
+    border: 2px solid var(--accent-green);
+    border-radius: 32px;
+    padding: 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-badge {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-red) 100%);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 0 0 20px 20px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.offer-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 40px 0 48px;
+}
+
+.offer-items {
+    max-width: 500px;
+    margin: 0 auto 40px;
+    text-align: left;
+}
+
+.offer-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.offer-item:last-child {
+    border-bottom: none;
+}
+
+.offer-item-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.offer-check {
+    width: 24px;
+    height: 24px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.offer-item-text {
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+.offer-item-value {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+.offer-item.bonus {
+    background: rgba(255, 149, 10, 0.08);
+    margin: 0 -20px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    border: none;
+}
+
+.offer-item.bonus .offer-check {
+    background: var(--accent-orange);
+}
+
+.offer-total {
+    margin: 40px 0;
+}
+
+.total-crossed {
+    font-size: 20px;
+    color: var(--text-muted);
+    text-decoration: line-through;
+    margin-bottom: 8px;
+}
+
+.total-price {
+    font-size: 80px;
+    font-weight: 800;
+    color: var(--accent-green);
+    line-height: 1;
+}
+
+.total-savings {
+    font-size: 18px;
+    color: var(--accent-orange);
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+/* ============ GUARANTEE ============ */
+.guarantee-box {
+    background: rgba(48, 209, 88, 0.05);
+    border: 1px solid rgba(48, 209, 88, 0.25);
+    border-radius: 24px;
+    padding: 48px;
+    margin: 48px 0;
+    text-align: center;
+}
+
+.guarantee-icon {
+    font-size: 56px;
+    margin-bottom: 20px;
+}
+
+.guarantee-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-green);
+    margin-bottom: 16px;
+}
+
+.guarantee-text {
+    font-size: 17px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ============ LIVE NOTIFICATION ============ */
+.live-notification {
+    position: fixed;
+    bottom: 100px;
+    left: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 998;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transform: translateX(-120%);
+    transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    max-width: 320px;
+}
+
+.live-notification.visible {
+    transform: translateX(0);
+}
+
+.notification-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-blue) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.notification-content p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.notification-content strong {
+    color: var(--text-primary);
+}
+
+.notification-time {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* ============ FLOATING CTA ============ */
+.floating-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    z-index: 999;
+    border-top: 1px solid var(--glass-border);
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.floating-cta.visible {
+    transform: translateY(0);
+}
+
+.floating-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent-green);
+}
+
+.floating-cta .cta-button {
+    padding: 16px 32px;
+    font-size: 16px;
+}
+
+/* ============ FOOTER ============ */
+footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--glass-border);
+    padding: 60px 0 40px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+footer a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+/* ============ SCROLL ANIMATIONS ============ */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+    .social-proof-bar {
+        padding: 10px 16px;
+    }
+
+    .social-proof-inner {
+        gap: 16px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 120px 0 80px;
+        min-height: auto;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 17px;
+    }
+
+    .story-headline {
+        font-size: 28px;
+    }
+
+    .story-section {
+        padding: 80px 0;
+    }
+
+    .cta-button {
+        width: 100%;
+        padding: 18px 32px;
+        font-size: 16px;
+    }
+
+    .stack-book.size-sm { width: 70px; height: 96px; }
+    .stack-book.size-md { width: 78px; height: 107px; }
+    .stack-book.size-lg { width: 86px; height: 118px; }
+
+    .stack-book-content { padding: 12px 10px 10px 14px; }
+    .stack-book-icon { width: 24px; height: 24px; font-size: 12px; }
+    .stack-book-badge { font-size: 7px; }
+    .stack-book-title { font-size: 8px; }
+    .stack-book-author { font-size: 7px; }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .stat-number {
+        font-size: 36px;
+    }
+
+    .founder-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .founder-photo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .offer-card {
+        padding: 40px 24px;
+    }
+
+    .total-price {
+        font-size: 56px;
+    }
+
+    .floating-cta {
+        flex-direction: row;
+        gap: 16px;
+        padding: 12px 16px;
+    }
+
+    .floating-price {
+        font-size: 24px;
+    }
+
+    .floating-cta .cta-button {
+        flex: 1;
+        padding: 14px 20px;
+    }
+
+    .live-notification {
+        left: 12px;
+        right: 12px;
+        max-width: none;
+    }
+
+    .emotional-callout {
+        padding: 24px;
+        font-size: 18px;
+    }
+
+    .breaking-point,
+    .epiphany-box {
+        padding: 32px 24px;
+    }
+
+    .breaking-point p,
+    .epiphany-box p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .stack-book.size-sm { width: 52px; height: 72px; }
+    .stack-book.size-md { width: 58px; height: 80px; }
+    .stack-book.size-lg { width: 64px; height: 88px; }
+
+    .stack-book-content { padding: 8px 6px 6px 10px; }
+    .stack-book-icon { width: 18px; height: 18px; font-size: 10px; margin-bottom: 6px; }
+    .stack-book-badge { font-size: 5px; padding: 2px 4px; }
+    .stack-book-title { font-size: 6px; }
+    .stack-book-author { font-size: 5px; }
+}
+</style>
+</head>
+<body>
+
+<!-- LIVE SOCIAL PROOF BAR -->
+<div class="social-proof-bar">
+    <div class="social-proof-inner">
+        <div class="proof-item">
+            <span class="dot"></span>
+            <span><strong id="viewerCount">47</strong> people viewing</span>
+        </div>
+        <div class="proof-item">
+            <span>🔥</span>
+            <span><strong id="soldCount">2,847</strong> entrepreneurs joined</span>
+        </div>
+        <div class="proof-item">
+            <span>⏰</span>
+            <span>$9 price ends <span class="live-counter" id="timerText">23:59:47</span></span>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section class="hero">
+    <div class="container" style="text-align: center;">
+        <div class="hero-eyebrow">
+            <span>What 47 courses and $47,000 couldn't teach me</span>
+        </div>
+
+        <h1 class="hero-title">
+            There's a System.<br>
+            <span class="gradient">They Don't Want You to Know It.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            After 3 years of failure, I discovered the <strong>6-skill framework</strong> that separates entrepreneurs who automate from those who drown.<br>
+            This is the system they don't teach in courses. <strong>Because if you knew it, you'd never buy another one.</strong>
+        </p>
+
+        <!-- PRODUCT STACK -->
+        <div class="product-stack">
+            <div class="stack-grid">
+                <div class="stack-book size-md stack-blue">
+                    <div class="stack-book-cover">
+                        <div class="stack-book-spine"></div>
+                        <div class="stack-book-design">
+                            <div class="stack-circles">
+                                <div class="stack-circle sc1"></div>
+                                <div class="stack-circle sc2"></div>
+                                <div class="stack-circle sc3"></div>
+                            </div>
+                            <div class="stack-grid-pattern"></div>
+                        </div>
+                        <div class="stack-book-content">
+                            <div class="stack-book-icon">💻</div>
+                            <div class="stack-book-badge">Pack 1</div>
+                            <div class="stack-book-title">AI Vibe Coding</div>
+                            <div class="stack-book-author">$97</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-book size-lg stack-purple">
+                    <div class="stack-book-cover">
+                        <div class="stack-book-spine"></div>
+                        <div class="stack-book-design">
+                            <div class="stack-circles">
+                                <div class="stack-circle sc1"></div>
+                                <div class="stack-circle sc2"></div>
+                                <div class="stack-circle sc3"></div>
+                            </div>
+                            <div class="stack-grid-pattern"></div>
+                        </div>
+                        <div class="stack-book-content">
+                            <div class="stack-book-icon">🎨</div>
+                            <div class="stack-book-badge">Pack 2</div>
+                            <div class="stack-book-title">AI Image Gen</div>
+                            <div class="stack-book-author">$97</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-book size-md stack-orange">
+                    <div class="stack-book-cover">
+                        <div class="stack-book-spine"></div>
+                        <div class="stack-book-design">
+                            <div class="stack-circles">
+                                <div class="stack-circle sc1"></div>
+                                <div class="stack-circle sc2"></div>
+                                <div class="stack-circle sc3"></div>
+                            </div>
+                            <div class="stack-grid-pattern"></div>
+                        </div>
+                        <div class="stack-book-content">
+                            <div class="stack-book-icon">✏️</div>
+                            <div class="stack-book-badge">Pack 3</div>
+                            <div class="stack-book-title">Graphic Design</div>
+                            <div class="stack-book-author">$97</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-book size-lg stack-cyan">
+                    <div class="stack-book-cover">
+                        <div class="stack-book-spine"></div>
+                        <div class="stack-book-design">
+                            <div class="stack-circles">
+                                <div class="stack-circle sc1"></div>
+                                <div class="stack-circle sc2"></div>
+                                <div class="stack-circle sc3"></div>
+                            </div>
+                            <div class="stack-grid-pattern"></div>
+                        </div>
+                        <div class="stack-book-content">
+                            <div class="stack-book-icon">🔍</div>
+                            <div class="stack-book-badge">Pack 4</div>
+                            <div class="stack-book-title">Deep Research</div>
+                            <div class="stack-book-author">$97</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-book size-md stack-green">
+                    <div class="stack-book-cover">
+                        <div class="stack-book-spine"></div>
+                        <div class="stack-book-design">
+                            <div class="stack-circles">
+                                <div class="stack-circle sc1"></div>
+                                <div class="stack-circle sc2"></div>
+                                <div class="stack-circle sc3"></div>
+                            </div>
+                            <div class="stack-grid-pattern"></div>
+                        </div>
+                        <div class="stack-book-content">
+                            <div class="stack-book-icon">🌐</div>
+                            <div class="stack-book-badge">Pack 5</div>
+                            <div class="stack-book-title">Web Dev</div>
+                            <div class="stack-book-author">$97</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stack-book size-sm stack-red">
+                    <div class="stack-book-cover">
+                        <div class="stack-book-spine"></div>
+                        <div class="stack-book-design">
+                            <div class="stack-circles">
+                                <div class="stack-circle sc1"></div>
+                                <div class="stack-circle sc2"></div>
+                                <div class="stack-circle sc3"></div>
+                            </div>
+                            <div class="stack-grid-pattern"></div>
+                        </div>
+                        <div class="stack-book-content">
+                            <div class="stack-book-icon">⚡</div>
+                            <div class="stack-book-badge">Pack 6</div>
+                            <div class="stack-book-title">Prompting</div>
+                            <div class="stack-book-author">$97</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="stack-label">The Complete AI Operator System™</p>
+        </div>
+
+        <!-- THE SYSTEM TEASE -->
+        <div style="background: rgba(191, 90, 242, 0.08); border: 1px solid rgba(191, 90, 242, 0.3); border-radius: 16px; padding: 24px 32px; margin: 32px 0; text-align: left;">
+            <p style="font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-purple); margin-bottom: 12px; font-weight: 600;">What You'll Discover Inside:</p>
+            <p style="font-size: 17px; color: var(--text-secondary); margin: 0; line-height: 1.7;">
+                ✓ The <strong style="color: var(--text-primary);">exact 6-skill framework</strong> that took me from stuck to automated<br>
+                ✓ Why 99% of "AI training" keeps you dependent (and what works instead)<br>
+                ✓ The <strong style="color: var(--text-primary);">counterintuitive method</strong> to get 10x better outputs than ChatGPT power users<br>
+                ✓ How to build tools, designs, and systems <strong style="color: var(--text-primary);">without technical skills</strong><br>
+                ✓ The "invisible leverage" that lets solo operators outcompete agencies
+            </p>
+        </div>
+
+        <div class="price-tag">
+            <span class="price-current">$9</span>
+            <span class="price-original">$582</span>
+        </div>
+
+        <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button green">
+            Get Instant Access
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+        </a>
+
+        <p class="cta-subtext">✓ Instant delivery &nbsp; ✓ Works with any AI &nbsp; ✓ 30-day money-back guarantee</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     THE STORY BEGINS - Origin
+     ============================================================ -->
+<section class="story-section dark">
+    <div class="container-narrow">
+        <span class="section-label fade-in">Chapter 1</span>
+
+        <h2 class="story-headline fade-in">I wasn't supposed to make it.</h2>
+
+        <p class="story-text fade-in">I grew up in <em>Kazakhstan</em>. A country most people can't even point to on a map.</p>
+
+        <p class="story-text fade-in">My first job paid <strong>$1 an hour</strong>. Not as a teenager — as an adult, with bills to pay.</p>
+
+        <p class="story-text fade-in">No connections. No fancy degree. No inheritance. No "startup ecosystem." No one in my family who had ever built a business.</p>
+
+        <div class="emotional-callout fade-in">
+            Just this constant, gnawing feeling that I was <em>capable of more</em> — but the system around me had already decided my ceiling.
+        </div>
+
+        <p class="story-text fade-in">I watched people work 70-hour weeks. Good people. Smart people. My parents. My neighbors. <strong>Getting nowhere.</strong></p>
+
+        <p class="story-text fade-in">The message was clear: <em>Work hard. Keep your head down. Accept what you're given.</em></p>
+
+        <p class="story-text fade-in">But something inside me refused.</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     THE STRUGGLE
+     ============================================================ -->
+<section class="story-section">
+    <div class="container-narrow">
+        <span class="section-label fade-in">Chapter 2</span>
+
+        <h2 class="story-headline fade-in">Then I discovered the internet.<br>And everything got worse.</h2>
+
+        <p class="story-text fade-in">I saw people online — regular people — working remotely for American companies. Same skills I had. Sometimes worse. But earning <strong>5x, 10x, 20x more</strong>.</p>
+
+        <p class="story-text fade-in">Not because they were smarter. Not because they worked harder.</p>
+
+        <p class="story-text fade-in">Because of <em>geography</em>. Because of <em>systems</em>. Because they understood something I didn't.</p>
+
+        <div class="breaking-point scale-in">
+            <h3>The Moment I Almost Gave Up</h3>
+            <p>I was 26. Working 14-hour days. Making barely enough to survive. Watching every "how to succeed" video on YouTube while eating instant noodles at 2 AM.</p>
+        </div>
+
+        <p class="story-text fade-in">I tried everything:</p>
+
+        <div class="journey-timeline">
+            <div class="timeline-item struggle">
+                <span class="timeline-year">Attempt 1</span>
+                <h4 class="timeline-title">Freelancing on Upwork</h4>
+                <p class="timeline-text">Race to the bottom. $3/hour competing against thousands. Got a few projects. Made almost nothing.</p>
+            </div>
+
+            <div class="timeline-item struggle">
+                <span class="timeline-year">Attempt 2</span>
+                <h4 class="timeline-title">Following "Guru" Advice</h4>
+                <p class="timeline-text">Bought courses. Followed blueprints designed for Americans with American advantages. Nothing worked.</p>
+            </div>
+
+            <div class="timeline-item struggle">
+                <span class="timeline-year">Attempt 3</span>
+                <h4 class="timeline-title">Just Working Harder</h4>
+                <p class="timeline-text">80-hour weeks. Burnout. Health problems. Still stuck. Starting to think maybe I just wasn't good enough.</p>
+            </div>
+        </div>
+
+        <p class="story-text fade-in" style="font-size: 22px;"><strong>Effort without leverage is a trap.</strong></p>
+
+        <p class="story-text fade-in">I learned that the hard way. Over and over and over.</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     THE TURNING POINT
+     ============================================================ -->
+<section class="story-section glow">
+    <div class="container-narrow">
+        <span class="section-label fade-in">Chapter 3</span>
+
+        <h2 class="story-headline fade-in">Then I asked a different question.</h2>
+
+        <p class="story-text fade-in">I stopped asking: <em>"How do I work more?"</em></p>
+
+        <p class="story-text fade-in">I started asking: <strong>"What would make successful companies need ME?"</strong></p>
+
+        <p class="story-text fade-in">Not compete for scraps. Not race to the bottom. Not beg for attention.</p>
+
+        <p class="story-text fade-in">What would make them <em>seek me out</em>?</p>
+
+        <div class="epiphany-box scale-in">
+            <h3>The Epiphany</h3>
+            <p>I wasn't underpaid because I was bad.<br>I was underpaid because I was <strong>playing the wrong game entirely.</strong></p>
+        </div>
+
+        <p class="story-text fade-in">The game wasn't about working harder. It was about <strong>leverage</strong>.</p>
+
+        <p class="story-text fade-in">And in 2024, the greatest leverage in history became available to everyone:</p>
+
+        <p class="story-text fade-in" style="font-size: 28px; text-align: center; color: var(--text-primary);"><strong>Artificial Intelligence.</strong></p>
+    </div>
+</section>
+
+<!-- ============================================================
+     THE DISCOVERY
+     ============================================================ -->
+<section class="story-section dark">
+    <div class="container-narrow">
+        <span class="section-label fade-in">Chapter 4</span>
+
+        <h2 class="story-headline fade-in">I spent $47,000 learning what actually works.</h2>
+
+        <p class="story-text fade-in">I bought every course. Hired consultants. Paid for masterminds. Subscribed to every tool.</p>
+
+        <p class="story-text fade-in">Most of it was garbage. Theory. Fluff. Hype.</p>
+
+        <p class="story-text fade-in">But slowly, painfully, I extracted the truth:</p>
+
+        <div class="epiphany-box scale-in">
+            <h3>The Revelation</h3>
+            <p>There's a system. <strong>6 interconnected skills</strong> that work together as a framework. Master them in the right order, with the right techniques, and everything changes. Miss even one — and you stay stuck like everyone else.</p>
+        </div>
+
+        <p class="story-text fade-in" style="text-align: center; font-size: 20px; color: var(--accent-purple);"><strong>I call it "The AI Operator System™"</strong></p>
+
+        <p class="story-text fade-in" style="text-align: center;">It's not a course. It's not theory. It's the operating system for building a leveraged business in 2026.</p>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number counting" data-target="6">0</div>
+                <div class="stat-label">Core Skills</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number counting" data-target="47000">0</div>
+                <div class="stat-label">$ I Spent Learning</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number counting" data-target="3">0</div>
+                <div class="stat-label">Years of Testing</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number counting" data-target="9">0</div>
+                <div class="stat-label">Your Investment</div>
+            </div>
+        </div>
+
+        <p class="story-text fade-in">Master these six skills, and you'll outperform people who've spent 10x more time and money "learning AI."</p>
+
+        <p class="story-text fade-in">Ignore them, and you'll keep drowning in tutorials, tabs, and tools that don't move the needle.</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     THE TRANSFORMATION
+     ============================================================ -->
+<section class="story-section">
+    <div class="container-narrow">
+        <span class="section-label fade-in">Chapter 5</span>
+
+        <h2 class="story-headline fade-in">Everything changed.</h2>
+
+        <div class="journey-timeline">
+            <div class="timeline-item turning">
+                <span class="timeline-year">Year 1</span>
+                <h4 class="timeline-title">Landed my first U.S. client</h4>
+                <p class="timeline-text">Used AI to deliver 10x the value. They couldn't believe I wasn't local. Didn't matter — results spoke.</p>
+            </div>
+
+            <div class="timeline-item discovery">
+                <span class="timeline-year">Year 2</span>
+                <h4 class="timeline-title">Became a CEO's right hand</h4>
+                <p class="timeline-text">Research, presentations, systems — all AI-powered. They paid me more than I ever dreamed possible.</p>
+            </div>
+
+            <div class="timeline-item success">
+                <span class="timeline-year">Year 3</span>
+                <h4 class="timeline-title">Built my own company</h4>
+                <p class="timeline-text">Now I run teams across countries. Help other entrepreneurs escape the same trap I was in.</p>
+            </div>
+        </div>
+
+        <p class="story-text fade-in">I didn't escape the system.</p>
+
+        <p class="story-text fade-in"><strong>I learned how to plug into a better one.</strong></p>
+    </div>
+</section>
+
+<!-- ============================================================
+     THE SYSTEM REVEALED (Teaser)
+     ============================================================ -->
+<section class="story-section" style="background: linear-gradient(180deg, #0a0a0a 0%, #000 100%);">
+    <div class="container">
+        <span class="section-label fade-in" style="text-align: center; display: block;">The Framework</span>
+
+        <h2 class="story-headline fade-in" style="text-align: center;">The 6 Skills. The Exact Order. The Hidden Connections.</h2>
+
+        <p class="story-text fade-in" style="text-align: center; max-width: 700px; margin: 0 auto 48px;">Most people learn AI skills randomly. That's why they fail. The AI Operator System™ works because the skills <strong>build on each other</strong> in a specific sequence.</p>
+
+        <!-- MYSTERY FRAMEWORK VISUAL -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 800px; margin: 0 auto;" class="fade-in">
+            <div style="background: linear-gradient(135deg, rgba(41, 151, 255, 0.1), rgba(41, 151, 255, 0.02)); border: 1px solid rgba(41, 151, 255, 0.3); border-radius: 16px; padding: 28px 20px; text-align: center;">
+                <div style="font-size: 32px; margin-bottom: 12px;">💻</div>
+                <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-blue); margin-bottom: 8px;">Skill #1</div>
+                <div style="font-size: 16px; font-weight: 600; color: var(--text-primary);">Vibe Coding</div>
+                <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Build without coding</div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, rgba(191, 90, 242, 0.1), rgba(191, 90, 242, 0.02)); border: 1px solid rgba(191, 90, 242, 0.3); border-radius: 16px; padding: 28px 20px; text-align: center;">
+                <div style="font-size: 32px; margin-bottom: 12px;">🎨</div>
+                <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-purple); margin-bottom: 8px;">Skill #2</div>
+                <div style="font-size: 16px; font-weight: 600; color: var(--text-primary);">Image Generation</div>
+                <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Create on command</div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, rgba(255, 159, 10, 0.1), rgba(255, 159, 10, 0.02)); border: 1px solid rgba(255, 159, 10, 0.3); border-radius: 16px; padding: 28px 20px; text-align: center;">
+                <div style="font-size: 32px; margin-bottom: 12px;">✏️</div>
+                <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-orange); margin-bottom: 8px;">Skill #3</div>
+                <div style="font-size: 16px; font-weight: 600; color: var(--text-primary);">Graphic Design</div>
+                <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Pro-level output</div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, rgba(100, 210, 255, 0.1), rgba(100, 210, 255, 0.02)); border: 1px solid rgba(100, 210, 255, 0.3); border-radius: 16px; padding: 28px 20px; text-align: center;">
+                <div style="font-size: 32px; margin-bottom: 12px;">🔍</div>
+                <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #64d2ff; margin-bottom: 8px;">Skill #4</div>
+                <div style="font-size: 16px; font-weight: 600; color: var(--text-primary);">Deep Research</div>
+                <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">10 hrs → 30 min</div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, rgba(48, 209, 88, 0.1), rgba(48, 209, 88, 0.02)); border: 1px solid rgba(48, 209, 88, 0.3); border-radius: 16px; padding: 28px 20px; text-align: center;">
+                <div style="font-size: 32px; margin-bottom: 12px;">🌐</div>
+                <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-green); margin-bottom: 8px;">Skill #5</div>
+                <div style="font-size: 16px; font-weight: 600; color: var(--text-primary);">Web Development</div>
+                <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">Ship in hours</div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, rgba(255, 69, 58, 0.1), rgba(255, 69, 58, 0.02)); border: 1px solid rgba(255, 69, 58, 0.3); border-radius: 16px; padding: 28px 20px; text-align: center;">
+                <div style="font-size: 32px; margin-bottom: 12px;">⚡</div>
+                <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-red); margin-bottom: 8px;">Skill #6</div>
+                <div style="font-size: 16px; font-weight: 600; color: var(--text-primary);">The Multiplier</div>
+                <div style="font-size: 13px; color: var(--text-muted); margin-top: 8px;">10x everything</div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;" class="fade-in">
+            <p style="font-size: 18px; color: var(--text-secondary); margin-bottom: 24px;">Each skill unlocks the next. Together, they create <strong style="color: var(--text-primary);">compound leverage</strong>.</p>
+
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--glass-border); border-radius: 12px; padding: 20px 32px; display: inline-block;">
+                <p style="font-size: 15px; color: var(--text-muted); margin: 0;">
+                    <strong style="color: var(--accent-orange);">What you won't find inside:</strong> Generic prompts. Theory. "Basics." Surface-level tutorials.<br>
+                    <strong style="color: var(--accent-green);">What you will find:</strong> The exact techniques, frameworks, and sequences I used to build a real business.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SOCIAL PROOF
+     ============================================================ -->
+<section class="story-section dark">
+    <div class="container">
+        <span class="section-label fade-in" style="text-align: center; display: block;">The Results Speak</span>
+
+        <h2 class="story-headline fade-in" style="text-align: center;">2,847 entrepreneurs discovered the system.</h2>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                </div>
+                <p class="testimonial-text">"I was paying my VA <strong>$2,400/month</strong> to handle client emails. Implemented the AI system in one afternoon. <strong>Cancelled the VA that week.</strong> This literally paid for itself 200x over."</p>
+                <div class="testimonial-result">
+                    <p>→ Saves $28,800/year</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MR</div>
+                    <div class="author-info">
+                        <h4>Marcus R.</h4>
+                        <p>eCommerce, Texas</p>
+                    </div>
+                    <span class="verified-badge">✓ Verified</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                </div>
+                <p class="testimonial-text">"Client proposals used to take <strong>3 hours</strong>. Now they take <strong>15 minutes</strong>. My close rate went UP because I respond faster than competitors. Just won a <strong>$47K contract</strong> I would've lost waiting."</p>
+                <div class="testimonial-result">
+                    <p>→ Won $47K contract</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SK</div>
+                    <div class="author-info">
+                        <h4>Sarah K.</h4>
+                        <p>Consultant, Chicago</p>
+                    </div>
+                    <span class="verified-badge">✓ Verified</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                </div>
+                <p class="testimonial-text">"I'm 52 and terrible with technology. But this actually made sense. Used the vibe coding section to build a scheduling tool for my practice. <strong>First time I've ever built anything technical.</strong>"</p>
+                <div class="testimonial-result">
+                    <p>→ Built first app ever</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JM</div>
+                    <div class="author-info">
+                        <h4>Jessica M.</h4>
+                        <p>Therapist, Florida</p>
+                    </div>
+                    <span class="verified-badge">✓ Verified</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-stars">
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                    <div class="testimonial-star"></div>
+                </div>
+                <p class="testimonial-text">"I was spending <strong>$800/month</strong> on a designer. The AI image pack taught me to create everything myself in Midjourney. <strong>Better quality than what I was paying for.</strong> My team thinks I hired someone new."</p>
+                <div class="testimonial-result">
+                    <p>→ Saves $9,600/year</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RJ</div>
+                    <div class="author-info">
+                        <h4>Ryan J.</h4>
+                        <p>Agency Owner, LA</p>
+                    </div>
+                    <span class="verified-badge">✓ Verified</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     THE FOUNDER
+     ============================================================ -->
+<section class="story-section glow">
+    <div class="container">
+        <div class="founder-section fade-in">
+            <div class="founder-image">
+                <div class="founder-photo">
+                    [YOUR PHOTO HERE]<br>
+                    Professional headshot<br>
+                    or lifestyle image
+                </div>
+            </div>
+            <div class="founder-content">
+                <h3>Hey, I'm Nuri.</h3>
+                <span class="title">Founder, Recrutu • AI Systems Architect</span>
+                <p>I went from $1/hour in Kazakhstan to running a global business and helping Fortune 500 companies implement AI systems.</p>
+                <p>Not because I'm special. Because I figured out the 6 skills that actually matter — and I'm willing to share them for the price of a lunch.</p>
+                <p><strong>This toolkit is everything I wish existed 3 years ago.</strong> The shortcut that would've saved me $47,000 and thousands of hours.</p>
+                <p>Now it's yours for $9.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     THE OFFER
+     ============================================================ -->
+<section class="offer-section" id="offer">
+    <div class="container">
+        <h2 class="story-headline fade-in" style="text-align: center;">Get The Complete System</h2>
+
+        <p class="story-text fade-in" style="text-align: center; max-width: 600px; margin: 0 auto 40px;">This isn't a course. It's not a collection of tips. It's the complete framework that changes how you operate.</p>
+
+        <div class="offer-card scale-in">
+            <span class="offer-badge">⚡ System Access — 98% Off</span>
+
+            <h3 class="offer-title">The AI Operator System™</h3>
+
+            <div class="offer-items">
+                <div class="offer-item">
+                    <div class="offer-item-left">
+                        <span class="offer-check">✓</span>
+                        <span class="offer-item-text">AI Vibe Coding Pack</span>
+                    </div>
+                    <span class="offer-item-value">$97</span>
+                </div>
+
+                <div class="offer-item">
+                    <div class="offer-item-left">
+                        <span class="offer-check">✓</span>
+                        <span class="offer-item-text">AI Image Generation Pack</span>
+                    </div>
+                    <span class="offer-item-value">$97</span>
+                </div>
+
+                <div class="offer-item">
+                    <div class="offer-item-left">
+                        <span class="offer-check">✓</span>
+                        <span class="offer-item-text">AI Graphic Design Pack</span>
+                    </div>
+                    <span class="offer-item-value">$97</span>
+                </div>
+
+                <div class="offer-item">
+                    <div class="offer-item-left">
+                        <span class="offer-check">✓</span>
+                        <span class="offer-item-text">AI Deep Research Pack</span>
+                    </div>
+                    <span class="offer-item-value">$97</span>
+                </div>
+
+                <div class="offer-item">
+                    <div class="offer-item-left">
+                        <span class="offer-check">✓</span>
+                        <span class="offer-item-text">AI Web Development Pack</span>
+                    </div>
+                    <span class="offer-item-value">$97</span>
+                </div>
+
+                <div class="offer-item">
+                    <div class="offer-item-left">
+                        <span class="offer-check">✓</span>
+                        <span class="offer-item-text">Advanced Prompting Pack</span>
+                    </div>
+                    <span class="offer-item-value">$97</span>
+                </div>
+
+                <div class="offer-item bonus">
+                    <div class="offer-item-left">
+                        <span class="offer-check">🎁</span>
+                        <span class="offer-item-text"><strong>BONUS:</strong> 500+ Copy-Paste Prompts</span>
+                    </div>
+                    <span class="offer-item-value">$147</span>
+                </div>
+
+                <div class="offer-item bonus">
+                    <div class="offer-item-left">
+                        <span class="offer-check">🎁</span>
+                        <span class="offer-item-text"><strong>BONUS:</strong> Lifetime Updates</span>
+                    </div>
+                    <span class="offer-item-value">$197</span>
+                </div>
+
+                <div class="offer-item bonus">
+                    <div class="offer-item-left">
+                        <span class="offer-check">🎁</span>
+                        <span class="offer-item-text"><strong>BONUS:</strong> Private Community</span>
+                    </div>
+                    <span class="offer-item-value">$197</span>
+                </div>
+            </div>
+
+            <div class="offer-total">
+                <p class="total-crossed">Total Value: $1,123</p>
+                <p class="total-price">$9</p>
+                <p class="total-savings">You Save $1,114 Today</p>
+            </div>
+
+            <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button green" style="width: 100%; max-width: 400px;">
+                Unlock The Complete System — $9
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+            </a>
+
+            <p class="cta-subtext">One-time unlock. Instant access. Lifetime updates.</p>
+        </div>
+
+        <div class="guarantee-box fade-in">
+            <div class="guarantee-icon">🛡️</div>
+            <h3 class="guarantee-title">30-Day "Try Everything" Guarantee</h3>
+            <p class="guarantee-text">Get the complete toolkit. Go through all 6 packs. Implement the techniques in your business. If you don't save at least 5 hours in your first month — if you don't feel like this was worth 100x what you paid — just message me. Full refund, no questions asked.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA
+     ============================================================ -->
+<section class="story-section dark">
+    <div class="container-narrow" style="text-align: center;">
+        <h2 class="story-headline fade-in">You now know the system exists.</h2>
+
+        <p class="story-text fade-in" style="font-size: 22px;">The only question is: Will you learn it from someone who spent $47,000 and 3 years figuring it out? Or will you try to piece it together yourself?</p>
+
+        <p class="story-text fade-in">The skills. The sequence. The techniques. The frameworks. It's all inside.</p>
+
+        <p class="story-text fade-in" style="font-size: 24px; color: var(--accent-green);"><strong>$9 to unlock the complete system.</strong></p>
+
+        <p class="story-text fade-in" style="color: var(--text-muted);">That's less than what most people spend on coffee this week. For a framework that can change the trajectory of your business.</p>
+
+        <div style="margin-top: 48px;" class="fade-in">
+            <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button green">
+                Unlock The AI Operator System™ — $9
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+            </a>
+            <p class="cta-subtext">🔒 Secure checkout • Instant system access • 30-day guarantee</p>
+        </div>
+
+        <p style="margin-top: 40px; font-size: 15px; color: var(--text-muted);" class="fade-in">
+            Questions? DM me: <a href="https://instagram.com/nurikadi" style="color: var(--accent-blue);">@nurikadi</a> on Instagram or <a href="https://t.me/incastra31" style="color: var(--accent-blue);">@incastra31</a> on Telegram
+        </p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p style="font-size: 16px; color: var(--text-primary); margin-bottom: 4px; font-weight: 600;">Recrutu Virtual Assistants LLC</p>
+        <p>2416 Marian Bay Circle, Anchorage, AK 99515, USA</p>
+        <p><a href="mailto:nurikadi@recrutugo.com">nurikadi@recrutugo.com</a></p>
+        <p style="margin-top: 20px;">
+            <a href="#" style="margin: 0 12px;">Privacy Policy</a>
+            <a href="#" style="margin: 0 12px;">Terms of Service</a>
+        </p>
+        <p style="margin-top: 32px; font-size: 11px; opacity: 0.6;">
+            Results vary. The examples shown are not typical and depend on effort. © 2026 Recrutu Virtual Assistants LLC.
+        </p>
+    </div>
+</footer>
+
+<!-- LIVE NOTIFICATION POPUP -->
+<div class="live-notification" id="liveNotification">
+    <div class="notification-avatar">✓</div>
+    <div class="notification-content">
+        <p><strong id="notifName">Someone</strong> from <strong id="notifLocation">California</strong> just got the toolkit</p>
+        <p class="notification-time" id="notifTime">2 minutes ago</p>
+    </div>
+</div>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta" id="floatingCta">
+    <span class="floating-price">$9</span>
+    <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button green">Unlock The System →</a>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+// Countdown Timer
+(function() {
+    const COUNTDOWN_KEY = 'ai_toolkit_v3_end';
+    let endTime = localStorage.getItem(COUNTDOWN_KEY);
+
+    if (!endTime) {
+        endTime = Date.now() + (24 * 60 * 60 * 1000);
+        localStorage.setItem(COUNTDOWN_KEY, endTime);
+    } else {
+        endTime = parseInt(endTime);
+    }
+
+    function updateCountdown() {
+        const now = Date.now();
+        let diff = endTime - now;
+
+        if (diff <= 0) {
+            endTime = Date.now() + (24 * 60 * 60 * 1000);
+            localStorage.setItem(COUNTDOWN_KEY, endTime);
+            diff = 24 * 60 * 60 * 1000;
+        }
+
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('timerText').textContent =
+            String(hours).padStart(2, '0') + ':' +
+            String(minutes).padStart(2, '0') + ':' +
+            String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+})();
+
+// Live Viewer Count
+(function() {
+    const viewerEl = document.getElementById('viewerCount');
+    let viewers = 47;
+
+    setInterval(() => {
+        viewers += Math.floor(Math.random() * 3) - 1;
+        viewers = Math.max(35, Math.min(65, viewers));
+        viewerEl.textContent = viewers;
+    }, 3000);
+})();
+
+// Sold Count Animation
+(function() {
+    const soldEl = document.getElementById('soldCount');
+    let sold = 2847;
+
+    setInterval(() => {
+        if (Math.random() > 0.7) {
+            sold += 1;
+            soldEl.textContent = sold.toLocaleString();
+        }
+    }, 8000);
+})();
+
+// Floating CTA
+(function() {
+    const floatingCta = document.getElementById('floatingCta');
+    const hero = document.querySelector('.hero');
+
+    function checkScroll() {
+        const heroBottom = hero.offsetTop + hero.offsetHeight;
+        if (window.scrollY > heroBottom) {
+            floatingCta.classList.add('visible');
+        } else {
+            floatingCta.classList.remove('visible');
+        }
+    }
+
+    window.addEventListener('scroll', checkScroll);
+})();
+
+// Live Notification Popup
+(function() {
+    const notification = document.getElementById('liveNotification');
+    const names = ['Alex', 'Sarah', 'Mike', 'Jessica', 'David', 'Emily', 'Chris', 'Amanda', 'Ryan', 'Nicole'];
+    const locations = ['Texas', 'California', 'Florida', 'New York', 'Illinois', 'Arizona', 'Colorado', 'Georgia', 'Ohio', 'Michigan'];
+    const times = ['Just now', '1 minute ago', '2 minutes ago', '3 minutes ago', '5 minutes ago'];
+
+    function showNotification() {
+        document.getElementById('notifName').textContent = names[Math.floor(Math.random() * names.length)];
+        document.getElementById('notifLocation').textContent = locations[Math.floor(Math.random() * locations.length)];
+        document.getElementById('notifTime').textContent = times[Math.floor(Math.random() * times.length)];
+
+        notification.classList.add('visible');
+
+        setTimeout(() => {
+            notification.classList.remove('visible');
+        }, 5000);
+    }
+
+    setTimeout(showNotification, 8000);
+    setInterval(showNotification, 25000);
+})();
+
+// Scroll Animations
+(function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in, .timeline-item').forEach(el => {
+        observer.observe(el);
+    });
+})();
+
+// Counting Animation for Stats
+(function() {
+    const counters = document.querySelectorAll('.stat-number.counting');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = parseInt(entry.target.dataset.target);
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        entry.target.textContent = target === 47000 ? '$' + target.toLocaleString() : target;
+                        clearInterval(timer);
+                    } else {
+                        entry.target.textContent = target === 47000 ? '$' + Math.floor(current).toLocaleString() : Math.floor(current);
+                    }
+                }, 30);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    counters.forEach(counter => observer.observe(counter));
+})();
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
