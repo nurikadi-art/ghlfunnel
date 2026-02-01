@@ -3,14 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-    <title>AI Operator Toolkit — Finally understand AI (without the overwhelm)</title>
-    <meta name="description" content="6 implementation packs that teach you exactly which AI skills actually make money. No fluff. No 47-hour courses. Just results.">
+    <title>The AI shortcut I wish someone told me 3 years ago</title>
+    <meta name="description" content="How I stopped drowning in AI tools and started actually using them to run my business. The 6 skills that took me from overwhelmed to automated.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <style>
 /* ============================================================
-   PREMIUM LOW-FI 2026 - Dark, Clean, Converts
+   PREMIUM LOW-FI 2026 - The Insider Hack
    ============================================================ */
 
 :root {
@@ -28,18 +28,12 @@
     --green: #22c55e;
     --green-soft: rgba(34, 197, 94, 0.12);
     --orange: #f59e0b;
+    --orange-soft: rgba(245, 158, 11, 0.12);
     --red: #ef4444;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -48,93 +42,81 @@ body {
     font-size: 17px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Subtle grain texture */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    opacity: 0.03;
-    pointer-events: none;
-    z-index: 1000;
-}
+::selection { background: var(--accent); color: white; }
 
-::selection {
-    background: var(--accent);
-    color: white;
-}
-
-/* Container */
 .wrap {
-    max-width: 720px;
+    max-width: 680px;
     margin: 0 auto;
     padding: 0 24px;
-    position: relative;
 }
 
-/* ============ NAVIGATION ============ */
-.nav {
+/* ============ CLEAN STICKY BAR ============ */
+.sticky-bar {
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
     z-index: 100;
-    padding: 16px 24px;
-    background: rgba(10, 10, 11, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-    transform: translateY(-100%);
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border);
+    padding: 12px 24px;
+    transform: translateY(100%);
     transition: transform 0.3s ease;
 }
 
-.nav.visible {
+.sticky-bar.visible {
     transform: translateY(0);
 }
 
-.nav-inner {
-    max-width: 720px;
+.sticky-bar-inner {
+    max-width: 680px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 16px;
 }
 
-.nav-price {
+.sticky-bar-text {
     font-size: 14px;
     color: var(--text-secondary);
+    display: none;
 }
 
-.nav-price strong {
+.sticky-bar-text strong {
     color: var(--green);
-    font-weight: 700;
 }
 
-.nav-cta {
+.sticky-bar-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     background: var(--green);
     color: #000;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 14px;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-size: 15px;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.2s;
 }
 
-.nav-cta:hover {
+.sticky-bar-btn:hover {
     background: #1eb854;
-    transform: translateY(-1px);
+}
+
+@media (min-width: 640px) {
+    .sticky-bar-text { display: block; }
+    .sticky-bar-btn { flex: none; }
 }
 
 /* ============ HERO ============ */
 .hero {
-    padding: 120px 0 80px;
+    padding: 80px 0 60px;
     position: relative;
 }
 
@@ -144,97 +126,103 @@ body::before {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 800px;
-    height: 600px;
-    background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+    width: 100%;
+    height: 500px;
+    background: radial-gradient(ellipse at center top, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
     pointer-events: none;
 }
 
-.badge {
+.eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--accent-soft);
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    padding: 8px 16px;
+    background: var(--orange-soft);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    padding: 6px 14px;
     border-radius: 100px;
     font-size: 13px;
     font-weight: 600;
-    color: #a5a8fc;
+    color: var(--orange);
     margin-bottom: 24px;
-}
-
-.badge-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: pulse-dot 2s infinite;
-}
-
-@keyframes pulse-dot {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
 }
 
 h1 {
-    font-size: clamp(32px, 6vw, 56px);
+    font-size: clamp(28px, 5.5vw, 48px);
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.15;
     letter-spacing: -0.03em;
-    margin-bottom: 24px;
-    background: linear-gradient(135deg, #fff 0%, #a0a0a0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    margin-bottom: 20px;
 }
 
 .hero-sub {
-    font-size: clamp(18px, 3vw, 22px);
+    font-size: 18px;
     color: var(--text-secondary);
-    margin-bottom: 40px;
-    max-width: 580px;
+    margin-bottom: 32px;
+    line-height: 1.7;
 }
 
-.hero-cta-group {
+.hero-sub strong {
+    color: var(--text-primary);
+}
+
+/* ============ CTA ============ */
+.cta-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin: 32px 0;
+}
+
+.cta-row {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 16px;
-    margin-bottom: 48px;
+    margin-bottom: 16px;
 }
 
-.cta-main {
-    display: inline-flex;
+.cta-price {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--green);
+}
+
+.cta-price-old {
+    font-size: 16px;
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+.cta-btn {
+    flex: 1;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    background: linear-gradient(135deg, var(--green) 0%, #16a34a 100%);
+    gap: 10px;
+    background: var(--green);
     color: #000;
-    padding: 18px 32px;
-    border-radius: 12px;
-    font-size: 17px;
+    padding: 16px 24px;
+    border-radius: 10px;
+    font-size: 16px;
     font-weight: 700;
     text-decoration: none;
-    transition: all 0.25s;
-    box-shadow: 0 4px 24px rgba(34, 197, 94, 0.25);
+    transition: all 0.2s;
 }
 
-.cta-main:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(34, 197, 94, 0.35);
+.cta-btn:hover {
+    background: #1eb854;
+    transform: translateY(-1px);
 }
 
-.cta-main svg {
-    width: 20px;
-    height: 20px;
+.cta-btn svg {
+    width: 18px;
+    height: 18px;
 }
 
 .cta-meta {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    font-size: 14px;
+    gap: 16px;
+    font-size: 13px;
     color: var(--text-muted);
 }
 
@@ -245,85 +233,39 @@ h1 {
 }
 
 .cta-meta svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     color: var(--green);
-}
-
-/* Social proof bar */
-.social-proof {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    padding: 20px 0;
-    border-top: 1px solid var(--border);
-    flex-wrap: wrap;
-}
-
-.proof-avatars {
-    display: flex;
-}
-
-.proof-avatar {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    border: 2px solid var(--bg-primary);
-    margin-left: -12px;
-    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.proof-avatar:first-child {
-    margin-left: 0;
-}
-
-.proof-text {
-    font-size: 14px;
-    color: var(--text-secondary);
-}
-
-.proof-text strong {
-    color: var(--text-primary);
 }
 
 /* ============ SECTIONS ============ */
 section {
-    padding: 80px 0;
-    position: relative;
+    padding: 64px 0;
 }
 
-.section-label {
-    display: inline-block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--accent);
-    margin-bottom: 16px;
+.section-divider {
+    width: 40px;
+    height: 2px;
+    background: var(--border);
+    margin-bottom: 32px;
 }
 
 h2 {
-    font-size: clamp(26px, 4vw, 36px);
+    font-size: clamp(24px, 4vw, 32px);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.25;
     letter-spacing: -0.02em;
-    margin-bottom: 20px;
-}
-
-h3 {
-    font-size: 22px;
-    font-weight: 700;
     margin-bottom: 16px;
 }
 
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
 p {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     color: var(--text-secondary);
 }
 
@@ -332,323 +274,257 @@ p strong {
     font-weight: 600;
 }
 
-/* ============ STORY SECTION ============ */
-.story-card {
+/* ============ STORY ELEMENTS ============ */
+.callout {
     background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 32px;
-    margin: 32px 0;
-}
-
-.story-quote {
-    font-size: 20px;
+    border-left: 3px solid var(--accent);
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-radius: 0 12px 12px 0;
+    font-size: 17px;
     font-style: italic;
     color: var(--text-primary);
-    line-height: 1.6;
-    position: relative;
-    padding-left: 24px;
-    border-left: 3px solid var(--accent);
-    margin: 32px 0;
 }
 
-/* ============ PAIN POINTS ============ */
+.highlight-box {
+    background: var(--orange-soft);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 24px 0;
+}
+
+.highlight-box p {
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* ============ LISTS ============ */
 .pain-list {
     list-style: none;
-    margin: 32px 0;
+    margin: 24px 0;
 }
 
 .pain-list li {
     display: flex;
     align-items: flex-start;
-    gap: 16px;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--border);
+    gap: 12px;
+    padding: 12px 0;
     color: var(--text-secondary);
+    font-size: 16px;
 }
 
-.pain-list li:last-child {
+.pain-list li::before {
+    content: "×";
+    color: var(--red);
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.hack-list {
+    list-style: none;
+    margin: 24px 0;
+}
+
+.hack-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.hack-list li:last-child {
     border-bottom: none;
 }
 
-.pain-icon {
+.hack-num {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
     width: 24px;
     height: 24px;
-    color: var(--red);
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-/* ============ SOLUTION ============ */
-.solution-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin: 32px 0;
-}
-
-.solution-item {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
-    transition: all 0.25s;
-}
-
-.solution-item:hover {
-    border-color: var(--border-hover);
-    transform: translateY(-2px);
-}
-
-.solution-number {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--accent);
-    margin-bottom: 12px;
-}
-
-.solution-title {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 8px;
-}
-
-.solution-desc {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin: 0;
-}
-
-/* ============ TESTIMONIALS ============ */
-.testimonial-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 28px;
-    margin: 20px 0;
-    transition: all 0.25s;
-}
-
-.testimonial-card:hover {
-    border-color: var(--border-hover);
-}
-
-.testimonial-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 16px;
-}
-
-.testimonial-avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
-    font-size: 16px;
+    flex-shrink: 0;
 }
 
-.testimonial-info h4 {
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 2px;
+.hack-content strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 4px;
 }
 
-.testimonial-info span {
-    font-size: 13px;
+.hack-content span {
     color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* ============ TESTIMONIALS ============ */
+.testimonial {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin: 20px 0;
 }
 
 .testimonial-text {
     font-size: 16px;
     color: var(--text-secondary);
-    line-height: 1.7;
     margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+.testimonial-text strong {
+    color: var(--text-primary);
+}
+
+.testimonial-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.testimonial-author {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.testimonial-author strong {
+    color: var(--text-primary);
 }
 
 .testimonial-result {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
     background: var(--green-soft);
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--green);
 }
 
-.testimonial-result svg {
-    width: 16px;
-    height: 16px;
-}
-
 /* ============ WHAT'S INSIDE ============ */
-.package-list {
-    margin: 32px 0;
+.bundle-grid {
+    display: grid;
+    gap: 12px;
+    margin: 24px 0;
 }
 
-.package-item {
+.bundle-item {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 24px;
+    gap: 14px;
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    margin-bottom: 12px;
-    transition: all 0.25s;
-}
-
-.package-item:hover {
-    border-color: var(--border-hover);
-    transform: translateX(4px);
-}
-
-.package-left {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-.package-icon {
-    width: 44px;
-    height: 44px;
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 16px 18px;
+    transition: border-color 0.2s;
+}
+
+.bundle-item:hover {
+    border-color: var(--border-hover);
+}
+
+.bundle-icon {
     font-size: 20px;
 }
 
-.package-icon.blue { background: rgba(59, 130, 246, 0.15); }
-.package-icon.purple { background: rgba(168, 85, 247, 0.15); }
-.package-icon.orange { background: rgba(249, 115, 22, 0.15); }
-.package-icon.cyan { background: rgba(6, 182, 212, 0.15); }
-.package-icon.green { background: rgba(34, 197, 94, 0.15); }
-.package-icon.pink { background: rgba(236, 72, 153, 0.15); }
-
-.package-name {
-    font-weight: 600;
+.bundle-name {
+    flex: 1;
     font-size: 15px;
-    color: var(--text-primary);
+    font-weight: 500;
 }
 
-.package-value {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
+.bundle-value {
+    font-size: 13px;
     color: var(--text-muted);
 }
 
 /* ============ PRICING ============ */
-.pricing-card {
-    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+.price-card {
+    background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
     border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 48px 40px;
-    text-align: center;
-    margin: 48px 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.pricing-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
-    pointer-events: none;
-}
-
-.pricing-label {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 8px;
-}
-
-.pricing-old {
-    font-size: 24px;
-    color: var(--text-muted);
-    text-decoration: line-through;
-    margin-bottom: 8px;
-}
-
-.pricing-current {
-    font-size: 72px;
-    font-weight: 800;
-    color: var(--green);
-    line-height: 1;
-    margin-bottom: 8px;
-    letter-spacing: -0.03em;
-}
-
-.pricing-note {
-    font-size: 15px;
-    color: var(--text-secondary);
-    margin-bottom: 32px;
-}
-
-.pricing-features {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    margin-bottom: 32px;
-    flex-wrap: wrap;
-}
-
-.pricing-feature {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    color: var(--text-secondary);
-}
-
-.pricing-feature svg {
-    width: 18px;
-    height: 18px;
-    color: var(--green);
-}
-
-/* ============ GUARANTEE ============ */
-.guarantee-card {
-    background: var(--green-soft);
-    border: 1px solid rgba(34, 197, 94, 0.2);
     border-radius: 16px;
     padding: 32px;
     text-align: center;
     margin: 32px 0;
+    position: relative;
 }
 
-.guarantee-icon {
-    font-size: 40px;
+.price-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.3) 0%, transparent 50%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.price-label {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.price-amount {
+    font-size: 56px;
+    font-weight: 800;
+    color: var(--green);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.price-original {
+    font-size: 18px;
+    color: var(--text-muted);
+    text-decoration: line-through;
     margin-bottom: 16px;
 }
 
-.guarantee-card h3 {
-    color: var(--green);
-    margin-bottom: 12px;
+.price-note {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
 }
 
-.guarantee-card p {
+/* ============ GUARANTEE ============ */
+.guarantee {
+    background: var(--green-soft);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 24px 0;
+}
+
+.guarantee h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--green);
+    margin-bottom: 8px;
+}
+
+.guarantee p {
+    font-size: 15px;
     color: var(--text-secondary);
     margin: 0;
-    font-size: 15px;
 }
 
 /* ============ FAQ ============ */
 .faq-item {
+    padding: 20px 0;
     border-bottom: 1px solid var(--border);
-    padding: 24px 0;
 }
 
 .faq-item:last-child {
@@ -658,653 +534,488 @@ p strong {
 .faq-q {
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 12px;
-    font-size: 17px;
+    margin-bottom: 8px;
 }
 
 .faq-a {
-    color: var(--text-secondary);
     font-size: 15px;
+    color: var(--text-secondary);
     margin: 0;
-    line-height: 1.7;
 }
 
 /* ============ AUTHOR ============ */
-.author-card {
+.author-note {
     display: flex;
-    gap: 24px;
+    gap: 16px;
     align-items: flex-start;
+    padding: 24px;
     background: var(--bg-card);
     border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 32px;
-    margin: 32px 0;
+    border-radius: 14px;
+    margin: 24px 0;
 }
 
 .author-avatar {
-    width: 72px;
-    height: 72px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent) 0%, #8b5cf6 100%);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
+    font-weight: 700;
+    font-size: 18px;
     flex-shrink: 0;
 }
 
-.author-info h4 {
-    font-size: 18px;
-    margin-bottom: 8px;
-}
-
-.author-info p {
+.author-content p {
     font-size: 15px;
-    color: var(--text-secondary);
-    margin: 0 0 12px;
+    margin: 0;
 }
 
-.author-links {
-    display: flex;
-    gap: 12px;
-}
-
-.author-link {
-    font-size: 13px;
+.author-content a {
     color: var(--accent);
     text-decoration: none;
-    transition: color 0.2s;
-}
-
-.author-link:hover {
-    color: #818cf8;
-}
-
-/* ============ FINAL CTA ============ */
-.final-cta {
-    text-align: center;
-    padding: 80px 0 120px;
-}
-
-.final-cta h2 {
-    margin-bottom: 16px;
-}
-
-.final-cta > p {
-    max-width: 500px;
-    margin: 0 auto 40px;
 }
 
 /* ============ FOOTER ============ */
 footer {
-    border-top: 1px solid var(--border);
-    padding: 40px 24px;
+    padding: 40px 24px 120px;
     text-align: center;
+    border-top: 1px solid var(--border);
 }
 
-.footer-inner {
-    max-width: 720px;
-    margin: 0 auto;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    margin-bottom: 16px;
-}
-
-.footer-links a {
-    font-size: 14px;
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.footer-links a:hover {
-    color: var(--text-secondary);
-}
-
-.footer-copy {
+footer p {
     font-size: 13px;
     color: var(--text-muted);
 }
 
-/* ============ MOBILE FLOATING CTA ============ */
-.mobile-cta {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(10, 10, 11, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    padding: 16px 20px;
-    border-top: 1px solid var(--border);
-    display: none;
-    gap: 16px;
-    align-items: center;
-    z-index: 99;
+footer a {
+    color: var(--text-muted);
+    text-decoration: none;
 }
 
-.mobile-cta-price {
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--green);
-}
-
-.mobile-cta .cta-main {
-    flex: 1;
-    padding: 14px 20px;
-    font-size: 15px;
+footer a:hover {
+    color: var(--text-secondary);
 }
 
 /* ============ RESPONSIVE ============ */
-@media (max-width: 768px) {
-    .hero {
-        padding: 100px 0 60px;
-    }
+@media (max-width: 640px) {
+    .hero { padding: 60px 0 40px; }
+    section { padding: 48px 0; }
 
-    section {
-        padding: 60px 0;
-    }
-
-    .solution-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .author-card {
+    .cta-row {
         flex-direction: column;
+        align-items: stretch;
+    }
+
+    .cta-price {
         text-align: center;
-        align-items: center;
-    }
-
-    .pricing-card {
-        padding: 36px 24px;
-    }
-
-    .pricing-current {
-        font-size: 56px;
-    }
-
-    .pricing-features {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .mobile-cta {
-        display: flex;
-    }
-
-    .final-cta {
-        padding-bottom: 140px;
-    }
-
-    .social-proof {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 16px;
-    }
-
-    .package-item {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .hero-cta-group {
-        gap: 12px;
     }
 
     .cta-meta {
+        justify-content: center;
+    }
+
+    .author-note {
         flex-direction: column;
-        gap: 8px;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 28px;
+        align-items: center;
+        text-align: center;
     }
 
-    h2 {
-        font-size: 24px;
+    .testimonial-footer {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .wrap {
-        padding: 0 20px;
-    }
-
-    .testimonial-card, .story-card, .guarantee-card {
-        padding: 24px;
-    }
-
-    .package-item {
-        padding: 16px 20px;
+    .price-amount {
+        font-size: 48px;
     }
 }
 
 /* ============ ANIMATIONS ============ */
 @keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.animate {
-    animation: fadeUp 0.6s ease forwards;
+.animate-in {
+    animation: fadeUp 0.5s ease forwards;
 }
-
-.delay-1 { animation-delay: 0.1s; opacity: 0; }
-.delay-2 { animation-delay: 0.2s; opacity: 0; }
-.delay-3 { animation-delay: 0.3s; opacity: 0; }
     </style>
 </head>
 <body>
 
-<!-- Sticky Nav (appears on scroll) -->
-<nav class="nav" id="nav">
-    <div class="nav-inner">
-        <span class="nav-price">AI Operator Toolkit <strong>$27</strong></span>
-        <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="nav-cta">Get Access</a>
+<!-- Clean sticky bar -->
+<div class="sticky-bar" id="stickyBar">
+    <div class="sticky-bar-inner">
+        <span class="sticky-bar-text">Get the toolkit for <strong>$27</strong></span>
+        <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="sticky-bar-btn">
+            Get Access — $27
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+        </a>
     </div>
-</nav>
+</div>
 
 <!-- Hero -->
 <section class="hero">
     <div class="wrap">
-        <div class="badge animate">
-            <span class="badge-dot"></span>
-            Launch Pricing — 86% Off
-        </div>
+        <div class="eyebrow">The shortcut nobody talks about</div>
 
-        <h1 class="animate delay-1">I wasted $47,000 learning AI the hard way.<br>Here's the $27 shortcut.</h1>
+        <h1>I finally stopped drowning in AI tools.<br>Here's the trick.</h1>
 
-        <p class="hero-sub animate delay-2">6 implementation packs that teach you exactly which AI skills actually make money for your business. No fluff. No 47-hour courses. Just results.</p>
+        <p class="hero-sub">Look, I know you're busy. You've got 47 tabs open, a to-do list that never ends, and every day there's some new AI thing you're "supposed" to learn.<br><br><strong>I was exactly where you are.</strong> Except I wasted 3 years and $47,000 figuring out what actually matters. You don't have to.</p>
 
-        <div class="hero-cta-group animate delay-3">
-            <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-main">
-                Get Instant Access — $27
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-            </a>
+        <div class="cta-box">
+            <div class="cta-row">
+                <div>
+                    <span class="cta-price">$27</span>
+                    <span class="cta-price-old">$197</span>
+                </div>
+                <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-btn">
+                    Get the Toolkit
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                </a>
+            </div>
             <div class="cta-meta">
-                <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    Instant download
-                </span>
-                <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    30-day guarantee
-                </span>
-                <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    Lifetime access
-                </span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg> Instant access</span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg> 30-day guarantee</span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg> No subscriptions</span>
             </div>
-        </div>
-
-        <div class="social-proof">
-            <div class="proof-avatars">
-                <div class="proof-avatar">M</div>
-                <div class="proof-avatar">S</div>
-                <div class="proof-avatar">J</div>
-                <div class="proof-avatar">A</div>
-                <div class="proof-avatar">+</div>
-            </div>
-            <p class="proof-text"><strong>2,847 entrepreneurs</strong> already using the toolkit</p>
         </div>
     </div>
 </section>
 
-<!-- The Problem -->
+<!-- The Real Talk -->
 <section>
     <div class="wrap">
-        <span class="section-label">The Problem</span>
-        <h2>You know AI is important. You just don't know where to start.</h2>
-        <p>Every day there's a new tool. A new "game-changing" feature. A new course promising to make you an AI expert. Meanwhile, you're still doing everything manually while your competitors seem to have figured it out.</p>
+        <div class="section-divider"></div>
+        <h2>Can I be honest with you?</h2>
+
+        <p>You already know AI is important. You don't need another article telling you that.</p>
+
+        <p>What's killing you is the <strong>overwhelm</strong>. Every week there's a new tool, a new "game-changer," a new course promising to make you an expert.</p>
+
+        <p>Meanwhile you're still:</p>
 
         <ul class="pain-list">
+            <li>Doing everything manually while competitors seem to have it figured out</li>
+            <li>Paying for AI subscriptions you opened once and forgot about</li>
+            <li>Watching tutorials that somehow never apply to YOUR actual business</li>
+            <li>Feeling that pit in your stomach every time someone mentions their "AI workflow"</li>
+        </ul>
+
+        <div class="callout">
+            "I know I should be using this stuff. I just don't have time to figure out which tools actually matter for what I do."
+        </div>
+
+        <p>Yeah. I've said that exact sentence. Probably at 11pm while doom-scrolling LinkedIn and seeing some competitor announce their AI-powered whatever.</p>
+    </div>
+</section>
+
+<!-- The Hack -->
+<section style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="wrap">
+        <div class="section-divider"></div>
+        <h2>Here's what nobody tells you.</h2>
+
+        <p>After wasting $47,000 on courses, consultants, and subscriptions, I figured out something that changed everything:</p>
+
+        <div class="highlight-box">
+            <p><strong>There are only 6 AI skills that actually matter for running a business.</strong> Not 47. Not 100. Just six. Everything else is noise designed to sell you more courses.</p>
+        </div>
+
+        <p>Master these six, and you'll run circles around people who've spent 10x more time "learning AI."</p>
+
+        <ul class="hack-list">
             <li>
-                <svg class="pain-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-                <span>47 browser tabs open trying to "research" AI tools — still confused</span>
+                <span class="hack-num">1</span>
+                <div class="hack-content">
+                    <strong>Vibe Coding</strong>
+                    <span>Build tools for your business without hiring a dev or learning to code. Seriously.</span>
+                </div>
             </li>
             <li>
-                <svg class="pain-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-                <span>Bought courses that are now collecting digital dust</span>
+                <span class="hack-num">2</span>
+                <div class="hack-content">
+                    <strong>AI Image Generation</strong>
+                    <span>Create visuals that used to cost $500+ from a designer. In minutes.</span>
+                </div>
             </li>
             <li>
-                <svg class="pain-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-                <span>Paying for AI subscriptions you barely use</span>
+                <span class="hack-num">3</span>
+                <div class="hack-content">
+                    <strong>Graphic Design</strong>
+                    <span>Professional marketing materials without touching Photoshop or Canva templates.</span>
+                </div>
             </li>
             <li>
-                <svg class="pain-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-                <span>That sinking feeling when competitors announce their "AI-powered" everything</span>
+                <span class="hack-num">4</span>
+                <div class="hack-content">
+                    <strong>Deep Research</strong>
+                    <span>Do 10 hours of research in 30 minutes. This one alone is worth the price.</span>
+                </div>
+            </li>
+            <li>
+                <span class="hack-num">5</span>
+                <div class="hack-content">
+                    <strong>Web Development</strong>
+                    <span>Launch landing pages while your coffee's still hot. No developers needed.</span>
+                </div>
+            </li>
+            <li>
+                <span class="hack-num">6</span>
+                <div class="hack-content">
+                    <strong>Advanced Prompting</strong>
+                    <span>Get 10x better outputs than 99% of ChatGPT users. The difference is night and day.</span>
+                </div>
             </li>
         </ul>
 
-        <div class="story-quote">
-            "I know I should be using this stuff, but I don't even know where to start. And I definitely don't have time to figure it out."
-        </div>
-
-        <p>Sound familiar? That was me 3 years ago. Before I wasted $47,000 figuring out what actually works.</p>
-    </div>
-</section>
-
-<!-- The Solution -->
-<section style="background: var(--bg-secondary);">
-    <div class="wrap">
-        <span class="section-label">The Shortcut</span>
-        <h2>There are only 6 AI skills that actually matter for your business.</h2>
-        <p>Not 47. Not 100. Just six. Master these, and you'll outperform people who've spent 10x more time and money on AI.</p>
-
-        <div class="solution-grid">
-            <div class="solution-item">
-                <div class="solution-number">01</div>
-                <div class="solution-title">Vibe Coding</div>
-                <p class="solution-desc">Build tools for your business without writing code or hiring devs.</p>
-            </div>
-            <div class="solution-item">
-                <div class="solution-number">02</div>
-                <div class="solution-title">Image Generation</div>
-                <p class="solution-desc">Create stunning visuals that used to cost $500+ from designers.</p>
-            </div>
-            <div class="solution-item">
-                <div class="solution-number">03</div>
-                <div class="solution-title">Graphic Design</div>
-                <p class="solution-desc">Professional marketing materials in minutes, not days.</p>
-            </div>
-            <div class="solution-item">
-                <div class="solution-number">04</div>
-                <div class="solution-title">Deep Research</div>
-                <p class="solution-desc">Do 10 hours of research in 30 minutes with AI.</p>
-            </div>
-            <div class="solution-item">
-                <div class="solution-number">05</div>
-                <div class="solution-title">Web Development</div>
-                <p class="solution-desc">Launch landing pages while your coffee's still hot.</p>
-            </div>
-            <div class="solution-item">
-                <div class="solution-number">06</div>
-                <div class="solution-title">Advanced Prompting</div>
-                <p class="solution-desc">Get 10x better AI outputs than 99% of users.</p>
-            </div>
-        </div>
+        <p>That's it. That's the whole game. Everything else is a distraction.</p>
     </div>
 </section>
 
 <!-- Social Proof -->
 <section>
     <div class="wrap">
-        <span class="section-label">Results</span>
-        <h2>What happens when you actually implement this stuff.</h2>
+        <div class="section-divider"></div>
+        <h2>I started sharing this with friends.</h2>
 
-        <div class="testimonial-card">
-            <div class="testimonial-header">
-                <div class="testimonial-avatar">M</div>
-                <div class="testimonial-info">
-                    <h4>Marcus R.</h4>
-                    <span>Shopify Store Owner</span>
-                </div>
-            </div>
-            <p class="testimonial-text">"I was spending $2,400/month on a VA to handle customer emails. Implemented the AI system in one afternoon. Cancelled the VA the next day. Not exaggerating."</p>
-            <div class="testimonial-result">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>
-                Saves 5+ hours weekly
+        <p>Just casually. Over coffee. In group chats. "Hey, here's what actually works."</p>
+
+        <p>Their results kind of blew my mind:</p>
+
+        <div class="testimonial">
+            <p class="testimonial-text">"I was paying my VA <strong>$2,400/month</strong> to handle customer emails. Implemented your AI system in one afternoon. <strong>Cancelled the VA the next day.</strong> I'm not even exaggerating."</p>
+            <div class="testimonial-footer">
+                <span class="testimonial-author">— <strong>Marcus R.</strong>, runs a Shopify store</span>
+                <span class="testimonial-result">Saves 5+ hrs/week</span>
             </div>
         </div>
 
-        <div class="testimonial-card">
-            <div class="testimonial-header">
-                <div class="testimonial-avatar">S</div>
-                <div class="testimonial-info">
-                    <h4>Sarah K.</h4>
-                    <span>Marketing Consultant</span>
-                </div>
-            </div>
-            <p class="testimonial-text">"Built a client proposal generator that used to take me 3 hours. Now it takes 15 minutes. My close rate actually went UP because I can respond faster."</p>
-            <div class="testimonial-result">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg>
-                Won $12K contract
+        <div class="testimonial">
+            <p class="testimonial-text">"Built a client proposal system that used to take me <strong>3 hours</strong>. Now it takes <strong>15 minutes</strong>. My close rate actually went UP because I can respond faster than competitors."</p>
+            <div class="testimonial-footer">
+                <span class="testimonial-author">— <strong>Sarah K.</strong>, marketing consultant</span>
+                <span class="testimonial-result">Won $12K contract</span>
             </div>
         </div>
 
-        <div class="testimonial-card">
-            <div class="testimonial-header">
-                <div class="testimonial-avatar">J</div>
-                <div class="testimonial-info">
-                    <h4>Jessica M.</h4>
-                    <span>Business Coach</span>
-                </div>
-            </div>
-            <p class="testimonial-text">"I'm not tech-savvy at all. Like, at all. But this actually made sense. Used the vibe coding section to build a scheduling tool for my coaching business. First time I've ever built anything technical."</p>
-            <div class="testimonial-result">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                Built her first app
+        <div class="testimonial">
+            <p class="testimonial-text">"I'm not tech-savvy. Like, at all. But this actually made sense. Used the vibe coding section to build a scheduling tool for my coaching business. <strong>First time I've ever built anything technical.</strong>"</p>
+            <div class="testimonial-footer">
+                <span class="testimonial-author">— <strong>Jessica M.</strong>, business coach</span>
+                <span class="testimonial-result">Built her first app</span>
             </div>
         </div>
+
+        <p>They kept asking: "Why isn't this a product?"</p>
+        <p>So I made it one.</p>
     </div>
 </section>
 
 <!-- What's Inside -->
-<section style="background: var(--bg-secondary);">
+<section style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="wrap">
-        <span class="section-label">What's Inside</span>
-        <h2>6 implementation packs. Zero fluff.</h2>
-        <p>Each pack is designed to take you from "I don't know where to start" to "holy crap I just built that" in a single afternoon.</p>
+        <div class="section-divider"></div>
+        <h2>The AI Operator Toolkit</h2>
 
-        <div class="package-list">
-            <div class="package-item">
-                <div class="package-left">
-                    <div class="package-icon blue">&#128187;</div>
-                    <span class="package-name">Pack 1: AI Vibe Coding</span>
-                </div>
-                <span class="package-value">$97 value</span>
+        <p>6 implementation packs. No fluff. No 47-hour video courses you'll never finish. Just the stuff that actually works, organized so you can implement it in an afternoon.</p>
+
+        <div class="bundle-grid">
+            <div class="bundle-item">
+                <span class="bundle-icon">💻</span>
+                <span class="bundle-name">AI Vibe Coding</span>
+                <span class="bundle-value">$97 value</span>
             </div>
-            <div class="package-item">
-                <div class="package-left">
-                    <div class="package-icon purple">&#127912;</div>
-                    <span class="package-name">Pack 2: AI Image Generation</span>
-                </div>
-                <span class="package-value">$97 value</span>
+            <div class="bundle-item">
+                <span class="bundle-icon">🎨</span>
+                <span class="bundle-name">AI Image Generation</span>
+                <span class="bundle-value">$97 value</span>
             </div>
-            <div class="package-item">
-                <div class="package-left">
-                    <div class="package-icon orange">&#9999;&#65039;</div>
-                    <span class="package-name">Pack 3: AI Graphic Design</span>
-                </div>
-                <span class="package-value">$97 value</span>
+            <div class="bundle-item">
+                <span class="bundle-icon">✏️</span>
+                <span class="bundle-name">AI Graphic Design</span>
+                <span class="bundle-value">$97 value</span>
             </div>
-            <div class="package-item">
-                <div class="package-left">
-                    <div class="package-icon cyan">&#128269;</div>
-                    <span class="package-name">Pack 4: AI Deep Research</span>
-                </div>
-                <span class="package-value">$97 value</span>
+            <div class="bundle-item">
+                <span class="bundle-icon">🔍</span>
+                <span class="bundle-name">AI Deep Research</span>
+                <span class="bundle-value">$97 value</span>
             </div>
-            <div class="package-item">
-                <div class="package-left">
-                    <div class="package-icon green">&#127760;</div>
-                    <span class="package-name">Pack 5: AI Web Development</span>
-                </div>
-                <span class="package-value">$97 value</span>
+            <div class="bundle-item">
+                <span class="bundle-icon">🌐</span>
+                <span class="bundle-name">AI Web Development</span>
+                <span class="bundle-value">$97 value</span>
             </div>
-            <div class="package-item">
-                <div class="package-left">
-                    <div class="package-icon pink">&#9889;</div>
-                    <span class="package-name">Pack 6: Advanced Prompting</span>
-                </div>
-                <span class="package-value">$97 value</span>
+            <div class="bundle-item">
+                <span class="bundle-icon">⚡</span>
+                <span class="bundle-name">Advanced Prompting</span>
+                <span class="bundle-value">$97 value</span>
             </div>
         </div>
 
-        <p style="text-align: center; color: var(--text-muted); font-size: 15px;">Total value: $582 — Yours today for <strong style="color: var(--green);">$27</strong></p>
+        <p style="text-align: center; color: var(--text-muted); font-size: 14px;">Total value: $582</p>
     </div>
 </section>
 
 <!-- Pricing -->
 <section>
     <div class="wrap">
-        <div class="pricing-card">
-            <p class="pricing-label">Complete AI Operator Toolkit</p>
-            <p class="pricing-old">$582</p>
-            <p class="pricing-current">$27</p>
-            <p class="pricing-note">One-time payment. Lifetime access. No subscriptions.</p>
+        <div class="section-divider"></div>
+        <h2>So what's this cost?</h2>
 
-            <div class="pricing-features">
-                <div class="pricing-feature">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    All 6 packs included
-                </div>
-                <div class="pricing-feature">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    Instant download
-                </div>
-                <div class="pricing-feature">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                    Future updates free
-                </div>
-            </div>
+        <p>I could charge $197 for this. Honestly, that's still cheap compared to what I paid to learn this stuff the hard way.</p>
 
-            <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-main" style="max-width: 400px; margin: 0 auto;">
-                Get Instant Access — $27
+        <p>But here's my thinking: <strong>I'd rather help 10,000 business owners at $27 than 500 at $197.</strong></p>
+
+        <p>More impact. Better karma. And honestly? I know the math works out anyway.</p>
+
+        <div class="price-card">
+            <p class="price-label">Complete AI Operator Toolkit</p>
+            <p class="price-amount">$27</p>
+            <p class="price-original">$582 value</p>
+            <p class="price-note">One-time payment. Lifetime access. No subscriptions ever.</p>
+
+            <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-btn" style="max-width: 320px; margin: 0 auto;">
+                Get Instant Access
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
             </a>
         </div>
 
-        <div class="guarantee-card">
-            <div class="guarantee-icon">&#128737;</div>
-            <h3>30-Day Money-Back Guarantee</h3>
-            <p>Go through everything. Use the techniques. If you don't save at least 5 hours in your first month, message me and I'll refund every penny. No questions asked.</p>
+        <div class="guarantee">
+            <h4>30-Day "Actually Try It" Guarantee</h4>
+            <p>Go through everything. Implement the techniques. If you don't save at least 5 hours in your first month, just message me. Full refund. No questions, no forms, no guilt trips.</p>
         </div>
     </div>
 </section>
 
-<!-- About -->
-<section style="background: var(--bg-secondary);">
+<!-- Objections -->
+<section style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="wrap">
-        <span class="section-label">Who Made This</span>
-        <h2>Hey, I'm Nuri.</h2>
+        <div class="section-divider"></div>
+        <h2>Look, I get it.</h2>
 
-        <div class="author-card">
+        <p>You've bought courses before that are now collecting digital dust. You've signed up for tools you used once. You've been burned.</p>
+
+        <p>Here's why this is different:</p>
+
+        <p><strong>These aren't courses. They're implementation packs.</strong> Each one is designed to get you a result in a single afternoon. Not "learn theory for 6 weeks and maybe someday apply it."</p>
+
+        <p><strong>I didn't make this to sell courses.</strong> I made this because I was tired of watching smart business owners waste time on the wrong AI stuff while the right stuff sat right in front of them.</p>
+
+        <p>The real question isn't "should I buy this?"</p>
+
+        <p>The real question is: <strong>What's it costing you to keep doing everything manually while your competitors automate?</strong></p>
+
+        <p>Hint: It's a lot more than $27.</p>
+    </div>
+</section>
+
+<!-- About -->
+<section>
+    <div class="wrap">
+        <div class="section-divider"></div>
+        <h2>Who am I?</h2>
+
+        <div class="author-note">
             <div class="author-avatar">N</div>
-            <div class="author-info">
-                <h4>Nuri</h4>
-                <p>I run multiple businesses and spent 3 years (and $47,000) learning AI the hard way. Consultants, courses, subscriptions — you name it, I bought it. Most of it was garbage. This toolkit is everything I wish existed when I started. No theory. No fluff. Just the stuff that actually works.</p>
-                <div class="author-links">
-                    <a href="https://instagram.com/nurikadi" target="_blank" class="author-link">Instagram</a>
-                    <a href="https://t.me/incastra31" target="_blank" class="author-link">Telegram</a>
-                </div>
+            <div class="author-content">
+                <p>Hey, I'm <strong>Nuri</strong>. I run multiple businesses and spent 3 years (and way too much money) learning AI the hard way. Consultants, courses, subscriptions — you name it, I bought it. Most of it was garbage. This toolkit is everything I wish existed when I started.</p>
+                <p style="margin-top: 12px;">Questions? DM me on <a href="https://instagram.com/nurikadi" target="_blank">Instagram</a> or <a href="https://t.me/incastra31" target="_blank">Telegram</a>.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- FAQ -->
-<section>
+<section style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="wrap">
-        <span class="section-label">FAQ</span>
-        <h2>Quick answers.</h2>
+        <div class="section-divider"></div>
+        <h2>Quick questions</h2>
 
         <div class="faq-item">
             <p class="faq-q">Do I need to be technical?</p>
-            <p class="faq-a">No. If you can use Google and follow instructions, you're good. This is specifically designed for non-technical business owners.</p>
+            <p class="faq-a">No. If you can use Google and follow instructions, you're good. This is specifically for non-technical business owners who just want stuff to work.</p>
         </div>
+
         <div class="faq-item">
             <p class="faq-q">How is this delivered?</p>
-            <p class="faq-a">Instant digital download. You'll get access to all 6 packs immediately after purchase.</p>
+            <p class="faq-a">Instant digital download. All 6 packs, immediately after purchase. No drip-feeding, no waiting.</p>
         </div>
+
         <div class="faq-item">
-            <p class="faq-q">How long does it take to go through?</p>
-            <p class="faq-a">Each pack is designed for a single afternoon. Go through one, implement it, see results, then move to the next.</p>
+            <p class="faq-q">How long does it take?</p>
+            <p class="faq-a">Each pack is designed for one afternoon. Go through one, implement it, see results, then move to the next whenever you're ready.</p>
         </div>
+
         <div class="faq-item">
             <p class="faq-q">What if I already use ChatGPT?</p>
-            <p class="faq-a">Perfect. This will show you how to use it 10x better. Most people are barely scratching the surface of what's possible.</p>
+            <p class="faq-a">Perfect. This will show you how to use it 10x better. Most people are barely scratching the surface.</p>
         </div>
+
         <div class="faq-item">
             <p class="faq-q">What if it's not for me?</p>
-            <p class="faq-a">30-day money-back guarantee. If you don't find it valuable, just message me for a full refund. No hoops.</p>
+            <p class="faq-a">30-day money-back guarantee. If you don't find it valuable, message me and I'll refund you. No hoops.</p>
         </div>
     </div>
 </section>
 
 <!-- Final CTA -->
-<section class="final-cta">
-    <div class="wrap">
-        <h2>Still scrolling?</h2>
-        <p>Your competitors aren't waiting. Your inbox isn't getting smaller. That "someday" when you'll figure out AI? It's not coming.</p>
-        <p><strong style="color: var(--text-primary);">Unless you make it today.</strong></p>
+<section>
+    <div class="wrap" style="text-align: center;">
+        <div class="section-divider" style="margin-left: auto; margin-right: auto;"></div>
+        <h2>Still here?</h2>
 
-        <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-main" style="max-width: 400px; margin: 32px auto 0;">
-            Get the Toolkit — $27
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-        </a>
+        <p>Your competitors aren't waiting around. Your inbox isn't getting smaller. That "someday" when you'll have time to figure out AI? It's not coming.</p>
+
+        <p><strong>Unless you make it today.</strong></p>
+
+        <div class="cta-box" style="text-align: left;">
+            <div class="cta-row">
+                <div>
+                    <span class="cta-price">$27</span>
+                    <span class="cta-price-old">$197</span>
+                </div>
+                <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-btn">
+                    Get the Toolkit
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                </a>
+            </div>
+            <div class="cta-meta">
+                <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg> Instant access</span>
+                <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg> 30-day guarantee</span>
+            </div>
+        </div>
+
+        <p style="margin-top: 24px; font-size: 14px; color: var(--text-muted);">
+            Questions? <a href="https://instagram.com/nurikadi" target="_blank" style="color: var(--accent); text-decoration: none;">@nurikadi</a> on Instagram or <a href="https://t.me/incastra31" target="_blank" style="color: var(--accent); text-decoration: none;">@incastra31</a> on Telegram
+        </p>
     </div>
 </section>
 
-<!-- Mobile CTA -->
-<div class="mobile-cta" id="mobileCta">
-    <span class="mobile-cta-price">$27</span>
-    <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-main">Get Access</a>
-</div>
-
-<!-- Footer -->
 <footer>
-    <div class="footer-inner">
-        <div class="footer-links">
-            <a href="https://instagram.com/nurikadi" target="_blank">Instagram</a>
-            <a href="https://t.me/incastra31" target="_blank">Telegram</a>
-            <a href="mailto:support@smartworkers.kz">Support</a>
-        </div>
-        <p class="footer-copy">&copy; 2026 AI Operator Toolkit. All rights reserved.</p>
-    </div>
+    <p>© 2026 AI Operator Toolkit · <a href="https://t.me/incastra31">Support</a></p>
 </footer>
 
 <script>
-// Show sticky nav and mobile CTA on scroll
-const nav = document.getElementById('nav');
-const mobileCta = document.getElementById('mobileCta');
-let lastScroll = 0;
+// Clean sticky bar - only shows after scrolling past hero
+const stickyBar = document.getElementById('stickyBar');
+let ticking = false;
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > 400) {
-        nav.classList.add('visible');
-        mobileCta.style.display = 'flex';
-    } else {
-        nav.classList.remove('visible');
-        mobileCta.style.display = 'none';
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            if (window.scrollY > 600) {
+                stickyBar.classList.add('visible');
+            } else {
+                stickyBar.classList.remove('visible');
+            }
+            ticking = false;
+        });
+        ticking = true;
     }
-
-    lastScroll = currentScroll;
-});
-
-// Animate elements on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('section > .wrap').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
 });
 </script>
 
