@@ -5,15 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
     <title>The AI shortcut I wish someone told me 3 years ago</title>
     <meta name="description" content="How I stopped drowning in AI tools and started actually using them to run my business. The 6 skills that took me from overwhelmed to automated.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <style>
 /* ============================================================
    PREMIUM LOW-FI 2026 - The Insider Hack
+   Custom Font Combination: New Icon / Amoresa / Georgia Pro Condensed
    ============================================================ */
 
+/* CUSTOM FONTS - Update paths to your font files */
+@font-face {
+    font-family: 'New Icon';
+    src: url('fonts/NewIcon-Regular.woff2') format('woff2'),
+         url('fonts/NewIcon-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'New Icon';
+    src: url('fonts/NewIcon-Bold.woff2') format('woff2'),
+         url('fonts/NewIcon-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Amoresa';
+    src: url('fonts/Amoresa-Regular.woff2') format('woff2'),
+         url('fonts/Amoresa-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Georgia Pro Condensed';
+    src: url('fonts/GeorgiaProCond-Regular.woff2') format('woff2'),
+         url('fonts/GeorgiaProCond-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Georgia Pro Condensed';
+    src: url('fonts/GeorgiaProCond-Bold.woff2') format('woff2'),
+         url('fonts/GeorgiaProCond-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
+    /* Font Families */
+    --font-display: 'New Icon', 'SF Pro Display', -apple-system, sans-serif;
+    --font-accent: 'Amoresa', 'Playfair Display', Georgia, serif;
+    --font-body: 'Georgia Pro Condensed', Georgia, 'Times New Roman', serif;
     --bg-primary: #0a0a0b;
     --bg-secondary: #111113;
     --bg-card: #16161a;
@@ -36,7 +84,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--font-body);
     background: var(--bg-primary);
     color: var(--text-primary);
     font-size: 17px;
@@ -99,8 +147,9 @@ body {
     color: #000;
     padding: 14px 24px;
     border-radius: 10px;
+    font-family: var(--font-display);
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     transition: all 0.2s;
 }
@@ -138,20 +187,24 @@ body {
     gap: 8px;
     background: var(--orange-soft);
     border: 1px solid rgba(245, 158, 11, 0.3);
-    padding: 6px 14px;
+    padding: 8px 16px;
     border-radius: 100px;
-    font-size: 13px;
-    font-weight: 600;
+    font-family: var(--font-accent);
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
     color: var(--orange);
     margin-bottom: 24px;
+    letter-spacing: 0.02em;
 }
 
 h1 {
-    font-size: clamp(28px, 5.5vw, 48px);
-    font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -0.03em;
-    margin-bottom: 20px;
+    font-family: var(--font-display);
+    font-size: clamp(32px, 6vw, 54px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
 }
 
 .hero-sub {
@@ -182,8 +235,9 @@ h1 {
 }
 
 .cta-price {
-    font-size: 32px;
-    font-weight: 800;
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 700;
     color: var(--green);
 }
 
@@ -203,6 +257,7 @@ h1 {
     color: #000;
     padding: 16px 24px;
     border-radius: 10px;
+    font-family: var(--font-display);
     font-size: 16px;
     font-weight: 700;
     text-decoration: none;
@@ -251,16 +306,18 @@ section {
 }
 
 h2 {
-    font-size: clamp(24px, 4vw, 32px);
+    font-family: var(--font-display);
+    font-size: clamp(26px, 4.5vw, 36px);
     font-weight: 700;
-    line-height: 1.25;
-    letter-spacing: -0.02em;
-    margin-bottom: 16px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
 }
 
 h3 {
-    font-size: 20px;
-    font-weight: 600;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
     margin-bottom: 12px;
 }
 
@@ -278,25 +335,36 @@ p strong {
 .callout {
     background: var(--bg-card);
     border-left: 3px solid var(--accent);
-    padding: 20px 24px;
-    margin: 24px 0;
+    padding: 24px 28px;
+    margin: 28px 0;
     border-radius: 0 12px 12px 0;
-    font-size: 17px;
+    font-family: var(--font-accent);
+    font-size: 19px;
     font-style: italic;
     color: var(--text-primary);
+    line-height: 1.6;
 }
 
 .highlight-box {
     background: var(--orange-soft);
     border: 1px solid rgba(245, 158, 11, 0.2);
     border-radius: 12px;
-    padding: 20px 24px;
-    margin: 24px 0;
+    padding: 24px 28px;
+    margin: 28px 0;
 }
 
 .highlight-box p {
+    font-family: var(--font-accent);
+    font-size: 19px;
+    font-style: italic;
     color: var(--text-primary);
     margin: 0;
+    line-height: 1.6;
+}
+
+.highlight-box p strong {
+    font-family: var(--font-display);
+    font-style: normal;
 }
 
 /* ============ LISTS ============ */
@@ -354,9 +422,11 @@ p strong {
 }
 
 .hack-content strong {
+    font-family: var(--font-display);
     color: var(--text-primary);
     display: block;
     margin-bottom: 4px;
+    font-size: 17px;
 }
 
 .hack-content span {
@@ -374,14 +444,16 @@ p strong {
 }
 
 .testimonial-text {
-    font-size: 16px;
+    font-size: 17px;
     color: var(--text-secondary);
     margin-bottom: 16px;
     line-height: 1.7;
 }
 
 .testimonial-text strong {
+    font-family: var(--font-display);
     color: var(--text-primary);
+    font-weight: 700;
 }
 
 .testimonial-footer {
@@ -393,11 +465,15 @@ p strong {
 }
 
 .testimonial-author {
+    font-family: var(--font-accent);
     font-size: 14px;
+    font-style: italic;
     color: var(--text-muted);
 }
 
 .testimonial-author strong {
+    font-family: var(--font-display);
+    font-style: normal;
     color: var(--text-primary);
 }
 
@@ -405,8 +481,9 @@ p strong {
     background: var(--green-soft);
     padding: 6px 12px;
     border-radius: 6px;
+    font-family: var(--font-display);
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--green);
 }
 
@@ -438,8 +515,9 @@ p strong {
 
 .bundle-name {
     flex: 1;
-    font-size: 15px;
-    font-weight: 500;
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .bundle-value {
@@ -473,14 +551,17 @@ p strong {
 }
 
 .price-label {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: 8px;
+    font-family: var(--font-accent);
+    font-size: 15px;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
 }
 
 .price-amount {
-    font-size: 56px;
-    font-weight: 800;
+    font-family: var(--font-display);
+    font-size: 64px;
+    font-weight: 700;
     color: var(--green);
     line-height: 1;
     margin-bottom: 4px;
@@ -509,8 +590,9 @@ p strong {
 }
 
 .guarantee h4 {
-    font-size: 16px;
-    font-weight: 600;
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
     color: var(--green);
     margin-bottom: 8px;
 }
@@ -532,7 +614,9 @@ p strong {
 }
 
 .faq-q {
-    font-weight: 600;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 17px;
     color: var(--text-primary);
     margin-bottom: 8px;
 }
@@ -629,7 +713,7 @@ footer a:hover {
     }
 
     .price-amount {
-        font-size: 48px;
+        font-size: 54px;
     }
 }
 
