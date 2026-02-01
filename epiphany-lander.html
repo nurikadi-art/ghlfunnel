@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The AI Shortcut That Changed Everything — $9 Toolkit</title>
+<meta name="description" content="How a business owner from Kazakhstan discovered the 6 AI skills that actually matter. No fluff. No 47-hour courses. Just what works.">
+<style>
+/* ============================================================
+   EPIPHANY BRIDGE LANDING PAGE
+   Original Style + Nuri's Story + $9 Price Point
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --titanium-gold: #f5d0a9;
+    --titanium-dark: #1d1d1f;
+    --apple-grey: #86868b;
+    --pure-white: #f5f5f7;
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --highlight-green: #28cd41;
+    --highlight-red: #ff453a;
+    --system-blue: #0a84ff;
+    --urgent-orange: #ff9500;
+    --urgent-red: #ff3b30;
+    --accent-purple: #a855f7;
+}
+
+body, html {
+    background-color: #020204 !important;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--pure-white);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* ============ URGENCY BAR ============ */
+.urgency-bar {
+    background: linear-gradient(90deg, var(--urgent-red) 0%, var(--urgent-orange) 100%);
+    padding: 14px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(255, 59, 48, 0.3);
+}
+
+.urgency-bar p {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.countdown-timer {
+    display: inline-flex;
+    gap: 6px;
+    font-family: 'Inter', monospace;
+}
+
+.countdown-unit {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px 8px;
+    border-radius: 6px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.countdown-number {
+    display: block;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.countdown-label {
+    display: block;
+    font-size: 8px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* ============ HERO ============ */
+.hero {
+    position: relative;
+    background: #020204;
+    padding: 80px 0 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: 0;
+    background-image: linear-gradient(rgba(10, 132, 255, 0.12) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(10, 132, 255, 0.12) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 25s linear infinite;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+@keyframes gridMove {
+    0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
+    100% { transform: perspective(500px) rotateX(60deg) translateY(50px); }
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.pre-headline {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--urgent-orange);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.headline {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    color: var(--pure-white);
+    margin-bottom: 24px;
+}
+
+.headline-green { color: var(--highlight-green); }
+.headline-blue { color: var(--system-blue); }
+
+.subheadline {
+    font-size: clamp(17px, 2.2vw, 20px);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--apple-grey);
+    margin-bottom: 32px;
+}
+
+.subheadline strong {
+    color: var(--pure-white);
+}
+
+/* ============ IMAGE PLACEHOLDERS ============ */
+.hero-image {
+    width: 100%;
+    max-width: 500px;
+    margin: 32px auto;
+    aspect-ratio: 16/10;
+    background: linear-gradient(135deg, rgba(10, 132, 255, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
+    border: 2px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--apple-grey);
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+}
+
+.founder-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(10, 132, 255, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
+    border: 3px solid var(--system-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--apple-grey);
+    font-size: 13px;
+    text-align: center;
+    margin: 0 auto 24px;
+}
+
+.inline-photo {
+    width: 100%;
+    max-width: 400px;
+    margin: 24px auto;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, rgba(40, 205, 65, 0.08) 0%, rgba(10, 132, 255, 0.08) 100%);
+    border: 2px dashed rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--apple-grey);
+    font-size: 13px;
+    text-align: center;
+    padding: 16px;
+}
+
+/* ============ CTA BUTTON ============ */
+.cta-button {
+    display: inline-block;
+    padding: 20px 48px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--highlight-green) 0%, #1fa82e 100%);
+    color: #ffffff;
+    border-radius: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 24px rgba(40, 205, 65, 0.3);
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(40, 205, 65, 0.45);
+}
+
+.cta-subtext {
+    font-size: 13px;
+    color: var(--apple-grey);
+    margin-top: 16px;
+    opacity: 0.9;
+}
+
+.price-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(40, 205, 65, 0.15) 0%, rgba(40, 205, 65, 0.05) 100%);
+    border: 2px solid var(--highlight-green);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--highlight-green);
+    margin-left: 8px;
+}
+
+.price-crossed {
+    text-decoration: line-through;
+    color: var(--apple-grey);
+    opacity: 0.6;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+/* ============ SECTIONS ============ */
+.section {
+    padding: 80px 0;
+}
+
+.section-dark {
+    background: radial-gradient(circle at 80% 20%, rgba(10, 132, 255, 0.06) 0%, #020204 60%);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.section-darker {
+    background: linear-gradient(180deg, #020204 0%, #0a0a0c 50%, #020204 100%);
+}
+
+.section-glow {
+    background: radial-gradient(circle at 50% 50%, rgba(10, 132, 255, 0.08) 0%, #020204 70%);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.section-headline {
+    font-size: clamp(26px, 4vw, 40px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--pure-white);
+    margin-bottom: 24px;
+}
+
+.body-text {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--apple-grey);
+    margin-bottom: 20px;
+}
+
+.body-text strong {
+    color: var(--pure-white);
+    font-weight: 600;
+}
+
+/* ============ STORY CALLOUT ============ */
+.story-callout {
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.08) 0%, rgba(10, 132, 255, 0.08) 100%);
+    border-left: 4px solid var(--accent-purple);
+    padding: 28px 32px;
+    border-radius: 0 16px 16px 0;
+    margin: 32px 0;
+    font-size: 19px;
+    font-style: italic;
+    color: var(--pure-white);
+    line-height: 1.6;
+}
+
+.highlight-box {
+    background: rgba(40, 205, 65, 0.08);
+    border: 1px solid rgba(40, 205, 65, 0.25);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin: 32px 0;
+}
+
+.highlight-box p {
+    color: var(--pure-white);
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.highlight-box strong {
+    color: var(--highlight-green);
+}
+
+/* ============ EPIPHANY SECTION ============ */
+.epiphany-moment {
+    background: linear-gradient(135deg, rgba(255, 149, 0, 0.1) 0%, rgba(255, 59, 48, 0.05) 100%);
+    border: 1px solid rgba(255, 149, 0, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.epiphany-moment h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--urgent-orange);
+    margin-bottom: 16px;
+}
+
+.epiphany-moment p {
+    font-size: 20px;
+    color: var(--pure-white);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ============ PAIN LIST ============ */
+.pain-list {
+    list-style: none;
+    padding: 0;
+    margin: 28px 0;
+}
+
+.pain-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+    font-size: 17px;
+    color: var(--apple-grey);
+    line-height: 1.6;
+}
+
+.pain-list li::before {
+    content: "✗";
+    color: var(--highlight-red);
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.win-list {
+    list-style: none;
+    padding: 0;
+    margin: 28px 0;
+}
+
+.win-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+    font-size: 17px;
+    color: var(--apple-grey);
+    line-height: 1.6;
+}
+
+.win-list li::before {
+    content: "✓";
+    color: var(--highlight-green);
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+/* ============ THE 6 SKILLS ============ */
+.skills-grid {
+    display: grid;
+    gap: 16px;
+    margin: 32px 0;
+}
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: border-color 0.2s;
+}
+
+.skill-card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.skill-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.skill-icon.blue { background: linear-gradient(135deg, rgba(10, 132, 255, 0.2), rgba(10, 132, 255, 0.05)); border: 1px solid rgba(10, 132, 255, 0.3); }
+.skill-icon.purple { background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(168, 85, 247, 0.05)); border: 1px solid rgba(168, 85, 247, 0.3); }
+.skill-icon.orange { background: linear-gradient(135deg, rgba(251, 146, 60, 0.2), rgba(251, 146, 60, 0.05)); border: 1px solid rgba(251, 146, 60, 0.3); }
+.skill-icon.cyan { background: linear-gradient(135deg, rgba(34, 211, 238, 0.2), rgba(34, 211, 238, 0.05)); border: 1px solid rgba(34, 211, 238, 0.3); }
+.skill-icon.green { background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.05)); border: 1px solid rgba(34, 197, 94, 0.3); }
+.skill-icon.red { background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(239, 68, 68, 0.05)); border: 1px solid rgba(239, 68, 68, 0.3); }
+
+.skill-content h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--pure-white);
+    margin: 0 0 6px 0;
+}
+
+.skill-content p {
+    font-size: 15px;
+    color: var(--apple-grey);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ============ TESTIMONIALS ============ */
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(40, 205, 65, 0.2);
+    border-radius: 16px;
+    padding: 28px;
+    margin: 20px 0;
+}
+
+.testimonial-text {
+    font-size: 16px;
+    color: var(--apple-grey);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.testimonial-text strong {
+    color: var(--pure-white);
+}
+
+.testimonial-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.testimonial-author {
+    font-size: 14px;
+    color: var(--apple-grey);
+}
+
+.testimonial-author strong {
+    color: var(--pure-white);
+}
+
+.testimonial-result {
+    background: rgba(40, 205, 65, 0.1);
+    border-left: 3px solid var(--highlight-green);
+    padding: 8px 14px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--highlight-green);
+}
+
+/* ============ FOUNDER SECTION ============ */
+.founder-section {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    align-items: start;
+    margin: 40px 0;
+}
+
+.founder-content h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--pure-white);
+    margin-bottom: 20px;
+}
+
+.founder-content .title {
+    display: inline-block;
+    background: var(--system-blue);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.founder-story {
+    font-size: 17px;
+    color: var(--apple-grey);
+    line-height: 1.8;
+}
+
+.founder-story strong {
+    color: var(--pure-white);
+}
+
+.founder-story em {
+    color: var(--urgent-orange);
+    font-style: normal;
+}
+
+/* ============ OFFER STACK ============ */
+.offer-stack {
+    background: linear-gradient(145deg, rgba(10, 132, 255, 0.06) 0%, rgba(0, 0, 0, 0.4) 100%);
+    border: 2px solid var(--highlight-green);
+    border-radius: 24px;
+    padding: 48px 40px;
+    text-align: center;
+    position: relative;
+    margin: 40px 0;
+}
+
+.offer-badge {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--urgent-orange) 0%, var(--urgent-red) 100%);
+    color: #fff;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.offer-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--pure-white);
+    margin-bottom: 32px;
+}
+
+.offer-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: left;
+}
+
+.offer-item:last-of-type {
+    border-bottom: none;
+}
+
+.offer-check {
+    color: var(--highlight-green);
+    font-size: 18px;
+    margin-right: 14px;
+}
+
+.offer-text {
+    flex: 1;
+    font-size: 16px;
+    color: var(--pure-white);
+}
+
+.offer-value {
+    font-size: 14px;
+    color: var(--apple-grey);
+    text-decoration: line-through;
+}
+
+.offer-item.bonus {
+    background: rgba(255, 149, 0, 0.08);
+    margin: 8px -20px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+.total-value {
+    font-size: 16px;
+    color: var(--apple-grey);
+    margin: 32px 0 8px;
+    text-decoration: line-through;
+}
+
+.today-price {
+    font-size: 72px;
+    font-weight: 800;
+    color: var(--highlight-green);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.savings-text {
+    font-size: 18px;
+    color: var(--urgent-orange);
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+/* ============ GUARANTEE ============ */
+.guarantee-box {
+    background: rgba(40, 205, 65, 0.06);
+    border: 1px solid rgba(40, 205, 65, 0.25);
+    border-radius: 20px;
+    padding: 40px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.guarantee-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.guarantee-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--highlight-green);
+    margin-bottom: 16px;
+}
+
+/* ============ FAQ ============ */
+.faq-item {
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.faq-question {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--pure-white);
+    margin-bottom: 12px;
+}
+
+.faq-answer {
+    font-size: 15px;
+    color: var(--apple-grey);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ============ FLOATING CTA ============ */
+.floating-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(2, 2, 4, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    z-index: 999;
+    border-top: 1px solid var(--glass-border);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.floating-cta.visible {
+    transform: translateY(0);
+}
+
+.floating-cta-price {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--highlight-green);
+}
+
+.floating-cta .cta-button {
+    padding: 14px 28px;
+    font-size: 15px;
+}
+
+/* ============ FOOTER ============ */
+footer {
+    background: #0a0a0c;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 60px 0 40px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 13px;
+    color: var(--apple-grey);
+    margin-bottom: 12px;
+}
+
+footer a {
+    color: var(--system-blue);
+    text-decoration: none;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+    .hero { padding: 60px 0 40px; }
+    .section { padding: 60px 0; }
+
+    .headline { font-size: 24px !important; }
+    .section-headline { font-size: 22px !important; }
+    .subheadline { font-size: 16px !important; }
+    .body-text { font-size: 15px !important; }
+
+    .cta-button {
+        padding: 16px 32px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .founder-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .founder-photo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .offer-stack {
+        padding: 36px 24px;
+    }
+
+    .today-price {
+        font-size: 56px;
+    }
+
+    .floating-cta {
+        padding: 10px 16px;
+        gap: 12px;
+    }
+
+    .floating-cta .cta-button {
+        padding: 12px 20px;
+        font-size: 14px;
+        flex: 1;
+    }
+
+    .price-badge {
+        display: block;
+        margin: 16px auto 0;
+        width: fit-content;
+    }
+
+    .story-callout {
+        padding: 20px 24px;
+        font-size: 17px;
+    }
+
+    .epiphany-moment {
+        padding: 28px 24px;
+    }
+
+    .skill-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skill-icon {
+        margin: 0 auto;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+    <p>
+        <span>⚡ LAUNCH PRICE — $9 Ends In:</span>
+        <span class="countdown-timer" id="countdown">
+            <span class="countdown-unit">
+                <span class="countdown-number" id="hours">23</span>
+                <span class="countdown-label">Hrs</span>
+            </span>
+            <span class="countdown-unit">
+                <span class="countdown-number" id="minutes">59</span>
+                <span class="countdown-label">Min</span>
+            </span>
+            <span class="countdown-unit">
+                <span class="countdown-number" id="seconds">59</span>
+                <span class="countdown-label">Sec</span>
+            </span>
+        </span>
+    </p>
+</div>
+
+<!-- ============================================================
+     HERO - THE HOOK
+     ============================================================ -->
+<section class="hero">
+    <div class="container" style="text-align: center;">
+        <p class="pre-headline">From a business owner who figured it out the hard way</p>
+
+        <h1 class="headline">I Spent 3 Years and $47,000 Learning AI.<br><span class="headline-green">Here's the Only 6 Skills That Actually Mattered.</span></h1>
+
+        <p class="subheadline">If you're drowning in AI tools, watching competitors automate while you're still doing everything manually, and feeling that pit in your stomach every time someone mentions "ChatGPT"... <strong>this is for you.</strong></p>
+
+        <!-- HERO IMAGE PLACEHOLDER -->
+        <div class="hero-image">
+            [PLACEHOLDER: Hero image - Nuri working on laptop with AI dashboards visible, or lifestyle shot showing the "after" transformation]
+        </div>
+
+        <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button">Get the AI Toolkit — Just $9</a>
+
+        <p class="cta-subtext">✓ Instant access &nbsp; ✓ 6 complete skill packs &nbsp; ✓ 30-day money-back guarantee</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION: THE HONEST TRUTH (Pain Agitation)
+     ============================================================ -->
+<section class="section section-dark">
+    <div class="container">
+        <h2 class="section-headline">Let me guess what your week looks like.</h2>
+
+        <p class="body-text">47 browser tabs open. Three half-finished ChatGPT conversations. A bookmarked folder called "AI stuff to learn" that you haven't touched in months.</p>
+
+        <p class="body-text">You're working 50+ hours a week. <strong>Wearing every hat in your business.</strong> Doing the work of three people because "good help is impossible to find."</p>
+
+        <ul class="pain-list">
+            <li>You've hired VAs who ghosted, delivered garbage, or cost more to manage than they saved</li>
+            <li>You've bought courses that are now collecting digital dust</li>
+            <li>You've signed up for AI tools you opened once and forgot about</li>
+            <li>You've watched tutorial after tutorial that somehow never applies to YOUR actual business</li>
+        </ul>
+
+        <p class="body-text">And the worst part?</p>
+
+        <p class="body-text" style="font-size: 20px; color: var(--highlight-red); font-weight: 600;">Every day, you see competitors who seem to have it figured out. Posting about their "AI workflows." Automating things you're still doing manually at 11pm.</p>
+
+        <div class="story-callout">
+            "I know I should be using this stuff. I just don't have time to figure out which tools actually matter for what I do."
+        </div>
+
+        <p class="body-text">I've said that exact sentence. Probably while doom-scrolling LinkedIn at midnight, watching some 25-year-old talk about his "6-figure AI agency."</p>
+
+        <p class="body-text"><strong>Here's what nobody tells you:</strong> The problem isn't that you're not smart enough, not technical enough, or don't have time.</p>
+
+        <p class="body-text">The problem is you're playing the wrong game.</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION: MY STORY (Epiphany Bridge)
+     ============================================================ -->
+<section class="section section-darker">
+    <div class="container">
+        <h2 class="section-headline" style="text-align: center;">Who am I to tell you this?</h2>
+
+        <div class="founder-section">
+            <div class="founder-photo">
+                [PLACEHOLDER: Professional photo of Nuri - confident but approachable, not "guru" energy]
+            </div>
+            <div class="founder-content">
+                <span class="title">Founder, Recrutu</span>
+                <h3>I'm Nuri. And I didn't have any advantages.</h3>
+            </div>
+        </div>
+
+        <div class="founder-story">
+            <p class="body-text">I grew up in Kazakhstan. <em>$1 an hour.</em> No connections. No fancy degree. No "online business" blueprint. Just work, survival, and this constant feeling that I was capable of more — but the system around me capped me.</p>
+
+            <p class="body-text">I tried the normal path. Local jobs. Traditional effort. More hours. And the reward was always the same: <strong>Work harder → get paid slightly less than you deserve → repeat.</strong></p>
+
+            <!-- INLINE PHOTO PLACEHOLDER -->
+            <div class="inline-photo">
+                [PLACEHOLDER: Photo from early days - maybe at a desk, working late, showing the "hustle" phase]
+            </div>
+
+            <p class="body-text">Then I saw something that messed with my head.</p>
+
+            <p class="body-text">People online — regular people — working remotely for U.S. companies. Same tasks I could do. Sometimes worse skills. But earning <strong>5x–10x more</strong>, just because of where their employer was.</p>
+
+            <p class="body-text">That's when it hit me:</p>
+
+            <div class="epiphany-moment">
+                <h3>The Moment Everything Changed</h3>
+                <p>I wasn't underpaid because I was bad.<br>I was underpaid because <strong>I was playing the wrong game.</strong></p>
+            </div>
+
+            <p class="body-text">So I did what everyone does. I tried random freelancing. Upwork-style race-to-the-bottom work. Copied Western advice that didn't apply to my reality. Hustled harder instead of smarter.</p>
+
+            <p class="body-text">I worked more. Got more stressed. Still didn't feel in control.</p>
+
+            <p class="body-text" style="font-size: 20px; color: var(--urgent-orange);"><strong>Effort without leverage is a trap.</strong></p>
+
+            <p class="body-text">The real shift happened when I stopped asking "How do I work more?" and started asking: <strong>"What skills would make global companies need ME?"</strong></p>
+
+            <p class="body-text">That's when I discovered the truth about AI.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION: THE DISCOVERY (The One Thing)
+     ============================================================ -->
+<section class="section section-glow">
+    <div class="container">
+        <h2 class="section-headline">Here's what $47,000 in courses, consultants, and subscriptions taught me.</h2>
+
+        <div class="highlight-box">
+            <p><strong>There are only 6 AI skills that actually matter for running a business.</strong></p>
+            <p style="margin-top: 12px; font-size: 16px; color: var(--apple-grey);">Not 47. Not 100. Not the "complete AI masterclass" with 200 videos. Just six. Everything else is noise designed to sell you more courses.</p>
+        </div>
+
+        <p class="body-text">Master these six, and you'll run circles around people who've spent 10x more time "learning AI."</p>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon blue">💻</div>
+                <div class="skill-content">
+                    <h4>AI Vibe Coding</h4>
+                    <p>Build tools for your business without hiring a dev or learning to code. I'm not kidding. Create automations, scripts, and internal tools — with zero technical background.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon purple">🎨</div>
+                <div class="skill-content">
+                    <h4>AI Image Generation</h4>
+                    <p>Create visuals that used to cost $500+ from a designer. Product mockups, social media graphics, marketing assets — in minutes, not days.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon orange">✏️</div>
+                <div class="skill-content">
+                    <h4>AI Graphic Design</h4>
+                    <p>Professional marketing materials without touching Photoshop or settling for Canva templates everyone else uses.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon cyan">🔍</div>
+                <div class="skill-content">
+                    <h4>AI Deep Research</h4>
+                    <p>Do 10 hours of research in 30 minutes. Competitor analysis, market research, content research — this skill alone pays for the toolkit 100x over.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon green">🌐</div>
+                <div class="skill-content">
+                    <h4>AI Web Development</h4>
+                    <p>Launch landing pages while your coffee's still hot. No developers, no waiting, no $2,000 quotes for a simple page.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-icon red">⚡</div>
+                <div class="skill-content">
+                    <h4>Advanced Prompting</h4>
+                    <p>Get 10x better outputs than 99% of ChatGPT users. The difference between "meh" AI results and "holy sh*t that's good" is technique — not the tool.</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="body-text" style="text-align: center; font-size: 20px;"><strong>That's it. That's the whole game.</strong></p>
+
+        <p class="body-text" style="text-align: center;">Everything else is a distraction designed to keep you paying for more courses.</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION: THE TRANSFORMATION
+     ============================================================ -->
+<section class="section section-dark">
+    <div class="container">
+        <h2 class="section-headline">That shift took me from:</h2>
+
+        <ul class="win-list">
+            <li><strong>$1/hour work</strong> → Working directly with U.S. businesses</li>
+            <li><strong>Overwhelmed solopreneur</strong> → CEO's right-hand operator</li>
+            <li><strong>Doing everything manually</strong> → Building systems that scale</li>
+            <li><strong>Hiring VAs who ghosted</strong> → Running teams across countries</li>
+            <li><strong>Struggling alone</strong> → Helping others shortcut the same path</li>
+        </ul>
+
+        <!-- TRANSFORMATION PHOTO -->
+        <div class="inline-photo">
+            [PLACEHOLDER: "After" photo - Nuri with team, at conference, or showing business success - not flashy, just real]
+        </div>
+
+        <p class="body-text"><strong>I didn't escape the system. I learned how to plug into a better one.</strong></p>
+
+        <p class="body-text">And that's exactly what this toolkit gives you — the shortcut I wish I had three years ago.</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION: SOCIAL PROOF
+     ============================================================ -->
+<section class="section section-darker">
+    <div class="container">
+        <h2 class="section-headline">I started sharing this with friends. Here's what happened.</h2>
+
+        <p class="body-text">Just casually. Over coffee. In group chats. "Hey, here's what actually works."</p>
+
+        <p class="body-text">Their results kind of blew my mind:</p>
+
+        <div class="testimonial-card">
+            <p class="testimonial-text">"I was paying my VA <strong>$2,400/month</strong> to handle customer emails. Implemented the AI system in one afternoon. <strong>Cancelled the VA the next day.</strong> I'm not even exaggerating — this saved my business."</p>
+            <div class="testimonial-footer">
+                <span class="testimonial-author">— <strong>Marcus R.</strong>, Shopify Store Owner</span>
+                <span class="testimonial-result">Saves 5+ hrs/week</span>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <p class="testimonial-text">"Built a client proposal system that used to take me <strong>3 hours</strong>. Now it takes <strong>15 minutes</strong>. My close rate actually went UP because I can respond faster than my competitors."</p>
+            <div class="testimonial-footer">
+                <span class="testimonial-author">— <strong>Sarah K.</strong>, Marketing Consultant</span>
+                <span class="testimonial-result">Won $12K contract</span>
+            </div>
+        </div>
+
+        <div class="testimonial-card">
+            <p class="testimonial-text">"I'm not tech-savvy. Like, at all. But this actually made sense. Used the vibe coding section to build a scheduling tool for my coaching business. <strong>First time I've ever built anything technical.</strong> At 47."</p>
+            <div class="testimonial-footer">
+                <span class="testimonial-author">— <strong>Jessica M.</strong>, Business Coach</span>
+                <span class="testimonial-result">Built her first app</span>
+            </div>
+        </div>
+
+        <p class="body-text">They kept asking: "Why isn't this a product?"</p>
+
+        <p class="body-text">So I made it one.</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION: THE ONE THING (Survival Frame)
+     ============================================================ -->
+<section class="section section-glow">
+    <div class="container" style="text-align: center;">
+        <h2 class="section-headline">Here's the uncomfortable truth nobody wants to say.</h2>
+
+        <p class="body-text" style="font-size: 19px;">In 2026, there are two types of business owners:</p>
+
+        <p class="body-text" style="font-size: 20px; color: var(--pure-white);"><strong>Those who use AI as leverage. And those who get replaced by someone who does.</strong></p>
+
+        <p class="body-text">Your competitors aren't waiting around. Your inbox isn't getting smaller. That "someday" when you'll have time to figure out AI? It's not coming.</p>
+
+        <p class="body-text">Every week you spend doing tasks manually that AI could handle in minutes is a week your competition gains on you.</p>
+
+        <div class="epiphany-moment">
+            <h3>The Real Question</h3>
+            <p>How much longer are you willing to stay capped by a system that doesn't reward effort — only leverage?</p>
+        </div>
+
+        <p class="body-text">This toolkit is the fastest way I know to get that leverage.</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION: OFFER STACK
+     ============================================================ -->
+<section class="section section-darker" id="order">
+    <div class="container">
+        <h2 class="section-headline" style="text-align: center;">Everything You Get Today</h2>
+
+        <div class="offer-stack">
+            <span class="offer-badge">⚡ Launch Special — 98% Off</span>
+
+            <h3 class="offer-title">The Complete AI Operator Toolkit</h3>
+
+            <div class="offer-item">
+                <span class="offer-check">✓</span>
+                <span class="offer-text">AI Vibe Coding Training Pack</span>
+                <span class="offer-value">$97</span>
+            </div>
+
+            <div class="offer-item">
+                <span class="offer-check">✓</span>
+                <span class="offer-text">AI Image Generation Training Pack</span>
+                <span class="offer-value">$97</span>
+            </div>
+
+            <div class="offer-item">
+                <span class="offer-check">✓</span>
+                <span class="offer-text">AI Graphic Design Training Pack</span>
+                <span class="offer-value">$97</span>
+            </div>
+
+            <div class="offer-item">
+                <span class="offer-check">✓</span>
+                <span class="offer-text">AI Deep Research Training Pack</span>
+                <span class="offer-value">$97</span>
+            </div>
+
+            <div class="offer-item">
+                <span class="offer-check">✓</span>
+                <span class="offer-text">AI Web Development Training Pack</span>
+                <span class="offer-value">$97</span>
+            </div>
+
+            <div class="offer-item">
+                <span class="offer-check">✓</span>
+                <span class="offer-text">Advanced Prompting Mastery</span>
+                <span class="offer-value">$97</span>
+            </div>
+
+            <div class="offer-item bonus">
+                <span class="offer-check">🎁</span>
+                <span class="offer-text"><strong>BONUS:</strong> Copy-Paste Prompt Library (500+)</span>
+                <span class="offer-value">$147</span>
+            </div>
+
+            <div class="offer-item bonus">
+                <span class="offer-check">🎁</span>
+                <span class="offer-text"><strong>BONUS:</strong> Lifetime Updates + Future Packs</span>
+                <span class="offer-value">$197</span>
+            </div>
+
+            <div class="offer-item bonus">
+                <span class="offer-check">🎁</span>
+                <span class="offer-text"><strong>BONUS:</strong> Private Community Access</span>
+                <span class="offer-value">$197</span>
+            </div>
+
+            <p class="total-value">Total Value: $1,123</p>
+            <p class="today-price">$9</p>
+            <p class="savings-text">You Save Over $1,100 Today</p>
+
+            <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button">Get The AI Operator Toolkit → $9</a>
+            <p class="cta-subtext" style="margin-top: 20px;">One-time payment. Instant delivery. Use it forever.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION: GUARANTEE
+     ============================================================ -->
+<section class="section section-dark">
+    <div class="container">
+        <div class="guarantee-box">
+            <div class="guarantee-icon">🛡️</div>
+            <p class="guarantee-title">30-Day "Actually Try It" Guarantee</p>
+
+            <p class="body-text">Get the complete toolkit. Start with the skill you need most. Give yourself 7 days to start using the techniques.</p>
+
+            <p class="body-text">If you don't save at least 5 hours in your first month — if you don't feel like this was worth 10x what you paid — just message me. <strong>Full refund. No questions, no forms, no guilt trips.</strong></p>
+
+            <p class="body-text">I've helped 160+ business owners with this framework. I know it works.</p>
+
+            <p class="body-text">But you don't have to trust me. Take it for a risk-free test drive.</p>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button">Get Instant Access — 100% Risk Free</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION: FAQ
+     ============================================================ -->
+<section class="section section-darker">
+    <div class="container">
+        <h2 class="section-headline" style="text-align: center;">Quick Questions</h2>
+
+        <div class="faq-item">
+            <p class="faq-question">"I'm not technical at all. Can I actually use this?"</p>
+            <p class="faq-answer">That's exactly who this is for. Each pack assumes zero prior knowledge. The training focuses on using AI to do the work — not becoming a developer or designer. If you can use Google and follow instructions, you're good.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">"I don't have time to go through 6 training programs."</p>
+            <p class="faq-answer">You don't need to. Start with the skill you need most — usually research or image generation — and see results the same day. Each pack is designed to be completed in a single afternoon, not weeks.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">"I've tried AI before and it didn't work."</p>
+            <p class="faq-answer">That's because you were guessing. These packs give you the exact frameworks, prompts, and techniques that actually work. No more trial and error — just follow the system.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">"$9 seems too cheap. Is this actually good?"</p>
+            <p class="faq-answer">It's priced for mass adoption during launch. I want 5,000+ entrepreneurs trained this month. The price goes up once we hit our goal. This is the same framework used by clients paying 10x more.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">"What format is this delivered in?"</p>
+            <p class="faq-answer">PDF guides, prompt libraries, and step-by-step frameworks you can copy and use immediately. Works with whatever AI tools you already use (ChatGPT, Claude, Midjourney, etc.)</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">"Is this a subscription?"</p>
+            <p class="faq-answer">No. One-time payment of $9. You own everything forever. Plus you get lifetime updates and community access at no extra cost.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION: FINAL CTA
+     ============================================================ -->
+<section class="section section-glow">
+    <div class="container" style="text-align: center;">
+        <h2 class="section-headline">Still here?</h2>
+
+        <p class="body-text">Look, I get it. You've been burned before. Courses that collected dust. Tools you never used. Promises that didn't deliver.</p>
+
+        <p class="body-text">But consider this: <strong>What's it costing you to keep doing everything manually while your competitors automate?</strong></p>
+
+        <p class="body-text">Hint: It's a lot more than $9.</p>
+
+        <p class="body-text" style="font-size: 20px; color: var(--pure-white); margin-top: 32px;">If someone like me — from Kazakhstan, with no head start — can do this...</p>
+
+        <p class="body-text" style="font-size: 20px; color: var(--highlight-green);"><strong>The question isn't "Is it possible?"</strong></p>
+
+        <p class="body-text" style="font-size: 20px; color: var(--urgent-orange);"><strong>The question is: How much longer are you willing to wait?</strong></p>
+
+        <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button" style="margin-top: 32px;">Get The AI Operator Toolkit → $9</a>
+
+        <p class="cta-subtext">🔒 Secure checkout • Instant access • 30-day guarantee</p>
+
+        <p style="margin-top: 32px; font-size: 14px; color: var(--apple-grey);">
+            Questions? DM me on <a href="https://instagram.com/nurikadi" target="_blank" style="color: var(--system-blue);">Instagram @nurikadi</a> or <a href="https://t.me/incastra31" target="_blank" style="color: var(--system-blue);">Telegram @incastra31</a>
+        </p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <p style="font-size: 16px; font-weight: 600; color: var(--pure-white); margin-bottom: 4px;">Recrutu Virtual Assistants LLC</p>
+        <p>2416 Marian Bay Circle, Anchorage, AK 99515, USA</p>
+        <p><a href="mailto:nurikadi@recrutugo.com">nurikadi@recrutugo.com</a></p>
+
+        <p style="margin-top: 24px;">
+            <a href="#" style="margin: 0 12px;">Privacy Policy</a>
+            <a href="#" style="margin: 0 12px;">Terms of Service</a>
+        </p>
+
+        <p style="margin-top: 32px; font-size: 11px; opacity: 0.7;">
+            <strong>Earnings Disclaimer:</strong> Results vary and depend on many factors including your background, experience, and work ethic. The examples shown are not typical results.
+        </p>
+
+        <p style="margin-top: 16px; font-size: 11px; opacity: 0.6;">
+            © 2026 Recrutu Virtual Assistants LLC. All Rights Reserved.
+        </p>
+    </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta" id="floatingCta">
+    <span class="floating-cta-price">$9</span>
+    <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button">Get Instant Access →</a>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+// Countdown Timer
+(function() {
+    const COUNTDOWN_KEY = 'ai_toolkit_countdown_v2';
+    let endTime = localStorage.getItem(COUNTDOWN_KEY);
+
+    if (!endTime) {
+        endTime = Date.now() + (24 * 60 * 60 * 1000);
+        localStorage.setItem(COUNTDOWN_KEY, endTime);
+    } else {
+        endTime = parseInt(endTime);
+    }
+
+    function updateCountdown() {
+        const now = Date.now();
+        let diff = endTime - now;
+
+        if (diff <= 0) {
+            endTime = Date.now() + (24 * 60 * 60 * 1000);
+            localStorage.setItem(COUNTDOWN_KEY, endTime);
+            diff = endTime - now;
+        }
+
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+})();
+
+// Floating CTA
+(function() {
+    const floatingCta = document.getElementById('floatingCta');
+    const hero = document.querySelector('.hero');
+
+    function checkScroll() {
+        const heroBottom = hero.offsetTop + hero.offsetHeight;
+        const scrollY = window.scrollY || window.pageYOffset;
+
+        if (scrollY > heroBottom) {
+            floatingCta.classList.add('visible');
+        } else {
+            floatingCta.classList.remove('visible');
+        }
+    }
+
+    window.addEventListener('scroll', checkScroll);
+    checkScroll();
+})();
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const offset = 80;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
