@@ -1,0 +1,3096 @@
+
+<!DOCTYPE html>
+<html lang="en" data-capo="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Operator Toolkit — Hand Off 99% of Your Tasks</title>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<style type="text/css">
+/* ============================================================
+   AI OPERATOR TOOLKIT V3.1 - UPDATED UI IMPROVEMENTS
+   - Removed bundle card redundancy
+   - Blue verified checkmarks on reviews
+   - Fixed founder badge spacing
+   - Book mockups in products section
+   - Compact offer stack
+   - AI-focused product naming
+   - Mobile arrow fix
+   - Compact mobile floating CTA
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --titanium-gold: #f5d0a9;
+    --titanium-dark: #1d1d1f;
+    --apple-grey: #86868b;
+    --pure-white: #f5f5f7;
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --highlight-green: #28cd41;
+    --highlight-red: #ff453a;
+    --system-blue: #0a84ff;
+    --urgent-orange: #ff9500;
+    --urgent-red: #ff3b30;
+    --trustpilot-green: #00b67a;
+    --trustpilot-star: #00b67a;
+    --verified-blue: #1d9bf0;
+}
+
+/* ---- 1. GLOBAL RESET ---- */
+body, html, .hl_page-preview--content {
+    background-color: #020204 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    font-family: 'Inter', -apple-system, sans-serif !important;
+    color: var(--pure-white) !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.c-section, .c-row, .c-column, .c-column > .inner, .c-custom-html {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.ai-clone {
+    width: 100% !important;
+    margin-left: 0 !important;
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
+    background: #020204;
+    overflow-x: hidden;
+    max-width: 100%;
+    container-type: inline-size;
+}
+
+.ai-clone .container {
+    max-width: 1000px !important;
+    margin: 0 auto !important;
+    padding: 0 24px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    position: relative;
+    z-index: 2;
+}
+
+img, svg, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---- 2. URGENCY BAR ---- */
+.urgency-bar {
+    background: linear-gradient(90deg, var(--urgent-red) 0%, var(--urgent-orange) 100%);
+    padding: 14px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(255, 59, 48, 0.3);
+}
+
+.urgency-bar p {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.countdown-timer {
+    display: inline-flex;
+    gap: 8px;
+    font-family: 'Inter', monospace;
+}
+
+.countdown-unit {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 6px 10px;
+    border-radius: 6px;
+    min-width: 45px;
+    text-align: center;
+}
+
+.countdown-number {
+    display: block;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.countdown-label {
+    display: block;
+    font-size: 9px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.spots-left {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* ---- 3. HERO (NEURAL GRID) ---- */
+.hero-neural {
+    position: relative;
+    background-color: #020204;
+    overflow: hidden !important;
+    padding-top: 80px !important;
+    padding-bottom: 60px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-neural::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    z-index: 0;
+    background-image: linear-gradient(rgba(10, 132, 255, 0.15) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(10, 132, 255, 0.15) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+@keyframes gridMove {
+    0% { transform: perspective(500px) rotateX(60deg) translateY(0); }
+    100% { transform: perspective(500px) rotateX(60deg) translateY(50px); }
+}
+
+/* ---- 4. BACKGROUNDS & SPACING ---- */
+.problem-section {
+    padding-top: 80px !important;
+    background: #020204;
+    position: relative;
+    z-index: 5;
+}
+
+.bg-deep-space {
+    background: radial-gradient(circle at 80% 20%, rgba(10, 132, 255, 0.08) 0%, #020204 60%);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-bottom: 80px !important;
+}
+
+.bg-titanium-dark {
+    background: linear-gradient(180deg, #020204 0%, #0f0f12 50%, #020204 100%);
+}
+
+.bg-blue-glow {
+    position: relative;
+    background: radial-gradient(circle at 50% 50%, rgba(10, 132, 255, 0.08) 0%, #020204 70%);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.section-padding {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+}
+
+.section-padding-lg {
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+}
+
+/* ---- 5. TYPOGRAPHY ---- */
+.ai-clone .pre-headline {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--system-blue);
+    margin-bottom: 16px;
+    display: block;
+}
+
+.ai-clone .headline {
+    font-size: clamp(28px, 5vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--pure-white);
+    margin-bottom: 24px;
+}
+
+.ai-clone .headline-blue {
+    color: var(--system-blue);
+}
+
+.ai-clone .headline-green {
+    color: var(--highlight-green);
+}
+
+.ai-clone .headline-red {
+    color: var(--highlight-red);
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+.ai-clone .subheadline {
+    font-size: clamp(18px, 2.5vw, 22px);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--apple-grey);
+    margin-bottom: 16px;
+}
+
+.ai-clone .sub-subheadline {
+    font-size: 17px;
+    font-style: italic;
+    color: var(--apple-grey);
+    opacity: 0.8;
+    margin-bottom: 40px;
+}
+
+.ai-clone .section-headline {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--pure-white);
+    margin-bottom: 24px;
+}
+
+.ai-clone .body-text {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--apple-grey);
+    margin-bottom: 20px;
+}
+
+.ai-clone .body-text strong {
+    color: var(--pure-white);
+    font-weight: 600;
+}
+
+/* ---- 6. TRUSTPILOT STYLING ---- */
+.trustpilot-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 32px 0;
+    padding: 24px;
+    background: linear-gradient(135deg, rgba(0, 182, 122, 0.08) 0%, rgba(0, 182, 122, 0.02) 100%);
+    border: 1px solid rgba(0, 182, 122, 0.3);
+    border-radius: 16px;
+}
+
+.trustpilot-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.trustpilot-logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--pure-white);
+    letter-spacing: -0.5px;
+}
+
+.trustpilot-logo-star {
+    color: var(--trustpilot-green);
+    font-size: 18px;
+}
+
+.trustpilot-stars {
+    display: flex;
+    gap: 4px;
+}
+
+.trustpilot-star {
+    width: 28px;
+    height: 28px;
+    background: var(--trustpilot-green);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.trustpilot-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.trustpilot-score {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--pure-white);
+}
+
+.trustpilot-label {
+    font-size: 13px;
+    color: var(--apple-grey);
+}
+
+.trustpilot-count {
+    font-size: 14px;
+    color: var(--apple-grey);
+    padding-left: 16px;
+    border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ---- 7. BUTTONS ---- */
+.ai-clone .cta-button {
+    display: inline-block;
+    padding: 20px 48px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--highlight-green) 0%, #1fa82e 100%);
+    color: #ffffff;
+    border-radius: 14px;
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    box-shadow: 0 4px 24px rgba(40, 205, 65, 0.3);
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.ai-clone .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(40, 205, 65, 0.45);
+}
+
+.ai-clone .cta-button-blue {
+    background: linear-gradient(135deg, var(--system-blue) 0%, #0066cc 100%);
+    box-shadow: 0 4px 24px rgba(10, 132, 255, 0.25);
+}
+
+.ai-clone .cta-button-blue:hover {
+    box-shadow: 0 8px 32px rgba(10, 132, 255, 0.35);
+}
+
+.ai-clone .cta-secondary {
+    background: transparent;
+    border: 2px solid var(--system-blue);
+    color: var(--system-blue);
+    box-shadow: none;
+}
+
+.ai-clone .cta-secondary:hover {
+    background: rgba(10, 132, 255, 0.1);
+}
+
+.ai-clone .cta-subtext {
+    font-size: 13px;
+    color: var(--apple-grey);
+    margin-top: 12px;
+    opacity: 0.8;
+}
+
+.ai-clone .micro-text {
+    font-size: 13px;
+    color: var(--apple-grey);
+    margin-top: 16px;
+    opacity: 0.7;
+}
+
+/* ---- 8. PRICE TAG INLINE ---- */
+.price-highlight {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(40, 205, 65, 0.15) 0%, rgba(40, 205, 65, 0.05) 100%);
+    border: 2px solid var(--highlight-green);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--highlight-green);
+    margin-left: 8px;
+}
+
+.price-crossed {
+    text-decoration: line-through;
+    color: var(--apple-grey);
+    opacity: 0.6;
+    font-weight: 400;
+}
+
+/* ============================================================
+   BOOK MOCKUPS - 3D PERSPECTIVE STYLING
+   ============================================================ */
+/* ============================================================
+   PRODUCT STACK - 6 BOOKS VISUAL (Enhanced 3D Layout)
+   ============================================================ */
+.product-stack {
+    margin: 40px 0 24px;
+    padding: 36px 24px;
+    background: linear-gradient(145deg, rgba(10, 132, 255, 0.06) 0%, rgba(0, 0, 0, 0.2) 50%, #020204 100%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-stack::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(10, 132, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.stack-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 14px;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.stack-book {
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(800px) rotateY(-6deg);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.stack-book:hover {
+    transform: perspective(800px) rotateY(-6deg) translateY(-10px);
+}
+
+.stack-book-cover {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px 12px 12px 4px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        -5px 5px 18px rgba(0, 0, 0, 0.45),
+        0 12px 30px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stack-book-spine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+}
+
+.stack-book-design {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.stack-circles {
+    position: absolute;
+    top: 10px;
+    right: -18px;
+    width: 70px;
+    height: 70px;
+}
+
+.stack-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.stack-circle.sc1 { width: 60px; height: 60px; top: 0; right: 0; }
+.stack-circle.sc2 { width: 42px; height: 42px; top: 9px; right: 9px; }
+.stack-circle.sc3 { width: 24px; height: 24px; top: 18px; right: 18px; }
+
+.stack-grid-pattern {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background:
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 10px 10px;
+    mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+}
+
+.stack-book-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 12px 12px 18px;
+    z-index: 2;
+}
+
+.stack-book-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.stack-book-badge {
+    display: inline-block;
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-size: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    width: fit-content;
+    margin-bottom: 6px;
+}
+
+.stack-book-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.25;
+    margin-bottom: auto;
+}
+
+.stack-book-author {
+    font-size: 9px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
+}
+
+/* Stack book sizes - for hero section */
+.stack-book.size-sm { width: 90px; height: 125px; }
+.stack-book.size-md { width: 100px; height: 138px; }
+.stack-book.size-lg { width: 110px; height: 152px; }
+
+/* Stack book color themes */
+.stack-blue .stack-book-cover { background: linear-gradient(145deg, #1e3a5f 0%, #0d1b2a 100%); }
+.stack-blue .stack-book-icon { background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(99, 102, 241, 0.1)); border: 1px solid rgba(99, 102, 241, 0.3); }
+.stack-blue .stack-book-badge { background: rgba(99, 102, 241, 0.25); border: 1px solid rgba(99, 102, 241, 0.3); color: #a5b4fc; }
+.stack-blue .stack-circle.sc3 { background: rgba(99, 102, 241, 0.2); }
+
+.stack-purple .stack-book-cover { background: linear-gradient(145deg, #3d2a5c 0%, #1a1028 100%); }
+.stack-purple .stack-book-icon { background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(168, 85, 247, 0.1)); border: 1px solid rgba(168, 85, 247, 0.3); }
+.stack-purple .stack-book-badge { background: rgba(168, 85, 247, 0.25); border: 1px solid rgba(168, 85, 247, 0.3); color: #c4b5fd; }
+.stack-purple .stack-circle.sc3 { background: rgba(168, 85, 247, 0.2); }
+
+.stack-orange .stack-book-cover { background: linear-gradient(145deg, #5c3d2e 0%, #2a1a10 100%); }
+.stack-orange .stack-book-icon { background: linear-gradient(135deg, rgba(251, 146, 60, 0.3), rgba(251, 146, 60, 0.1)); border: 1px solid rgba(251, 146, 60, 0.3); }
+.stack-orange .stack-book-badge { background: rgba(251, 146, 60, 0.25); border: 1px solid rgba(251, 146, 60, 0.3); color: #fdba74; }
+.stack-orange .stack-circle.sc3 { background: rgba(251, 146, 60, 0.2); }
+
+.stack-cyan .stack-book-cover { background: linear-gradient(145deg, #134e5e 0%, #0a2a33 100%); }
+.stack-cyan .stack-book-icon { background: linear-gradient(135deg, rgba(34, 211, 238, 0.3), rgba(34, 211, 238, 0.1)); border: 1px solid rgba(34, 211, 238, 0.3); }
+.stack-cyan .stack-book-badge { background: rgba(34, 211, 238, 0.25); border: 1px solid rgba(34, 211, 238, 0.3); color: #67e8f9; }
+.stack-cyan .stack-circle.sc3 { background: rgba(34, 211, 238, 0.2); }
+
+.stack-green .stack-book-cover { background: linear-gradient(145deg, #1a4d3e 0%, #0d2820 100%); }
+.stack-green .stack-book-icon { background: linear-gradient(135deg, rgba(34, 197, 94, 0.3), rgba(34, 197, 94, 0.1)); border: 1px solid rgba(34, 197, 94, 0.3); }
+.stack-green .stack-book-badge { background: rgba(34, 197, 94, 0.25); border: 1px solid rgba(34, 197, 94, 0.3); color: #86efac; }
+.stack-green .stack-circle.sc3 { background: rgba(34, 197, 94, 0.2); }
+
+.stack-red .stack-book-cover { background: linear-gradient(145deg, #5c2a2a 0%, #2a1010 100%); }
+.stack-red .stack-book-icon { background: linear-gradient(135deg, rgba(239, 68, 68, 0.3), rgba(239, 68, 68, 0.1)); border: 1px solid rgba(239, 68, 68, 0.3); }
+.stack-red .stack-book-badge { background: rgba(239, 68, 68, 0.25); border: 1px solid rgba(239, 68, 68, 0.3); color: #fca5a5; }
+.stack-red .stack-circle.sc3 { background: rgba(239, 68, 68, 0.2); }
+
+.stack-label {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ---- 9. LISTS ---- */
+.ai-clone .problem-list {
+    list-style: none;
+    padding: 0;
+    margin: 28px 0;
+}
+
+.ai-clone .problem-list li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 14px;
+    color: var(--apple-grey);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.ai-clone .problem-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background: var(--system-blue);
+    border-radius: 50%;
+}
+
+.ai-clone .check-list {
+    list-style: none;
+    padding: 0;
+    margin: 28px 0;
+}
+
+.ai-clone .check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 18px;
+    font-size: 17px;
+    color: var(--apple-grey);
+    line-height: 1.6;
+}
+
+.ai-clone .icon-check {
+    color: var(--highlight-green);
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.ai-clone .icon-x {
+    color: var(--highlight-red);
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+/* ---- 10. TRUSTPILOT TESTIMONIALS ---- */
+.trustpilot-reviews {
+    margin: 48px 0;
+}
+
+.trustpilot-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.trustpilot-header-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.trustpilot-header-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--pure-white);
+}
+
+.trustpilot-header-stars {
+    display: flex;
+    gap: 3px;
+}
+
+.trustpilot-header-star {
+    width: 24px;
+    height: 24px;
+    background: var(--trustpilot-green);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.review-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(0, 182, 122, 0.2);
+    border-radius: 16px;
+    padding: 28px;
+    position: relative;
+}
+
+.review-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.review-stars {
+    display: flex;
+    gap: 2px;
+}
+
+.review-star {
+    width: 20px;
+    height: 20px;
+    background: var(--trustpilot-green);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.review-star.empty {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.review-verified {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--trustpilot-green);
+    font-weight: 600;
+}
+
+.review-verified-icon {
+    width: 16px;
+    height: 16px;
+    background: var(--trustpilot-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #fff;
+}
+
+.review-text {
+    font-size: 15px;
+    color: var(--apple-grey);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.review-result {
+    background: rgba(0, 182, 122, 0.1);
+    border-left: 3px solid var(--trustpilot-green);
+    padding: 10px 14px;
+    margin-bottom: 16px;
+    border-radius: 0 8px 8px 0;
+}
+
+.review-result-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--trustpilot-green);
+    margin: 0;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Updated: No avatar circle, just name with verified badge */
+.review-info {
+    flex: 1;
+}
+
+.review-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--pure-white);
+    margin-bottom: 2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Blue verified checkmark badge like X/Meta */
+.verified-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background: var(--verified-blue);
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.verified-badge svg {
+    width: 10px;
+    height: 10px;
+    fill: #fff;
+}
+
+.review-role {
+    font-size: 12px;
+    color: var(--apple-grey);
+}
+
+/* ---- 11. TRANSFORMATION DIAGRAM ---- */
+.transformation-mockup {
+    margin: 48px 0;
+    padding: 48px 32px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.transformation-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 32px;
+    align-items: center;
+}
+
+.transform-side {
+    text-align: center;
+}
+
+.transform-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+.transform-avatar.before {
+    background: linear-gradient(135deg, rgba(255, 69, 58, 0.2) 0%, rgba(255, 69, 58, 0.05) 100%);
+    border: 3px solid var(--highlight-red);
+    animation: confused 2s ease-in-out infinite;
+}
+
+.transform-avatar.after {
+    background: linear-gradient(135deg, rgba(40, 205, 65, 0.2) 0%, rgba(40, 205, 65, 0.05) 100%);
+    border: 3px solid var(--highlight-green);
+    animation: confident 3s ease-in-out infinite;
+}
+
+@keyframes confused {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+@keyframes confident {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.transform-label {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.transform-side.before .transform-label {
+    color: var(--highlight-red);
+}
+
+.transform-side.after .transform-label {
+    color: var(--highlight-green);
+}
+
+.transform-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--pure-white);
+    margin-bottom: 16px;
+}
+
+.transform-stats {
+    text-align: left;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.transform-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--apple-grey);
+    margin-bottom: 8px;
+}
+
+.transform-stat-icon {
+    font-size: 16px;
+}
+
+.transform-side.before .transform-stat-icon {
+    color: var(--highlight-red);
+}
+
+.transform-side.after .transform-stat-icon {
+    color: var(--highlight-green);
+}
+
+.transform-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.arrow-line {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--highlight-red) 0%, var(--system-blue) 50%, var(--highlight-green) 100%);
+    border-radius: 2px;
+    position: relative;
+}
+
+.arrow-line::after {
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 12px solid var(--highlight-green);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+}
+
+.arrow-kit {
+    background: linear-gradient(135deg, var(--system-blue) 0%, #0066cc 100%);
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(10, 132, 255, 0.3);
+}
+
+.arrow-time {
+    font-size: 11px;
+    color: var(--apple-grey);
+    text-align: center;
+}
+
+/* ---- 12. FOUNDER SECTION ---- */
+.founder-section {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    align-items: center;
+    margin: 48px 0;
+    padding: 40px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+}
+
+.founder-image {
+    position: relative;
+}
+
+.founder-avatar {
+    width: 200px;
+    height: 200px;
+    background-image: url('https://storage.googleapis.com/msgsndr/bh7ksvCXuReJ4AaVrUfG/media/68e02f033474f78388d66799.png');
+    background-size: 320%;
+    background-position: 50% 28%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 4px solid var(--system-blue);
+    box-shadow: 0 8px 32px rgba(10, 132, 255, 0.3);
+}
+
+.founder-avatar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    pointer-events: none;
+}
+
+.founder-initials {
+    display: none; /* Hidden now that we have real photo */
+}
+
+/* FIXED: Founder badge spacing - adjusted position */
+.founder-badge {
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--highlight-green);
+    color: #000;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 8px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(40, 205, 65, 0.3);
+    z-index: 5;
+}
+
+.founder-image {
+    margin-bottom: 40px;
+}
+
+.founder-content h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--pure-white);
+    margin: 0 0 8px;
+}
+
+.founder-content .title {
+    font-size: 14px;
+    color: var(--system-blue);
+    margin-bottom: 20px;
+}
+
+/* ---- 13. PRODUCT SECTION BOOKS (uses stack-book system) ---- */
+.products-stack {
+    margin: 48px auto 24px;
+    padding: 40px 28px;
+    background: linear-gradient(145deg, rgba(10, 132, 255, 0.06) 0%, rgba(0, 0, 0, 0.2) 50%, #020204 100%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    max-width: 900px;
+}
+
+.products-stack::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 70% 30%, rgba(10, 132, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.products-stack .stack-grid {
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.products-stack .stack-book.size-md { width: 115px; height: 158px; }
+
+.products-stack > .stack-grid > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-book-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--pure-white);
+    margin: 12px 0 4px;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.product-book-value {
+    font-size: 11px;
+    color: var(--highlight-green);
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ---- 14. FRAMEWORKS SECTION ---- */
+.frameworks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.framework-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 28px;
+}
+
+.framework-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.framework-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--pure-white);
+    margin-bottom: 12px;
+}
+
+.framework-desc {
+    font-size: 15px;
+    color: var(--apple-grey);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ---- 15. RESULTS SECTION ---- */
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.result-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 28px;
+}
+
+.result-comparison {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.result-before, .result-after {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.result-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--apple-grey);
+}
+
+.result-value {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.result-value.bad {
+    color: var(--highlight-red);
+}
+
+.result-value.good {
+    color: var(--highlight-green);
+}
+
+.result-context {
+    font-size: 12px;
+    color: var(--apple-grey);
+}
+
+.result-vs {
+    font-size: 24px;
+    color: var(--system-blue);
+    font-weight: 700;
+}
+
+.result-example {
+    font-size: 14px;
+    color: var(--apple-grey);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ---- 16. BONUSES SECTION (Stack-book style matching products) ---- */
+.bonuses-stack {
+    margin: 32px auto 24px;
+    padding: 40px 28px;
+    background: linear-gradient(145deg, rgba(40, 205, 65, 0.04) 0%, rgba(0, 0, 0, 0.2) 50%, #020204 100%);
+    border: 1px solid rgba(40, 205, 65, 0.15);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    max-width: 700px;
+}
+
+.bonuses-stack::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 30%, rgba(40, 205, 65, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.bonuses-stack .stack-grid {
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.bonuses-stack > .stack-grid > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Green theme for bonus books */
+.stack-bonus .stack-book-cover { background: linear-gradient(145deg, #1a4d3e 0%, #0d2820 100%); }
+.stack-bonus .stack-book-icon { background: linear-gradient(135deg, rgba(40, 205, 65, 0.3), rgba(40, 205, 65, 0.1)); border: 1px solid rgba(40, 205, 65, 0.3); }
+.stack-bonus .stack-book-badge { background: rgba(40, 205, 65, 0.25); border: 1px solid rgba(40, 205, 65, 0.3); color: #86efac; }
+.stack-bonus .stack-circle.sc3 { background: rgba(40, 205, 65, 0.2); }
+
+.bonus-book-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--pure-white);
+    margin: 12px 0 4px;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.bonus-book-value {
+    font-size: 11px;
+    color: var(--highlight-green);
+    font-weight: 600;
+    text-align: center;
+}
+
+/* ---- 15. CARDS ---- */
+.ai-clone .glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.ai-clone .callout-box {
+    background: var(--glass-bg);
+    border-left: 3px solid var(--system-blue);
+    padding: 28px 32px;
+    margin: 40px 0;
+    border-radius: 0 16px 16px 0;
+}
+
+.ai-clone .callout-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--pure-white);
+    margin-bottom: 12px;
+}
+
+/* ---- 16. OBJECTION HANDLING ---- */
+.ai-clone .objection-item {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.ai-clone .objection-item:last-child {
+    border-bottom: none;
+}
+
+.ai-clone .objection-question {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--pure-white);
+    margin-bottom: 16px;
+}
+
+.ai-clone .objection-answer {
+    font-size: 17px;
+    color: var(--apple-grey);
+    line-height: 1.7;
+}
+
+/* ---- 17. OFFER STACK - MORE COMPACT ---- */
+.ai-clone .offer-stack {
+    background: linear-gradient(135deg, rgba(10, 132, 255, 0.08) 0%, rgba(10, 132, 255, 0.02) 100%);
+    border: 3px solid var(--system-blue);
+    border-radius: 24px;
+    padding: 48px;
+    text-align: center;
+    margin: 48px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-stack-badge {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--urgent-red) 0%, var(--urgent-orange) 100%);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 10px 24px;
+    border-radius: 0 0 12px 12px;
+}
+
+.ai-clone .offer-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    margin-top: 24px;
+    color: var(--pure-white);
+}
+
+/* COMPACT: Reduced padding in offer items */
+.ai-clone .offer-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--glass-border);
+    text-align: left;
+}
+
+.ai-clone .offer-item:last-of-type {
+    border-bottom: none;
+}
+
+.ai-clone .offer-item.bonus-item {
+    background: rgba(40, 205, 65, 0.08);
+    margin: 0 -24px;
+    padding: 10px 24px;
+    border-radius: 12px;
+}
+
+.ai-clone .offer-check {
+    color: var(--highlight-green);
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.ai-clone .offer-text {
+    font-size: 16px;
+    color: var(--apple-grey);
+    flex: 1;
+}
+
+.ai-clone .offer-value {
+    color: var(--apple-grey);
+    font-size: 13px;
+    opacity: 0.6;
+    white-space: nowrap;
+}
+
+.ai-clone .total-value {
+    font-size: 22px;
+    color: var(--apple-grey);
+    margin: 24px 0 8px;
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.ai-clone .today-price {
+    font-size: 64px;
+    font-weight: 800;
+    color: var(--highlight-green);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.ai-clone .savings-text {
+    font-size: 18px;
+    color: var(--highlight-green);
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+/* ---- 18. FAQ ---- */
+.ai-clone .faq-item {
+    border-bottom: 1px solid var(--glass-border);
+    padding: 28px 0;
+}
+
+.ai-clone .faq-question {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--pure-white);
+    margin-bottom: 12px;
+}
+
+.ai-clone .faq-answer {
+    font-size: 16px;
+    color: var(--apple-grey);
+    line-height: 1.7;
+}
+
+/* ---- 19. GUARANTEE BOX ---- */
+.ai-clone .guarantee-box {
+    background: linear-gradient(135deg, rgba(10, 132, 255, 0.1) 0%, transparent 100%);
+    border: 2px solid var(--system-blue);
+    border-radius: 20px;
+    padding: 48px;
+    text-align: center;
+    margin: 48px 0;
+    position: relative;
+}
+
+.guarantee-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.ai-clone .guarantee-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--system-blue);
+    margin-bottom: 20px;
+}
+
+/* ---- 20. FINAL CTA ---- */
+.ai-clone .final-cta {
+    background: radial-gradient(circle at 50% 100%, rgba(10, 132, 255, 0.12) 0%, transparent 50%),
+                #020204;
+    padding: 120px 0;
+    text-align: center;
+}
+
+/* ---- 21. FLOATING CTA - COMPACT MOBILE ---- */
+.floating-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(2, 2, 4, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    z-index: 999;
+    border-top: 1px solid var(--glass-border);
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.5);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.floating-cta.visible {
+    transform: translateY(0);
+}
+
+.floating-cta-text {
+    font-size: 15px;
+    color: var(--pure-white);
+    font-weight: 500;
+}
+
+.floating-cta-price {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--highlight-green);
+}
+
+.floating-cta .cta-button {
+    padding: 14px 32px;
+    font-size: 15px;
+}
+
+/* ---- 22. RESPONSIVE ---- */
+@media (max-width: 768px) {
+    .urgency-bar p {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .hero-neural {
+        padding-top: 48px !important;
+        padding-bottom: 32px !important;
+    }
+
+    .section-padding {
+        padding-top: 48px !important;
+        padding-bottom: 48px !important;
+    }
+
+    .section-padding-lg {
+        padding-top: 60px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .ai-clone .container {
+        padding: 0 20px !important;
+    }
+
+    .ai-clone .headline {
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+    }
+
+    .ai-clone .section-headline {
+        font-size: 20px !important;
+    }
+
+    .ai-clone .subheadline {
+        font-size: 16px !important;
+    }
+
+    .ai-clone .body-text {
+        font-size: 15px !important;
+    }
+
+    .ai-clone .cta-button {
+        padding: 16px 32px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .trustpilot-bar {
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .product-stack {
+        padding: 28px 16px;
+        margin: 32px 0 20px;
+    }
+
+    .stack-grid {
+        gap: 10px;
+    }
+
+    .stack-book.size-sm { width: 72px; height: 100px; }
+    .stack-book.size-md { width: 80px; height: 110px; }
+    .stack-book.size-lg { width: 88px; height: 122px; }
+
+    .stack-book-content {
+        padding: 10px 8px 8px 14px;
+    }
+
+    .stack-book-icon {
+        width: 22px;
+        height: 22px;
+        font-size: 11px;
+        margin-bottom: 6px;
+    }
+
+    .stack-book-badge {
+        font-size: 6px;
+        padding: 2px 5px;
+    }
+
+    .stack-book-title {
+        font-size: 8px;
+    }
+
+    .stack-book-author {
+        font-size: 7px;
+    }
+
+    .stack-label {
+        font-size: 10px;
+        margin-top: 18px;
+        letter-spacing: 1.5px;
+    }
+
+    .products-stack {
+        padding: 28px 16px;
+        margin: 32px auto 20px;
+    }
+
+    .products-stack .stack-book.size-md { width: 90px; height: 124px; }
+
+    .product-book-name {
+        font-size: 10px;
+    }
+
+    .product-book-value {
+        font-size: 9px;
+    }
+
+    .bonuses-stack {
+        padding: 28px 16px;
+    }
+
+    .bonuses-stack .stack-grid {
+        gap: 16px;
+    }
+
+    .bonus-book-name {
+        font-size: 10px;
+    }
+
+    .bonus-book-value {
+        font-size: 9px;
+    }
+
+    .frameworks-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-comparison {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .result-vs {
+        transform: rotate(90deg);
+    }
+
+    .transformation-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* FIXED: Mobile arrow - horizontal layout instead of rotated */
+    .transform-arrow {
+        flex-direction: row;
+        justify-content: center;
+        padding: 20px 0;
+        gap: 12px;
+    }
+
+    .arrow-line {
+        width: 60px;
+    }
+
+    .arrow-kit {
+        font-size: 11px;
+        padding: 10px 16px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .founder-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .founder-image {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .founder-avatar {
+        width: 150px;
+        height: 150px;
+    }
+
+    .founder-initials {
+        font-size: 54px;
+    }
+
+    .ai-clone .offer-stack {
+        padding: 28px 20px;
+    }
+
+    .ai-clone .today-price {
+        font-size: 48px;
+    }
+
+    /* COMPACT: Mobile floating CTA - reduced size */
+    .floating-cta {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px 16px;
+        justify-content: space-between;
+    }
+
+    .floating-cta-text {
+        font-size: 12px;
+        display: none;
+    }
+
+    .floating-cta-price {
+        font-size: 20px;
+    }
+
+    .floating-cta .cta-button {
+        padding: 12px 20px;
+        font-size: 14px;
+        flex: 1;
+    }
+
+    .price-highlight {
+        display: block;
+        margin: 12px auto 0;
+        width: fit-content;
+    }
+}
+
+@media (max-width: 480px) {
+    .ai-clone .headline {
+        font-size: 20px !important;
+    }
+
+    .ai-clone .section-headline {
+        font-size: 18px !important;
+    }
+
+    .product-stack {
+        padding: 20px 12px;
+        margin: 24px 0 16px;
+    }
+
+    .stack-grid {
+        gap: 6px;
+    }
+
+    .stack-book.size-sm { width: 54px; height: 75px; }
+    .stack-book.size-md { width: 60px; height: 83px; }
+    .stack-book.size-lg { width: 66px; height: 92px; }
+
+    .stack-book-content {
+        padding: 6px 4px 4px 8px;
+    }
+
+    .stack-book-icon {
+        width: 14px;
+        height: 14px;
+        font-size: 8px;
+        border-radius: 3px;
+        margin-bottom: 4px;
+    }
+
+    .stack-book-badge {
+        font-size: 4px;
+        padding: 1px 3px;
+        border-radius: 2px;
+        margin-bottom: 3px;
+    }
+
+    .stack-book-title {
+        font-size: 5px;
+    }
+
+    .stack-book-author {
+        font-size: 5px;
+    }
+
+    .stack-circles {
+        top: 5px;
+        right: -10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .stack-circle.sc1 { width: 35px; height: 35px; }
+    .stack-circle.sc2 { width: 24px; height: 24px; top: 5px; right: 5px; }
+    .stack-circle.sc3 { width: 14px; height: 14px; top: 10px; right: 10px; }
+
+    .stack-label {
+        font-size: 9px;
+        margin-top: 14px;
+        letter-spacing: 1px;
+    }
+
+    .products-stack {
+        padding: 20px 12px;
+    }
+
+    .products-stack .stack-book.size-md { width: 68px; height: 94px; }
+
+    .product-book-name {
+        font-size: 9px;
+    }
+
+    .product-book-value {
+        font-size: 8px;
+    }
+
+    .bonuses-stack {
+        padding: 16px 10px;
+    }
+
+    .bonuses-stack .stack-grid {
+        gap: 10px;
+    }
+
+    .bonus-book-name {
+        font-size: 8px;
+    }
+
+    .bonus-book-value {
+        font-size: 7px;
+    }
+
+    .floating-cta {
+        padding: 8px 12px;
+    }
+
+    .floating-cta .cta-button {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+<body>
+<div class="ai-clone">
+
+<!-- ============================================================
+     URGENCY BAR (STICKY)
+     ============================================================ -->
+<div class="urgency-bar">
+    <p>
+        <span>⚡ LAUNCH SPECIAL — $27 Price Ends In:</span>
+        <span class="countdown-timer" id="countdown">
+            <span class="countdown-unit">
+                <span class="countdown-number" id="hours">47</span>
+                <span class="countdown-label">Hours</span>
+            </span>
+            <span class="countdown-unit">
+                <span class="countdown-number" id="minutes">59</span>
+                <span class="countdown-label">Mins</span>
+            </span>
+            <span class="countdown-unit">
+                <span class="countdown-number" id="seconds">59</span>
+                <span class="countdown-label">Secs</span>
+            </span>
+        </span>
+        <span class="spots-left">🔥 Only <strong id="spots-count">87</strong> Spots Left</span>
+    </p>
+</div>
+
+<!-- ============================================================
+     SECTION 1: HERO
+     ============================================================ -->
+<section class="hero-neural">
+    <div class="container" style="text-align: center;">
+        <p class="pre-headline">The Complete AI Toolkit for Business Owners</p>
+
+        <h1 class="headline">Become an <span class="headline-green">AI-Powered Operator</span> — Master 6 Critical Skills <span class="price-highlight">Just $27</span></h1>
+
+        <p class="subheadline">6 specialized training packs covering coding, design, research, web development, image generation & more. The exact AI techniques top entrepreneurs use to 10x their output.</p>
+
+        <p class="sub-subheadline">30-Day Money-Back Guarantee. Start using these skills today.</p>
+
+        <!-- Trustpilot Bar -->
+        <div class="trustpilot-bar">
+            <div class="trustpilot-logo">
+                <span class="trustpilot-logo-star">★</span>
+                <span class="trustpilot-logo-text">Trustpilot</span>
+            </div>
+            <div class="trustpilot-stars">
+                <div class="trustpilot-star"></div>
+                <div class="trustpilot-star"></div>
+                <div class="trustpilot-star"></div>
+                <div class="trustpilot-star"></div>
+                <div class="trustpilot-star"></div>
+            </div>
+            <div class="trustpilot-rating">
+                <span class="trustpilot-score">4.9</span>
+                <span class="trustpilot-label">Excellent</span>
+            </div>
+            <span class="trustpilot-count"><strong>127</strong> verified reviews</span>
+        </div>
+
+        <!-- ENHANCED BOOK STACK VISUAL -->
+        <div class="product-stack">
+            <div class="stack-grid">
+                <!-- Book 1: AI Vibe Coding (Blue) -->
+                <div class="stack-book size-md stack-blue">
+                    <div class="stack-book-cover">
+                        <div class="stack-book-spine"></div>
+                        <div class="stack-book-design">
+                            <div class="stack-circles">
+                                <div class="stack-circle sc1"></div>
+                                <div class="stack-circle sc2"></div>
+                                <div class="stack-circle sc3"></div>
+                            </div>
+                            <div class="stack-grid-pattern"></div>
+                        </div>
+                        <div class="stack-book-content">
+                            <div class="stack-book-icon">💻</div>
+                            <div class="stack-book-badge">Pack 1</div>
+                            <div class="stack-book-title">AI Vibe Coding</div>
+                            <div class="stack-book-author">$97</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 2: AI Image Gen (Purple) -->
+                <div class="stack-book size-lg stack-purple">
+                    <div class="stack-book-cover">
+                        <div class="stack-book-spine"></div>
+                        <div class="stack-book-design">
+                            <div class="stack-circles">
+                                <div class="stack-circle sc1"></div>
+                                <div class="stack-circle sc2"></div>
+                                <div class="stack-circle sc3"></div>
+                            </div>
+                            <div class="stack-grid-pattern"></div>
+                        </div>
+                        <div class="stack-book-content">
+                            <div class="stack-book-icon">🎨</div>
+                            <div class="stack-book-badge">Pack 2</div>
+                            <div class="stack-book-title">AI Image Gen</div>
+                            <div class="stack-book-author">$97</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 3: AI Graphic Design (Orange) -->
+                <div class="stack-book size-md stack-orange">
+                    <div class="stack-book-cover">
+                        <div class="stack-book-spine"></div>
+                        <div class="stack-book-design">
+                            <div class="stack-circles">
+                                <div class="stack-circle sc1"></div>
+                                <div class="stack-circle sc2"></div>
+                                <div class="stack-circle sc3"></div>
+                            </div>
+                            <div class="stack-grid-pattern"></div>
+                        </div>
+                        <div class="stack-book-content">
+                            <div class="stack-book-icon">✏️</div>
+                            <div class="stack-book-badge">Pack 3</div>
+                            <div class="stack-book-title">Graphic Design</div>
+                            <div class="stack-book-author">$97</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 4: Research with AI (Cyan) -->
+                <div class="stack-book size-lg stack-cyan">
+                    <div class="stack-book-cover">
+                        <div class="stack-book-spine"></div>
+                        <div class="stack-book-design">
+                            <div class="stack-circles">
+                                <div class="stack-circle sc1"></div>
+                                <div class="stack-circle sc2"></div>
+                                <div class="stack-circle sc3"></div>
+                            </div>
+                            <div class="stack-grid-pattern"></div>
+                        </div>
+                        <div class="stack-book-content">
+                            <div class="stack-book-icon">🔍</div>
+                            <div class="stack-book-badge">Pack 4</div>
+                            <div class="stack-book-title">Research AI</div>
+                            <div class="stack-book-author">$97</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 5: AI Web Design (Green) -->
+                <div class="stack-book size-md stack-green">
+                    <div class="stack-book-cover">
+                        <div class="stack-book-spine"></div>
+                        <div class="stack-book-design">
+                            <div class="stack-circles">
+                                <div class="stack-circle sc1"></div>
+                                <div class="stack-circle sc2"></div>
+                                <div class="stack-circle sc3"></div>
+                            </div>
+                            <div class="stack-grid-pattern"></div>
+                        </div>
+                        <div class="stack-book-content">
+                            <div class="stack-book-icon">🌐</div>
+                            <div class="stack-book-badge">Pack 5</div>
+                            <div class="stack-book-title">AI Web Design</div>
+                            <div class="stack-book-author">$97</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 6: Study with AI (Red) -->
+                <div class="stack-book size-sm stack-red">
+                    <div class="stack-book-cover">
+                        <div class="stack-book-spine"></div>
+                        <div class="stack-book-design">
+                            <div class="stack-circles">
+                                <div class="stack-circle sc1"></div>
+                                <div class="stack-circle sc2"></div>
+                                <div class="stack-circle sc3"></div>
+                            </div>
+                            <div class="stack-grid-pattern"></div>
+                        </div>
+                        <div class="stack-book-content">
+                            <div class="stack-book-icon">📚</div>
+                            <div class="stack-book-badge">Pack 6</div>
+                            <div class="stack-book-title">Study with AI</div>
+                            <div class="stack-book-author">$97</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="stack-label">6 Complete Training Packs + 3 Bonuses</p>
+        </div>
+
+        <!-- REMOVED: Bundle Card section (redundant after book showcase) -->
+
+        <a href="https://www.outsourcingleader.com/checkout" class="cta-button">Get The AI Operator Toolkit → $27</a>
+
+        <p class="cta-subtext">✓ Instant digital delivery &nbsp;&nbsp; ✓ Works with ChatGPT, Claude, any AI &nbsp;&nbsp; ✓ 30-day money-back guarantee</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 2: PROBLEM AGITATION
+     ============================================================ -->
+<section class="problem-section bg-deep-space">
+    <div class="container">
+        <h2 class="section-headline">You're Only Using 10% of AI's Potential...</h2>
+
+        <p class="body-text">You've heard AI can transform your business.</p>
+
+        <p class="body-text">But you're still doing everything the old way — manually grinding through tasks that AI could handle in minutes.</p>
+
+        <p class="body-text"><strong>The problem isn't you. The problem is nobody taught you how to actually use AI for real work.</strong></p>
+
+        <p class="body-text">While you're struggling with basic prompts, other entrepreneurs are using AI to build websites, create graphics, write code, and do research — all in a fraction of the time.</p>
+
+        <p class="body-text">Coding? They use AI to build it. Graphics? AI generates them. Research? Done in minutes. Web design? Handled. Content? Created.</p>
+
+        <p class="body-text" style="font-size: 22px; color: var(--highlight-red); font-weight: 700;">→ They're not smarter. They learned the right AI techniques.</p>
+
+        <div class="callout-box" style="border-left-color: var(--highlight-green); background: rgba(40, 205, 65, 0.05);">
+            <p class="callout-title" style="color: var(--highlight-green);">💡 The Solution:</p>
+            <p class="body-text" style="margin-bottom: 0;">Get the complete AI Operator Toolkit. Master 6 critical skills. Become the AI-powered entrepreneur who gets 10x more done.</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="#solution" class="cta-button cta-secondary">Show Me The System →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3: SOLUTION + TRANSFORMATION
+     ============================================================ -->
+<section id="solution" class="bg-titanium-dark section-padding">
+    <div class="container">
+        <h2 class="section-headline">The Complete AI Toolkit: 6 Training Packs for Every Skill</h2>
+
+        <p class="body-text"><strong>Picture this:</strong></p>
+
+        <p class="body-text">Tomorrow morning, you open 6 specialized training packs covering every AI skill you need. No courses. No fluff. Just the exact techniques that work.</p>
+
+        <!-- Transformation Diagram -->
+        <div class="transformation-mockup">
+            <div class="transformation-grid">
+                <div class="transform-side before">
+                    <div class="transform-avatar before">😵</div>
+                    <p class="transform-label">Before</p>
+                    <p class="transform-title">"I Can't Do That"</p>
+                    <div class="transform-stats">
+                        <div class="transform-stat">
+                            <span class="transform-stat-icon">✗</span>
+                            <span>No coding ability</span>
+                        </div>
+                        <div class="transform-stat">
+                            <span class="transform-stat-icon">✗</span>
+                            <span>No design skills</span>
+                        </div>
+                        <div class="transform-stat">
+                            <span class="transform-stat-icon">✗</span>
+                            <span>Hours of research</span>
+                        </div>
+                        <div class="transform-stat">
+                            <span class="transform-stat-icon">✗</span>
+                            <span>Can't build websites</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="transform-arrow">
+                    <div class="arrow-kit">AI Operator<br>Toolkit</div>
+                    <div class="arrow-line"></div>
+                    <p class="arrow-time">48 Hours</p>
+                </div>
+
+                <div class="transform-side after">
+                    <div class="transform-avatar after">🚀</div>
+                    <p class="transform-label">After</p>
+                    <p class="transform-title">"Already Done"</p>
+                    <div class="transform-stats">
+                        <div class="transform-stat">
+                            <span class="transform-stat-icon">✓</span>
+                            <span>Builds with AI code</span>
+                        </div>
+                        <div class="transform-stat">
+                            <span class="transform-stat-icon">✓</span>
+                            <span>Creates pro graphics</span>
+                        </div>
+                        <div class="transform-stat">
+                            <span class="transform-stat-icon">✓</span>
+                            <span>10-min deep research</span>
+                        </div>
+                        <div class="transform-stat">
+                            <span class="transform-stat-icon">✓</span>
+                            <span>Designs full websites</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="body-text">Within 48 hours, you're handling tasks you used to outsource to expensive freelancers or spend hours struggling through.</p>
+
+        <p class="body-text"><strong>Not because you got smarter. Because you learned the right AI techniques for every skill.</strong></p>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 4: TRUSTPILOT REVIEWS
+     ============================================================ -->
+<section class="bg-blue-glow section-padding">
+    <div class="container">
+        <div class="trustpilot-reviews">
+            <div class="trustpilot-header">
+                <div class="trustpilot-header-logo">
+                    <span class="trustpilot-logo-star">★</span>
+                    <span class="trustpilot-header-text">Trustpilot</span>
+                </div>
+                <div class="trustpilot-header-stars">
+                    <div class="trustpilot-header-star"></div>
+                    <div class="trustpilot-header-star"></div>
+                    <div class="trustpilot-header-star"></div>
+                    <div class="trustpilot-header-star"></div>
+                    <div class="trustpilot-header-star"></div>
+                </div>
+                <span style="color: var(--apple-grey);">Based on 127 reviews</span>
+            </div>
+
+            <div class="reviews-grid">
+                <!-- Review 1 - 5 stars -->
+                <div class="review-card">
+                    <div class="review-card-header">
+                        <div class="review-stars">
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                        </div>
+                        <div class="review-verified">
+                            <span class="review-verified-icon">✓</span>
+                            Verified
+                        </div>
+                    </div>
+                    <p class="review-text">Ok so I was pretty skeptical at first... $27 seemed too cheap to be useful. But I needed help with landing pages and didn't want to pay another $800 to my web guy. Went through the web design pack over a weekend and actually built something decent in Cursor. Not perfect but way better than I expected for my first try.</p>
+                    <div class="review-author">
+                        <div class="review-info">
+                            <p class="review-name">Mike K. <span class="verified-badge"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></p>
+                            <p class="review-role">Runs a small marketing agency</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 - 4 stars -->
+                <div class="review-card">
+                    <div class="review-card-header">
+                        <div class="review-stars">
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star empty"></div>
+                        </div>
+                        <div class="review-verified">
+                            <span class="review-verified-icon">✓</span>
+                            Verified
+                        </div>
+                    </div>
+                    <p class="review-text">The image gen stuff is honestly pretty solid. I use it for my etsy shop - product mockups mostly. Took me like 3 days to get the hang of the prompts but now I'm cranking out maybe 15-20 graphics a week? Used to pay a designer $40 per image so... yeah the math works out lol</p>
+                    <div class="review-author">
+                        <div class="review-info">
+                            <p class="review-name">Sarah L. <span class="verified-badge"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></p>
+                            <p class="review-role">Etsy seller, mom of 2</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 - 5 stars -->
+                <div class="review-card">
+                    <div class="review-card-header">
+                        <div class="review-stars">
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                        </div>
+                        <div class="review-verified">
+                            <span class="review-verified-icon">✓</span>
+                            Verified
+                        </div>
+                    </div>
+                    <p class="review-text">Research pack saved my butt. Had a client presentation due and needed competitor analysis fast. The frameworks in here helped me pull together something in like 2 hours that would've taken me all weekend. Not everything in the toolkit is useful for me but that one pack alone was worth it.</p>
+                    <div class="review-author">
+                        <div class="review-info">
+                            <p class="review-name">James R. <span class="verified-badge"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></p>
+                            <p class="review-role">Freelance consultant</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 - 5 stars -->
+                <div class="review-card">
+                    <div class="review-card-header">
+                        <div class="review-stars">
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                        </div>
+                        <div class="review-verified">
+                            <span class="review-verified-icon">✓</span>
+                            Verified
+                        </div>
+                    </div>
+                    <p class="review-text">Never coded anything in my life before this. Like literally nothing. The vibe coding pack got me to build a simple lead tracker thing using Claude and Replit. Took a few tries and it's kinda ugly but it works?? My dev friend said it would've cost me $1500+ to hire someone for this.</p>
+                    <div class="review-author">
+                        <div class="review-info">
+                            <p class="review-name">Amanda P.</p>
+                            <p class="review-role">Real estate agent</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 5 - 4 stars -->
+                <div class="review-card">
+                    <div class="review-card-header">
+                        <div class="review-stars">
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star empty"></div>
+                        </div>
+                        <div class="review-verified">
+                            <span class="review-verified-icon">✓</span>
+                            Verified
+                        </div>
+                    </div>
+                    <p class="review-text">Solid toolkit, wish I found it sooner tbh. Been using ChatGPT for months but just basic stuff. These frameworks helped me actually understand what makes a good prompt vs just guessing. The Skool community is helpful too - people share what's working for them which is nice.</p>
+                    <div class="review-author">
+                        <div class="review-info">
+                            <p class="review-name">David M.</p>
+                            <p class="review-role">Agency owner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 6 - 5 stars -->
+                <div class="review-card">
+                    <div class="review-card-header">
+                        <div class="review-stars">
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                            <div class="review-star"></div>
+                        </div>
+                        <div class="review-verified">
+                            <span class="review-verified-icon">✓</span>
+                            Verified
+                        </div>
+                    </div>
+                    <p class="review-text">Grabbed this mainly for the graphic design pack since I do all my own social content. The Canva + AI workflow they show is really practical - I was doing everything manually before like an idiot lol. Probably saves me 4-5 hours a week now? Maybe more. Good stuff.</p>
+                    <div class="review-author">
+                        <div class="review-info">
+                            <p class="review-name">Rachel H.</p>
+                            <p class="review-role">Fitness coach, online</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 5: PRODUCT SHOWCASE - BOOK MOCKUPS
+     ============================================================ -->
+<section class="bg-titanium-dark section-padding-lg">
+    <div class="container">
+        <h2 class="section-headline" style="text-align: center;">What's Inside: 6 Complete Training Packs</h2>
+
+        <p class="body-text" style="text-align: center; max-width: 700px; margin: 0 auto 48px;">Each pack takes you from zero to proficient in that skill using AI. No prior experience needed — just follow the frameworks.</p>
+
+        <!-- ENHANCED: Stack-book visual with labels -->
+        <div class="products-stack">
+            <div class="stack-grid">
+                <!-- Book 1: AI Vibe Coding -->
+                <div style="text-align: center;">
+                    <div class="stack-book size-md stack-blue">
+                        <div class="stack-book-cover">
+                            <div class="stack-book-spine"></div>
+                            <div class="stack-book-design">
+                                <div class="stack-circles">
+                                    <div class="stack-circle sc1"></div>
+                                    <div class="stack-circle sc2"></div>
+                                    <div class="stack-circle sc3"></div>
+                                </div>
+                                <div class="stack-grid-pattern"></div>
+                            </div>
+                            <div class="stack-book-content">
+                                <div class="stack-book-icon">💻</div>
+                                <div class="stack-book-badge">Pack 1</div>
+                                <div class="stack-book-title">AI Vibe Coding</div>
+                                <div class="stack-book-author">$97</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="product-book-name">AI Vibe Coding</p>
+                    <p class="product-book-value">$97 Value</p>
+                </div>
+
+                <!-- Book 2: AI Image Generation -->
+                <div style="text-align: center;">
+                    <div class="stack-book size-md stack-purple">
+                        <div class="stack-book-cover">
+                            <div class="stack-book-spine"></div>
+                            <div class="stack-book-design">
+                                <div class="stack-circles">
+                                    <div class="stack-circle sc1"></div>
+                                    <div class="stack-circle sc2"></div>
+                                    <div class="stack-circle sc3"></div>
+                                </div>
+                                <div class="stack-grid-pattern"></div>
+                            </div>
+                            <div class="stack-book-content">
+                                <div class="stack-book-icon">🎨</div>
+                                <div class="stack-book-badge">Pack 2</div>
+                                <div class="stack-book-title">AI Image Gen</div>
+                                <div class="stack-book-author">$97</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="product-book-name">AI Image Generation</p>
+                    <p class="product-book-value">$97 Value</p>
+                </div>
+
+                <!-- Book 3: AI Graphic Design -->
+                <div style="text-align: center;">
+                    <div class="stack-book size-md stack-orange">
+                        <div class="stack-book-cover">
+                            <div class="stack-book-spine"></div>
+                            <div class="stack-book-design">
+                                <div class="stack-circles">
+                                    <div class="stack-circle sc1"></div>
+                                    <div class="stack-circle sc2"></div>
+                                    <div class="stack-circle sc3"></div>
+                                </div>
+                                <div class="stack-grid-pattern"></div>
+                            </div>
+                            <div class="stack-book-content">
+                                <div class="stack-book-icon">✏️</div>
+                                <div class="stack-book-badge">Pack 3</div>
+                                <div class="stack-book-title">Graphic Design</div>
+                                <div class="stack-book-author">$97</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="product-book-name">AI Graphic Design</p>
+                    <p class="product-book-value">$97 Value</p>
+                </div>
+
+                <!-- Book 4: Research with AI -->
+                <div style="text-align: center;">
+                    <div class="stack-book size-md stack-cyan">
+                        <div class="stack-book-cover">
+                            <div class="stack-book-spine"></div>
+                            <div class="stack-book-design">
+                                <div class="stack-circles">
+                                    <div class="stack-circle sc1"></div>
+                                    <div class="stack-circle sc2"></div>
+                                    <div class="stack-circle sc3"></div>
+                                </div>
+                                <div class="stack-grid-pattern"></div>
+                            </div>
+                            <div class="stack-book-content">
+                                <div class="stack-book-icon">🔍</div>
+                                <div class="stack-book-badge">Pack 4</div>
+                                <div class="stack-book-title">Research AI</div>
+                                <div class="stack-book-author">$97</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="product-book-name">Research with AI</p>
+                    <p class="product-book-value">$97 Value</p>
+                </div>
+
+                <!-- Book 5: AI Web Design -->
+                <div style="text-align: center;">
+                    <div class="stack-book size-md stack-green">
+                        <div class="stack-book-cover">
+                            <div class="stack-book-spine"></div>
+                            <div class="stack-book-design">
+                                <div class="stack-circles">
+                                    <div class="stack-circle sc1"></div>
+                                    <div class="stack-circle sc2"></div>
+                                    <div class="stack-circle sc3"></div>
+                                </div>
+                                <div class="stack-grid-pattern"></div>
+                            </div>
+                            <div class="stack-book-content">
+                                <div class="stack-book-icon">🌐</div>
+                                <div class="stack-book-badge">Pack 5</div>
+                                <div class="stack-book-title">AI Web Design</div>
+                                <div class="stack-book-author">$97</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="product-book-name">AI Web Design</p>
+                    <p class="product-book-value">$97 Value</p>
+                </div>
+
+                <!-- Book 6: Study with AI -->
+                <div style="text-align: center;">
+                    <div class="stack-book size-md stack-red">
+                        <div class="stack-book-cover">
+                            <div class="stack-book-spine"></div>
+                            <div class="stack-book-design">
+                                <div class="stack-circles">
+                                    <div class="stack-circle sc1"></div>
+                                    <div class="stack-circle sc2"></div>
+                                    <div class="stack-circle sc3"></div>
+                                </div>
+                                <div class="stack-grid-pattern"></div>
+                            </div>
+                            <div class="stack-book-content">
+                                <div class="stack-book-icon">📚</div>
+                                <div class="stack-book-badge">Pack 6</div>
+                                <div class="stack-book-title">Study with AI</div>
+                                <div class="stack-book-author">$97</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="product-book-name">Study with AI</p>
+                    <p class="product-book-value">$97 Value</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <p style="font-size: 20px; font-weight: 700; color: var(--pure-white); margin-bottom: 16px;">+ 3 Exclusive Bonuses</p>
+        </div>
+
+        <!-- BONUSES as Stack-Book Style -->
+        <div class="bonuses-stack">
+            <div class="stack-grid">
+                <!-- Bonus 1: Training Documentation Prompts -->
+                <div style="text-align: center;">
+                    <div class="stack-book size-md stack-bonus">
+                        <div class="stack-book-cover">
+                            <div class="stack-book-spine"></div>
+                            <div class="stack-book-design">
+                                <div class="stack-circles">
+                                    <div class="stack-circle sc1"></div>
+                                    <div class="stack-circle sc2"></div>
+                                    <div class="stack-circle sc3"></div>
+                                </div>
+                                <div class="stack-grid-pattern"></div>
+                            </div>
+                            <div class="stack-book-content">
+                                <div class="stack-book-icon">📝</div>
+                                <div class="stack-book-badge">Bonus 1</div>
+                                <div class="stack-book-title">Documentation Prompts</div>
+                                <div class="stack-book-author">$97</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="bonus-book-name">Training Documentation Prompts</p>
+                    <p class="bonus-book-value">$97 Value</p>
+                </div>
+
+                <!-- Bonus 2: Lifetime Updates -->
+                <div style="text-align: center;">
+                    <div class="stack-book size-md stack-bonus">
+                        <div class="stack-book-cover">
+                            <div class="stack-book-spine"></div>
+                            <div class="stack-book-design">
+                                <div class="stack-circles">
+                                    <div class="stack-circle sc1"></div>
+                                    <div class="stack-circle sc2"></div>
+                                    <div class="stack-circle sc3"></div>
+                                </div>
+                                <div class="stack-grid-pattern"></div>
+                            </div>
+                            <div class="stack-book-content">
+                                <div class="stack-book-icon">🔄</div>
+                                <div class="stack-book-badge">Bonus 2</div>
+                                <div class="stack-book-title">Lifetime Updates</div>
+                                <div class="stack-book-author">$197</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="bonus-book-name">Lifetime Updates</p>
+                    <p class="bonus-book-value">$197 Value</p>
+                </div>
+
+                <!-- Bonus 3: Community Access -->
+                <div style="text-align: center;">
+                    <div class="stack-book size-md stack-bonus">
+                        <div class="stack-book-cover">
+                            <div class="stack-book-spine"></div>
+                            <div class="stack-book-design">
+                                <div class="stack-circles">
+                                    <div class="stack-circle sc1"></div>
+                                    <div class="stack-circle sc2"></div>
+                                    <div class="stack-circle sc3"></div>
+                                </div>
+                                <div class="stack-grid-pattern"></div>
+                            </div>
+                            <div class="stack-book-content">
+                                <div class="stack-book-icon">🎓</div>
+                                <div class="stack-book-badge">Bonus 3</div>
+                                <div class="stack-book-title">Community Access</div>
+                                <div class="stack-book-author">$197</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="bonus-book-name">Skool.com Community Access</p>
+                    <p class="bonus-book-value">$197 Value</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="https://www.outsourcingleader.com/checkout" class="cta-button">Get All 6 Training Packs + Bonuses — $27</a>
+            <p class="cta-subtext">Start using these frameworks today. See results this week.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION: WHAT YOU'RE GETTING (Framework Description)
+     ============================================================ -->
+<section class="bg-deep-space section-padding">
+    <div class="container">
+        <h2 class="section-headline" style="text-align: center;">What You're Actually Getting</h2>
+        <p class="body-text" style="text-align: center; max-width: 700px; margin: 0 auto 48px;">Not another course that'll collect dust. These are practical frameworks designed to work with any AI tool — ChatGPT, Claude, Gemini, whatever comes next. The principles stay the same even as AI evolves.</p>
+
+        <div class="frameworks-grid">
+            <div class="framework-item">
+                <div class="framework-icon">📋</div>
+                <h3 class="framework-title">Step-by-Step Frameworks</h3>
+                <p class="framework-desc">Not vague advice. Actual workflows you can follow. Open the PDF, follow the steps, get results. Each framework breaks down complex tasks into simple prompts that work.</p>
+            </div>
+            <div class="framework-item">
+                <div class="framework-icon">💬</div>
+                <h3 class="framework-title">Prompt Libraries</h3>
+                <p class="framework-desc">Copy-paste prompts for every situation. Research prompts, coding prompts, design prompts, writing prompts. Tested and refined so you don't waste time guessing what works.</p>
+            </div>
+            <div class="framework-item">
+                <div class="framework-icon">🔧</div>
+                <h3 class="framework-title">Tool-Agnostic Methods</h3>
+                <p class="framework-desc">These frameworks work with ChatGPT, Claude, Gemini, Midjourney, DALL-E, Cursor, Replit — whatever tools you prefer. The techniques transfer because they're built on how AI actually works.</p>
+            </div>
+            <div class="framework-item">
+                <div class="framework-icon">🔄</div>
+                <h3 class="framework-title">Future-Proof Principles</h3>
+                <p class="framework-desc">AI tools change constantly. But the underlying principles — how to structure prompts, how to iterate, how to get better outputs — those stay relevant. Learn once, use forever.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION: TANGIBLE RESULTS (What You'll Be Able To Do)
+     ============================================================ -->
+<section class="bg-titanium-dark section-padding-lg">
+    <div class="container">
+        <h2 class="section-headline" style="text-align: center;">What You'll Actually Be Able To Do</h2>
+        <p class="body-text" style="text-align: center; max-width: 700px; margin: 0 auto 48px;">Real examples from people using these frameworks. Not "10x your life" — just practical stuff that saves time and money.</p>
+
+        <div class="results-grid">
+            <div class="result-card">
+                <div class="result-comparison">
+                    <div class="result-before">
+                        <span class="result-label">Without AI</span>
+                        <span class="result-value bad">$3,000 - $10,000</span>
+                        <span class="result-context">Hiring a developer</span>
+                    </div>
+                    <div class="result-vs">→</div>
+                    <div class="result-after">
+                        <span class="result-label">With Vibe Coding</span>
+                        <span class="result-value good">3-5 days + $0</span>
+                        <span class="result-context">Build it yourself</span>
+                    </div>
+                </div>
+                <p class="result-example">Build a simple web app, landing page, or automation tool. People are building lead trackers, booking systems, and portfolio sites — stuff that used to require hiring a dev.</p>
+            </div>
+
+            <div class="result-card">
+                <div class="result-comparison">
+                    <div class="result-before">
+                        <span class="result-label">Without AI</span>
+                        <span class="result-value bad">$30 - $100/image</span>
+                        <span class="result-context">Hiring a designer</span>
+                    </div>
+                    <div class="result-vs">→</div>
+                    <div class="result-after">
+                        <span class="result-label">With Image Gen</span>
+                        <span class="result-value good">~$0.02/image</span>
+                        <span class="result-context">Generate unlimited</span>
+                    </div>
+                </div>
+                <p class="result-example">Product mockups, social media graphics, ad creatives, thumbnails. Once you learn the prompting techniques, you can generate professional-looking visuals in minutes.</p>
+            </div>
+
+            <div class="result-card">
+                <div class="result-comparison">
+                    <div class="result-before">
+                        <span class="result-label">Without AI</span>
+                        <span class="result-value bad">8-12 hours</span>
+                        <span class="result-context">Weekend of research</span>
+                    </div>
+                    <div class="result-vs">→</div>
+                    <div class="result-after">
+                        <span class="result-label">With Research Pack</span>
+                        <span class="result-value good">1-2 hours</span>
+                        <span class="result-context">Same depth, way faster</span>
+                    </div>
+                </div>
+                <p class="result-example">Competitor analysis, market research, content research, due diligence. The frameworks help you extract and organize information systematically instead of random googling.</p>
+            </div>
+
+            <div class="result-card">
+                <div class="result-comparison">
+                    <div class="result-before">
+                        <span class="result-label">Without AI</span>
+                        <span class="result-value bad">$500 - $2,000</span>
+                        <span class="result-context">Per website design</span>
+                    </div>
+                    <div class="result-vs">→</div>
+                    <div class="result-after">
+                        <span class="result-label">With Web Design</span>
+                        <span class="result-value good">DIY in a weekend</span>
+                        <span class="result-context">Professional results</span>
+                    </div>
+                </div>
+                <p class="result-example">Design and build responsive websites, landing pages, sales pages. Use AI to write the code, generate the copy, and create the visuals — all without prior web experience.</p>
+            </div>
+        </div>
+
+        <p class="body-text" style="text-align: center; margin-top: 40px; color: var(--apple-grey); font-size: 15px;">* Results vary. These are examples of what's possible, not guarantees. Your results depend on the effort you put in.</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 7: WHO THIS IS FOR
+     ============================================================ -->
+<section class="bg-deep-space section-padding">
+    <div class="container">
+        <h2 class="section-headline">This Is For You If...</h2>
+
+        <ul class="check-list">
+            <li><span class="icon-check">✓</span> You want to 10x your productivity but don't know how to use AI effectively</li>
+            <li><span class="icon-check">✓</span> You're paying expensive freelancers for coding, design, or research you could do yourself with the right training</li>
+            <li><span class="icon-check">✓</span> You know AI is powerful but you're stuck with basic prompts that don't work</li>
+            <li><span class="icon-check">✓</span> You want to become a true AI-powered operator, not just someone who dabbles</li>
+            <li><span class="icon-check">✓</span> You're tired of watching other entrepreneurs crush it with AI while you fall behind</li>
+        </ul>
+
+        <h2 class="section-headline" style="margin-top: 60px;">This Is NOT For You If...</h2>
+
+        <ul class="check-list">
+            <li><span class="icon-x">✗</span> You're looking for theory — this is practical, hands-on training</li>
+            <li><span class="icon-x">✗</span> You're not willing to actually use AI in your business</li>
+            <li><span class="icon-x">✗</span> You expect results without putting in the work to learn</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 8: OBJECTION HANDLING
+     ============================================================ -->
+<section class="bg-titanium-dark section-padding-lg">
+    <div class="container">
+        <h2 class="section-headline" style="text-align: center;">"Yeah, But..."</h2>
+
+        <div class="objection-item">
+            <p class="objection-question">"I have no technical skills. Can I really learn coding and web design?"</p>
+            <p class="objection-answer">That's exactly why these packs exist. AI does the heavy lifting. You learn to prompt AI effectively — not to become a developer or designer. We've trained business owners with zero technical background to build automations, websites, and graphics in under a week.</p>
+        </div>
+
+        <div class="objection-item">
+            <p class="objection-question">"I don't have time to go through 6 different training programs."</p>
+            <p class="objection-answer">You don't need to go through all 6 at once. Start with the skill you need most. Each pack is self-contained and designed to be completed in a few hours. Most people start with research or image generation and see results the same day.</p>
+        </div>
+
+        <div class="objection-item">
+            <p class="objection-question">"I've tried AI before and it didn't work for me."</p>
+            <p class="objection-answer">That's because you were guessing. These packs give you the exact frameworks, prompts, and techniques that actually work. No more trial and error — just follow the system.</p>
+        </div>
+
+        <div class="objection-item">
+            <p class="objection-question">"$27 seems too cheap. Is this actually good?"</p>
+            <p class="objection-answer">It's priced for mass adoption during launch. We want 1,000+ entrepreneurs trained this month. The price goes up once we hit our goal. This is the same training framework used by clients paying 10x more.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 9: GUARANTEE
+     ============================================================ -->
+<section class="bg-blue-glow section-padding">
+    <div class="container" style="text-align: center;">
+        <h2 class="section-headline">The "Use It Or Don't Pay" Guarantee</h2>
+
+        <div class="guarantee-box">
+            <div class="guarantee-icon">🛡️</div>
+            <p class="guarantee-title">30-Day Money-Back Guarantee</p>
+
+            <p class="body-text">Get the complete AI Operator Toolkit. Start with the skill you need most. Give yourself 7 days to start using the techniques.</p>
+
+            <p class="body-text">If you don't see a real difference in what you can accomplish within 30 days — email me. Full refund. No questions.</p>
+
+            <p class="body-text">I've helped 160+ business owners with this. <strong>I know it works.</strong></p>
+
+            <p class="body-text">But you don't have to trust me. Take it for a risk-free test drive.</p>
+        </div>
+
+        <a href="https://www.outsourcingleader.com/checkout" class="cta-button">Get The Complete Toolkit — 100% Risk Free</a>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 10: OFFER STACK - COMPACT
+     ============================================================ -->
+<section id="order" class="bg-titanium-dark section-padding-lg">
+    <div class="container">
+        <h2 class="section-headline" style="text-align: center;">Everything You Get Today</h2>
+
+        <div class="offer-stack">
+            <span class="offer-stack-badge">⚡ Launch Special — 97% Off</span>
+
+            <h3 class="offer-title">The Complete AI Operator Toolkit</h3>
+
+            <div class="offer-item">
+                <span class="offer-check">✓</span>
+                <span class="offer-text">AI Vibe Coding Training Pack</span>
+                <span class="offer-value">($97)</span>
+            </div>
+
+            <div class="offer-item">
+                <span class="offer-check">✓</span>
+                <span class="offer-text">AI Image Generation Training Pack</span>
+                <span class="offer-value">($97)</span>
+            </div>
+
+            <div class="offer-item">
+                <span class="offer-check">✓</span>
+                <span class="offer-text">AI Graphic Design Training Pack</span>
+                <span class="offer-value">($97)</span>
+            </div>
+
+            <div class="offer-item">
+                <span class="offer-check">✓</span>
+                <span class="offer-text">Research with AI Training Pack</span>
+                <span class="offer-value">($97)</span>
+            </div>
+
+            <div class="offer-item">
+                <span class="offer-check">✓</span>
+                <span class="offer-text">AI Web Design Training Pack</span>
+                <span class="offer-value">($97)</span>
+            </div>
+
+            <div class="offer-item">
+                <span class="offer-check">✓</span>
+                <span class="offer-text">Study with AI Training Pack</span>
+                <span class="offer-value">($97)</span>
+            </div>
+
+            <div class="offer-item bonus-item">
+                <span class="offer-check">🎁</span>
+                <span class="offer-text"><strong>BONUS:</strong> Training Documentation Prompts</span>
+                <span class="offer-value">($97)</span>
+            </div>
+
+            <div class="offer-item bonus-item">
+                <span class="offer-check">🎁</span>
+                <span class="offer-text"><strong>BONUS:</strong> Lifetime Updates + Future Packs</span>
+                <span class="offer-value">($197)</span>
+            </div>
+
+            <div class="offer-item bonus-item">
+                <span class="offer-check">🎁</span>
+                <span class="offer-text"><strong>BONUS:</strong> Skool.com Community Access</span>
+                <span class="offer-value">($197)</span>
+            </div>
+
+            <p class="total-value">Total Value: $1,073</p>
+            <p class="today-price">$27</p>
+            <p class="savings-text">You Save Over $1,000 Today!</p>
+
+            <a href="https://www.outsourcingleader.com/checkout" class="cta-button">Get The AI Operator Toolkit → $27</a>
+            <p class="micro-text">One-time payment. Instant delivery. 30-day guarantee. Use it forever.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 11: FINAL CTA
+     ============================================================ -->
+<section class="final-cta">
+    <div class="container" style="text-align: center;">
+        <h2 class="section-headline">Become an AI-Powered Operator. Finally.</h2>
+
+        <p class="body-text">Stop struggling with basic prompts. Stop paying expensive freelancers. Stop watching others crush it with AI.</p>
+
+        <p class="body-text">Get the complete AI toolkit — coding, design, research, web development, images, and more. All the skills you need.</p>
+
+        <p class="body-text"><strong>$27 today. Results this week. 30-day guarantee.</strong></p>
+
+        <a href="https://www.outsourcingleader.com/checkout" class="cta-button" style="margin-top: 40px;">Get The AI Operator Toolkit →</a>
+        <p class="micro-text">Instant access. Start learning today. Works with any AI tool.</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 12: FAQ
+     ============================================================ -->
+<section class="bg-titanium-dark section-padding">
+    <div class="container">
+        <h2 class="section-headline" style="text-align: center;">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <p class="faq-question">Q: How quickly can I start using these training packs?</p>
+            <p class="faq-answer">A: Immediately. Each pack is self-contained. Most people start with whichever skill they need most — usually research or image generation — and see results within the first day.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">Q: Do I need prior experience in coding/design/etc?</p>
+            <p class="faq-answer">A: No. Each pack assumes zero prior knowledge. The training focuses on using AI to do the work — not becoming a traditional developer or designer.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">Q: What format are the training packs in?</p>
+            <p class="faq-answer">A: PDF guides, prompt libraries, and step-by-step frameworks you can copy and use immediately. Works with whatever AI tools you already use (ChatGPT, Claude, Midjourney, etc.)</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">Q: Is this a subscription?</p>
+            <p class="faq-answer">A: No. One-time payment of $27. You own everything forever. Plus you get lifetime updates and access to the Skool community at no extra cost.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">Q: What's included in the Skool community?</p>
+            <p class="faq-answer">A: A private community of entrepreneurs sharing prompts, workflows, and wins. Regular updates with new AI techniques. Direct access to ask questions and get support.</p>
+        </div>
+
+        <div class="faq-item">
+            <p class="faq-question">Q: Will this price go up?</p>
+            <p class="faq-answer">A: Yes. The $27 launch price is temporary. Once we hit our early-bird goal, it goes back to $97. This is your best chance to get in at the lowest price.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 13: FOOTER CTA
+     ============================================================ -->
+<section class="bg-blue-glow section-padding">
+    <div class="container" style="text-align: center;">
+        <h2 class="headline">$27 for the Complete <span class="headline-green">AI Operator Toolkit.</span></h2>
+        <p class="subheadline">Master 6 critical AI skills. Become an AI-powered entrepreneur.</p>
+
+        <a href="https://www.outsourcingleader.com/checkout" class="cta-button" style="margin-top: 32px;">Get The AI Operator Toolkit →</a>
+        <p class="cta-subtext">🔒 Secure checkout • Instant access • 30-day guarantee</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer style="background: #0a0a0c; border-top: 1px solid rgba(255,255,255,0.08); padding: 60px 0 40px;">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <p style="font-size: 18px; font-weight: 600; color: var(--pure-white); margin-bottom: 8px;">Recrutu Virtual Assistants LLC</p>
+            <p style="font-size: 14px; color: var(--apple-grey); margin-bottom: 4px;">2416 Marian Bay Circle</p>
+            <p style="font-size: 14px; color: var(--apple-grey); margin-bottom: 4px;">Anchorage, AK 99515, USA</p>
+            <p style="font-size: 14px; color: var(--apple-grey); margin-top: 12px;">
+                <a href="mailto:nurikadi@recrutugo.com" style="color: var(--system-blue); text-decoration: none;">nurikadi@recrutugo.com</a>
+            </p>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 40px;">
+            <a href="https://www.outsourcingleader.com/privacypolicy-page" target="_blank" style="color: var(--apple-grey); text-decoration: none; font-size: 14px; margin: 0 16px;">Privacy Policy</a>
+            <a href="https://www.outsourcingleader.com/termsandconditions-page" target="_blank" style="color: var(--apple-grey); text-decoration: none; font-size: 14px; margin: 0 16px;">Terms of Service</a>
+            <a href="mailto:nurikadi@recrutugo.com" style="color: var(--apple-grey); text-decoration: none; font-size: 14px; margin: 0 16px;">Contact</a>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px; margin-bottom: 32px;">
+            <p style="font-size: 12px; color: var(--apple-grey); line-height: 1.7; text-align: center; margin: 0;">
+                <strong style="color: var(--pure-white);">Facebook Ads Disclaimer:</strong> This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.
+            </p>
+        </div>
+
+        <div style="margin-bottom: 32px;">
+            <p style="font-size: 11px; color: var(--apple-grey); line-height: 1.7; text-align: center; opacity: 0.7;">
+                <strong>Earnings Disclaimer:</strong> The results mentioned are not typical. Your results will vary and depend on many factors including but not limited to your background, experience, and work ethic. All business entails risk as well as consistent effort and action.
+            </p>
+        </div>
+
+        <div style="text-align: center; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06);">
+            <p style="font-size: 13px; color: var(--apple-grey); margin: 0;">
+                © 2025 Recrutu Virtual Assistants LLC. All Rights Reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<!-- FLOATING CTA BAR -->
+<div class="floating-cta" id="floatingCta">
+    <span class="floating-cta-text">Complete AI Toolkit</span>
+    <span class="floating-cta-price">$27</span>
+    <a href="https://www.outsourcingleader.com/checkout" class="cta-button">Get Instant Access →</a>
+</div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+// Countdown Timer
+(function() {
+    const COUNTDOWN_KEY = 'ai_toolkit_countdown_end';
+    let endTime = localStorage.getItem(COUNTDOWN_KEY);
+
+    if (!endTime) {
+        endTime = Date.now() + (48 * 60 * 60 * 1000);
+        localStorage.setItem(COUNTDOWN_KEY, endTime);
+    } else {
+        endTime = parseInt(endTime);
+    }
+
+    function updateCountdown() {
+        const now = Date.now();
+        const diff = endTime - now;
+
+        if (diff <= 0) {
+            endTime = Date.now() + (48 * 60 * 60 * 1000);
+            localStorage.setItem(COUNTDOWN_KEY, endTime);
+        }
+
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+})();
+
+// Spots Counter
+(function() {
+    const SPOTS_KEY = 'ai_toolkit_spots';
+    const SPOTS_TIME_KEY = 'ai_toolkit_spots_time';
+    let spots = localStorage.getItem(SPOTS_KEY);
+    let lastUpdate = localStorage.getItem(SPOTS_TIME_KEY);
+
+    if (!spots) {
+        spots = 87;
+        localStorage.setItem(SPOTS_KEY, spots);
+        localStorage.setItem(SPOTS_TIME_KEY, Date.now());
+    } else {
+        spots = parseInt(spots);
+        lastUpdate = parseInt(lastUpdate);
+        const elapsed = Date.now() - lastUpdate;
+        const decrements = Math.floor(elapsed / (20 * 60 * 1000));
+
+        if (decrements > 0) {
+            spots = Math.max(23, spots - decrements);
+            localStorage.setItem(SPOTS_KEY, spots);
+            localStorage.setItem(SPOTS_TIME_KEY, Date.now());
+        }
+    }
+
+    document.getElementById('spots-count').textContent = spots;
+})();
+
+// Floating CTA
+(function() {
+    const floatingCta = document.getElementById('floatingCta');
+    const heroSection = document.querySelector('.hero-neural');
+
+    function checkScroll() {
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        const scrollY = window.scrollY || window.pageYOffset;
+
+        if (scrollY > heroBottom) {
+            floatingCta.classList.add('visible');
+        } else {
+            floatingCta.classList.remove('visible');
+        }
+    }
+
+    window.addEventListener('scroll', checkScroll);
+    checkScroll();
+})();
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            const offset = 100;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+</script>
+
+</body>
+</html>
