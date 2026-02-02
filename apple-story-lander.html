@@ -7,6 +7,9 @@
 <meta name="description" content="The foundational framework that makes AI finally click. Not tips. Not hacks. The actual system for making AI work for your business.">
 
 <!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 @font-face {
     font-family: 'New Icon';
@@ -39,8 +42,8 @@
 :root {
     --bg-primary: #000000;
     --bg-secondary: #0a0a0a;
-    --bg-card: #111111;
-    --text-primary: #ffffff;
+    --bg-card: #1a1a1a;
+    --text-primary: #f5f5f7;
     --text-secondary: #a1a1a6;
     --text-muted: #6e6e73;
     --accent-blue: #2997ff;
@@ -49,10 +52,8 @@
     --accent-purple: #bf5af2;
     --accent-red: #ff453a;
     --accent-cyan: #64d2ff;
+    --accent-pink: #ff375f;
     --glass-border: rgba(255, 255, 255, 0.08);
-    --font-display: 'New Icon', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
-    --font-accent: 'Amoresa', Georgia, serif;
-    --font-body: 'Georgia Pro Condensed', Georgia, serif;
 }
 
 html {
@@ -60,12 +61,14 @@ html {
 }
 
 body {
-    font-family: var(--font-body);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg-primary);
     color: var(--text-primary);
+    font-size: 17px;
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -194,43 +197,63 @@ body {
 
 /* ============ 3D BOOK STACK ============ */
 .product-stack {
-    margin: 48px auto;
-    max-width: 600px;
+    margin: 48px 0;
+    padding: 40px 24px;
+    background: linear-gradient(145deg, rgba(41, 151, 255, 0.05) 0%, rgba(0, 0, 0, 0.3) 50%, var(--bg-primary) 100%);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-stack::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(41, 151, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .stack-grid {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    gap: 12px;
-    perspective: 1000px;
-    margin-bottom: 16px;
+    gap: 14px;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
 }
 
 .stack-book {
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transform: perspective(800px) rotateY(-6deg);
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    cursor: pointer;
 }
 
 .stack-book:hover {
-    transform: translateY(-8px) rotateY(-5deg);
+    transform: perspective(800px) rotateY(-6deg) translateY(-12px) scale(1.02);
 }
 
-.stack-book.size-sm { width: 80px; height: 110px; }
-.stack-book.size-md { width: 90px; height: 124px; }
-.stack-book.size-lg { width: 100px; height: 138px; }
+.stack-book.size-sm { width: 95px; height: 130px; }
+.stack-book.size-md { width: 105px; height: 145px; }
+.stack-book.size-lg { width: 115px; height: 158px; }
 
 .stack-book-cover {
     width: 100%;
     height: 100%;
+    border-radius: 4px 12px 12px 4px;
     position: relative;
-    transform-style: preserve-3d;
-    transform: rotateY(-15deg);
-    border-radius: 4px 8px 8px 4px;
+    overflow: hidden;
     box-shadow:
-        -6px 6px 20px rgba(0, 0, 0, 0.5),
-        0 0 40px rgba(0, 0, 0, 0.3);
+        -8px 8px 24px rgba(0, 0, 0, 0.5),
+        0 16px 40px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .stack-book-spine {
@@ -238,115 +261,136 @@ body {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 12px;
-    background: inherit;
-    filter: brightness(0.7);
-    transform: rotateY(90deg) translateX(-6px);
-    transform-origin: left;
-    border-radius: 2px 0 0 2px;
+    width: 14px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
 }
 
 .stack-book-design {
     position: absolute;
-    inset: 0;
-    border-radius: 4px 8px 8px 4px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     overflow: hidden;
 }
 
 .stack-circles {
     position: absolute;
+    top: 12px;
     right: -20px;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
 }
 
 .stack-circle {
-    border-radius: 50%;
     position: absolute;
-    opacity: 0.3;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-.stack-circle.sc1 { width: 60px; height: 60px; right: 0; top: -30px; }
-.stack-circle.sc2 { width: 40px; height: 40px; right: 20px; top: 0; }
-.stack-circle.sc3 { width: 30px; height: 30px; right: 5px; top: 20px; }
+.stack-circle.sc1 { width: 70px; height: 70px; top: 0; right: 0; }
+.stack-circle.sc2 { width: 50px; height: 50px; top: 10px; right: 10px; }
+.stack-circle.sc3 { width: 30px; height: 30px; top: 20px; right: 20px; }
 
 .stack-grid-pattern {
     position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 8px 8px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background:
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 10px 10px;
+    mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
 }
 
 .stack-book-content {
     position: relative;
-    z-index: 2;
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 14px 12px 12px 16px;
+    padding: 18px 14px 14px 20px;
+    z-index: 2;
 }
 
 .stack-book-icon {
-    width: 28px;
-    height: 28px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 6px;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
-    margin-bottom: 8px;
+    font-size: 18px;
+    margin-bottom: 12px;
 }
 
 .stack-book-badge {
-    font-size: 8px;
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 9px;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.7;
-    margin-bottom: 4px;
-    font-family: var(--font-display);
+    letter-spacing: 0.8px;
+    width: fit-content;
+    margin-bottom: 8px;
 }
 
 .stack-book-title {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 700;
-    line-height: 1.2;
-    margin-top: auto;
-    font-family: var(--font-display);
+    color: white;
+    line-height: 1.25;
+    margin-bottom: auto;
 }
 
 .stack-book-author {
-    font-size: 8px;
-    opacity: 0.6;
-    margin-top: 2px;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 600;
 }
 
-/* Book Colors */
-.stack-blue .stack-book-cover { background: linear-gradient(135deg, #1a3a5c 0%, #0d1f33 100%); }
-.stack-blue .stack-circle { background: var(--accent-blue); }
+/* Book Colors - Enhanced */
+.stack-blue .stack-book-cover { background: linear-gradient(145deg, #1e3a5f 0%, #0d1b2a 100%); }
+.stack-blue .stack-book-icon { background: linear-gradient(135deg, rgba(41, 151, 255, 0.3), rgba(41, 151, 255, 0.1)); border: 1px solid rgba(41, 151, 255, 0.4); }
+.stack-blue .stack-book-badge { background: rgba(41, 151, 255, 0.25); border: 1px solid rgba(41, 151, 255, 0.4); color: #7cc4ff; }
+.stack-blue .stack-circle.sc3 { background: rgba(41, 151, 255, 0.25); }
 
-.stack-purple .stack-book-cover { background: linear-gradient(135deg, #3d1a5c 0%, #1f0d33 100%); }
-.stack-purple .stack-circle { background: var(--accent-purple); }
+.stack-purple .stack-book-cover { background: linear-gradient(145deg, #3d2a5c 0%, #1a1028 100%); }
+.stack-purple .stack-book-icon { background: linear-gradient(135deg, rgba(191, 90, 242, 0.3), rgba(191, 90, 242, 0.1)); border: 1px solid rgba(191, 90, 242, 0.4); }
+.stack-purple .stack-book-badge { background: rgba(191, 90, 242, 0.25); border: 1px solid rgba(191, 90, 242, 0.4); color: #d4a5f9; }
+.stack-purple .stack-circle.sc3 { background: rgba(191, 90, 242, 0.25); }
 
-.stack-orange .stack-book-cover { background: linear-gradient(135deg, #5c3a1a 0%, #331f0d 100%); }
-.stack-orange .stack-circle { background: var(--accent-orange); }
+.stack-orange .stack-book-cover { background: linear-gradient(145deg, #5c3d2e 0%, #2a1a10 100%); }
+.stack-orange .stack-book-icon { background: linear-gradient(135deg, rgba(255, 159, 10, 0.3), rgba(255, 159, 10, 0.1)); border: 1px solid rgba(255, 159, 10, 0.4); }
+.stack-orange .stack-book-badge { background: rgba(255, 159, 10, 0.25); border: 1px solid rgba(255, 159, 10, 0.4); color: #ffcc70; }
+.stack-orange .stack-circle.sc3 { background: rgba(255, 159, 10, 0.25); }
 
-.stack-cyan .stack-book-cover { background: linear-gradient(135deg, #1a4a5c 0%, #0d2833 100%); }
-.stack-cyan .stack-circle { background: var(--accent-cyan); }
+.stack-cyan .stack-book-cover { background: linear-gradient(145deg, #134e5e 0%, #0a2a33 100%); }
+.stack-cyan .stack-book-icon { background: linear-gradient(135deg, rgba(100, 210, 255, 0.3), rgba(100, 210, 255, 0.1)); border: 1px solid rgba(100, 210, 255, 0.4); }
+.stack-cyan .stack-book-badge { background: rgba(100, 210, 255, 0.25); border: 1px solid rgba(100, 210, 255, 0.4); color: #9ee5ff; }
+.stack-cyan .stack-circle.sc3 { background: rgba(100, 210, 255, 0.25); }
 
-.stack-green .stack-book-cover { background: linear-gradient(135deg, #1a5c3a 0%, #0d331f 100%); }
-.stack-green .stack-circle { background: var(--accent-green); }
+.stack-green .stack-book-cover { background: linear-gradient(145deg, #1a4d3e 0%, #0d2820 100%); }
+.stack-green .stack-book-icon { background: linear-gradient(135deg, rgba(48, 209, 88, 0.3), rgba(48, 209, 88, 0.1)); border: 1px solid rgba(48, 209, 88, 0.4); }
+.stack-green .stack-book-badge { background: rgba(48, 209, 88, 0.25); border: 1px solid rgba(48, 209, 88, 0.4); color: #7ee8a0; }
+.stack-green .stack-circle.sc3 { background: rgba(48, 209, 88, 0.25); }
 
-.stack-red .stack-book-cover { background: linear-gradient(135deg, #5c1a1a 0%, #330d0d 100%); }
-.stack-red .stack-circle { background: var(--accent-red); }
+.stack-red .stack-book-cover { background: linear-gradient(145deg, #5c2a2a 0%, #2a1010 100%); }
+.stack-red .stack-book-icon { background: linear-gradient(135deg, rgba(255, 69, 58, 0.3), rgba(255, 69, 58, 0.1)); border: 1px solid rgba(255, 69, 58, 0.4); }
+.stack-red .stack-book-badge { background: rgba(255, 69, 58, 0.25); border: 1px solid rgba(255, 69, 58, 0.4); color: #ff9590; }
+.stack-red .stack-circle.sc3 { background: rgba(255, 69, 58, 0.25); }
 
 .stack-label {
     text-align: center;
-    font-size: 14px;
+    margin-top: 28px;
+    font-size: 13px;
+    font-weight: 600;
     color: var(--text-muted);
-    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* ============ PRICING ============ */
@@ -1124,9 +1168,9 @@ footer a {
         font-size: 16px;
     }
 
-    .stack-book.size-sm { width: 70px; height: 96px; }
-    .stack-book.size-md { width: 78px; height: 107px; }
-    .stack-book.size-lg { width: 86px; height: 118px; }
+    .stack-book.size-sm { width: 80px; height: 110px; }
+    .stack-book.size-md { width: 90px; height: 124px; }
+    .stack-book.size-lg { width: 100px; height: 138px; }
 
     .testimonials-grid {
         grid-template-columns: 1fr;
@@ -1245,13 +1289,13 @@ footer a {
         </div>
 
         <h1 class="hero-title">
-            I Was Drowning in 15-Hour Days.<br>
-            <span class="gradient">Then I Discovered This.</span>
+            3x Your Output.<br>
+            <span class="gradient">Half The Hours.</span>
         </h1>
 
         <p class="hero-subtitle">
-            There's a foundational framework that makes AI finally <em>click</em>. Not tips. Not hacks. Not another tool to learn.<br>
-            <strong>The actual operating system that let me 3x my company while working half the hours.</strong>
+            The foundational AI framework that makes everything finally <em>click</em>. Not tips. Not hacks. Not another tool to learn.<br>
+            <strong>The actual operating system that lets you work smarter — not harder.</strong>
         </p>
 
         <!-- PRODUCT STACK -->
