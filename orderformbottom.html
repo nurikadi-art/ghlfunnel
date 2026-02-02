@@ -1,0 +1,686 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order Form Bottom Section - AI Operator Toolkit</title>
+<style type="text/css">
+/* ============================================================
+   AI OPERATOR TOOLKIT - FRONT END ORDER FORM BOTTOM
+   Trust Elements, FAQ, Footer - Titanium Blue Theme
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --system-blue: #0a84ff;
+    --system-blue-dark: #0066cc;
+    --pure-white: #f5f5f7;
+    --apple-grey: #86868b;
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --highlight-green: #28cd41;
+    --bg-dark: #020204;
+    --bg-card: rgba(255, 255, 255, 0.02);
+    --trustpilot-green: #00b67a;
+    --verified-blue: #1d9bf0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    background-color: var(--bg-dark) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    color: var(--pure-white) !important;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+}
+
+/* GHL Override */
+.c-section, .c-row, .c-column, .c-column > .inner, .c-custom-html,
+.hl_page-creator--row, .hl_page-creator--column {
+    background-color: transparent !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.bottom-wrapper {
+    width: 100%;
+    background: var(--bg-dark);
+}
+
+.container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* ============================================================
+   TRUSTPILOT REVIEWS SECTION
+   ============================================================ */
+.trustpilot-section {
+    padding: 48px 0;
+    background: linear-gradient(180deg, rgba(0, 182, 122, 0.04) 0%, var(--bg-dark) 100%);
+    border-top: 1px solid rgba(0, 182, 122, 0.2);
+}
+
+.trustpilot-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.trustpilot-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.trustpilot-logo-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.trustpilot-logo-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--pure-white);
+    letter-spacing: -0.3px;
+}
+
+.trustpilot-logo-text span {
+    color: var(--trustpilot-green);
+}
+
+.trustpilot-stars {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    margin-bottom: 8px;
+}
+
+.trustpilot-star {
+    width: 20px;
+    height: 20px;
+    background: var(--trustpilot-green);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.trustpilot-rating {
+    font-size: 13px;
+    color: var(--apple-grey);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.review-card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.review-card:hover {
+    border-color: rgba(0, 182, 122, 0.25);
+    background: rgba(0, 182, 122, 0.03);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.review-author-name {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--pure-white);
+}
+
+.verified-badge {
+    width: 14px;
+    height: 14px;
+    background: var(--verified-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.verified-badge svg {
+    width: 8px;
+    height: 8px;
+    fill: #fff;
+}
+
+.review-stars {
+    display: flex;
+    gap: 2px;
+}
+
+.review-star {
+    width: 14px;
+    height: 14px;
+    background: var(--trustpilot-green);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.review-star.empty {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.review-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--pure-white);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.review-text {
+    font-size: 13px;
+    color: var(--apple-grey);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.review-text strong {
+    color: var(--pure-white);
+    font-weight: 600;
+}
+
+.review-role {
+    font-size: 11px;
+    color: var(--apple-grey);
+    margin-top: 12px;
+    font-style: italic;
+}
+
+/* ============================================================
+   SECTION 7: TRUST ELEMENTS
+   ============================================================ */
+.trust-elements {
+    padding: 48px 0;
+    border-top: 1px solid var(--glass-border);
+}
+
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.trust-item {
+    text-align: center;
+    padding: 24px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.trust-item:hover {
+    border-color: rgba(10, 132, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.trust-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.trust-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--pure-white);
+    margin-bottom: 8px;
+}
+
+.trust-description {
+    font-size: 12px;
+    color: var(--apple-grey);
+    line-height: 1.5;
+}
+
+/* ============================================================
+   SECTION 8: MINI FAQ
+   ============================================================ */
+.faq-section {
+    padding: 48px 0;
+    border-top: 1px solid var(--glass-border);
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.faq-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--pure-white);
+    margin-bottom: 8px;
+}
+
+.faq-subtitle {
+    font-size: 14px;
+    color: var(--apple-grey);
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 18px 20px;
+    background: transparent;
+    border: none;
+    color: var(--pure-white);
+    font-size: 15px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: inherit;
+    transition: background 0.2s ease;
+}
+
+.faq-question:hover {
+    background: rgba(10, 132, 255, 0.05);
+}
+
+.faq-icon {
+    font-size: 18px;
+    color: var(--system-blue);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 16px;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+}
+
+.faq-answer-content {
+    padding: 0 20px 18px;
+    font-size: 14px;
+    color: var(--apple-grey);
+    line-height: 1.6;
+}
+
+/* ============================================================
+   SECTION 9: FOOTER
+   ============================================================ */
+.footer-section {
+    padding: 40px 0 32px;
+    border-top: 1px solid var(--glass-border);
+    text-align: center;
+}
+
+.footer-contact {
+    margin-bottom: 20px;
+}
+
+.footer-contact-text {
+    font-size: 14px;
+    color: var(--apple-grey);
+}
+
+.footer-contact-text a {
+    color: var(--system-blue);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.footer-contact-text a:hover {
+    opacity: 0.8;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-link {
+    font-size: 13px;
+    color: var(--apple-grey);
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: var(--system-blue);
+}
+
+.footer-divider {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-copyright {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .review-card {
+        padding: 16px;
+    }
+
+    .review-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .trust-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .trust-item {
+        padding: 20px 16px;
+    }
+
+    .trust-icon {
+        font-size: 28px;
+    }
+
+    .faq-section {
+        padding: 40px 0;
+    }
+
+    .faq-title {
+        font-size: 18px;
+    }
+
+    .faq-question {
+        padding: 16px;
+        font-size: 14px;
+    }
+
+    .faq-answer-content {
+        padding: 0 16px 16px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .trust-elements {
+        padding: 40px 0;
+    }
+
+    .trust-title {
+        font-size: 13px;
+    }
+
+    .trust-description {
+        font-size: 11px;
+    }
+
+    .footer-link {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .footer-divider {
+        display: none;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="bottom-wrapper">
+
+    <!-- ============================================================
+         TRUSTPILOT REVIEWS
+         ============================================================ -->
+    <section class="trustpilot-section">
+        <div class="container">
+            <div class="trustpilot-header">
+                <div class="trustpilot-logo">
+                    <svg class="trustpilot-logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 0L20.944 9.93691L32 11.6393L24 19.4262L25.888 30.4L16 25.1369L6.112 30.4L8 19.4262L0 11.6393L11.056 9.93691L16 0Z" fill="#00b67a"/>
+                    </svg>
+                    <span class="trustpilot-logo-text">Trust<span>pilot</span></span>
+                </div>
+                <div class="trustpilot-stars">
+                    <div class="trustpilot-star"></div>
+                    <div class="trustpilot-star"></div>
+                    <div class="trustpilot-star"></div>
+                    <div class="trustpilot-star"></div>
+                    <div class="trustpilot-star"></div>
+                </div>
+                <p class="trustpilot-rating">4.9 out of 5 · Based on 127 reviews</p>
+            </div>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <span class="review-author-name">
+                                Mike K.
+                                <span class="verified-badge">
+                                    <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/></svg>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="review-stars">
+                            <div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div>
+                        </div>
+                    </div>
+                    <h4 class="review-title">Skeptical at first... but it actually works</h4>
+                    <p class="review-text">$27 seemed too cheap to be useful. But I needed help with landing pages. <strong>Went through the web design pack</strong> over a weekend and actually built something decent in Cursor. Way better than I expected.</p>
+                    <p class="review-role">Runs a small marketing agency</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <span class="review-author-name">
+                                Sarah L.
+                                <span class="verified-badge">
+                                    <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/></svg>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="review-stars">
+                            <div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star empty"></div>
+                        </div>
+                    </div>
+                    <h4 class="review-title">The image gen stuff is honestly pretty solid</h4>
+                    <p class="review-text">I use it for my etsy shop — product mockups mostly. <strong>Cranking out 15-20 graphics a week now.</strong> Used to pay a designer $40 per image so... the math works out lol</p>
+                    <p class="review-role">Etsy seller, mom of 2</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-author">
+                            <span class="review-author-name">
+                                James R.
+                                <span class="verified-badge">
+                                    <svg viewBox="0 0 24 24" fill="none"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="currentColor"/></svg>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="review-stars">
+                            <div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div><div class="review-star"></div>
+                        </div>
+                    </div>
+                    <h4 class="review-title">Research pack saved my butt</h4>
+                    <p class="review-text">Had a client presentation due and needed competitor analysis fast. <strong>Pulled together something in 2 hours</strong> that would've taken me all weekend. That one pack alone was worth it.</p>
+                    <p class="review-role">Freelance consultant</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7: TRUST ELEMENTS
+         ============================================================ -->
+    <section class="trust-elements">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <span class="trust-icon">🛡️</span>
+                    <h3 class="trust-title">30-Day Money-Back Guarantee</h3>
+                    <p class="trust-description">If you're not satisfied, email us for a full refund. No questions asked.</p>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">🔒</span>
+                    <h3 class="trust-title">Your Information is Secure</h3>
+                    <p class="trust-description">256-bit SSL encryption. We never store your card details.</p>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">⚡</span>
+                    <h3 class="trust-title">Works With Any AI Tool</h3>
+                    <p class="trust-description">ChatGPT, Claude, Gemini, Midjourney — the frameworks work everywhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 8: MINI FAQ
+         ============================================================ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-header">
+                <h2 class="faq-title">Quick Answers</h2>
+                <p class="faq-subtitle">Everything you need to know</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>When do I get access?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-content">Instantly. All 6 training packs + 3 bonuses will be delivered to your email within 5 minutes of purchase. Start using them today.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>What format are the training packs?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-content">PDF frameworks + copy-paste prompts you can use immediately. Plus access to the Skool community where people share what's working.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>Do I need prior experience with AI?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-content">Nope. Each pack takes you from zero to proficient. Just follow the frameworks — they work even if you've never touched AI before.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                        <span>What if it doesn't work for me?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="faq-answer-content">Email us within 30 days for a full refund. No hoops, no hassle. We're confident this will work for you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 9: FOOTER
+         ============================================================ -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-contact">
+                <p class="footer-contact-text">Questions? Email <a href="mailto:support@recrutu.com">support@recrutu.com</a></p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#" class="footer-link">Terms of Service</a>
+                <span class="footer-divider">|</span>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <span class="footer-divider">|</span>
+                <a href="#" class="footer-link">Refund Policy</a>
+            </div>
+
+            <p class="footer-copyright">© 2026 Recrutu Virtual Assistants LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+</div>
+
+<script>
+// Optional: Start with first FAQ item open
+// document.querySelector('.faq-item').classList.add('active');
+</script>
+
+</body>
+</html>

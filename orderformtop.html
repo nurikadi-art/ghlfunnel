@@ -1,0 +1,898 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Secure Checkout - AI Operator Toolkit</title>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<style type="text/css">
+/* ============================================================
+   AI OPERATOR TOOLKIT - FRONT END ORDER FORM TOP
+   Mobile-optimized checkout page - Titanium Blue Theme
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --system-blue: #0a84ff;
+    --system-blue-dark: #0066cc;
+    --pure-white: #f5f5f7;
+    --apple-grey: #86868b;
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --highlight-green: #28cd41;
+    --bg-dark: #020204;
+    --bg-card: rgba(255, 255, 255, 0.02);
+}
+
+/* ---- GLOBAL RESET ---- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    background-color: var(--bg-dark) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    color: var(--pure-white) !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* GHL Override Classes */
+.c-section, .c-row, .c-column, .c-column > .inner, .c-custom-html,
+.hl_page-creator--row, .hl_page-creator--column {
+    background-color: transparent !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.order-form-wrapper {
+    width: 100%;
+    max-width: 100%;
+    background: var(--bg-dark);
+}
+
+.container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* ============================================================
+   SECTION: HEADER - Security Badge + Logo
+   ============================================================ */
+.checkout-header {
+    background: linear-gradient(180deg, rgba(10, 132, 255, 0.08) 0%, var(--bg-dark) 100%);
+    padding: 24px 0;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.security-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(10, 132, 255, 0.1);
+    padding: 10px 18px;
+    border-radius: 100px;
+    border: 1px solid rgba(10, 132, 255, 0.2);
+}
+
+.lock-icon {
+    font-size: 16px;
+}
+
+.security-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--system-blue);
+    letter-spacing: 0.5px;
+}
+
+.logo-placeholder {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--pure-white);
+    letter-spacing: -0.5px;
+}
+
+.logo-placeholder span {
+    color: var(--system-blue);
+}
+
+/* ============================================================
+   SECTION 1: ORDER SUMMARY
+   ============================================================ */
+.order-summary {
+    padding: 48px 0 40px;
+}
+
+.order-summary-card {
+    background: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.order-summary-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--system-blue) 0%, var(--system-blue-dark) 100%);
+}
+
+.summary-headline {
+    font-size: clamp(22px, 4vw, 28px);
+    font-weight: 700;
+    color: var(--pure-white);
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.summary-subheadline {
+    font-size: 14px;
+    color: var(--apple-grey);
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.included-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--system-blue);
+    margin-bottom: 16px;
+    display: block;
+}
+
+.included-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+}
+
+.included-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.included-item:last-child {
+    border-bottom: none;
+}
+
+.check-icon {
+    color: var(--highlight-green);
+    font-size: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.item-content {
+    flex: 1;
+}
+
+.item-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--pure-white);
+    margin-bottom: 4px;
+}
+
+.item-description {
+    font-size: 13px;
+    color: var(--apple-grey);
+    line-height: 1.5;
+}
+
+.item-value {
+    font-size: 12px;
+    color: var(--highlight-green);
+    font-weight: 600;
+}
+
+/* Bonus items styling */
+.included-item.bonus-item {
+    background: rgba(40, 205, 65, 0.05);
+    margin: 8px -16px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border-bottom: none;
+}
+
+.bonus-badge {
+    display: inline-block;
+    background: var(--highlight-green);
+    color: #000;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.delivery-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(40, 205, 65, 0.1);
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(40, 205, 65, 0.2);
+    margin-top: 8px;
+}
+
+.delivery-icon {
+    font-size: 14px;
+}
+
+.delivery-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--highlight-green);
+}
+
+/* ============================================================
+   PRODUCT STACK - 6 BOOKS VISUAL (Titanium Blue Theme)
+   ============================================================ */
+.product-stack {
+    margin: 32px 0 24px;
+    padding: 32px 20px;
+    background: linear-gradient(145deg, rgba(10, 132, 255, 0.06) 0%, rgba(0, 0, 0, 0.2) 50%, #020204 100%);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-stack::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(10, 132, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.stack-grid {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.stack-book {
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(800px) rotateY(-6deg);
+    transition: transform 0.3s ease;
+}
+
+.stack-book:hover {
+    transform: perspective(800px) rotateY(-6deg) translateY(-8px);
+}
+
+.stack-book-cover {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px 10px 10px 3px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        -4px 4px 15px rgba(0, 0, 0, 0.4),
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stack-book-spine {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 10px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, transparent 100%);
+}
+
+.stack-book-design {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.stack-circles {
+    position: absolute;
+    top: 8px;
+    right: -15px;
+    width: 60px;
+    height: 60px;
+}
+
+.stack-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.stack-circle.sc1 { width: 50px; height: 50px; top: 0; right: 0; }
+.stack-circle.sc2 { width: 35px; height: 35px; top: 7px; right: 7px; }
+.stack-circle.sc3 { width: 20px; height: 20px; top: 15px; right: 15px; }
+
+.stack-grid-pattern {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background:
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 8px 8px;
+    mask-image: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 100%);
+}
+
+.stack-book-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 8px 8px 14px;
+    z-index: 2;
+}
+
+.stack-book-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.stack-book-badge {
+    display: inline-block;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    width: fit-content;
+    margin-bottom: 4px;
+}
+
+.stack-book-title {
+    font-size: 6px;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+    margin-bottom: auto;
+}
+
+.stack-book-author {
+    font-size: 5px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Stack book sizes - 6 books */
+.stack-book.size-sm { width: 58px; height: 80px; }
+.stack-book.size-md { width: 64px; height: 88px; }
+.stack-book.size-lg { width: 70px; height: 96px; }
+
+/* Stack book color themes */
+.stack-blue .stack-book-cover { background: linear-gradient(145deg, #1e3a5f 0%, #0d1b2a 100%); }
+.stack-blue .stack-book-icon { background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(99, 102, 241, 0.1)); border: 1px solid rgba(99, 102, 241, 0.3); }
+.stack-blue .stack-book-badge { background: rgba(99, 102, 241, 0.25); border: 1px solid rgba(99, 102, 241, 0.3); color: #a5b4fc; }
+.stack-blue .stack-circle.sc3 { background: rgba(99, 102, 241, 0.2); }
+
+.stack-purple .stack-book-cover { background: linear-gradient(145deg, #3d2a5c 0%, #1a1028 100%); }
+.stack-purple .stack-book-icon { background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(168, 85, 247, 0.1)); border: 1px solid rgba(168, 85, 247, 0.3); }
+.stack-purple .stack-book-badge { background: rgba(168, 85, 247, 0.25); border: 1px solid rgba(168, 85, 247, 0.3); color: #c4b5fd; }
+.stack-purple .stack-circle.sc3 { background: rgba(168, 85, 247, 0.2); }
+
+.stack-orange .stack-book-cover { background: linear-gradient(145deg, #5c3d2e 0%, #2a1a10 100%); }
+.stack-orange .stack-book-icon { background: linear-gradient(135deg, rgba(251, 146, 60, 0.3), rgba(251, 146, 60, 0.1)); border: 1px solid rgba(251, 146, 60, 0.3); }
+.stack-orange .stack-book-badge { background: rgba(251, 146, 60, 0.25); border: 1px solid rgba(251, 146, 60, 0.3); color: #fdba74; }
+.stack-orange .stack-circle.sc3 { background: rgba(251, 146, 60, 0.2); }
+
+.stack-cyan .stack-book-cover { background: linear-gradient(145deg, #134e5e 0%, #0a2a33 100%); }
+.stack-cyan .stack-book-icon { background: linear-gradient(135deg, rgba(34, 211, 238, 0.3), rgba(34, 211, 238, 0.1)); border: 1px solid rgba(34, 211, 238, 0.3); }
+.stack-cyan .stack-book-badge { background: rgba(34, 211, 238, 0.25); border: 1px solid rgba(34, 211, 238, 0.3); color: #67e8f9; }
+.stack-cyan .stack-circle.sc3 { background: rgba(34, 211, 238, 0.2); }
+
+.stack-green .stack-book-cover { background: linear-gradient(145deg, #1a4d3e 0%, #0d2820 100%); }
+.stack-green .stack-book-icon { background: linear-gradient(135deg, rgba(34, 197, 94, 0.3), rgba(34, 197, 94, 0.1)); border: 1px solid rgba(34, 197, 94, 0.3); }
+.stack-green .stack-book-badge { background: rgba(34, 197, 94, 0.25); border: 1px solid rgba(34, 197, 94, 0.3); color: #86efac; }
+.stack-green .stack-circle.sc3 { background: rgba(34, 197, 94, 0.2); }
+
+.stack-red .stack-book-cover { background: linear-gradient(145deg, #5c2a2a 0%, #2a1010 100%); }
+.stack-red .stack-book-icon { background: linear-gradient(135deg, rgba(239, 68, 68, 0.3), rgba(239, 68, 68, 0.1)); border: 1px solid rgba(239, 68, 68, 0.3); }
+.stack-red .stack-book-badge { background: rgba(239, 68, 68, 0.25); border: 1px solid rgba(239, 68, 68, 0.3); color: #fca5a5; }
+.stack-red .stack-circle.sc3 { background: rgba(239, 68, 68, 0.2); }
+
+.stack-label {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* ============================================================
+   VALUE BADGE
+   ============================================================ */
+.value-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: rgba(10, 132, 255, 0.08);
+    border: 1px solid rgba(10, 132, 255, 0.2);
+    border-radius: 10px;
+}
+
+.value-original {
+    font-size: 14px;
+    color: var(--apple-grey);
+    text-decoration: line-through;
+}
+
+.value-current {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--system-blue);
+}
+
+.value-savings {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--highlight-green);
+    background: rgba(40, 205, 65, 0.15);
+    padding: 4px 10px;
+    border-radius: 100px;
+}
+
+/* ============================================================
+   MOBILE RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .checkout-header .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center !important;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .security-badge {
+        margin: 0 auto;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+    }
+
+    .security-text {
+        text-align: center;
+    }
+
+    .logo-placeholder {
+        text-align: center;
+        width: 100%;
+    }
+
+    .order-summary-card {
+        padding: 24px 20px;
+    }
+
+    .summary-headline {
+        font-size: 22px;
+    }
+
+    .stack-grid {
+        gap: 8px;
+    }
+
+    .stack-book.size-sm { width: 48px; height: 66px; }
+    .stack-book.size-md { width: 54px; height: 74px; }
+    .stack-book.size-lg { width: 60px; height: 82px; }
+
+    .value-badge {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .security-badge {
+        padding: 8px 14px;
+    }
+
+    .security-text {
+        font-size: 11px;
+    }
+
+    .summary-headline {
+        font-size: 20px;
+    }
+
+    .included-item {
+        padding: 10px 0;
+    }
+
+    .item-title {
+        font-size: 14px;
+    }
+
+    .item-description {
+        font-size: 12px;
+    }
+
+    .product-stack {
+        padding: 24px 12px;
+    }
+
+    .stack-grid {
+        gap: 6px;
+    }
+
+    .stack-book.size-sm { width: 44px; height: 60px; }
+    .stack-book.size-md { width: 48px; height: 66px; }
+    .stack-book.size-lg { width: 52px; height: 72px; }
+
+    .stack-book-content {
+        padding: 8px 5px 5px 10px;
+    }
+
+    .stack-book-icon {
+        width: 16px;
+        height: 16px;
+        font-size: 8px;
+        margin-bottom: 4px;
+    }
+
+    .stack-book-badge {
+        font-size: 4px;
+        padding: 1px 3px;
+    }
+
+    .stack-book-title {
+        font-size: 5px;
+    }
+
+    .stack-label {
+        font-size: 10px;
+    }
+
+    .value-original {
+        font-size: 13px;
+    }
+
+    .value-current {
+        font-size: 16px;
+    }
+
+    .value-savings {
+        font-size: 11px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="order-form-wrapper">
+
+    <!-- ============================================================
+         HEADER: Security Badge + Logo
+         ============================================================ -->
+    <header class="checkout-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="security-badge">
+                    <span class="lock-icon">🔒</span>
+                    <span class="security-text">Secure 256-Bit Encrypted Checkout</span>
+                </div>
+                <div class="logo-placeholder">
+                    AI<span>Operator</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         SECTION 1: ORDER SUMMARY
+         ============================================================ -->
+    <section class="order-summary">
+        <div class="container">
+            <div class="order-summary-card">
+                <h1 class="summary-headline">You're Getting The Complete AI Operator Toolkit</h1>
+                <p class="summary-subheadline">6 specialized training packs + 3 exclusive bonuses — master every AI skill you need</p>
+
+                <span class="included-label">6 Training Packs Included</span>
+
+                <ul class="included-list">
+                    <li class="included-item">
+                        <span class="check-icon">✅</span>
+                        <div class="item-content">
+                            <div class="item-title">AI Vibe Coding</div>
+                            <div class="item-description">Build apps, automations, and tools — no coding experience needed</div>
+                            <div class="item-value">$97 Value</div>
+                        </div>
+                    </li>
+                    <li class="included-item">
+                        <span class="check-icon">✅</span>
+                        <div class="item-content">
+                            <div class="item-title">AI Image Generation</div>
+                            <div class="item-description">Create professional visuals, mockups, and graphics on demand</div>
+                            <div class="item-value">$97 Value</div>
+                        </div>
+                    </li>
+                    <li class="included-item">
+                        <span class="check-icon">✅</span>
+                        <div class="item-content">
+                            <div class="item-title">AI Graphic Design</div>
+                            <div class="item-description">Design social media content, ads, and marketing materials with AI</div>
+                            <div class="item-value">$97 Value</div>
+                        </div>
+                    </li>
+                    <li class="included-item">
+                        <span class="check-icon">✅</span>
+                        <div class="item-content">
+                            <div class="item-title">Research with AI</div>
+                            <div class="item-description">Complete deep research in minutes instead of hours</div>
+                            <div class="item-value">$97 Value</div>
+                        </div>
+                    </li>
+                    <li class="included-item">
+                        <span class="check-icon">✅</span>
+                        <div class="item-content">
+                            <div class="item-title">AI Web Design</div>
+                            <div class="item-description">Design and build complete websites without touching code</div>
+                            <div class="item-value">$97 Value</div>
+                        </div>
+                    </li>
+                    <li class="included-item">
+                        <span class="check-icon">✅</span>
+                        <div class="item-content">
+                            <div class="item-title">Study with AI</div>
+                            <div class="item-description">Accelerate learning and master any topic 10x faster</div>
+                            <div class="item-value">$97 Value</div>
+                        </div>
+                    </li>
+                </ul>
+
+                <span class="included-label" style="margin-top: 24px;">+ 3 Exclusive Bonuses</span>
+
+                <ul class="included-list">
+                    <li class="included-item bonus-item">
+                        <span class="check-icon">🎁</span>
+                        <div class="item-content">
+                            <div class="item-title">Training Documentation Prompts <span class="bonus-badge">Bonus</span></div>
+                            <div class="item-description">Ready-to-use prompts for documenting any process</div>
+                            <div class="item-value">$97 Value</div>
+                        </div>
+                    </li>
+                    <li class="included-item bonus-item">
+                        <span class="check-icon">🎁</span>
+                        <div class="item-content">
+                            <div class="item-title">Lifetime Updates <span class="bonus-badge">Bonus</span></div>
+                            <div class="item-description">Get every new framework and update as AI evolves</div>
+                            <div class="item-value">$197 Value</div>
+                        </div>
+                    </li>
+                    <li class="included-item bonus-item">
+                        <span class="check-icon">🎁</span>
+                        <div class="item-content">
+                            <div class="item-title">Skool.com Community Access <span class="bonus-badge">Bonus</span></div>
+                            <div class="item-description">Connect with other AI operators and share what's working</div>
+                            <div class="item-value">$197 Value</div>
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- Product Stack Visual - 6 Books -->
+                <div class="product-stack">
+                    <div class="stack-grid">
+                        <!-- Book 1: AI Vibe Coding (Blue) -->
+                        <div class="stack-book size-md stack-blue">
+                            <div class="stack-book-cover">
+                                <div class="stack-book-spine"></div>
+                                <div class="stack-book-design">
+                                    <div class="stack-circles">
+                                        <div class="stack-circle sc1"></div>
+                                        <div class="stack-circle sc2"></div>
+                                        <div class="stack-circle sc3"></div>
+                                    </div>
+                                    <div class="stack-grid-pattern"></div>
+                                </div>
+                                <div class="stack-book-content">
+                                    <div class="stack-book-icon">💻</div>
+                                    <div class="stack-book-badge">Pack 1</div>
+                                    <div class="stack-book-title">AI Vibe Coding</div>
+                                    <div class="stack-book-author">$97</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Book 2: AI Image Gen (Purple) -->
+                        <div class="stack-book size-lg stack-purple">
+                            <div class="stack-book-cover">
+                                <div class="stack-book-spine"></div>
+                                <div class="stack-book-design">
+                                    <div class="stack-circles">
+                                        <div class="stack-circle sc1"></div>
+                                        <div class="stack-circle sc2"></div>
+                                        <div class="stack-circle sc3"></div>
+                                    </div>
+                                    <div class="stack-grid-pattern"></div>
+                                </div>
+                                <div class="stack-book-content">
+                                    <div class="stack-book-icon">🎨</div>
+                                    <div class="stack-book-badge">Pack 2</div>
+                                    <div class="stack-book-title">AI Image Gen</div>
+                                    <div class="stack-book-author">$97</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Book 3: AI Graphic Design (Orange) -->
+                        <div class="stack-book size-md stack-orange">
+                            <div class="stack-book-cover">
+                                <div class="stack-book-spine"></div>
+                                <div class="stack-book-design">
+                                    <div class="stack-circles">
+                                        <div class="stack-circle sc1"></div>
+                                        <div class="stack-circle sc2"></div>
+                                        <div class="stack-circle sc3"></div>
+                                    </div>
+                                    <div class="stack-grid-pattern"></div>
+                                </div>
+                                <div class="stack-book-content">
+                                    <div class="stack-book-icon">✏️</div>
+                                    <div class="stack-book-badge">Pack 3</div>
+                                    <div class="stack-book-title">Graphic Design</div>
+                                    <div class="stack-book-author">$97</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Book 4: Research with AI (Cyan) -->
+                        <div class="stack-book size-lg stack-cyan">
+                            <div class="stack-book-cover">
+                                <div class="stack-book-spine"></div>
+                                <div class="stack-book-design">
+                                    <div class="stack-circles">
+                                        <div class="stack-circle sc1"></div>
+                                        <div class="stack-circle sc2"></div>
+                                        <div class="stack-circle sc3"></div>
+                                    </div>
+                                    <div class="stack-grid-pattern"></div>
+                                </div>
+                                <div class="stack-book-content">
+                                    <div class="stack-book-icon">🔍</div>
+                                    <div class="stack-book-badge">Pack 4</div>
+                                    <div class="stack-book-title">Research AI</div>
+                                    <div class="stack-book-author">$97</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Book 5: AI Web Design (Green) -->
+                        <div class="stack-book size-md stack-green">
+                            <div class="stack-book-cover">
+                                <div class="stack-book-spine"></div>
+                                <div class="stack-book-design">
+                                    <div class="stack-circles">
+                                        <div class="stack-circle sc1"></div>
+                                        <div class="stack-circle sc2"></div>
+                                        <div class="stack-circle sc3"></div>
+                                    </div>
+                                    <div class="stack-grid-pattern"></div>
+                                </div>
+                                <div class="stack-book-content">
+                                    <div class="stack-book-icon">🌐</div>
+                                    <div class="stack-book-badge">Pack 5</div>
+                                    <div class="stack-book-title">AI Web Design</div>
+                                    <div class="stack-book-author">$97</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Book 6: Study with AI (Red) -->
+                        <div class="stack-book size-sm stack-red">
+                            <div class="stack-book-cover">
+                                <div class="stack-book-spine"></div>
+                                <div class="stack-book-design">
+                                    <div class="stack-circles">
+                                        <div class="stack-circle sc1"></div>
+                                        <div class="stack-circle sc2"></div>
+                                        <div class="stack-circle sc3"></div>
+                                    </div>
+                                    <div class="stack-grid-pattern"></div>
+                                </div>
+                                <div class="stack-book-content">
+                                    <div class="stack-book-icon">📚</div>
+                                    <div class="stack-book-badge">Pack 6</div>
+                                    <div class="stack-book-title">Study with AI</div>
+                                    <div class="stack-book-author">$97</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="stack-label">6 Complete Training Packs + 3 Bonuses</p>
+                </div>
+
+                <!-- Value Badge -->
+                <div class="value-badge">
+                    <span class="value-original">$1,073 Value</span>
+                    <span class="value-current">Just $27</span>
+                    <span class="value-savings">Save 97%</span>
+                </div>
+
+                <div class="delivery-badge">
+                    <span class="delivery-icon">⚡</span>
+                    <span class="delivery-text">Instant Digital Access — Works with ChatGPT, Claude, any AI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
