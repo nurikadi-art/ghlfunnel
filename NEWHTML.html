@@ -150,6 +150,33 @@ img, svg, video {
     50% { opacity: 0.7; }
 }
 
+.live-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: livePulse 2s infinite;
+}
+
+@keyframes livePulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+.countdown-inline {
+    font-family: 'Inter', monospace;
+    font-weight: 800;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
 /* ---- 3. HERO (NEURAL GRID) ---- */
 .hero-neural {
     position: relative;
@@ -1871,6 +1898,305 @@ img, svg, video {
         font-size: 13px;
     }
 }
+
+/* ============================================================
+   HERO'S JOURNEY STORY SECTIONS
+   ============================================================ */
+.story-section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.story-section.bg-warm {
+    background: linear-gradient(180deg, #020204 0%, #1a0f08 50%, #020204 100%);
+}
+
+.story-section.bg-cold {
+    background: linear-gradient(180deg, #020204 0%, #080f1a 50%, #020204 100%);
+}
+
+.story-section.bg-hope {
+    background: linear-gradient(180deg, #020204 0%, #0a1a0f 50%, #020204 100%);
+}
+
+.story-section.bg-danger {
+    background: linear-gradient(180deg, #020204 0%, #1a0808 50%, #020204 100%);
+}
+
+.story-section.bg-gold {
+    background: linear-gradient(180deg, #020204 0%, #1a1508 50%, #020204 100%);
+}
+
+.story-chapter-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 100px;
+}
+
+.story-chapter-label.warm {
+    background: rgba(255, 149, 0, 0.15);
+    color: var(--urgent-orange);
+    border: 1px solid rgba(255, 149, 0, 0.3);
+}
+
+.story-chapter-label.cold {
+    background: rgba(10, 132, 255, 0.15);
+    color: var(--system-blue);
+    border: 1px solid rgba(10, 132, 255, 0.3);
+}
+
+.story-chapter-label.danger {
+    background: rgba(255, 59, 48, 0.15);
+    color: var(--urgent-red);
+    border: 1px solid rgba(255, 59, 48, 0.3);
+}
+
+.story-chapter-label.hope {
+    background: rgba(40, 205, 65, 0.15);
+    color: var(--highlight-green);
+    border: 1px solid rgba(40, 205, 65, 0.3);
+}
+
+.story-chapter-label.gold {
+    background: rgba(245, 208, 169, 0.15);
+    color: var(--titanium-gold);
+    border: 1px solid rgba(245, 208, 169, 0.3);
+}
+
+.story-title {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 32px;
+    color: var(--pure-white);
+}
+
+.story-title .highlight-orange { color: var(--urgent-orange); }
+.story-title .highlight-blue { color: var(--system-blue); }
+.story-title .highlight-red { color: var(--urgent-red); }
+.story-title .highlight-green { color: var(--highlight-green); }
+.story-title .highlight-gold { color: var(--titanium-gold); }
+
+.story-text {
+    font-size: 19px;
+    line-height: 1.8;
+    color: var(--apple-grey);
+    margin-bottom: 28px;
+}
+
+.story-text strong {
+    color: var(--pure-white);
+}
+
+.story-text em {
+    font-style: normal;
+    color: var(--urgent-orange);
+}
+
+.story-image-placeholder {
+    width: 100%;
+    background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.2) 100%);
+    border: 2px dashed rgba(255,255,255,0.12);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.story-image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.story-image-placeholder.ratio-16-9 {
+    aspect-ratio: 16/9;
+}
+
+.story-image-placeholder.ratio-4-3 {
+    aspect-ratio: 4/3;
+}
+
+.story-image-placeholder.ratio-1-1 {
+    aspect-ratio: 1/1;
+}
+
+.story-image-placeholder.ratio-21-9 {
+    aspect-ratio: 21/9;
+}
+
+.placeholder-text {
+    text-align: center;
+    color: var(--apple-grey);
+    opacity: 0.5;
+}
+
+.placeholder-text .number {
+    font-size: 48px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.08);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.placeholder-text .dims {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.story-callout {
+    background: linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(0,0,0,0.2) 100%);
+    border-left: 4px solid;
+    padding: 32px 40px;
+    border-radius: 0 20px 20px 0;
+    margin: 40px 0;
+    font-size: 22px;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--pure-white);
+}
+
+.story-callout.orange { border-color: var(--urgent-orange); background: linear-gradient(135deg, rgba(255, 149, 0, 0.08) 0%, rgba(0,0,0,0.2) 100%); }
+.story-callout.blue { border-color: var(--system-blue); background: linear-gradient(135deg, rgba(10, 132, 255, 0.08) 0%, rgba(0,0,0,0.2) 100%); }
+.story-callout.red { border-color: var(--urgent-red); background: linear-gradient(135deg, rgba(255, 59, 48, 0.08) 0%, rgba(0,0,0,0.2) 100%); }
+.story-callout.green { border-color: var(--highlight-green); background: linear-gradient(135deg, rgba(40, 205, 65, 0.08) 0%, rgba(0,0,0,0.2) 100%); }
+.story-callout.gold { border-color: var(--titanium-gold); background: linear-gradient(135deg, rgba(245, 208, 169, 0.08) 0%, rgba(0,0,0,0.2) 100%); }
+
+.breaking-point-box {
+    background: linear-gradient(135deg, rgba(255, 59, 48, 0.1) 0%, rgba(0,0,0,0.3) 100%);
+    border: 2px solid rgba(255, 59, 48, 0.3);
+    border-radius: 24px;
+    padding: 48px;
+    margin: 48px 0;
+    text-align: center;
+}
+
+.breaking-point-box h4 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--urgent-red);
+    margin-bottom: 20px;
+}
+
+.breaking-point-box p {
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--pure-white);
+    margin: 0;
+}
+
+.epiphany-box {
+    background: linear-gradient(135deg, rgba(40, 205, 65, 0.1) 0%, rgba(0,0,0,0.3) 100%);
+    border: 2px solid rgba(40, 205, 65, 0.3);
+    border-radius: 24px;
+    padding: 48px;
+    margin: 48px 0;
+    text-align: center;
+}
+
+.epiphany-box h4 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--highlight-green);
+    margin-bottom: 20px;
+}
+
+.epiphany-box p {
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--pure-white);
+    margin: 0;
+}
+
+.story-cta-break {
+    background: linear-gradient(135deg, rgba(10, 132, 255, 0.08) 0%, rgba(0,0,0,0.3) 100%);
+    border: 1px solid rgba(10, 132, 255, 0.2);
+    border-radius: 24px;
+    padding: 60px 40px;
+    text-align: center;
+    margin: 60px 0;
+}
+
+.story-cta-break h3 {
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    color: var(--pure-white);
+    margin-bottom: 16px;
+}
+
+.story-cta-break p {
+    font-size: 18px;
+    color: var(--apple-grey);
+    margin-bottom: 32px;
+}
+
+.story-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+    margin: 80px 0;
+}
+
+/* Lazy loading placeholder animation */
+.lazy-load {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.lazy-load.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .story-section {
+        padding: 60px 0;
+    }
+
+    .story-title {
+        font-size: 24px;
+    }
+
+    .story-text {
+        font-size: 17px;
+    }
+
+    .story-callout {
+        padding: 24px 28px;
+        font-size: 18px;
+    }
+
+    .breaking-point-box,
+    .epiphany-box {
+        padding: 32px 24px;
+    }
+
+    .breaking-point-box p,
+    .epiphany-box p {
+        font-size: 17px;
+    }
+
+    .story-cta-break {
+        padding: 40px 24px;
+    }
+}
 </style>
 </head>
 <body>
@@ -1881,22 +2207,9 @@ img, svg, video {
      ============================================================ -->
 <div class="urgency-bar">
     <p>
-        <span>⚡ LAUNCH SPECIAL — $27 Price Ends In:</span>
-        <span class="countdown-timer" id="countdown">
-            <span class="countdown-unit">
-                <span class="countdown-number" id="hours">47</span>
-                <span class="countdown-label">Hours</span>
-            </span>
-            <span class="countdown-unit">
-                <span class="countdown-number" id="minutes">59</span>
-                <span class="countdown-label">Mins</span>
-            </span>
-            <span class="countdown-unit">
-                <span class="countdown-number" id="seconds">59</span>
-                <span class="countdown-label">Secs</span>
-            </span>
-        </span>
-        <span class="spots-left">🔥 Only <strong id="spots-count">87</strong> Spots Left</span>
+        <span class="live-indicator"><span class="live-dot"></span> <span id="viewerCount">47</span> people viewing</span>
+        <span>🔥 <strong id="soldCount">2,847</strong> entrepreneurs joined</span>
+        <span>⏰ $9 price ends <span class="countdown-inline" id="timerText">12:11:06</span></span>
     </p>
 </div>
 
@@ -1907,7 +2220,7 @@ img, svg, video {
     <div class="container" style="text-align: center;">
         <p class="pre-headline">The Complete AI Toolkit for Business Owners</p>
 
-        <h1 class="headline">Become an <span class="headline-green">AI-Powered Operator</span> — Master 6 Critical Skills <span class="price-highlight">Just $27</span></h1>
+        <h1 class="headline">Become an <span class="headline-green">AI-Powered Operator</span> — Master 6 Critical Skills <span class="price-highlight">Just $9</span></h1>
 
         <p class="subheadline">6 specialized training packs covering coding, design, research, web development, image generation & more. The exact AI techniques top entrepreneurs use to 10x their output.</p>
 
@@ -2067,7 +2380,7 @@ img, svg, video {
 
         <!-- REMOVED: Bundle Card section (redundant after book showcase) -->
 
-        <a href="https://www.outsourcingleader.com/checkout" class="cta-button">Get The AI Operator Toolkit → $27</a>
+        <a href="https://www.outsourcingleader.com/checkout" class="cta-button">Get The AI Operator Toolkit → $9</a>
 
         <p class="cta-subtext">✓ Instant digital delivery &nbsp;&nbsp; ✓ Works with ChatGPT, Claude, any AI &nbsp;&nbsp; ✓ 30-day money-back guarantee</p>
     </div>
@@ -2216,7 +2529,7 @@ img, svg, video {
                             Verified
                         </div>
                     </div>
-                    <p class="review-text">Ok so I was pretty skeptical at first... $27 seemed too cheap to be useful. But I needed help with landing pages and didn't want to pay another $800 to my web guy. Went through the web design pack over a weekend and actually built something decent in Cursor. Not perfect but way better than I expected for my first try.</p>
+                    <p class="review-text">Ok so I was pretty skeptical at first... $9 seemed too cheap to be useful. But I needed help with landing pages and didn't want to pay another $800 to my web guy. Went through the web design pack over a weekend and actually built something decent in Cursor. Not perfect but way better than I expected for my first try.</p>
                     <div class="review-author">
                         <div class="review-info">
                             <p class="review-name">Mike K. <span class="verified-badge"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></span></p>
@@ -2598,7 +2911,7 @@ img, svg, video {
         </div>
 
         <div style="text-align: center; margin-top: 48px;">
-            <a href="https://www.outsourcingleader.com/checkout" class="cta-button">Get All 6 Training Packs + Bonuses — $27</a>
+            <a href="https://www.outsourcingleader.com/checkout" class="cta-button">Get All 6 Training Packs + Bonuses — $9</a>
             <p class="cta-subtext">Start using these frameworks today. See results this week.</p>
         </div>
     </div>
@@ -2767,7 +3080,7 @@ img, svg, video {
         </div>
 
         <div class="objection-item">
-            <p class="objection-question">"$27 seems too cheap. Is this actually good?"</p>
+            <p class="objection-question">"$9 seems too cheap. Is this actually good?"</p>
             <p class="objection-answer">It's priced for mass adoption during launch. We want 1,000+ entrepreneurs trained this month. The price goes up once we hit our goal. This is the same training framework used by clients paying 10x more.</p>
         </div>
     </div>
@@ -2864,10 +3177,10 @@ img, svg, video {
             </div>
 
             <p class="total-value">Total Value: $1,073</p>
-            <p class="today-price">$27</p>
+            <p class="today-price">$9</p>
             <p class="savings-text">You Save Over $1,000 Today!</p>
 
-            <a href="https://www.outsourcingleader.com/checkout" class="cta-button">Get The AI Operator Toolkit → $27</a>
+            <a href="https://www.outsourcingleader.com/checkout" class="cta-button">Get The AI Operator Toolkit → $9</a>
             <p class="micro-text">One-time payment. Instant delivery. 30-day guarantee. Use it forever.</p>
         </div>
     </div>
@@ -2884,7 +3197,7 @@ img, svg, video {
 
         <p class="body-text">Get the complete AI toolkit — coding, design, research, web development, images, and more. All the skills you need.</p>
 
-        <p class="body-text"><strong>$27 today. Results this week. 30-day guarantee.</strong></p>
+        <p class="body-text"><strong>$9 today. Results this week. 30-day guarantee.</strong></p>
 
         <a href="https://www.outsourcingleader.com/checkout" class="cta-button" style="margin-top: 40px;">Get The AI Operator Toolkit →</a>
         <p class="micro-text">Instant access. Start learning today. Works with any AI tool.</p>
@@ -2915,7 +3228,7 @@ img, svg, video {
 
         <div class="faq-item">
             <p class="faq-question">Q: Is this a subscription?</p>
-            <p class="faq-answer">A: No. One-time payment of $27. You own everything forever. Plus you get lifetime updates and access to the Skool community at no extra cost.</p>
+            <p class="faq-answer">A: No. One-time payment of $9. You own everything forever. Plus you get lifetime updates and access to the Skool community at no extra cost.</p>
         </div>
 
         <div class="faq-item">
@@ -2925,8 +3238,208 @@ img, svg, video {
 
         <div class="faq-item">
             <p class="faq-question">Q: Will this price go up?</p>
-            <p class="faq-answer">A: Yes. The $27 launch price is temporary. Once we hit our early-bird goal, it goes back to $97. This is your best chance to get in at the lowest price.</p>
+            <p class="faq-answer">A: Yes. The $9 launch price is temporary. Once we hit our early-bird goal, it goes back to $97. This is your best chance to get in at the lowest price.</p>
         </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     CTA BREAK BEFORE STORY
+     ============================================================ -->
+<section class="bg-blue-glow section-padding">
+    <div class="container" style="text-align: center;">
+        <h2 class="section-headline">Ready to Become an AI-Powered Operator?</h2>
+        <p class="subheadline">Join 2,847+ entrepreneurs who already made the shift.</p>
+        <a href="https://www.outsourcingleader.com/checkout" class="cta-button" style="margin-top: 32px;">Get The AI Operator Toolkit — $9 →</a>
+        <p class="cta-subtext">🔒 Secure checkout • Instant access • 30-day guarantee</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     THE STORY - HERO'S JOURNEY (EPIPHANY BRIDGE)
+     ============================================================ -->
+
+<!-- CHAPTER 1: THE STRUGGLE -->
+<section class="story-section bg-warm">
+    <div class="container">
+        <span class="story-chapter-label warm">Chapter 1</span>
+        <h2 class="story-title">I Was <span class="highlight-orange">Drowning</span>. And Nobody Could See It.</h2>
+
+        <p class="story-text">Running a business while working full-time. <strong>10 staff members</strong> depending on me. Clients expecting miracles. A family that barely saw me anymore.</p>
+
+        <p class="story-text">My days started at 6 AM and ended... whenever I collapsed. Usually around 11 PM. Sometimes later. <strong>15-hour days.</strong> Every single day. For years.</p>
+
+        <div class="story-image-placeholder ratio-16-9 lazy-load">
+            <div class="placeholder-text">
+                <span class="number">1</span>
+                <span class="dims">Image: Overwhelmed entrepreneur at desk • 1920×1080 (16:9)</span>
+            </div>
+        </div>
+
+        <div class="story-callout orange">
+            "I told myself it was temporary. 'Just get through this quarter.' 'Just land this client.' But the finish line kept moving. And I kept running."
+        </div>
+
+        <p class="story-text">I was wearing too many hats. <em>Marketing. Sales. Operations. HR. Customer service.</em> Every decision bottlenecked through me. I was building a prison, not a business.</p>
+
+        <p class="story-text">The worst part? I couldn't see a way out. Every "solution" just added more to my plate. More tools. More systems. More things to manage.</p>
+    </div>
+</section>
+
+<!-- CHAPTER 2: THE BREAKING POINT -->
+<section class="story-section bg-danger">
+    <div class="container">
+        <span class="story-chapter-label danger">Chapter 2</span>
+        <h2 class="story-title">Then Everything <span class="highlight-red">Fell Apart</span>.</h2>
+
+        <p class="story-text">The AI boom hit. Suddenly, my competitors were moving <em>faster</em>. Their proposals looked better. Their turnaround times were insane. They were scaling while I was stuck in the weeds.</p>
+
+        <p class="story-text">I watched businesses half my size start eating my lunch. They were using AI. I was still doing everything the old way — grinding while they worked smarter.</p>
+
+        <div class="story-image-placeholder ratio-16-9 lazy-load">
+            <div class="placeholder-text">
+                <span class="number">2</span>
+                <span class="dims">Image: Late night at desk, stressed • 1920×1080 (16:9)</span>
+            </div>
+        </div>
+
+        <div class="breaking-point-box">
+            <h4>⚠️ The Breaking Point</h4>
+            <p>It was 2 AM. I was at my desk, staring at a proposal that had consumed my entire evening. My wife walked in. We had <strong>the worst fight of our marriage</strong>. She said: <em>"I don't even know who you are anymore."</em></p>
+        </div>
+
+        <p class="story-text">That hit me like a truck. She was right. I'd become a ghost in my own home. A stranger to my kids. A prisoner of the business I'd built to give me freedom.</p>
+
+        <p class="story-text">Something had to change. I just didn't know what.</p>
+    </div>
+</section>
+
+<!-- CTA BREAK -->
+<section class="story-section" style="padding: 60px 0;">
+    <div class="container">
+        <div class="story-cta-break">
+            <h3>Does This Sound Familiar?</h3>
+            <p>If you're drowning in work, watching others scale with AI while you're still grinding... you don't have to stay stuck.</p>
+            <a href="https://www.outsourcingleader.com/checkout" class="cta-button">Get The AI Operator Toolkit — $9 →</a>
+            <p class="micro-text" style="margin-top: 16px;">Join 2,847+ entrepreneurs who broke free</p>
+        </div>
+    </div>
+</section>
+
+<!-- CHAPTER 3: THE MENTOR -->
+<section class="story-section bg-cold">
+    <div class="container">
+        <span class="story-chapter-label cold">Chapter 3</span>
+        <h2 class="story-title">My Dad Said Something That <span class="highlight-blue">Changed Everything</span>.</h2>
+
+        <p class="story-text">I called my father the next morning. He's always been my mentor — the one person who tells me the truth even when I don't want to hear it.</p>
+
+        <div class="story-image-placeholder ratio-4-3 lazy-load">
+            <div class="placeholder-text">
+                <span class="number">3</span>
+                <span class="dims">Image: Phone call / mentorship moment • 1200×900 (4:3)</span>
+            </div>
+        </div>
+
+        <div class="story-callout blue">
+            "Son, you're not failing because you're not working hard enough. You're failing because you're working on the wrong things. The world changed. You didn't."
+        </div>
+
+        <p class="story-text">He was right. I'd been so busy <em>grinding</em> that I never stopped to ask if the grind still made sense. Everyone around me was leveraging AI, and I was still doing things the hard way.</p>
+
+        <p class="story-text">That night, I made a decision. I was going to figure this AI thing out. Not just dabble — <strong>master it</strong>.</p>
+    </div>
+</section>
+
+<!-- CHAPTER 4: THE EPIPHANY -->
+<section class="story-section bg-hope">
+    <div class="container">
+        <span class="story-chapter-label hope">Chapter 4</span>
+        <h2 class="story-title">I Discovered What <span class="highlight-green">Actually Works</span>.</h2>
+
+        <p class="story-text">I cleared my schedule. Delegated what I could. And dove in completely. Courses, tutorials, Reddit threads, research papers. I tried every AI tool. Made every mistake.</p>
+
+        <p class="story-text">Most of what's out there is garbage. "Prompt engineering" that doesn't work. Gurus selling complexity. Tools that promise the world and deliver nothing.</p>
+
+        <p class="story-text">But slowly, something clicked.</p>
+
+        <div class="story-image-placeholder ratio-16-9 lazy-load">
+            <div class="placeholder-text">
+                <span class="number">4</span>
+                <span class="dims">Image: Lightbulb moment / breakthrough • 1920×1080 (16:9)</span>
+            </div>
+        </div>
+
+        <div class="epiphany-box">
+            <h4>💡 The Epiphany</h4>
+            <p>AI isn't about fancy prompts or expensive tools. It's about <strong>knowing which skills to apply and when</strong>. Once I understood that, everything became simple. I stopped trying to learn "AI" and started mastering <em>specific skills</em> that actually moved the needle.</p>
+        </div>
+
+        <p class="story-text">Coding. Image generation. Research. Web design. Content creation. Each skill unlocked a new level of leverage. Each one gave me hours back.</p>
+
+        <p class="story-text">I documented everything. Every shortcut. Every framework. Every technique that actually worked.</p>
+    </div>
+</section>
+
+<!-- CTA BREAK -->
+<section class="story-section" style="padding: 60px 0;">
+    <div class="container">
+        <div class="story-cta-break">
+            <h3>Skip the Trial and Error</h3>
+            <p>I spent months figuring this out. You can get there in days.</p>
+            <a href="https://www.outsourcingleader.com/checkout" class="cta-button">Get The AI Operator Toolkit — $9 →</a>
+            <p class="micro-text" style="margin-top: 16px;">6 complete training packs • Instant access</p>
+        </div>
+    </div>
+</section>
+
+<!-- CHAPTER 5: THE TRANSFORMATION -->
+<section class="story-section bg-gold">
+    <div class="container">
+        <span class="story-chapter-label gold">Chapter 5</span>
+        <h2 class="story-title">Within 90 Days, <span class="highlight-gold">Everything Changed</span>.</h2>
+
+        <p class="story-text">Proposals that took 3 hours now took 20 minutes. Content creation went from painful to automatic. Research became a superpower. I was building things I never thought possible.</p>
+
+        <div class="story-image-placeholder ratio-16-9 lazy-load">
+            <div class="placeholder-text">
+                <span class="number">5</span>
+                <span class="dims">Image: Success / freedom / results • 1920×1080 (16:9)</span>
+            </div>
+        </div>
+
+        <p class="story-text"><strong>I got my life back.</strong></p>
+
+        <p class="story-text">I started working out again. Lost 15 pounds. I was present for dinner — actually there, not just physically in the room while mentally at work.</p>
+
+        <p class="story-text">My wife noticed. My kids noticed. <em>I noticed.</em></p>
+
+        <div class="story-callout gold">
+            "The business didn't suffer. It thrived. Because I finally had the mental space to think strategically instead of just surviving."
+        </div>
+
+        <p class="story-text">Friends started asking how I did it. Then clients. Then strangers online. So I took everything I learned and packaged it into a complete system.</p>
+
+        <p class="story-text" style="font-size: 24px; text-align: center; margin-top: 48px; color: var(--pure-white);"><strong>Now I want to give you the same shortcut.</strong></p>
+    </div>
+</section>
+
+<!-- FINAL STORY CTA -->
+<section class="story-section" style="padding: 80px 0; background: radial-gradient(circle at 50% 50%, rgba(40, 205, 65, 0.1) 0%, #020204 70%);">
+    <div class="container" style="text-align: center;">
+        <h2 class="section-headline">Your Turn to Become an <span class="headline-green">AI-Powered Operator</span></h2>
+        <p class="subheadline" style="margin-bottom: 40px;">Stop drowning. Stop grinding. Start scaling with AI.</p>
+
+        <div style="display: inline-block; background: rgba(40, 205, 65, 0.1); border: 2px solid var(--highlight-green); border-radius: 20px; padding: 32px 48px; margin-bottom: 40px;">
+            <p style="font-size: 18px; color: var(--apple-grey); margin: 0 0 8px;">Everything I learned. Packaged for you.</p>
+            <p style="font-size: 56px; font-weight: 800; color: var(--highlight-green); margin: 0;">$9</p>
+            <p style="font-size: 14px; color: var(--apple-grey); margin: 8px 0 0; text-decoration: line-through;">$582 value</p>
+        </div>
+
+        <div style="display: block;">
+            <a href="https://www.outsourcingleader.com/checkout" class="cta-button" style="font-size: 20px; padding: 24px 56px;">Get The AI Operator Toolkit →</a>
+        </div>
+        <p class="cta-subtext">🔒 Secure checkout • Instant access • 30-day money-back guarantee</p>
     </div>
 </section>
 
@@ -2935,7 +3448,7 @@ img, svg, video {
      ============================================================ -->
 <section class="bg-blue-glow section-padding">
     <div class="container" style="text-align: center;">
-        <h2 class="headline">$27 for the Complete <span class="headline-green">AI Operator Toolkit.</span></h2>
+        <h2 class="headline">$9 for the Complete <span class="headline-green">AI Operator Toolkit.</span></h2>
         <p class="subheadline">Master 6 critical AI skills. Become an AI-powered entrepreneur.</p>
 
         <a href="https://www.outsourcingleader.com/checkout" class="cta-button" style="margin-top: 32px;">Get The AI Operator Toolkit →</a>
@@ -2986,7 +3499,7 @@ img, svg, video {
 <!-- FLOATING CTA BAR -->
 <div class="floating-cta" id="floatingCta">
     <span class="floating-cta-text">Complete AI Toolkit</span>
-    <span class="floating-cta-price">$27</span>
+    <span class="floating-cta-price">$9</span>
     <a href="https://www.outsourcingleader.com/checkout" class="cta-button">Get Instant Access →</a>
 </div>
 
@@ -2994,65 +3507,52 @@ img, svg, video {
 
 <!-- JAVASCRIPT -->
 <script>
-// Countdown Timer
+// Countdown Timer - displays as HH:MM:SS
 (function() {
-    const COUNTDOWN_KEY = 'ai_toolkit_countdown_end';
-    let endTime = localStorage.getItem(COUNTDOWN_KEY);
-
-    if (!endTime) {
-        endTime = Date.now() + (48 * 60 * 60 * 1000);
-        localStorage.setItem(COUNTDOWN_KEY, endTime);
-    } else {
-        endTime = parseInt(endTime);
-    }
-
     function updateCountdown() {
-        const now = Date.now();
-        const diff = endTime - now;
-
-        if (diff <= 0) {
-            endTime = Date.now() + (48 * 60 * 60 * 1000);
-            localStorage.setItem(COUNTDOWN_KEY, endTime);
-        }
+        const now = new Date();
+        const midnight = new Date();
+        midnight.setHours(24, 0, 0, 0);
+        const diff = midnight - now;
 
         const hours = Math.floor(diff / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        const timerEl = document.getElementById('timerText');
+        if (timerEl) {
+            timerEl.textContent = String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+        }
     }
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
 })();
 
-// Spots Counter
+// Viewer Count - fluctuates between 42-58
 (function() {
-    const SPOTS_KEY = 'ai_toolkit_spots';
-    const SPOTS_TIME_KEY = 'ai_toolkit_spots_time';
-    let spots = localStorage.getItem(SPOTS_KEY);
-    let lastUpdate = localStorage.getItem(SPOTS_TIME_KEY);
-
-    if (!spots) {
-        spots = 87;
-        localStorage.setItem(SPOTS_KEY, spots);
-        localStorage.setItem(SPOTS_TIME_KEY, Date.now());
-    } else {
-        spots = parseInt(spots);
-        lastUpdate = parseInt(lastUpdate);
-        const elapsed = Date.now() - lastUpdate;
-        const decrements = Math.floor(elapsed / (20 * 60 * 1000));
-
-        if (decrements > 0) {
-            spots = Math.max(23, spots - decrements);
-            localStorage.setItem(SPOTS_KEY, spots);
-            localStorage.setItem(SPOTS_TIME_KEY, Date.now());
+    function updateViewerCount() {
+        const viewerEl = document.getElementById('viewerCount');
+        if (viewerEl) {
+            viewerEl.textContent = 42 + Math.floor(Math.random() * 16);
         }
     }
 
-    document.getElementById('spots-count').textContent = spots;
+    updateViewerCount();
+    setInterval(updateViewerCount, 8000);
+})();
+
+// Sold Count - slowly increments
+(function() {
+    const soldEl = document.getElementById('soldCount');
+    if (soldEl) {
+        let count = 2847;
+
+        setInterval(function() {
+            count += Math.floor(Math.random() * 3) + 1;
+            soldEl.textContent = count.toLocaleString();
+        }, 45000);
+    }
 })();
 
 // Floating CTA
@@ -3060,19 +3560,49 @@ img, svg, video {
     const floatingCta = document.getElementById('floatingCta');
     const heroSection = document.querySelector('.hero-neural');
 
-    function checkScroll() {
-        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-        const scrollY = window.scrollY || window.pageYOffset;
+    if (floatingCta && heroSection) {
+        function checkScroll() {
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            const scrollY = window.scrollY || window.pageYOffset;
 
-        if (scrollY > heroBottom) {
-            floatingCta.classList.add('visible');
-        } else {
-            floatingCta.classList.remove('visible');
+            if (scrollY > heroBottom) {
+                floatingCta.classList.add('visible');
+            } else {
+                floatingCta.classList.remove('visible');
+            }
         }
-    }
 
-    window.addEventListener('scroll', checkScroll);
-    checkScroll();
+        window.addEventListener('scroll', checkScroll);
+        checkScroll();
+    }
+})();
+
+// Lazy Loading for Story Images and Elements
+(function() {
+    const lazyElements = document.querySelectorAll('.lazy-load');
+
+    if ('IntersectionObserver' in window) {
+        const lazyObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('loaded');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px',
+            threshold: 0.1
+        });
+
+        lazyElements.forEach(function(element) {
+            lazyObserver.observe(element);
+        });
+    } else {
+        // Fallback for older browsers
+        lazyElements.forEach(function(element) {
+            element.classList.add('loaded');
+        });
+    }
 })();
 
 // Smooth scroll
