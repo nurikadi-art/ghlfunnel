@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero Style 3 - Apple Keynote Style</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --bg-primary: #000000;
+    --text-primary: #f5f5f7;
+    --text-secondary: #a1a1a6;
+    --text-muted: #6e6e73;
+    --accent-green: #30d158;
+    --accent-orange: #ff9f0a;
+    --accent-gold: #ffb347;
+    --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ============ TRUSTPILOT BAR ============ */
+.trustpilot-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 12px 24px;
+}
+
+.trustpilot-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 13px;
+}
+
+.trustpilot-stars { display: flex; gap: 2px; }
+.trustpilot-star {
+    width: 18px;
+    height: 18px;
+    background: #00b67a;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.trustpilot-text { color: var(--text-secondary); }
+.trustpilot-text strong { color: var(--text-primary); }
+.trustpilot-logo { font-weight: 700; color: #00b67a; }
+
+/* ============ HERO - APPLE KEYNOTE STYLE ============ */
+.hero {
+    min-height: 100vh;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Stage lighting effect - warm dramatic lighting */
+.stage-light {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    height: 800px;
+    background:
+        conic-gradient(from 180deg at 50% 50%,
+            transparent 0deg,
+            rgba(255, 159, 10, 0.08) 60deg,
+            rgba(255, 179, 71, 0.12) 120deg,
+            rgba(232, 168, 124, 0.08) 180deg,
+            transparent 240deg,
+            transparent 360deg
+        );
+    pointer-events: none;
+    z-index: 0;
+    animation: stageRotate 20s linear infinite;
+}
+
+@keyframes stageRotate {
+    from { transform: translateX(-50%) rotate(0deg); }
+    to { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* Subtle ambient glow */
+.ambient-glow {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 159, 10, 0.15) 0%, transparent 60%);
+    filter: blur(100px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Hero container */
+.hero-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top section - Photo + Text side by side */
+.hero-main {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+    flex: 1;
+}
+
+/* Photo section */
+.founder-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+/* Warm spotlight effect behind photo */
+.founder-spotlight {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 500px;
+    background:
+        radial-gradient(ellipse at 40% 30%, rgba(255, 159, 10, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 60% 70%, rgba(255, 179, 71, 0.2) 0%, transparent 40%);
+    filter: blur(60px);
+    z-index: 0;
+    animation: spotlightBreath 4s ease-in-out infinite;
+}
+
+@keyframes spotlightBreath {
+    0%, 100% { opacity: 0.9; }
+    50% { opacity: 1; }
+}
+
+.founder-photo {
+    position: relative;
+    z-index: 1;
+}
+
+.founder-photo img {
+    max-width: 400px;
+    height: auto;
+    filter: drop-shadow(0 40px 100px rgba(0, 0, 0, 0.7));
+}
+
+/* Text section */
+.hero-text {
+    padding-right: 20px;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(48, 209, 88, 0.1);
+    border: 1px solid rgba(48, 209, 88, 0.3);
+    padding: 10px 20px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent-green);
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+.hero-headline {
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+}
+
+.hero-headline .line {
+    display: block;
+}
+
+.hero-headline .highlight {
+    background: linear-gradient(135deg, var(--accent-orange) 0%, var(--accent-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subheadline {
+    font-size: 18px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 500px;
+}
+
+.hero-subheadline strong { color: var(--text-primary); }
+
+/* CTA */
+.hero-cta {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--accent-green) 0%, #28a745 100%);
+    color: #000;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 30px rgba(48, 209, 88, 0.4);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 40px rgba(48, 209, 88, 0.5);
+}
+
+.price-inline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.price-current {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--accent-green);
+}
+
+.price-original {
+    font-size: 20px;
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+.cta-subtext {
+    width: 100%;
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Products showcase - horizontal strip at bottom */
+.products-strip {
+    margin-top: 60px;
+    padding-top: 48px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.products-label {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.products-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Small bonus books */
+.small-book {
+    width: 80px;
+    height: 110px;
+    border-radius: 4px 10px 10px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    text-align: center;
+    transform: perspective(600px) rotateY(-8deg);
+    transition: all 0.3s ease;
+    box-shadow: -6px 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.small-book:hover {
+    transform: perspective(600px) rotateY(-3deg) translateY(-6px);
+}
+
+.small-book.blue { background: linear-gradient(145deg, #1e3a5f, #0d1b2a); }
+.small-book.purple { background: linear-gradient(145deg, #3d2a5c, #1a1028); }
+.small-book.orange { background: linear-gradient(145deg, #5c3d2e, #2a1a10); }
+.small-book.cyan { background: linear-gradient(145deg, #134e5e, #0a2a33); }
+.small-book.red { background: linear-gradient(145deg, #5c2a2a, #2a1010); }
+.small-book.pink { background: linear-gradient(145deg, #5c2a4a, #2a1020); }
+
+.small-book-icon { font-size: 22px; margin-bottom: 6px; }
+.small-book-title { font-size: 8px; font-weight: 700; color: white; line-height: 1.2; }
+
+/* Main framework book - center, larger */
+.main-book {
+    width: 160px;
+    height: 220px;
+    position: relative;
+    transform: perspective(1000px) rotateY(-6deg);
+    margin: 0 8px;
+    transition: all 0.4s ease;
+}
+
+.main-book:hover {
+    transform: perspective(1000px) rotateY(-2deg) translateY(-12px);
+}
+
+.main-book-cover {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #1e5c3a 0%, #0f3d28 50%, #051510 100%);
+    border-radius: 5px 16px 16px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    box-shadow:
+        -12px 15px 40px rgba(0, 0, 0, 0.5),
+        0 0 80px rgba(48, 209, 88, 0.2);
+    border: 2px solid rgba(48, 209, 88, 0.35);
+}
+
+.main-book-icon { font-size: 36px; margin-bottom: 10px; }
+.main-book-badge {
+    background: linear-gradient(135deg, var(--accent-green), #64d2ff);
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 8px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+.main-book-title { font-size: 13px; font-weight: 800; color: white; line-height: 1.2; }
+
+@media (max-width: 900px) {
+    .hero-main {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    .hero-text { padding-right: 0; }
+    .hero-subheadline { margin: 0 auto 32px; }
+    .hero-cta { justify-content: center; }
+    .founder-photo img { max-width: 300px; }
+    .products-row { flex-wrap: wrap; }
+    .main-book { width: 130px; height: 180px; }
+    .small-book { width: 70px; height: 95px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TRUSTPILOT BAR -->
+<div class="trustpilot-bar">
+    <div class="trustpilot-inner">
+        <div class="trustpilot-stars">
+            <div class="trustpilot-star"></div>
+            <div class="trustpilot-star"></div>
+            <div class="trustpilot-star"></div>
+            <div class="trustpilot-star"></div>
+            <div class="trustpilot-star"></div>
+        </div>
+        <span class="trustpilot-text"><strong>4.9/5</strong> from 847 reviews on</span>
+        <span class="trustpilot-logo">★ Trustpilot</span>
+    </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="stage-light"></div>
+    <div class="ambient-glow"></div>
+
+    <div class="hero-container">
+        <div class="hero-main">
+            <!-- Photo -->
+            <div class="founder-section">
+                <div class="founder-spotlight"></div>
+                <div class="founder-photo">
+                    <img src="https://storage.googleapis.com/msgsndr/bh7ksvCXuReJ4AaVrUfG/media/697fefaef7a8776f8108f8b9.png" alt="Founder">
+                </div>
+            </div>
+
+            <!-- Text -->
+            <div class="hero-text">
+                <div class="hero-badge">🎯 Trusted by 2,847+ Entrepreneurs</div>
+
+                <h1 class="hero-headline">
+                    <span class="line">How I Went From</span>
+                    <span class="line"><span class="highlight">15-Hour Days</span> To</span>
+                    <span class="line"><span class="highlight">6-Hour Days</span> Using</span>
+                    <span class="line">One Simple AI Framework</span>
+                </h1>
+
+                <p class="hero-subheadline">
+                    And why copying prompts, watching tutorials, and "trying harder" will never get you there. <strong>This will.</strong>
+                </p>
+
+                <div class="hero-cta">
+                    <a href="#" class="cta-button">
+                        Get Instant Access
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                    </a>
+                    <div class="price-inline">
+                        <span class="price-current">$9</span>
+                        <span class="price-original">$582</span>
+                    </div>
+                </div>
+                <p class="cta-subtext">✓ Instant delivery &nbsp; ✓ Works with any AI &nbsp; ✓ 30-day money-back guarantee</p>
+            </div>
+        </div>
+
+        <!-- Products strip -->
+        <div class="products-strip">
+            <p class="products-label">Core Framework + 6 Bonus Skill Packs</p>
+
+            <div class="products-row">
+                <div class="small-book blue"><div class="small-book-icon">💻</div><div class="small-book-title">AI Vibe Coding</div></div>
+                <div class="small-book purple"><div class="small-book-icon">🎨</div><div class="small-book-title">Image Gen</div></div>
+                <div class="small-book orange"><div class="small-book-icon">📈</div><div class="small-book-title">Sales</div></div>
+
+                <div class="main-book">
+                    <div class="main-book-cover">
+                        <div class="main-book-icon">🧠</div>
+                        <div class="main-book-badge">Core Framework</div>
+                        <div class="main-book-title">The AI Operating<br>Framework™</div>
+                    </div>
+                </div>
+
+                <div class="small-book cyan"><div class="small-book-icon">🔍</div><div class="small-book-title">Research</div></div>
+                <div class="small-book red"><div class="small-book-icon">🌐</div><div class="small-book-title">Web Dev</div></div>
+                <div class="small-book pink"><div class="small-book-icon">⚡</div><div class="small-book-title">Prompts</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
