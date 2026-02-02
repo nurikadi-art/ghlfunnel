@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Framework That Gave Me My Life Back</title>
-<meta name="description" content="How I went from 15-hour days and a crumbling marriage to 3x revenue and actually being present. The system I wish existed 3 years ago.">
+<title>The AI Operating Framework™ — Stop Using AI Wrong</title>
+<meta name="description" content="97% of people use AI the wrong way. This framework changes everything. The system that took me from 15-hour days to 3x revenue.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
-   APPLE-STYLE LANDING PAGE - THE FRAMEWORK
-   Personal Story + Buyer Persona Focused
+   THE AI OPERATING FRAMEWORK™ - PREMIUM LANDING PAGE
+   Long-form with multiple CTAs and story at bottom
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
@@ -20,7 +20,8 @@
     --bg-primary: #000000;
     --bg-secondary: #0a0a0a;
     --bg-card: #111111;
-    --bg-elevated: #1a1a1a;
+    --bg-elevated: #161616;
+    --bg-glass: rgba(17, 17, 17, 0.8);
     --text-primary: #f5f5f7;
     --text-secondary: #a1a1a6;
     --text-muted: #6e6e73;
@@ -30,8 +31,10 @@
     --accent-purple: #bf5af2;
     --accent-orange: #ff9f0a;
     --accent-red: #ff453a;
-    --gradient-start: #30d158;
-    --gradient-end: #00c7be;
+    --accent-gold: #ffd60a;
+    --gradient-green: linear-gradient(135deg, #30d158 0%, #00c7be 100%);
+    --gradient-premium: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-gold: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
 }
 
 * {
@@ -56,20 +59,26 @@ body {
 
 /* CONTAINER */
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
 .container-wide {
-    max-width: 1000px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.container-narrow {
+    max-width: 700px;
     margin: 0 auto;
     padding: 0 24px;
 }
 
 /* SECTION STYLES */
 .section {
-    padding: 100px 0;
+    padding: 120px 0;
 }
 
 .section-dark {
@@ -80,37 +89,89 @@ body {
     background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 
+.section-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-glow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(48, 209, 88, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
 /* TYPOGRAPHY */
 .section-label {
     display: inline-block;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color: var(--accent-green);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+}
+
+.section-label.gold {
+    color: var(--accent-gold);
+}
+
+.section-label.purple {
+    color: var(--accent-purple);
+}
+
+.section-label.red {
+    color: var(--accent-red);
 }
 
 .headline {
-    font-size: clamp(32px, 6vw, 56px);
-    font-weight: 700;
-    line-height: 1.1;
+    font-size: clamp(36px, 7vw, 64px);
+    font-weight: 800;
+    line-height: 1.05;
     letter-spacing: -0.03em;
     color: var(--text-primary);
     margin-bottom: 24px;
 }
 
+.headline-medium {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+}
+
 .subheadline {
-    font-size: clamp(18px, 3vw, 22px);
+    font-size: clamp(18px, 2.5vw, 22px);
     color: var(--text-secondary);
     line-height: 1.6;
-    max-width: 600px;
+    max-width: 650px;
+}
+
+.gradient-text {
+    background: var(--gradient-green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.gradient-text-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 /* STORY TEXT */
 .story-text {
     font-size: 18px;
-    line-height: 1.8;
+    line-height: 1.85;
     margin-bottom: 28px;
     color: var(--text-secondary);
 }
@@ -124,13 +185,13 @@ body {
     font-style: normal;
 }
 
-/* HIGHLIGHT BOX */
+/* HIGHLIGHT BOXES */
 .highlight-box {
     background: linear-gradient(135deg, rgba(48, 209, 88, 0.1), rgba(48, 209, 88, 0.02));
     border: 1px solid rgba(48, 209, 88, 0.3);
-    border-radius: 16px;
-    padding: 28px 32px;
-    margin: 40px 0;
+    border-radius: 20px;
+    padding: 32px 36px;
+    margin: 48px 0;
 }
 
 .highlight-box p {
@@ -141,28 +202,222 @@ body {
     line-height: 1.6;
 }
 
+.highlight-box.warning {
+    background: linear-gradient(135deg, rgba(255, 69, 58, 0.1), rgba(255, 69, 58, 0.02));
+    border-color: rgba(255, 69, 58, 0.3);
+}
+
+.highlight-box.gold {
+    background: linear-gradient(135deg, rgba(255, 214, 10, 0.1), rgba(255, 214, 10, 0.02));
+    border-color: rgba(255, 214, 10, 0.3);
+}
+
 /* QUOTE BOX */
 .quote-box {
     background: var(--bg-card);
     border-left: 4px solid var(--accent-green);
-    border-radius: 0 16px 16px 0;
-    padding: 28px 32px;
-    margin: 40px 0;
+    border-radius: 0 20px 20px 0;
+    padding: 32px 36px;
+    margin: 48px 0;
 }
 
 .quote-box p {
-    font-size: 22px;
+    font-size: 24px;
     font-style: italic;
     color: var(--text-primary);
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.5;
+}
+
+/* ============================================================
+   PREMIUM PRODUCT MOCKUPS
+   ============================================================ */
+
+.hero-product-showcase {
+    position: relative;
+    margin: 60px auto 0;
+    max-width: 900px;
+}
+
+/* Main Framework Mockup - Center */
+.main-mockup {
+    position: relative;
+    z-index: 10;
+    perspective: 1500px;
+}
+
+.main-mockup-inner {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    transform: rotateX(5deg);
+    transform-style: preserve-3d;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: rotateX(5deg) translateY(0); }
+    50% { transform: rotateX(5deg) translateY(-15px); }
+}
+
+.mockup-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(ellipse at center, rgba(48, 209, 88, 0.3) 0%, transparent 60%);
+    filter: blur(60px);
+    z-index: -1;
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.mockup-book {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+    border-radius: 8px 20px 20px 8px;
+    box-shadow:
+        0 50px 100px -20px rgba(0, 0, 0, 0.8),
+        0 30px 60px -15px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    aspect-ratio: 3/4;
+}
+
+.mockup-book::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    background: linear-gradient(90deg, rgba(0,0,0,0.4), transparent);
+}
+
+.mockup-book-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+}
+
+.mockup-badge {
+    background: var(--gradient-green);
+    color: #000;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 16px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+}
+
+.mockup-title {
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.mockup-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.mockup-visual {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-green);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    margin-bottom: 24px;
+    box-shadow: 0 20px 40px -10px rgba(48, 209, 88, 0.4);
+}
+
+.mockup-author {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Side Mockups */
+.side-mockups {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: -60px;
+    position: relative;
+    z-index: 5;
+}
+
+.side-mockup {
+    width: 140px;
+    aspect-ratio: 3/4;
+    background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+    border-radius: 6px 12px 12px 6px;
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.side-mockup:hover {
+    transform: translateY(-8px);
+}
+
+.side-mockup:nth-child(1) { transform: rotate(-8deg) translateY(20px); }
+.side-mockup:nth-child(2) { transform: rotate(-4deg) translateY(10px); }
+.side-mockup:nth-child(3) { transform: rotate(4deg) translateY(10px); }
+.side-mockup:nth-child(4) { transform: rotate(8deg) translateY(20px); }
+
+.side-mockup:nth-child(1):hover { transform: rotate(-8deg) translateY(12px); }
+.side-mockup:nth-child(2):hover { transform: rotate(-4deg) translateY(2px); }
+.side-mockup:nth-child(3):hover { transform: rotate(4deg) translateY(2px); }
+.side-mockup:nth-child(4):hover { transform: rotate(8deg) translateY(12px); }
+
+.side-mockup-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.side-mockup-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
 }
 
 /* IMAGE PLACEHOLDERS */
 .image-placeholder {
     background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
-    border: 2px dashed rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
+    border: 2px dashed rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -170,16 +425,15 @@ body {
     color: var(--text-muted);
     font-size: 14px;
     text-align: center;
-    margin: 32px auto;
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
 }
 
 .image-placeholder::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.03) 50%, transparent 60%);
+    background: linear-gradient(45deg, transparent 40%, rgba(255,255,255,0.02) 50%, transparent 60%);
     background-size: 200% 200%;
     animation: shimmer 3s infinite;
 }
@@ -190,43 +444,69 @@ body {
 }
 
 .image-placeholder .number {
-    font-size: 48px;
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.1);
+    font-size: 64px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.06);
+    margin-bottom: 8px;
+}
+
+.image-placeholder .label {
+    font-size: 13px;
+    color: var(--text-muted);
     margin-bottom: 8px;
 }
 
 .image-placeholder .dimensions {
-    font-size: 12px;
+    font-size: 11px;
     color: var(--accent-green);
     font-weight: 600;
+    background: var(--accent-green-soft);
+    padding: 4px 12px;
+    border-radius: 100px;
 }
 
-/* CTA BUTTON */
+/* ============================================================
+   CTA BUTTONS
+   ============================================================ */
+
+.cta-section {
+    text-align: center;
+    padding: 80px 0;
+}
+
 .cta-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    background: linear-gradient(135deg, var(--accent-green), #00c853);
+    gap: 12px;
+    background: var(--gradient-green);
     color: #000;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 700;
-    padding: 18px 36px;
-    border-radius: 14px;
+    padding: 20px 40px;
+    border-radius: 16px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 24px rgba(48, 209, 88, 0.3);
+    box-shadow:
+        0 4px 24px rgba(48, 209, 88, 0.3),
+        0 0 0 1px rgba(48, 209, 88, 0.5);
 }
 
 .cta-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 32px rgba(48, 209, 88, 0.4);
+    transform: translateY(-3px);
+    box-shadow:
+        0 8px 40px rgba(48, 209, 88, 0.4),
+        0 0 0 1px rgba(48, 209, 88, 0.6);
 }
 
 .cta-button svg {
     width: 20px;
     height: 20px;
+}
+
+.cta-button.large {
+    font-size: 20px;
+    padding: 24px 48px;
 }
 
 .cta-subtext {
@@ -235,27 +515,220 @@ body {
     margin-top: 16px;
 }
 
-/* STATS GRID */
-.stats-grid {
+.cta-price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.cta-price-old {
+    font-size: 24px;
+    color: var(--text-muted);
+    text-decoration: line-through;
+}
+
+.cta-price-new {
+    font-size: 56px;
+    font-weight: 800;
+    color: var(--accent-green);
+}
+
+/* ============================================================
+   WRONG WAY SECTION
+   ============================================================ */
+
+.wrong-way-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     margin: 48px 0;
 }
 
-.stat-card {
+.wrong-card {
     background: var(--bg-card);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 69, 58, 0.2);
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrong-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-red), var(--accent-orange));
+}
+
+.wrong-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.wrong-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.wrong-desc {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* ============================================================
+   DIFFERENT SECTION
+   ============================================================ */
+
+.different-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 48px 0;
+}
+
+.different-card {
+    background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+    border: 1px solid rgba(48, 209, 88, 0.2);
+    border-radius: 20px;
+    padding: 36px 28px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.different-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(48, 209, 88, 0.4);
+    box-shadow: 0 20px 40px -20px rgba(48, 209, 88, 0.3);
+}
+
+.different-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-green);
+    border-radius: 20px 20px 0 0;
+}
+
+.different-number {
+    width: 48px;
+    height: 48px;
+    background: var(--gradient-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 800;
+    color: #000;
+    margin: 0 auto 20px;
+}
+
+.different-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.different-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+/* ============================================================
+   ACCOMPLISH SECTION
+   ============================================================ */
+
+.accomplish-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 48px 0;
+}
+
+.accomplish-card {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 16px;
-    padding: 28px 20px;
+    padding: 28px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+}
+
+.accomplish-card:hover {
+    border-color: rgba(48, 209, 88, 0.3);
+    transform: translateX(8px);
+}
+
+.accomplish-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--accent-green-soft);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.accomplish-content {
+    flex: 1;
+}
+
+.accomplish-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.accomplish-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ============================================================
+   STATS SECTION
+   ============================================================ */
+
+.stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 24px;
+    padding: 40px;
+    margin: 48px 0;
+}
+
+.stat-item {
     text-align: center;
 }
 
 .stat-number {
-    font-size: 36px;
+    font-size: 42px;
     font-weight: 800;
     color: var(--accent-green);
     margin-bottom: 8px;
+    line-height: 1;
 }
 
 .stat-label {
@@ -263,7 +736,10 @@ body {
     color: var(--text-muted);
 }
 
-/* INFOGRAPHIC SECTION */
+/* ============================================================
+   INFOGRAPHIC SECTION
+   ============================================================ */
+
 .infographic-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -286,78 +762,50 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent-red), var(--accent-orange));
+    height: 4px;
 }
 
-.infographic-card.positive::before {
-    background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
-}
+.infographic-card.red::before { background: linear-gradient(90deg, var(--accent-red), var(--accent-orange)); }
+.infographic-card.orange::before { background: linear-gradient(90deg, var(--accent-orange), var(--accent-gold)); }
+.infographic-card.green::before { background: linear-gradient(90deg, var(--accent-green), #00c7be); }
+.infographic-card.blue::before { background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple)); }
 
 .infographic-stat {
-    font-size: 48px;
+    font-size: 52px;
     font-weight: 800;
     margin-bottom: 12px;
+    line-height: 1;
 }
 
-.infographic-card:nth-child(1) .infographic-stat { color: var(--accent-red); }
-.infographic-card:nth-child(2) .infographic-stat { color: var(--accent-orange); }
-.infographic-card:nth-child(3) .infographic-stat { color: var(--accent-green); }
-.infographic-card:nth-child(4) .infographic-stat { color: var(--accent-blue); }
+.infographic-card.red .infographic-stat { color: var(--accent-red); }
+.infographic-card.orange .infographic-stat { color: var(--accent-orange); }
+.infographic-card.green .infographic-stat { color: var(--accent-green); }
+.infographic-card.blue .infographic-stat { color: var(--accent-blue); }
 
 .infographic-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 8px;
-}
-
-.infographic-source {
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-top: 12px;
-}
-
-/* ACCOMPLISH GRID */
-.accomplish-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin: 48px 0;
-}
-
-.accomplish-card {
-    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 28px;
-    transition: all 0.3s ease;
-}
-
-.accomplish-card:hover {
-    border-color: rgba(48, 209, 88, 0.3);
-    transform: translateY(-4px);
-}
-
-.accomplish-icon {
-    font-size: 32px;
-    margin-bottom: 16px;
-}
-
-.accomplish-title {
     font-size: 17px;
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 8px;
 }
 
-.accomplish-desc {
+.infographic-desc {
     font-size: 14px;
     color: var(--text-muted);
     line-height: 1.5;
 }
 
-/* TESTIMONIALS */
+.infographic-source {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 16px;
+    opacity: 0.7;
+}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+
 .testimonial-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -367,16 +815,16 @@ body {
 
 .testimonial-card {
     background: var(--bg-card);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 32px;
 }
 
 .testimonial-text {
     font-size: 16px;
     color: var(--text-secondary);
     line-height: 1.7;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
 .testimonial-text strong {
@@ -384,35 +832,44 @@ body {
 }
 
 .testimonial-author {
-    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.testimonial-info {
+    flex: 1;
 }
 
 .testimonial-name {
+    font-size: 15px;
     font-weight: 600;
     color: var(--text-primary);
 }
 
 .testimonial-role {
+    font-size: 13px;
     color: var(--text-muted);
 }
 
 .testimonial-result {
-    display: inline-block;
     background: var(--accent-green-soft);
     color: var(--accent-green);
     font-size: 12px;
     font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 6px;
-    margin-top: 12px;
+    padding: 8px 14px;
+    border-radius: 8px;
 }
 
-/* OFFER CARD */
+/* ============================================================
+   OFFER CARD
+   ============================================================ */
+
 .offer-card {
-    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+    background: linear-gradient(145deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
     border: 2px solid rgba(48, 209, 88, 0.3);
-    border-radius: 24px;
-    padding: 48px;
+    border-radius: 32px;
+    padding: 56px;
     position: relative;
     overflow: hidden;
 }
@@ -420,36 +877,37 @@ body {
 .offer-card::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(48, 209, 88, 0.08) 0%, transparent 50%);
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(48, 209, 88, 0.1) 0%, transparent 60%);
     pointer-events: none;
 }
 
 .offer-badge {
     display: inline-block;
-    background: var(--accent-green);
+    background: var(--gradient-green);
     color: #000;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 100px;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .offer-title {
-    font-size: 32px;
-    font-weight: 700;
+    font-size: 36px;
+    font-weight: 800;
     color: var(--text-primary);
-    margin-bottom: 32px;
+    margin-bottom: 40px;
 }
 
 .offer-section {
-    margin-bottom: 32px;
+    margin-bottom: 36px;
 }
 
 .offer-section-label {
@@ -458,14 +916,15 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--accent-green);
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    display: block;
 }
 
 .offer-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 0;
+    padding: 16px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
@@ -476,50 +935,51 @@ body {
 .offer-item-left {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
 }
 
 .offer-check {
     color: var(--accent-green);
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .offer-item-text {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--text-primary);
 }
 
 .offer-item-value {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-muted);
     text-decoration: line-through;
 }
 
 .offer-total {
     text-align: center;
-    padding-top: 32px;
-    margin-top: 32px;
+    padding-top: 40px;
+    margin-top: 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .total-crossed {
-    font-size: 18px;
+    font-size: 20px;
     color: var(--text-muted);
     text-decoration: line-through;
     margin-bottom: 8px;
 }
 
 .total-price {
-    font-size: 64px;
-    font-weight: 800;
+    font-size: 72px;
+    font-weight: 900;
     color: var(--accent-green);
     line-height: 1;
     margin-bottom: 8px;
 }
 
 .total-savings {
-    font-size: 14px;
+    font-size: 16px;
     color: var(--accent-green);
+    font-weight: 600;
 }
 
 /* GUARANTEE */
@@ -528,24 +988,28 @@ body {
     border: 1px solid rgba(48, 209, 88, 0.2);
     border-radius: 16px;
     padding: 28px;
-    margin-top: 32px;
+    margin-top: 36px;
     text-align: center;
 }
 
 .guarantee-box h4 {
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 700;
     color: var(--accent-green);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .guarantee-box p {
     font-size: 14px;
     color: var(--text-secondary);
     margin: 0;
+    line-height: 1.6;
 }
 
-/* FLOATING CTA */
+/* ============================================================
+   FLOATING CTA
+   ============================================================ */
+
 .floating-cta {
     position: fixed;
     bottom: 0;
@@ -559,7 +1023,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 24px;
     z-index: 1000;
     transform: translateY(100%);
     transition: transform 0.4s ease;
@@ -570,7 +1034,7 @@ body {
 }
 
 .floating-price {
-    font-size: 28px;
+    font-size: 32px;
     font-weight: 800;
     color: var(--accent-green);
 }
@@ -580,10 +1044,13 @@ body {
     font-size: 15px;
 }
 
-/* ANIMATIONS */
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
 .fade-in {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
@@ -594,7 +1061,7 @@ body {
 
 .scale-in {
     opacity: 0;
-    transform: scale(0.95);
+    transform: scale(0.9);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
@@ -603,45 +1070,94 @@ body {
     transform: scale(1);
 }
 
-/* RESPONSIVE */
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+    .section {
+        padding: 80px 0;
+    }
+
+    .different-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .side-mockups {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .side-mockup {
+        width: calc(50% - 8px);
+    }
+
+    .side-mockup:nth-child(1),
+    .side-mockup:nth-child(2),
+    .side-mockup:nth-child(3),
+    .side-mockup:nth-child(4) {
+        transform: none;
+    }
+}
+
 @media (max-width: 768px) {
     .section {
         padding: 60px 0;
     }
 
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 16px;
-    }
-
-    .stat-card {
-        padding: 20px 16px;
-    }
-
-    .stat-number {
-        font-size: 28px;
-    }
-
-    .infographic-grid,
+    .wrong-way-grid,
     .accomplish-grid,
+    .infographic-grid,
     .testimonial-grid {
         grid-template-columns: 1fr;
     }
 
-    .infographic-stat {
-        font-size: 36px;
-    }
-
-    .offer-card {
+    .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 16px;
         padding: 32px 24px;
     }
 
+    .stat-number {
+        font-size: 32px;
+    }
+
+    .offer-card {
+        padding: 36px 24px;
+    }
+
     .offer-title {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .total-price {
-        font-size: 48px;
+        font-size: 56px;
+    }
+
+    .main-mockup-inner {
+        max-width: 320px;
     }
 
     .floating-cta {
@@ -659,398 +1175,311 @@ body {
 <body>
 
 <!-- ============================================================
-     HERO SECTION
+     SECTION 1: HERO WITH PREMIUM MOCKUP
      ============================================================ -->
-<section class="section" style="padding-top: 80px;">
+<section class="section section-glow" style="padding-top: 80px; padding-bottom: 60px;">
     <div class="container" style="text-align: center;">
-        <span class="section-label fade-in">From someone who almost lost everything</span>
+        <span class="section-label fade-in">The Foundation You're Missing</span>
 
-        <h1 class="headline fade-in" style="margin-top: 16px;">
-            I Was Working 15-Hour Days.<br>
-            My Marriage Was Falling Apart.<br>
-            <span style="color: var(--accent-green);">Then I Found The System.</span>
+        <h1 class="headline fade-in">
+            Stop Collecting AI Tools.<br>
+            <span class="gradient-text">Start Understanding AI.</span>
         </h1>
 
-        <p class="subheadline fade-in" style="margin: 0 auto 40px;">
-            How I went from managing 10 staff, missing my kids grow up, and watching competitors pass me by — to 3x revenue and actually being present. <strong style="color: var(--text-primary);">This is the framework I wish someone gave me 3 years ago.</strong>
+        <p class="subheadline fade-in" style="margin: 0 auto;">
+            97% of people use AI the wrong way — jumping between tools, watching tutorials that don't stick, and falling further behind every week. <strong style="color: var(--text-primary);">There's a better way.</strong>
         </p>
+    </div>
 
-        <!-- IMAGE PLACEHOLDER 1: Hero Image -->
-        <div class="image-placeholder fade-in" style="width: 100%; max-width: 700px; height: 400px;">
-            <span class="number">1</span>
-            <span>Hero Image - You at desk/working</span>
-            <span class="dimensions">1400 × 800px (2:1 ratio)</span>
+    <!-- PREMIUM PRODUCT SHOWCASE -->
+    <div class="hero-product-showcase fade-in">
+        <!-- MAIN FRAMEWORK MOCKUP -->
+        <div class="main-mockup">
+            <div class="main-mockup-inner">
+                <div class="mockup-glow"></div>
+                <div class="mockup-book">
+                    <div class="mockup-book-content">
+                        <div class="mockup-badge">Core Framework</div>
+                        <div class="mockup-visual">🧠</div>
+                        <div class="mockup-title">The AI Operating<br>Framework™</div>
+                        <div class="mockup-subtitle">The Foundation That Changes Everything</div>
+                        <div class="mockup-author">By Nuri</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button fade-in" style="margin-top: 32px;">
+        <!-- SIDE MOCKUPS - BONUS PACKS -->
+        <div class="side-mockups">
+            <div class="side-mockup">
+                <div class="side-mockup-icon">💻</div>
+                <div class="side-mockup-title">Vibe Coding Pack</div>
+            </div>
+            <div class="side-mockup">
+                <div class="side-mockup-icon">🎨</div>
+                <div class="side-mockup-title">Image Generation</div>
+            </div>
+            <div class="side-mockup">
+                <div class="side-mockup-icon">📈</div>
+                <div class="side-mockup-title">Sales & Marketing</div>
+            </div>
+            <div class="side-mockup">
+                <div class="side-mockup-icon">🔍</div>
+                <div class="side-mockup-title">Deep Research</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HERO IMAGE PLACEHOLDER -->
+    <div class="container" style="margin-top: 60px;">
+        <div class="image-placeholder fade-in" style="width: 100%; max-width: 800px; height: 400px; margin: 0 auto;">
+            <span class="number">1</span>
+            <span class="label">Hero Visual — Product showcase / dashboard view</span>
+            <span class="dimensions">1600 × 800px</span>
+        </div>
+    </div>
+</section>
+
+<!-- CTA #1 -->
+<section class="cta-section" style="background: var(--bg-secondary);">
+    <div class="container">
+        <div class="cta-price fade-in">
+            <span class="cta-price-old">$497</span>
+            <span class="cta-price-new">$9</span>
+        </div>
+        <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button large fade-in">
+            Get The Framework Now
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+        </a>
+        <p class="cta-subtext fade-in">Join 2,847+ entrepreneurs who stopped struggling with AI</p>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 2: MOST PEOPLE USE AI WRONG
+     ============================================================ -->
+<section class="section">
+    <div class="container-wide">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <span class="section-label red fade-in">The Problem Nobody Talks About</span>
+            <h2 class="headline-medium fade-in">Here's Why You're Still Struggling With AI</h2>
+            <p class="subheadline fade-in" style="margin: 0 auto;">
+                You've tried the tools. Watched the tutorials. Maybe even bought courses. But something's not clicking. <strong style="color: var(--text-primary);">It's not your fault — you've been taught wrong.</strong>
+            </p>
+        </div>
+
+        <div class="wrong-way-grid">
+            <div class="wrong-card fade-in">
+                <div class="wrong-icon">🔧</div>
+                <div class="wrong-title">Tool Hopping</div>
+                <div class="wrong-desc">Jumping from ChatGPT to Claude to Gemini to the next shiny thing. Learning buttons instead of principles. Every new tool feels like starting over.</div>
+            </div>
+
+            <div class="wrong-card fade-in">
+                <div class="wrong-icon">📋</div>
+                <div class="wrong-title">Copy-Paste Prompting</div>
+                <div class="wrong-desc">Using "magic prompts" that worked for someone else but give you garbage. Because you don't understand WHY they work (or don't).</div>
+            </div>
+
+            <div class="wrong-card fade-in">
+                <div class="wrong-icon">🎬</div>
+                <div class="wrong-title">Tutorial Addiction</div>
+                <div class="wrong-desc">Watching hours of content that feels productive but never translates to results. Entertainment disguised as education.</div>
+            </div>
+
+            <div class="wrong-card fade-in">
+                <div class="wrong-icon">😰</div>
+                <div class="wrong-title">Constant FOMO</div>
+                <div class="wrong-desc">Every week there's something new. You feel behind before you even start. The anxiety never stops.</div>
+            </div>
+        </div>
+
+        <div class="highlight-box warning fade-in">
+            <p style="text-align: center;">This approach keeps you <strong>permanently dependent</strong> — always chasing, never mastering. While others who understand the fundamentals adapt to any tool in minutes.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 3: HOW THIS FRAMEWORK IS DIFFERENT
+     ============================================================ -->
+<section class="section section-dark">
+    <div class="container-wide">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <span class="section-label fade-in">The Shift</span>
+            <h2 class="headline-medium fade-in">This Framework Teaches You<br><span class="gradient-text">How AI Actually Thinks</span></h2>
+            <p class="subheadline fade-in" style="margin: 0 auto;">
+                Once you understand the principles, every tool becomes easy. New releases don't scare you — they excite you. <strong style="color: var(--text-primary);">You stop being a user. You become an operator.</strong>
+            </p>
+        </div>
+
+        <div class="different-grid">
+            <div class="different-card fade-in">
+                <div class="different-number">1</div>
+                <div class="different-title">The Mental Model</div>
+                <div class="different-desc">Understand what AI actually is — not the hype, the reality. How it processes information, why it fails, and how to make it work for you.</div>
+            </div>
+
+            <div class="different-card fade-in">
+                <div class="different-number">2</div>
+                <div class="different-title">The Question Framework</div>
+                <div class="different-desc">Learn to communicate with AI so it gives you exactly what you need — first time. Stop the endless back-and-forth.</div>
+            </div>
+
+            <div class="different-card fade-in">
+                <div class="different-number">3</div>
+                <div class="different-title">The Adaptation System</div>
+                <div class="different-desc">A method to master any new AI tool in under 30 minutes. As AI evolves, you evolve with it. Never fall behind again.</div>
+            </div>
+        </div>
+
+        <!-- IMAGE PLACEHOLDER 2 -->
+        <div class="image-placeholder fade-in" style="width: 100%; max-width: 900px; height: 450px; margin: 48px auto 0;">
+            <span class="number">2</span>
+            <span class="label">Framework Visual — The 3-part system diagram</span>
+            <span class="dimensions">1800 × 900px</span>
+        </div>
+
+        <div class="highlight-box fade-in" style="text-align: center;">
+            <p>This isn't about memorizing prompts or learning specific tools. It's about <strong>understanding the game</strong> so you can play it at any level, with any tool, forever.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA #2 -->
+<section class="cta-section">
+    <div class="container">
+        <h3 class="headline-medium fade-in" style="margin-bottom: 32px;">Ready to stop struggling?</h3>
+        <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button large fade-in">
             Get The Framework — $9
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
         </a>
-        <p class="cta-subtext fade-in">Join 2,847+ entrepreneurs who got their time back</p>
+        <p class="cta-subtext fade-in">Core Framework + 6 Bonus Skill Packs included</p>
     </div>
 </section>
 
 <!-- ============================================================
-     THE STRUGGLE - CHAPTER 1
-     ============================================================ -->
-<section class="section section-dark">
-    <div class="container">
-        <span class="section-label fade-in">Chapter 1: The Breaking Point</span>
-
-        <p class="story-text fade-in">Let me tell you about the night everything changed.</p>
-
-        <p class="story-text fade-in">It was 2am. I was still at my desk. My eyes burned from staring at spreadsheets. I had 10 staff members, a business doing okay on paper, and a to-do list that never ended. I was working <strong>15-hour days</strong>, 6 days a week.</p>
-
-        <p class="story-text fade-in">My wife walked in. We hadn't really talked in weeks — not <em>really</em> talked. Just logistics. Who's picking up the kids. What bills are due. That kind of thing.</p>
-
-        <div class="quote-box fade-in">
-            <p>"You're never here. Even when you're home, you're not here. The kids are growing up and you're missing it."</p>
-        </div>
-
-        <p class="story-text fade-in">We had a fight. Not the yelling kind. The quiet kind. The kind where you realize <strong>you're losing the things that actually matter</strong> while chasing the things that don't.</p>
-
-        <p class="story-text fade-in">She went to bed. I sat there in the dark, staring at nothing.</p>
-
-        <!-- IMAGE PLACEHOLDER 2: Late Night/Struggle -->
-        <div class="image-placeholder fade-in" style="width: 100%; max-width: 600px; height: 350px;">
-            <span class="number">2</span>
-            <span>The Struggle - Late night at desk/exhaustion</span>
-            <span class="dimensions">1200 × 700px (12:7 ratio)</span>
-        </div>
-
-        <p class="story-text fade-in">Here's the thing: <strong>I wasn't lazy.</strong> I was doing everything "right." Managing my team. Optimizing processes. Grinding harder than anyone I knew.</p>
-
-        <p class="story-text fade-in">But my offers had stopped converting like they used to. Competitors were moving faster. New tools were launching every week. I felt like I was running on a treadmill that kept speeding up.</p>
-
-        <p class="story-text fade-in">And while I was drowning in operations, I kept seeing other business owners — doing <em>less</em> work, getting <em>better</em> results. How?</p>
-    </div>
-</section>
-
-<!-- ============================================================
-     THE MENTOR - CHAPTER 2
-     ============================================================ -->
-<section class="section">
-    <div class="container">
-        <span class="section-label fade-in">Chapter 2: What My Father Taught Me</span>
-
-        <p class="story-text fade-in">The next morning, I called my dad.</p>
-
-        <p class="story-text fade-in">He's been my mentor my whole life. Not in a "business guru" way. In a real way. He's the one who taught me that <strong>working hard is only half the equation</strong>. Working smart is the other half.</p>
-
-        <p class="story-text fade-in">I told him everything. The business. The stress. The fight with my wife. How I felt like I was falling behind while doing more than ever.</p>
-
-        <p class="story-text fade-in">He listened. Then he said something I'll never forget:</p>
-
-        <div class="highlight-box fade-in">
-            <p>"Son, the world changed. You didn't change with it. Stop working harder. Start working different."</p>
-        </div>
-
-        <p class="story-text fade-in">He was right. I had been so busy <em>in</em> the business, I couldn't see what was happening <em>around</em> me.</p>
-
-        <p class="story-text fade-in">Everyone was talking about AI. But I'd written it off as hype. "I don't have time for that stuff." That's what I told myself. <strong>That was the biggest mistake I could have made.</strong></p>
-
-        <!-- IMAGE PLACEHOLDER 3: Turning Point -->
-        <div class="image-placeholder fade-in" style="width: 100%; max-width: 500px; height: 500px;">
-            <span class="number">3</span>
-            <span>The Mentor/Turning Point - Meaningful photo</span>
-            <span class="dimensions">1000 × 1000px (1:1 square)</span>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================================
-     THE DISCOVERY - CHAPTER 3
-     ============================================================ -->
-<section class="section section-dark">
-    <div class="container">
-        <span class="section-label fade-in">Chapter 3: The Two Weeks That Changed Everything</span>
-
-        <p class="story-text fade-in">That night, I made a decision.</p>
-
-        <p class="story-text fade-in">For the next two weeks, I was going to learn <strong>everything</strong> I could about AI. Not the hype. Not the headlines. The real stuff. How it actually works. How to use it. How to make it work for my business.</p>
-
-        <p class="story-text fade-in">I told my team to handle things. I told my wife I needed two weeks to figure something out. And then I disappeared into research mode.</p>
-
-        <p class="story-text fade-in">I read papers. Watched tutorials. Bought courses. Tested tools. <strong>I spent $47,000</strong> on programs, subscriptions, and training. Most of it was garbage. Talking heads who didn't actually use what they taught.</p>
-
-        <p class="story-text fade-in">But slowly, piece by piece, I started to see it.</p>
-
-        <p class="story-text fade-in">Not the tools. <em>The pattern.</em></p>
-
-        <div class="quote-box fade-in">
-            <p>There was a way to think about AI that made everything simple. A framework. A system. And once I understood it, everything changed.</p>
-        </div>
-
-        <p class="story-text fade-in">I learned how AI actually thinks. How to ask the right questions. How to communicate with it so it gives you exactly what you need — the first time.</p>
-
-        <p class="story-text fade-in">And then I applied it. To everything.</p>
-
-        <p class="story-text fade-in">I learned to generate images for my marketing. Build landing pages. Create videos. Do market research in minutes instead of days. Write content that actually converts. Automate tasks that used to take my team hours.</p>
-
-        <!-- IMAGE PLACEHOLDER 4: The Discovery/Learning -->
-        <div class="image-placeholder fade-in" style="width: 100%; max-width: 700px; height: 400px;">
-            <span class="number">4</span>
-            <span>The Discovery - Learning/Research montage</span>
-            <span class="dimensions">1400 × 800px (2:1 ratio)</span>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================================
-     THE TRANSFORMATION - CHAPTER 4
-     ============================================================ -->
-<section class="section">
-    <div class="container">
-        <span class="section-label fade-in">Chapter 4: The Results</span>
-
-        <h2 class="headline fade-in" style="font-size: clamp(28px, 5vw, 42px);">Within 6 Months, Everything Was Different.</h2>
-
-        <div class="stats-grid fade-in">
-            <div class="stat-card">
-                <div class="stat-number">3x</div>
-                <div class="stat-label">Revenue Growth</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">50%</div>
-                <div class="stat-label">Less Hours Worked</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">10→4</div>
-                <div class="stat-label">Team Members Needed</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">∞</div>
-                <div class="stat-label">Time With Family</div>
-            </div>
-        </div>
-
-        <p class="story-text fade-in">The business grew. But more importantly, <strong>I got my life back.</strong></p>
-
-        <p class="story-text fade-in">I'm in better shape because I actually have time to work out. My nutrition is dialed because I'm not stress-eating at midnight. I'm present with my kids because I'm not constantly checking emails.</p>
-
-        <p class="story-text fade-in">And here's what surprised me most: <strong>I'm not afraid of new tools anymore.</strong></p>
-
-        <p class="story-text fade-in">Every week, some new AI thing launches. Before, that would give me anxiety. "I need to learn THAT now too?!"</p>
-
-        <p class="story-text fade-in">Now? I just apply the framework. New tool? Takes me 20 minutes to understand and use it effectively. Because I understand <em>how AI thinks</em>, not just how individual tools work.</p>
-
-        <!-- IMAGE PLACEHOLDER 5: Transformation/Success -->
-        <div class="image-placeholder fade-in" style="width: 100%; max-width: 700px; height: 450px;">
-            <span class="number">5</span>
-            <span>The Transformation - Success/lifestyle photo</span>
-            <span class="dimensions">1400 × 900px (14:9 ratio)</span>
-        </div>
-
-        <div class="highlight-box fade-in">
-            <p>This isn't about being "good at AI." It's about understanding AI so well that you stay ahead — permanently. While everyone else scrambles to keep up, you're already there.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================================
-     THE FOMO SECTION - Research Data
-     ============================================================ -->
-<section class="section section-gradient">
-    <div class="container-wide">
-        <span class="section-label fade-in" style="text-align: center; display: block;">The Data Doesn't Lie</span>
-
-        <h2 class="headline fade-in" style="text-align: center; font-size: clamp(26px, 4vw, 38px);">What's Happening While You Wait</h2>
-
-        <div class="infographic-grid fade-in">
-            <div class="infographic-card">
-                <div class="infographic-stat">77%</div>
-                <div class="infographic-title">of businesses are already using AI</div>
-                <p style="color: var(--text-muted); font-size: 14px;">Not "planning to use" — actively using it right now to outpace competitors who aren't.</p>
-                <div class="infographic-source">Source: McKinsey Global Survey on AI, 2024</div>
-            </div>
-
-            <div class="infographic-card">
-                <div class="infographic-stat">40%</div>
-                <div class="infographic-title">of work hours can be automated</div>
-                <p style="color: var(--text-muted); font-size: 14px;">That's 16+ hours per week you could reclaim. Or 16 hours your competitors are saving.</p>
-                <div class="infographic-source">Source: Accenture Future of Work Report</div>
-            </div>
-
-            <div class="infographic-card positive">
-                <div class="infographic-stat">6.2%</div>
-                <div class="infographic-title">productivity boost from AI adoption</div>
-                <p style="color: var(--text-muted); font-size: 14px;">Companies using AI see measurable productivity gains within the first year.</p>
-                <div class="infographic-source">Source: Stanford Digital Economy Lab</div>
-            </div>
-
-            <div class="infographic-card positive">
-                <div class="infographic-stat">$15.7T</div>
-                <div class="infographic-title">AI contribution to global economy by 2030</div>
-                <p style="color: var(--text-muted); font-size: 14px;">The businesses capturing this value are the ones who learned the fundamentals early.</p>
-                <div class="infographic-source">Source: PwC Global AI Study</div>
-            </div>
-        </div>
-
-        <div class="highlight-box fade-in" style="text-align: center; margin-top: 48px;">
-            <p style="font-size: 18px;">The gap between businesses that "get" AI and those that don't is widening every single day. <strong>Which side do you want to be on?</strong></p>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================================
-     WHAT YOU'LL ACCOMPLISH SECTION
+     SECTION 4: WHAT YOU'LL ACCOMPLISH
      ============================================================ -->
 <section class="section section-dark">
     <div class="container-wide">
-        <span class="section-label fade-in" style="text-align: center; display: block;">What Becomes Possible</span>
+        <div style="text-align: center; margin-bottom: 60px;">
+            <span class="section-label fade-in">What Becomes Possible</span>
+            <h2 class="headline-medium fade-in">Here's What You'll Actually Be Able To Do</h2>
+            <p class="subheadline fade-in" style="margin: 0 auto;">
+                Not theory. Not "someday." These are real skills you'll have within your first week of applying the framework.
+            </p>
+        </div>
 
-        <h2 class="headline fade-in" style="text-align: center; font-size: clamp(26px, 4vw, 38px);">Here's What You'll Actually Be Able To Do</h2>
-
-        <p class="subheadline fade-in" style="text-align: center; margin: 0 auto 48px;">Not theory. Not "someday." These are real skills you'll have within your first week.</p>
-
-        <div class="accomplish-grid fade-in">
-            <div class="accomplish-card">
+        <div class="accomplish-grid">
+            <div class="accomplish-card fade-in">
                 <div class="accomplish-icon">⚡</div>
-                <div class="accomplish-title">Build Tools Without Code</div>
-                <div class="accomplish-desc">Create custom apps, calculators, and automation tools for your business — no developer needed.</div>
+                <div class="accomplish-content">
+                    <div class="accomplish-title">Build Tools Without Code</div>
+                    <div class="accomplish-desc">Create custom apps, calculators, and automation for your business — no developer needed.</div>
+                </div>
             </div>
 
-            <div class="accomplish-card">
+            <div class="accomplish-card fade-in">
                 <div class="accomplish-icon">🎯</div>
-                <div class="accomplish-title">Research Markets in Minutes</div>
-                <div class="accomplish-desc">Find trending topics, analyze competitors, and discover opportunities faster than any agency.</div>
+                <div class="accomplish-content">
+                    <div class="accomplish-title">Research Markets in Minutes</div>
+                    <div class="accomplish-desc">Find opportunities, analyze competitors, and discover trends faster than any agency.</div>
+                </div>
             </div>
 
-            <div class="accomplish-card">
+            <div class="accomplish-card fade-in">
                 <div class="accomplish-icon">🎨</div>
-                <div class="accomplish-title">Create Professional Visuals</div>
-                <div class="accomplish-desc">Generate images, graphics, and marketing materials that look like you hired a design team.</div>
+                <div class="accomplish-content">
+                    <div class="accomplish-title">Create Professional Visuals</div>
+                    <div class="accomplish-desc">Generate images, graphics, and marketing materials that look like you hired a design team.</div>
+                </div>
             </div>
 
-            <div class="accomplish-card">
+            <div class="accomplish-card fade-in">
                 <div class="accomplish-icon">📝</div>
-                <div class="accomplish-title">Write Copy That Converts</div>
-                <div class="accomplish-desc">Emails, ads, landing pages — create high-converting content on demand.</div>
+                <div class="accomplish-content">
+                    <div class="accomplish-title">Write Copy That Converts</div>
+                    <div class="accomplish-desc">Emails, ads, landing pages — create high-converting content on demand.</div>
+                </div>
             </div>
 
-            <div class="accomplish-card">
+            <div class="accomplish-card fade-in">
                 <div class="accomplish-icon">🌐</div>
-                <div class="accomplish-title">Build Websites Fast</div>
-                <div class="accomplish-desc">Design and launch landing pages and sites without touching code or waiting on developers.</div>
+                <div class="accomplish-content">
+                    <div class="accomplish-title">Build Websites Fast</div>
+                    <div class="accomplish-desc">Design and launch pages without touching code or waiting on developers.</div>
+                </div>
             </div>
 
-            <div class="accomplish-card">
+            <div class="accomplish-card fade-in">
                 <div class="accomplish-icon">🎬</div>
-                <div class="accomplish-title">Create Video Content</div>
-                <div class="accomplish-desc">Generate scripts, edit footage, and produce videos without expensive software or skills.</div>
+                <div class="accomplish-content">
+                    <div class="accomplish-title">Create Video Content</div>
+                    <div class="accomplish-desc">Scripts, edits, full production — without expensive software or skills.</div>
+                </div>
             </div>
 
-            <div class="accomplish-card">
+            <div class="accomplish-card fade-in">
                 <div class="accomplish-icon">🔄</div>
-                <div class="accomplish-title">Automate Repetitive Tasks</div>
-                <div class="accomplish-desc">Free up hours every week by automating the tasks that drain your energy.</div>
+                <div class="accomplish-content">
+                    <div class="accomplish-title">Automate Repetitive Tasks</div>
+                    <div class="accomplish-desc">Free up hours every week by automating the work that drains your energy.</div>
+                </div>
             </div>
 
-            <div class="accomplish-card">
+            <div class="accomplish-card fade-in">
                 <div class="accomplish-icon">🚀</div>
-                <div class="accomplish-title">Scale Without Hiring</div>
-                <div class="accomplish-desc">Grow your output without growing your payroll. Do more with the same (or smaller) team.</div>
+                <div class="accomplish-content">
+                    <div class="accomplish-title">Scale Without Hiring</div>
+                    <div class="accomplish-desc">Grow your output without growing your payroll. Do more with less.</div>
+                </div>
             </div>
         </div>
 
-        <!-- IMAGE PLACEHOLDER 6: Accomplishments Visual -->
-        <div class="image-placeholder fade-in" style="width: 100%; max-width: 800px; height: 350px; margin-top: 48px;">
-            <span class="number">6</span>
-            <span>What You'll Accomplish - Results/outcome visual</span>
-            <span class="dimensions">1600 × 700px (16:7 ratio)</span>
+        <!-- IMAGE PLACEHOLDER 3 -->
+        <div class="image-placeholder fade-in" style="width: 100%; max-width: 900px; height: 400px; margin: 48px auto 0;">
+            <span class="number">3</span>
+            <span class="label">Results Visual — Before/after or outcome showcase</span>
+            <span class="dimensions">1800 × 800px</span>
         </div>
     </div>
 </section>
 
 <!-- ============================================================
-     THE FRAMEWORK REVEAL
+     SECTION 5: WHAT'S INCLUDED
      ============================================================ -->
 <section class="section">
-    <div class="container">
-        <span class="section-label fade-in" style="text-align: center; display: block;">The Framework</span>
-
-        <h2 class="headline fade-in" style="text-align: center; font-size: clamp(26px, 4vw, 38px);">So I Packaged Everything I Learned</h2>
-
-        <p class="story-text fade-in" style="text-align: center;">After 3 years of testing, $47,000 spent, and hundreds of hours of learning — I distilled it all down into a simple framework that anyone can follow.</p>
-
-        <p class="story-text fade-in" style="text-align: center;">It's called <strong style="color: var(--accent-green);">The AI Operating Framework™</strong></p>
-
-        <p class="story-text fade-in" style="text-align: center;">It teaches you the <em>fundamentals</em> — how AI actually works, how to communicate with it, how to stay relevant as things evolve. The stuff that never becomes obsolete.</p>
-
-        <p class="story-text fade-in" style="text-align: center;">And to make it even more valuable, I'm including <strong>6 bonus skill packs</strong> that show you exactly how to apply the framework to specific use cases.</p>
-
-        <div class="highlight-box fade-in" style="text-align: center;">
-            <p>Whether you're a freelancer, business owner, content creator, or employee — this framework works. Because it teaches you how to think, not just what to do.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ============================================================
-     SOCIAL PROOF
-     ============================================================ -->
-<section class="section section-dark">
     <div class="container-wide">
-        <span class="section-label fade-in" style="text-align: center; display: block;">What Others Are Saying</span>
+        <div style="text-align: center; margin-bottom: 60px;">
+            <span class="section-label gold fade-in">Everything You Get</span>
+            <h2 class="headline-medium fade-in">The Complete Package</h2>
+            <p class="subheadline fade-in" style="margin: 0 auto;">
+                The Core Framework teaches you the fundamentals. The 6 Skill Packs show you how to apply them.
+            </p>
+        </div>
 
-        <h2 class="headline fade-in" style="text-align: center; font-size: clamp(24px, 4vw, 36px);">2,847+ Entrepreneurs Got Their Time Back</h2>
-
-        <div class="testimonial-grid fade-in">
-            <div class="testimonial-card">
-                <div class="testimonial-text">
-                    "I was skeptical — another AI course? But this was different. <strong>It finally made AI make sense.</strong> I rebuilt my entire client proposal process in a weekend."
-                </div>
-                <div class="testimonial-author">
-                    <span class="testimonial-name">Sarah M.</span><br>
-                    <span class="testimonial-role">Marketing Consultant, Texas</span>
-                </div>
-                <div class="testimonial-result">Saved 12+ hours/week</div>
+        <!-- STATS BAR -->
+        <div class="stats-bar fade-in">
+            <div class="stat-item">
+                <div class="stat-number">1</div>
+                <div class="stat-label">Core Framework</div>
             </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-text">
-                    "I run a 6-person agency. After going through this, I realized <strong>we could do the same work with 3 people.</strong> Not by firing anyone — by actually scaling."
-                </div>
-                <div class="testimonial-author">
-                    <span class="testimonial-name">James K.</span><br>
-                    <span class="testimonial-role">Agency Owner, UK</span>
-                </div>
-                <div class="testimonial-result">2x output, same team</div>
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Skill Packs</div>
             </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-text">
-                    "I'm 52 and thought AI was for the younger crowd. <strong>This framework made it approachable.</strong> Now I'm teaching my staff how to use it."
-                </div>
-                <div class="testimonial-author">
-                    <span class="testimonial-name">Robert T.</span><br>
-                    <span class="testimonial-role">Construction Business Owner, Ohio</span>
-                </div>
-                <div class="testimonial-result">Landed 3 new contracts</div>
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Templates</div>
             </div>
-
-            <div class="testimonial-card">
-                <div class="testimonial-text">
-                    "I was drowning in 50+ hour weeks. <strong>This gave me my weekends back.</strong> My wife noticed the difference before I did."
-                </div>
-                <div class="testimonial-author">
-                    <span class="testimonial-name">Michael R.</span><br>
-                    <span class="testimonial-role">E-commerce Owner, Florida</span>
-                </div>
-                <div class="testimonial-result">40-hour weeks now</div>
+            <div class="stat-item">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Lifetime Updates</div>
             </div>
         </div>
-    </div>
-</section>
 
-<!-- ============================================================
-     THE OFFER
-     ============================================================ -->
-<section class="section">
-    <div class="container">
-        <span class="section-label fade-in" style="text-align: center; display: block;">The Complete Package</span>
-
-        <h2 class="headline fade-in" style="text-align: center; font-size: clamp(26px, 4vw, 38px);">Everything You Need — One Price</h2>
-
+        <!-- OFFER CARD -->
         <div class="offer-card scale-in">
             <span class="offer-badge">⚡ Launch Special — 98% Off</span>
 
@@ -1058,7 +1487,7 @@ body {
 
             <!-- CORE FRAMEWORK -->
             <div class="offer-section">
-                <p class="offer-section-label">🔑 The Core Framework (The Foundation)</p>
+                <span class="offer-section-label">🔑 The Core Framework (The Foundation)</span>
                 <div class="offer-item">
                     <div class="offer-item-left">
                         <span class="offer-check">✓</span>
@@ -1069,14 +1498,14 @@ body {
                 <div class="offer-item">
                     <div class="offer-item-left">
                         <span class="offer-check">✓</span>
-                        <span class="offer-item-text">The Question Framework (Get Perfect Outputs)</span>
+                        <span class="offer-item-text">The Question Framework (Perfect Outputs)</span>
                     </div>
                     <span class="offer-item-value">$97</span>
                 </div>
                 <div class="offer-item">
                     <div class="offer-item-left">
                         <span class="offer-check">✓</span>
-                        <span class="offer-item-text">Staying Relevant Forever (Never Fall Behind)</span>
+                        <span class="offer-item-text">The Adaptation System (Master Any Tool)</span>
                     </div>
                     <span class="offer-item-value">$97</span>
                 </div>
@@ -1084,7 +1513,7 @@ body {
 
             <!-- BONUS PACKS -->
             <div class="offer-section">
-                <p class="offer-section-label">🎁 Bonus Skill Packs (Apply The Framework)</p>
+                <span class="offer-section-label">🎁 Bonus Skill Packs (Apply The Framework)</span>
                 <div class="offer-item">
                     <div class="offer-item-left">
                         <span class="offer-check">✓</span>
@@ -1131,7 +1560,7 @@ body {
 
             <!-- EXTRAS -->
             <div class="offer-section">
-                <p class="offer-section-label">✨ Also Included</p>
+                <span class="offer-section-label">✨ Also Included</span>
                 <div class="offer-item">
                     <div class="offer-item-left">
                         <span class="offer-check">✓</span>
@@ -1162,9 +1591,9 @@ body {
                 <p class="total-savings">You Save $1,555 Today</p>
             </div>
 
-            <div style="text-align: center; margin-top: 32px;">
-                <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button" style="width: 100%; max-width: 400px;">
-                    Get The Framework — $9
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button large" style="width: 100%; max-width: 450px;">
+                    Get Instant Access — $9
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
                 </a>
                 <p class="cta-subtext">Instant access. Lifetime updates. 30-day guarantee.</p>
@@ -1180,39 +1609,279 @@ body {
 </section>
 
 <!-- ============================================================
+     SECTION 6: SOCIAL PROOF / TESTIMONIALS
+     ============================================================ -->
+<section class="section section-dark">
+    <div class="container-wide">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <span class="section-label fade-in">Real Results</span>
+            <h2 class="headline-medium fade-in">2,847+ Entrepreneurs Got Their Time Back</h2>
+        </div>
+
+        <div class="testimonial-grid">
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-text">
+                    "I was skeptical — another AI thing? But this was different. <strong>It finally made AI make sense.</strong> I rebuilt my entire client proposal process in a weekend."
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Sarah M.</div>
+                        <div class="testimonial-role">Marketing Consultant, Texas</div>
+                    </div>
+                    <div class="testimonial-result">Saved 12+ hrs/week</div>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-text">
+                    "I run a 6-person agency. After this, I realized <strong>we could do the same work with 3 people.</strong> Not by firing anyone — by actually scaling."
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">James K.</div>
+                        <div class="testimonial-role">Agency Owner, UK</div>
+                    </div>
+                    <div class="testimonial-result">2x output, same team</div>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-text">
+                    "I'm 52 and thought AI was for the younger crowd. <strong>This framework made it approachable.</strong> Now I'm teaching my staff how to use it."
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Robert T.</div>
+                        <div class="testimonial-role">Construction Business, Ohio</div>
+                    </div>
+                    <div class="testimonial-result">Landed 3 new contracts</div>
+                </div>
+            </div>
+
+            <div class="testimonial-card fade-in">
+                <div class="testimonial-text">
+                    "I was drowning in 50+ hour weeks. <strong>This gave me my weekends back.</strong> My wife noticed the difference before I did."
+                </div>
+                <div class="testimonial-author">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Michael R.</div>
+                        <div class="testimonial-role">E-commerce Owner, Florida</div>
+                    </div>
+                    <div class="testimonial-result">40-hour weeks now</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA #3 -->
+<section class="cta-section">
+    <div class="container">
+        <h3 class="headline-medium fade-in" style="margin-bottom: 16px;">Join them today.</h3>
+        <p class="subheadline fade-in" style="margin: 0 auto 32px; text-align: center;">Same framework. Same results. $9.</p>
+        <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button large fade-in">
+            Get The Framework Now
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+        </a>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 7: FOMO DATA
+     ============================================================ -->
+<section class="section section-dark">
+    <div class="container-wide">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <span class="section-label red fade-in">The Data Is Clear</span>
+            <h2 class="headline-medium fade-in">What's Happening While You Wait</h2>
+        </div>
+
+        <div class="infographic-grid">
+            <div class="infographic-card red fade-in">
+                <div class="infographic-stat">77%</div>
+                <div class="infographic-title">of businesses already use AI</div>
+                <div class="infographic-desc">Not "planning to" — actively using it right now to outpace those who aren't.</div>
+                <div class="infographic-source">Source: McKinsey Global Survey, 2024</div>
+            </div>
+
+            <div class="infographic-card orange fade-in">
+                <div class="infographic-stat">40%</div>
+                <div class="infographic-title">of work can be automated</div>
+                <div class="infographic-desc">That's 16+ hours per week. Time you could reclaim — or time competitors are saving.</div>
+                <div class="infographic-source">Source: Accenture Future of Work</div>
+            </div>
+
+            <div class="infographic-card green fade-in">
+                <div class="infographic-stat">6.2%</div>
+                <div class="infographic-title">productivity boost from AI</div>
+                <div class="infographic-desc">Companies using AI see measurable gains within the first year of adoption.</div>
+                <div class="infographic-source">Source: Stanford Digital Economy Lab</div>
+            </div>
+
+            <div class="infographic-card blue fade-in">
+                <div class="infographic-stat">$15.7T</div>
+                <div class="infographic-title">AI impact by 2030</div>
+                <div class="infographic-desc">Those capturing this value learned the fundamentals early. The window is closing.</div>
+                <div class="infographic-source">Source: PwC Global AI Study</div>
+            </div>
+        </div>
+
+        <div class="highlight-box warning fade-in" style="text-align: center; margin-top: 48px;">
+            <p>The gap between businesses that "get" AI and those that don't widens every day. <strong>Which side will you be on?</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SECTION 8: THE STORY (NURI'S JOURNEY)
+     ============================================================ -->
+<section class="section">
+    <div class="container-narrow">
+        <span class="section-label fade-in" style="text-align: center; display: block;">My Story</span>
+
+        <h2 class="headline-medium fade-in" style="text-align: center;">Why I Built This Framework</h2>
+
+        <!-- IMAGE PLACEHOLDER 4: Nuri's Photo -->
+        <div class="image-placeholder fade-in" style="width: 200px; height: 200px; border-radius: 50%; margin: 40px auto;">
+            <span class="number" style="font-size: 48px;">4</span>
+            <span class="dimensions">400 × 400px</span>
+        </div>
+
+        <p class="story-text fade-in">Let me tell you about the night everything changed.</p>
+
+        <p class="story-text fade-in">It was 2am. I was still at my desk. My eyes burned from staring at spreadsheets. I had 10 staff members, a business doing okay on paper, and a to-do list that never ended. I was working <strong>15-hour days</strong>, 6 days a week.</p>
+
+        <p class="story-text fade-in">My wife walked in. We hadn't really talked in weeks — not <em>really</em> talked. Just logistics. Who's picking up the kids. What bills are due.</p>
+
+        <div class="quote-box fade-in">
+            <p>"You're never here. Even when you're home, you're not here. The kids are growing up and you're missing it."</p>
+        </div>
+
+        <p class="story-text fade-in">We had a fight. Not the yelling kind. The quiet kind. The kind where you realize <strong>you're losing the things that actually matter</strong> while chasing the things that don't.</p>
+
+        <p class="story-text fade-in">She went to bed. I sat there in the dark, staring at nothing.</p>
+
+        <!-- IMAGE PLACEHOLDER 5 -->
+        <div class="image-placeholder fade-in" style="width: 100%; height: 300px; margin: 40px auto;">
+            <span class="number">5</span>
+            <span class="label">The Struggle — Late night / exhaustion visual</span>
+            <span class="dimensions">1200 × 600px</span>
+        </div>
+
+        <p class="story-text fade-in">Here's the thing: <strong>I wasn't lazy.</strong> I was doing everything "right." Managing my team. Optimizing processes. Grinding harder than anyone I knew.</p>
+
+        <p class="story-text fade-in">But my offers had stopped converting like they used to. Competitors were moving faster. New tools were launching every week. I felt like I was running on a treadmill that kept speeding up.</p>
+
+        <p class="story-text fade-in">The next morning, I called my dad. He's been my mentor my whole life — not in a "business guru" way, in a real way. I told him everything.</p>
+
+        <div class="highlight-box fade-in">
+            <p>"Son, the world changed. You didn't change with it. Stop working harder. <strong>Start working different.</strong>"</p>
+        </div>
+
+        <p class="story-text fade-in">He was right. Everyone was talking about AI. But I'd written it off as hype. "I don't have time for that stuff." <strong>That was my biggest mistake.</strong></p>
+
+        <p class="story-text fade-in">That night, I made a decision. For the next two weeks, I would learn <strong>everything</strong> about AI. Not the hype. The real stuff.</p>
+
+        <p class="story-text fade-in">I read papers. Watched tutorials. Bought courses. Tested tools. <strong>I spent $47,000</strong> on programs and subscriptions. Most of it was garbage.</p>
+
+        <p class="story-text fade-in">But slowly, piece by piece, I started to see it. Not the tools. <em>The pattern.</em></p>
+
+        <div class="quote-box fade-in">
+            <p>There was a way to think about AI that made everything simple. A framework. Once I understood it, everything changed.</p>
+        </div>
+
+        <p class="story-text fade-in">I learned how AI actually thinks. How to ask the right questions. How to communicate with it so it gives you exactly what you need — first time.</p>
+
+        <p class="story-text fade-in">Then I applied it. To everything.</p>
+
+        <p class="story-text fade-in">I learned to generate images for marketing. Build landing pages. Create videos. Do market research in minutes. Write copy that converts. Automate tasks that used to take hours.</p>
+
+        <!-- IMAGE PLACEHOLDER 6 -->
+        <div class="image-placeholder fade-in" style="width: 100%; height: 350px; margin: 40px auto;">
+            <span class="number">6</span>
+            <span class="label">The Transformation — Success / lifestyle visual</span>
+            <span class="dimensions">1200 × 700px</span>
+        </div>
+
+        <p class="story-text fade-in" style="font-size: 22px; text-align: center;"><strong>Within 6 months, everything was different.</strong></p>
+
+        <div class="stats-bar fade-in" style="margin: 40px 0;">
+            <div class="stat-item">
+                <div class="stat-number">3x</div>
+                <div class="stat-label">Revenue</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50%</div>
+                <div class="stat-label">Less Hours</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10→4</div>
+                <div class="stat-label">Team Size</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Family Time</div>
+            </div>
+        </div>
+
+        <p class="story-text fade-in">The business grew. But more importantly, <strong>I got my life back.</strong></p>
+
+        <p class="story-text fade-in">I'm in better shape because I have time to work out. My nutrition is dialed because I'm not stress-eating at midnight. I'm present with my kids because I'm not constantly checking emails.</p>
+
+        <p class="story-text fade-in">And here's what surprised me most: <strong>I'm not afraid of new tools anymore.</strong></p>
+
+        <p class="story-text fade-in">Every week, something new launches. Before, that would give me anxiety. Now? I apply the framework. New tool? Takes me 20 minutes to master. Because I understand <em>how AI thinks</em>, not just how individual tools work.</p>
+
+        <div class="highlight-box fade-in" style="text-align: center;">
+            <p>I packaged everything I learned into this framework. The $47,000 in lessons. The 3 years of testing. The mental models. <strong>So you don't have to go through what I did.</strong></p>
+        </div>
+
+        <p class="story-text fade-in" style="text-align: center; font-size: 22px; margin-top: 48px;"><strong style="color: var(--text-primary);">— Nuri</strong></p>
+    </div>
+</section>
+
+<!-- ============================================================
      FINAL CTA
      ============================================================ -->
-<section class="section section-dark" style="text-align: center;">
+<section class="section section-glow" style="text-align: center;">
     <div class="container">
-        <span class="section-label fade-in">One Last Thing</span>
+        <span class="section-label fade-in">Your Choice</span>
 
-        <h2 class="headline fade-in" style="font-size: clamp(24px, 4vw, 36px);">I Built This For People Like You.</h2>
+        <h2 class="headline fade-in" style="font-size: clamp(28px, 5vw, 44px);">
+            Same Struggle.<br>Or Same Framework.
+        </h2>
 
-        <p class="story-text fade-in">People who are working hard but feel like they're falling behind. Who see competitors moving faster and wonder how. Who want more time with family, better health, less stress — but don't see a way out of the grind.</p>
+        <p class="subheadline fade-in" style="margin: 0 auto 20px;">
+            You can keep doing what you're doing. Jumping between tools. Watching tutorials. Falling further behind.
+        </p>
 
-        <p class="story-text fade-in">I was you. 15-hour days. Missing my kids grow up. Watching my marriage suffer. That 2am fight was my wake-up call.</p>
+        <p class="subheadline fade-in" style="margin: 0 auto 40px;">
+            Or you can learn the framework that made everything click for me — and 2,847+ others. <strong style="color: var(--text-primary);">$9.</strong>
+        </p>
 
-        <p class="story-text fade-in">This framework gave me my life back. <strong>I believe it can do the same for you.</strong></p>
-
-        <p class="story-text fade-in" style="color: var(--accent-green); font-size: 22px;"><strong>$9. That's it.</strong></p>
-
-        <p class="story-text fade-in" style="color: var(--text-muted);">Less than lunch. For a framework that can change how you work — and live — forever.</p>
-
-        <!-- IMAGE PLACEHOLDER 7: Final/Founder Image -->
-        <div class="image-placeholder fade-in" style="width: 150px; height: 150px; border-radius: 50%; margin: 32px auto;">
-            <span class="number" style="font-size: 32px;">7</span>
-            <span class="dimensions">300 × 300px</span>
+        <!-- IMAGE PLACEHOLDER 7 -->
+        <div class="image-placeholder fade-in" style="width: 100%; max-width: 700px; height: 350px; margin: 0 auto 48px;">
+            <span class="number">7</span>
+            <span class="label">Final CTA Visual — Product bundle / transformation</span>
+            <span class="dimensions">1400 × 700px</span>
         </div>
 
-        <p class="story-text fade-in"><strong style="color: var(--text-primary);">— Nuri</strong></p>
-
-        <div style="margin-top: 40px;" class="fade-in">
-            <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button">
-                Get The AI Operating Framework™ — $9
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
-            </a>
-            <p class="cta-subtext">🔒 Secure checkout • Instant access • 30-day guarantee</p>
+        <div class="cta-price fade-in">
+            <span class="cta-price-old">$1,564</span>
+            <span class="cta-price-new">$9</span>
         </div>
+
+        <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button large fade-in">
+            Get The AI Operating Framework™
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+        </a>
+
+        <p class="cta-subtext fade-in">🔒 Secure checkout • Instant access • 30-day guarantee</p>
+
+        <p class="story-text fade-in" style="margin-top: 48px; color: var(--text-muted); font-size: 16px;">
+            If someone like me — working 15-hour days, missing my kids, watching my marriage strain — can turn it around with this framework...<br><br>
+            <strong style="color: var(--text-primary);">What could it do for you?</strong>
+        </p>
     </div>
 </section>
 
@@ -1222,7 +1891,9 @@ body {
     <a href="https://smartworkers.kz/fe---order-form-page-6628-3000-5628" class="cta-button">Get The Framework →</a>
 </div>
 
-<!-- SCRIPTS -->
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
 <script>
 // Scroll animations
 const observerOptions = {
@@ -1238,30 +1909,22 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.fade-in, .scale-in').forEach(el => {
+document.querySelectorAll('.fade-in, .scale-in, .slide-in-left, .slide-in-right').forEach(el => {
     observer.observe(el);
 });
 
 // Floating CTA
 const floatingCta = document.getElementById('floatingCta');
-let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > 800) {
+    if (window.pageYOffset > 1000) {
         floatingCta.classList.add('visible');
     } else {
         floatingCta.classList.remove('visible');
     }
-
-    lastScroll = currentScroll;
 });
 
-// Animate stats on scroll
-const statNumbers = document.querySelectorAll('.stat-number');
-const infographicStats = document.querySelectorAll('.infographic-stat');
-
+// Animate numbers on scroll
 const animateValue = (element, start, end, duration, suffix = '') => {
     let startTimestamp = null;
     const step = (timestamp) => {
@@ -1271,33 +1934,32 @@ const animateValue = (element, start, end, duration, suffix = '') => {
         element.textContent = value + suffix;
         if (progress < 1) {
             window.requestAnimationFrame(step);
+        } else {
+            element.textContent = end + suffix;
         }
     };
     window.requestAnimationFrame(step);
 };
 
-// Stat animation observer
+const statNumbers = document.querySelectorAll('.stat-number');
 const statObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting && !entry.target.dataset.animated) {
             entry.target.dataset.animated = 'true';
             const text = entry.target.textContent;
 
-            if (text.includes('x')) {
-                animateValue(entry.target, 0, 3, 1500, 'x');
-            } else if (text.includes('%')) {
-                const num = parseFloat(text);
-                animateValue(entry.target, 0, num, 1500, '%');
-            } else if (text.includes('$')) {
-                animateValue(entry.target, 0, 15.7, 1500, 'T');
-                entry.target.textContent = '$15.7T';
+            if (text === '3x') {
+                animateValue(entry.target, 0, 3, 1200, 'x');
+            } else if (text === '50%') {
+                animateValue(entry.target, 0, 50, 1200, '%');
+            } else if (text.includes('500')) {
+                animateValue(entry.target, 0, 500, 1500, '+');
             }
         }
     });
 }, { threshold: 0.5 });
 
 statNumbers.forEach(el => statObserver.observe(el));
-infographicStats.forEach(el => statObserver.observe(el));
 </script>
 
 </body>
